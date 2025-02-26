@@ -1,0 +1,29 @@
+[
+  {
+    "$type": "",
+    "investigatorId": "",
+    "investigatorNPI": "",
+    "physicianPatientCount": {
+      "physicianProximity15m": "",
+      "patientProximity15m": "",
+      "physicianProximity25m": "",
+      "patientProximity25m": "",
+      "physicianProximity50m": "",
+      "patientProximity50m": ""
+    },
+    "latitude": "",
+    "longitude": "",
+    "diseaseHierarchy": [
+      ""
+    ],
+    "icd10Code": "",
+    "icd10Terms": [
+      ""
+    ],
+    "patientCount": {
+      "totalPatientCount": "",
+      "patientCountMale": "",
+      "patientCountChild": ""
+    }
+  }
+]

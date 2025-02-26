@@ -1,0 +1,11 @@
+
+{
+      "host": "aws-a0220-use1-00-d-aur-shrd-cus-pgs01.cluster-cikckwft6kay.us-east-1.rds.amazonaws.com",
+      "port": "5432",
+      "username": "a1da0220cusappshrd01u",
+      "password": "arn:aws:secretsmanager:us-east-1:737121104911:secret:aws-a0220-use1-00-d-sem-shrd-cus-pgs01-9Vn6Pw",
+      "database_name": "dev_shrd_a0220_cus_01_sdo",
+      "environment" : "dev"
+}
+
+

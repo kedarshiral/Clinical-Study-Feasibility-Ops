@@ -1,0 +1,201 @@
+[{
+  "$type": "drugs.api",
+  "origin": "Biological, protein, antibody",
+  "drugNameSynonyms": [
+        "anti-CD38 MAb (IV), Genmab",
+        "anti-CD38 MAb (SC), Genmab",
+        "anti-CD38 MAb, Genmab",
+        "daratumumab"
+  ],
+  "recordUrl": "https://citeline.informa.com/#/drugs/details/33598",
+  "drugCountries": [
+        {
+          "status": "Phase III Clinical Trial",
+          "name": "Argentina",
+          "licensingOpportunity": "N",
+          "yearLaunched": "2017"
+        },
+        {
+          "status": "Registered",
+          "name": "Australia",
+          "licensingOpportunity": "N"
+        }
+  ],
+  "overview": "aaa",
+  "chemicalStructure": [],
+  "indicationGroups": [
+        {
+          "indications": [
+                {
+                  "diseaseName": "Amyloidosis, AL",
+                  "diseaseStatus": "Phase III Clinical Trial"
+                }
+          ],
+          "id": 14,
+          "name": "Neurological Products"
+        },
+        {
+          "indications": [
+                {
+                  "diseaseName": "Cancer, myeloma",
+                  "diseaseStatus": "Launched"
+                },
+                {
+                  "diseaseName": "Cancer, pancreatic",
+                  "diseaseStatus": "Phase II Clinical Trial"
+                }
+          ],
+          "id": 24,
+          "name": "Rare Diseases"
+        }
+  ],
+  "drugIcd9": [
+        {
+          "icd9Id": "ICD9CM:153.9",
+          "name": "Malignant neoplasm of colon, unspecified site"
+        },
+        {
+          "icd9Id": "ICD9CM:157.0",
+          "name": "Malignant neoplasm of head of pancreas"
+        }
+  ],
+  "phaseII": "aa",
+  "licensing": "aa3",
+  "pharmacokinetics": [
+        {
+          "model": "m1",
+          "parameter": "p1",
+          "unit": "u1"
+        },
+        {
+          "model": "m2",
+          "parameter": "p2",
+          "unit": "u2"
+        }
+  ],
+  "phaseI": "aaaaaaa",
+  "latestChangeDate": "aaa1",
+  "copyrightNotice": "Data from Pharmaprojects pipeline drug development monitoring database. Copyright Citeline, Inc. 2019.",
+  "targets": [
+        {
+          "targetECNumbers": [
+                "Enzyme > EC number > 3.2.2.5"
+          ],
+          "targetSynonyms": [
+                "ADP-ribosyl cyclase",
+                "CD38"
+          ],
+          "targetName": "CD38 molecule",
+          "targetFamilies": [
+                "Receptor"
+          ],
+          "entrezGeneId": 952
+        }
+  ],
+  "casNumbers": [
+        "945721-28-8"
+  ],
+  "drugPrimaryName": "daratumumab",
+  "drugMeshTerms": [
+        {
+          "name": "Amyloidosis",
+          "meshId": "D000686"
+        },
+        {
+          "name": "Breast Neoplasms",
+          "meshId": "D001943"
+        }
+  ],
+  "marketing": "aaa",
+  "phaseIII": "aa27",
+  "latestChange": "Results of Phase III trial (COLUMBA; MMY3012) for multiple myeloma reported",
+  "isPharmaProjectsDrug": "True",
+  "originatorCompanyKey": "961",
+  "drugId": 33598,
+  "licensee": [
+        {
+          "licenseeStatus": "Launched",
+          "licenseeCountry": "USA",
+          "licenseeCompanyKey": 316,
+          "licenseeName": "Johnson & Johnson"
+        }
+  ],
+  "keyEvents": [
+        {
+          "keyEventHistory": "Nonproprietary Name Granted",
+          "keyEventDetail": "HuMax-CD38",
+          "keyEventDate": "2009-08-14T00:00:00Z"
+        },
+        {
+          "keyEventHistory": "Drug Added",
+          "keyEventDate": "2005-05-13T00:00:00Z"
+        }
+  ],
+  "mechanismsOfAction": [
+        "CD38 antagonist",
+        "Immuno-oncology therapy"
+  ],
+  "drugIcd10": [
+        {
+          "name": "Malignant neoplasm of ascending colon",
+          "icd10Id": "C18.2"
+        },
+        {
+          "name": "Malignant neoplasm of hepatic flexure",
+          "icd10Id": "C18.3"
+        }
+  ],
+  "originatorCountry": "Denmark",
+  "originatorStatus": "Launched",
+  "drugSource": "NonClinicalTrials.gov",
+  "globalStatus": "Launched",
+  "deliveryRoutes": [
+        "Inhaled",
+        "Injectable, subcutaneous"
+  ],
+  "trialIds": [
+        80740,
+        143380,
+        143381
+  ],
+  "drugSnomed": [
+        {
+          "name": "T-cell lymphoma",
+          "snomedId": "SNOMED109978004"
+        },
+        {
+          "name": "B-cell lymphoma",
+          "snomedId": "SNOMED109979007"
+        }
+  ],
+  "preClinical": "aaa",
+  "originatorName": "Genmab",
+  "therapeuticClasses": [
+        {
+          "therapeuticClassName": "aa1",
+          "therapeuticClassStatus": "aa2"
+        },
+        {
+          "therapeuticClassName": "aa3",
+          "therapeuticClassStatus": "Launched"
+        }
+  ],
+  "deliveryTechnologies": [],
+  "deliveryMediums": [
+        "aa"
+  ],
+  "patents": [
+        {
+          "patentNumber":"EP147193",
+          "patentPriorityCountryDate":"1983-12-26T00:00:00.0000000Z"
+    }
+  ],
+  "chemicalName": "aa234'",
+  "originatorParentName": "aa",
+  "originatorParentKey": "aaa",
+  "molecularFormula": "22331",
+  "molecularWeight": "20",
+  "nce": "aa"
+}]
+
+

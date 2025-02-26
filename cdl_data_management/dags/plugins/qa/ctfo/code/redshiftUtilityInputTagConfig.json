@@ -1,0 +1,22 @@
+
+{"table_paths": {
+  "f_rpt_site_tags" : "s3://aws-a0220-use1-00-q-s3b-shrd-shr-data01/clinical-data-lake/publish/staging/temp/TAG/final_site_tag_parquet/"
+},
+  "host": "aws-a0220-use1-00-q-red-shrd-cus-red01.c6wwcursbo3u.us-east-1.redshift.amazonaws.com",
+  "port": "5439",
+  "user": "a1q220cusappshrd01u",
+  "password": "YdqxdL67#8363vc#83V7gdF",
+  "db": "qa_shrd_0220_cus_01",
+  "iam_role": "arn:aws:iam::737121104911:role/aws-a0220-use1-00-q-rol-shrd-cus-mgmtred01",
+  "parallel_loads": 2,
+  "retry_limit": 1,
+  "timeout": 120000000,
+  "operation": "LOAD",
+  "source_s3_location": "",
+  "schema": "ctfo_app_fa_qa",
+  "table": "",
+  "table_format": "parquet",
+  "delimiter": "|",
+  "process_id": "1300"
+}
+

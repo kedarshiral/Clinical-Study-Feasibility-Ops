@@ -1,0 +1,6 @@
+{
+  "Ongoing": ["Active, not recruiting", "Available", "Enrolling by invitation", "Recruiting", "Temporarily not available", "Active (Recruiting) ", "First Subject In", "Last Subject In", "Open for Recruitment ", "Open", "Temporarily Closed", "Active", "CSR Approved", "initiated", "last subject enrolled", "Site Ready to Enrol", "Active (Not Recruiting)", "Ongoing"],
+  "Completed": ["Approved for marketing", "Completed", "No longer available", "Withheld", "Archived", "Clinically Complete", "Closing", "Last Subject Out", "Operationally Closed", "Planned Stats Complete", "Reported", "Study Closed and Archived", "Closed", "All Sites Closed", "Database Clean", "Database Locked", "last subject completed"],
+  "Planned": ["Not yet recruiting", "Authorised", "Candidate", "Initiating", "Not Recruiting", "Tentative", "Planned", "created", "identified", "pending", "selected"],
+  "Others": ["Suspended", "Terminated", "Unknown status", "Withdrawn", "(N/A)", "No information", "Not Available", "NULL", "On Hold", "postponed", "Cancelled", "closed no subject", "discontinued", "Evaluation", "hold", "not selected"]
+}

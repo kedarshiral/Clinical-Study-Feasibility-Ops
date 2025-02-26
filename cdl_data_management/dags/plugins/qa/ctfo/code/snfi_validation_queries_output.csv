@@ -1,0 +1,94 @@
+Category,Layer,Table,Prev Cycle ID,Curr Cycle ID,Previous Result,Current Result,Difference,Status
+Record Count,A1,f_rpt_patient_details ,2022021114174105575,2022021610434747434,226029,0,100.0%,Fail
+Record Count,A1,f_rpt_site_study_details ,2022021114174105575,2022021610434747434,4961348,0,100.0%,Fail
+Record Count,A1,f_rpt_investigator_site_study_details,2022021114174105575,2022021610434747434,3894194,0,100.0%,Fail
+Record Count,A1,f_trial_site ,2022021114174105575,2022021610434747434,178241,0,100.0%,Fail
+Record Count,A1,f_investigator_site_study_details ,2022021114174105575,2022021610434747434,149757,0,100.0%,Fail
+Record Count,A1,f_rpt_country ,2022021114174105575,2022021610434747434,725699,0,100.0%,Fail
+Record Count,A1,f_rpt_drug_details ,2022021114174105575,2022021610434747434,550194,0,100.0%,Fail
+Record Count,A1,f_rpt_filters_setup_all ,2022021114174105575,2022021610434747434,2214841,0,100.0%,Fail
+Record Count,A1,f_rpt_filters_site_inv ,2022021114174105575,2022021610434747434,6455516,0,100.0%,Fail
+Record Count,A1,f_rpt_filters_trial ,2022021114174105575,2022021610434747434,1223939,0,100.0%,Fail
+Site id ,A1,f_rpt_site_study_details ,2022021114174105575,2022021610434747434,796797,0,100.0%,Fail
+Site id ,A1,f_rpt_investigator_site_study_details,2022021114174105575,2022021610434747434,335672,0,100.0%,Fail
+Site id ,A1,f_trial_site ,2022021114174105575,2022021610434747434,60459,0,100.0%,Fail
+Site id ,A1,f_investigator_site_study_details ,2022021114174105575,2022021610434747434,49718,0,100.0%,Fail
+Site id ,A1,f_rpt_drug_details ,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Site id ,A1,f_rpt_filters_setup_all ,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Site id ,A1,f_rpt_filters_site_inv ,2022021114174105575,2022021610434747434,796797,0,100.0%,Fail
+Site id ,A1,f_rpt_filters_trial ,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Trial id ,A1,f_rpt_site_study_details ,2022021114174105575,2022021610434747434,505096,0,100.0%,Fail
+Trial id ,A1,f_rpt_investigator_site_study_details,2022021114174105575,2022021610434747434,269410,0,100.0%,Fail
+Trial id ,A1,f_trial_site ,2022021114174105575,2022021610434747434,6410,0,100.0%,Fail
+Trial id ,A1,f_investigator_site_study_details ,2022021114174105575,2022021610434747434,64057,0,100.0%,Fail
+Trial id ,A1,f_rpt_country ,2022021114174105575,2022021610434747434,505096,0,100.0%,Fail
+Trial id ,A1,f_rpt_drug_details ,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Trial id ,A1,f_rpt_filters_setup_all ,2022021114174105575,2022021610434747434,505096,0,100.0%,Fail
+Trial id ,A1,f_rpt_filters_site_inv ,2022021114174105575,2022021610434747434,505096,0,100.0%,Fail
+Trial id ,A1,f_rpt_filters_trial ,2022021114174105575,2022021610434747434,505096,0,100.0%,Fail
+Investigator id ,A1,f_rpt_investigator_details,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Investigator id ,A1,f_rpt_investigator_site_study_details,2022021114174105575,2022021610434747434,954545,0,100.0%,Fail
+Sponsor name,A1,f_rpt_filters_trial ,2022021114174105575,2022021610434747434,101380,0,100.0%,Fail
+Sponsor name,A1,f_rpt_site_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Sponsor name,A1,f_rpt_site_study_details_non_performance,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Sponsor name,A1,f_rpt_investigator_site_study_details,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Sponsor name,A1,f_rpt_Investigator_site_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+nct id,A1,f_rpt_site_study_details,2022021114174105575,2022021610434747434,349462,0,100.0%,Fail
+nct id,A1,f_rpt_site_study_details_non_performance,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+nct id,A1,f_rpt_site_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+nct id,A1,f_rpt_investigator_site_study_details,2022021114174105575,2022021610434747434,138613,0,100.0%,Fail
+nct id,A1,f_rpt_investigator_site_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Disease,A1,f_rpt_site_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Disease,A1,f_rpt_investigator_site_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Therapeutic Area,A1,f_rpt_site_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Therapeutic Area,A1,f_rpt_investigator_site_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Country,A1,f_rpt_site_study_details,2022021114174105575,2022021610434747434,215,0,100.0%,Fail
+Country,A1,f_rpt_site_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Country,A1,f_rpt_site_study_details_non_performance,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Country,A1,f_rpt_src_site_details,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Country,A1,f_rpt_investigator_details,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Country,A1,f_rpt_investigator_site_study_details,2022021114174105575,2022021610434747434,188,0,100.0%,Fail
+Country,A1,f_rpt_investigator_site_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Region,A1,f_rpt_site_study_details,2022021114174105575,2022021610434747434,24,0,100.0%,Fail
+Region,A1,f_rpt_site_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Region,A1,f_rpt_site_study_details_non_performance,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Region,A1,f_rpt_investigator_site_study_details,2022021114174105575,2022021610434747434,22,0,100.0%,Fail
+Region,A1,f_rpt_investigator_site_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Country Type,A1,f_rpt_site_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Country Type,A1,f_rpt_investigator_site_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Patient Seg,A1,f_rpt_site_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Patient Seg,A1,f_rpt_investigator_site_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+SQRA Score,A1,f_rpt_site_study_details,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+SQRA Score,A1,f_rpt_investigator_site_study_details,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+GCP Flag,A1,f_rpt_site_study_details,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Duplicate Count,L2,d_investigator,2022021005242571611,2022021111563496154,False,False,0.0%,Pass
+Duplicate Count,L2,d_site,2022021005242571611,2022021111563496154,False,False,0.0%,Pass
+Duplicate Count,L2,d_trial,2022021005242571611,2022021111563496154,False,False,0.0%,Pass
+Duplicate Count,L2,d_geo,2022021005242571611,2022021111563496154,False,False,0.0%,Pass
+Duplicate Count,L2,d_sponsor,2022021005242571611,2022021111563496154,False,False,0.0%,Pass
+Duplicate Count,L2,d_disease,2022021005242571611,2022021111563496154,False,False,0.0%,Pass
+Duplicate Count,L2,d_drug,2022021005242571611,2022021111563496154,False,False,0.0%,Pass
+Duplicate Count,L2,xref_src_investigator,2022021005242571611,2022021111563496154,False,False,0.0%,Pass
+Duplicate Count,L2,xref_src_site,2022021005242571611,2022021111563496154,False,False,0.0%,Pass
+Duplicate Count,L2,xref_src_trial,2022021005242571611,2022021111563496154,False,False,0.0%,Pass
+Non AZ Sites,A1,f_rpt_site_study_details,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+AZ Sites,A1,f_rpt_site_study_details,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Non AZ Sites,A1,f_rpt_investigator_site_study_details,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+AZ Sites,A1,f_rpt_investigator_site_study_details,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Refrential Integrity,L2,f_trial_site; r_trial_site,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Refrential Integrity,L2,f_investigator_site_study_details; r_trial_site,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Refrential Integrity,L2,f_investigator_site_study_details; r_site_investigator,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Refrential Integrity,L2,f_investigator_site_study_details; r_trial_investigator,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+az_trial_id,A1,f_rpt_study_details,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+az_site_id,A1,f_rpt_study_details,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+nct_id,A1,f_rpt_study_details,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+az_trial_id,A1,f_rpt_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+nct_id,A1,f_rpt_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+region,A1,f_rpt_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+country,A1,f_rpt_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+therapeutic_area,A1,f_rpt_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+disease,A1,f_rpt_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+patient_segment,A1,f_rpt_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+sponsor,A1,f_rpt_study_details_filters,2022021114174105575,2022021610434747434,False,False,0.0%,Pass
+Refrential Integrity,L2,f_study_details;r_trial_site,2022021005242571611,2022021111563496154,False,False,0.0%,Pass
+Refrential Integrity,L2,f_study_details;r_trial_investigator,2022021005242571611,2022021111563496154,False,False,0.0%,Pass

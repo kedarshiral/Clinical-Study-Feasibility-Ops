@@ -1,0 +1,19 @@
+{
+  "host_ip": "0.0.0.0",
+  "host_port": "80",
+  "host": "aws-a0220-use1-00-d-ars-shrd-cus-pgs03.cluster-cikckwft6kay.us-east-1.rds.amazonaws.com",
+  "port": "5432",
+  "username": "a1da0220cusappshrd01u",
+  "database_name": "dev_shrd_a0220_cus_01",
+  "schema": "ctfo_audit_schema_qa",
+  "environment": "qa",
+  "schema_reporting": "ctfo_app_fa_qa",
+  "bucket_name": "aws-a0220-use1-00-q-s3b-shrd-shr-data01",
+  "secret_name": "arn:aws:secretsmanager:us-east-1:737121104911:secret:aws-a0220-use1-00-d-secm-shrd-cus-pgs01-RJuvvC",
+  "smtp_server": "10.121.0.176",
+  "smtp_port": "25",
+  "db_region_name": "us-east-1",
+  "client_name": "Study Feasibility",
+  "foreign_server": "foreign_server_01",
+  "disable_export_endpoints": "False"
+}

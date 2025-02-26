@@ -1,0 +1,10 @@
+{
+  "payload_details": [
+  {
+    "disease_area_col_value":"oncologybreast",
+    "load_type": "delta",
+    "delta_refresh_date_str": "2019-04-26"
+  }
+]
+}
+

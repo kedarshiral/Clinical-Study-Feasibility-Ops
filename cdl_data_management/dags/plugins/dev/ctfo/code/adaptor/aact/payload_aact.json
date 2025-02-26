@@ -1,0 +1,477 @@
+{
+  "payload_details": [
+    {
+      "aact_database_name": "aact",
+      "table_name": "baseline_counts",
+      "condition": "",
+      "params": "",
+      "columns": ["id","nct_id","result_group_id","ctgov_group_code","units","scope","count"]
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "brief_summaries",
+      "condition": "",
+      "params": "",
+      "columns": ["id","nct_id", "description"]
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "browse_conditions",
+      "condition": "",
+      "params": "",
+      "columns": ["id","nct_id","mesh_term","downcase_mesh_term","mesh_type"]
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "conditions",
+      "condition": "",
+      "params": "",
+      "columns": ["id","nct_id","name","downcase_name"]
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "countries",
+      "condition": "",
+      "params": "",
+      "columns": ["id","nct_id","name","removed"]
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "design_groups",
+      "condition": "",
+      "params": "",
+     "columns": ["id","nct_id","group_type","title","description"]
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "eligibilities",
+      "condition": "",
+      "params": "",
+      "columns": ["id","nct_id","sampling_method","gender","minimum_age","maximum_age","healthy_volunteers","population","criteria","gender_description","gender_based","adult,child","older_adult"]
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "facilities",
+      "condition": "",
+      "params": "",
+      "columns": ["id", "nct_id", "status", "name", "city", "state", "zip", "country"]
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "facility_contacts",
+      "condition": "",
+      "params": "",
+      "columns": ["id", "nct_id", "facility_id", "contact_type", "name", "email", "phone", "phone_extension"]
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "facility_investigators",
+      "condition": "",
+      "params": "",
+      "columns": ["id", "nct_id", "facility_id","role", "name"]
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "interventions",
+      "condition": "",
+      "params": "",
+      "columns": ["id","nct_id","intervention_type", "name", "description"]
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "keywords",
+      "condition": "",
+      "params": "",
+      "columns": ["id","nct_id","name", "downcase_name"]
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "milestones",
+      "condition": "",
+      "params": "",
+      "columns": ["id", "nct_id", "result_group_id", "ctgov_group_code", "title", "period","description", "count"]
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "outcomes",
+      "condition": "",
+      "params": "",
+      "columns": ["id", "nct_id", "outcome_type", "title", "description", "time_frame", "population", "anticipated_posting_date", "anticipated_posting_month_year", "units", "units_analyzed", "dispersion_type", "param_type"]
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "responsible_parties",
+      "condition": "",
+      "params": "",
+      "columns": ["id", "nct_id", "responsible_party_type", "name", "title", "organization", "affiliation", "old_name_title"]
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "result_groups",
+      "condition": "",
+      "params": "",
+      "columns": ["id","nct_id", "ctgov_group_code", "result_type", "title", "description"]
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "sponsors",
+      "condition": "",
+      "params": "",
+      "columns": ["id", "nct_id", "agency_class", "lead_or_collaborator", "name"]
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "studies",
+      "condition": "",
+      "params": "",
+      "columns": ["nct_id", "nlm_download_date_description", "study_first_submitted_date", "results_first_submitted_date", "disposition_first_submitted_date", "last_update_submitted_date", "study_first_submitted_qc_date", "study_first_posted_date", "study_first_posted_date_type", "results_first_submitted_qc_date", "results_first_posted_date", "results_first_posted_date_type", "disposition_first_submitted_qc_date", "disposition_first_posted_date", "disposition_first_posted_date_type", "last_update_submitted_qc_date", "last_update_posted_date", "last_update_posted_date_type", "start_month_year", "start_date_type", "start_date", "verification_month_year", "verification_date", "completion_month_year", "completion_date_type", "completion_date", "primary_completion_month_year", "primary_completion_date_type", "primary_completion_date", "target_duration", "study_type", "acronym", "baseline_population", "brief_title", "official_title", "overall_status", "last_known_status", "phase", "enrollment", "enrollment_type", "source", "limitations_and_caveats", "number_of_arms", "number_of_groups", "why_stopped", "has_expanded_access", "expanded_access_type_individual", "expanded_access_type_intermediate", "expanded_access_type_treatment", "has_dmc", "is_fda_regulated_drug", "is_fda_regulated_device", "is_unapproved_device", "is_ppsd", "is_us_export", "biospec_retention", "biospec_description", "ipd_time_frame", "ipd_access_criteria", "ipd_url", "plan_to_share_ipd", "plan_to_share_ipd_description", "created_at", "updated_at", "source_class", "delayed_posting", "expanded_access_nctid", "expanded_access_status_for_nctid", "fdaaa801_violation"]
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "id_information",
+      "condition": "",
+      "params": "",
+      "columns": ["id", "nct_id", "id_source", "id_value", "id_type", "id_type_description", "id_link"]
+    },
+              {
+      "aact_database_name": "aact",
+      "table_name": "design_outcomes",
+      "condition": "",
+      "params": "",
+                "columns": ["id", "nct_id", "outcome_type", "measure", "time_frame", "population", "description"]
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "designs",
+      "condition": "",
+      "params": "",
+                "columns": ["id", "nct_id", "allocation", "intervention_model", "observational_model", "primary_purpose", "time_perspective", "masking", "masking_description", "intervention_model_description", "subject_masked", "caregiver_masked", "investigator_masked", "outcomes_assessor_masked"]
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "detailed_descriptions",
+      "condition": "",
+      "params": "",
+                "columns": ["id", "nct_id", "description"]
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "outcome_measurements",
+      "condition": "",
+      "params": "",
+                "columns": ["id", "nct_id", "outcome_id", "result_group_id", "ctgov_group_code", "classification", "category", "title", "description", "units", "param_type", "param_value", "param_value_num", "dispersion_type", "dispersion_value", "dispersion_value_num", "dispersion_lower_limit", "dispersion_upper_limit", "explanation_of_na"]
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "provided_documents",
+      "condition": "",
+      "params": "",
+                "columns": ["id", "nct_id", "document_type", "has_protocol", "has_icf", "has_sap", "document_date", "url"]
+    },
+	{
+      "aact_database_name": "aact",
+      "table_name": "baseline_measurements",
+      "condition": "",
+      "params": "",
+      "columns": ["id",
+		"nct_id",
+		"result_group_id",
+		"ctgov_group_code",
+		"classification",
+		"category",
+		"units",
+		"title",
+		"description",
+		"param_type",
+		"param_value",
+		"param_value_num",
+		"dispersion_type",
+		"dispersion_value",
+		"dispersion_value_num",
+		"dispersion_lower_limit",
+		"dispersion_upper_limit",
+		"explanation_of_na"
+		]
+    },
+	{
+      "aact_database_name": "aact",
+      "table_name": "browse_interventions",
+      "condition": "",
+      "params": "",
+      "columns": ["id",
+				"nct_id",
+				"mesh_term"
+				]
+    },
+	{
+      "aact_database_name": "aact",
+      "table_name": "calculated_values",
+      "condition": "",
+      "params": "",
+      "columns": ["id",
+				"nct_id",
+				"number_of_facilities",
+				"number_of_nsae_subjects",
+				"number_of_sae_subjects",
+				"registered_in_calendar_year",
+				"nlm_download_date",
+				"actual_duration",
+				"were_results_reported",
+				"months_to_report_results",
+				"has_us_facility",
+				"has_single_facility",
+				"minimum_age_num",
+				"maximum_age_num",
+				"minimum_age_unit",
+				"maximum_age_unit",
+				"number_of_primary_outcomes_to_measure",
+				"number_of_secondary_outcomes_to_measure",
+				"number_of_other_outcomes_to_measure"
+				]
+    },
+	{
+      "aact_database_name": "aact",
+      "table_name": "central_contacts",
+      "condition": "",
+      "params": "",
+      "columns": ["id",
+				"nct_id",
+				"contact_type",
+				"name",
+				"phone",
+				"email"
+				]
+    },
+	{
+      "aact_database_name": "aact",
+      "table_name": "design_group_interventions",
+      "condition": "",
+      "params": "",
+      "columns": ["id",
+"nct_id",
+"design_group_id",
+"intervention_id"
+]
+    },
+	{
+      "aact_database_name": "aact",
+      "table_name": "documents",
+      "condition": "",
+      "params": "",
+      "columns": ["id",
+			"nct_id",
+			"document_id",
+			"document_type",
+			"url",
+			"comment"
+			]
+    },
+	{
+      "aact_database_name": "aact",
+      "table_name": "drop_withdrawals",
+      "condition": "",
+      "params": "",
+      "columns": ["id",
+				"nct_id",
+				"result_group_id",
+				"ctgov_group_code",
+				"period",
+				"reason",
+				"count"]
+    },
+	{
+      "aact_database_name": "aact",
+      "table_name": "intervention_other_names",
+      "condition": "",
+      "params": "",
+      "columns": ["id",
+				"nct_id",
+				"intervention_id",
+				"name"]
+    },
+	{
+      "aact_database_name": "aact",
+      "table_name": "links",
+      "condition": "",
+      "params": "",
+      "columns": ["id",
+				"nct_id",
+				"url",
+				"description"
+				]
+    },
+	{
+      "aact_database_name": "aact",
+      "table_name": "outcome_analyses",
+      "condition": "",
+      "params": "",
+      "columns": ["id",
+				"nct_id",
+				"outcome_id",
+				"non_inferiority_type",
+				"non_inferiority_description",
+				"param_type",
+				"param_value",
+				"dispersion_type",
+				"dispersion_value",
+				"p_value",
+				"p_value_modifier",
+				"ci_n_sides",
+				"ci_percent",
+				"ci_lower_limit",
+				"ci_upper_limit",
+				"ci_upper_limit_na_comment",
+				"p_value_description",
+				"method",
+				"method_description",
+				"estimate_description",
+				"other_analysis_description",
+				"groups_description"]
+    },
+	{
+      "aact_database_name": "aact",
+      "table_name": "outcome_analysis_groups",
+      "condition": "",
+      "params": "",
+      "columns": ["id","nct_id","outcome_analysis_id","result_group_id","ctgov_group_code"]
+    },
+	{
+      "aact_database_name": "aact",
+      "table_name": "outcome_counts",
+      "condition": "",
+      "params": "",
+      "columns": ["id",
+				"nct_id",
+				"outcome_id",
+				"result_group_id",
+				"ctgov_group_code",
+				"scope",
+				"units",
+				"count"]
+    },
+	{
+      "aact_database_name": "aact",
+      "table_name": "overall_officials",
+      "condition": "",
+      "params": "",
+      "columns": ["id",
+				"nct_id",
+				"role",
+				"name",
+				"affiliation"]
+    },
+	{
+      "aact_database_name": "aact",
+      "table_name": "participant_flows",
+      "condition": "",
+      "params": "",
+      "columns": ["id",
+				"nct_id",
+				"pre_assignment_details",
+				"recruitment_details"
+				]
+    },
+	{
+      "aact_database_name": "aact",
+      "table_name": "pending_results",
+      "condition": "",
+      "params": "",
+      "columns": ["id",
+				"nct_id",
+				"event",
+				"event_date_description",
+				"event_date"
+				]
+    },
+	{
+      "aact_database_name": "aact",
+      "table_name": "reported_events",
+      "condition": "",
+      "params": "",
+      "columns": ["id",
+				"nct_id",
+				"result_group_id",
+				"ctgov_group_code",
+				"time_frame",
+				"event_type",
+				"default_vocab",
+				"default_assessment",
+				"subjects_affected",
+				"subjects_at_risk",
+				"description",
+				"event_count",
+				"organ_system",
+				"adverse_event_term",
+				"frequency_threshold",
+				"vocab",
+				"assessment"
+				]
+    },
+	{
+      "aact_database_name": "aact",
+      "table_name": "result_agreements",
+      "condition": "",
+      "params": "",
+      "columns": ["id",
+				"nct_id",
+				"pi_employee",
+				"agreement"
+				]
+    },
+	{
+      "aact_database_name": "aact",
+      "table_name": "result_contacts",
+      "condition": "",
+      "params": "",
+      "columns": ["id",
+				"nct_id",
+				"organization",
+				"name",
+				"phone",
+				"email"
+				]
+    },
+	{
+      "aact_database_name": "aact",
+      "table_name": "study_references",
+      "condition": "",
+      "params": "",
+      "columns": ["citation",
+					"id",
+					"nct_id",
+					"pmid",
+					"reference_type"
+				]
+    },
+	{
+      "aact_database_name": "aact",
+      "table_name": "reported_event_totals",
+      "condition": "",
+      "params": "",
+      "columns": ["classification",
+					"created_at",
+					"ctgov_group_code",
+					"event_type",
+					"id",
+					"nct_id",
+					"subjects_affected",
+					"subjects_at_risk",
+					"updated_at"
+				]
+    },
+	{
+      "aact_database_name": "aact",
+      "table_name": "search_results",
+      "condition": "",
+      "params": "",
+      "columns": ["created_at",
+				"grouping",
+				"id",
+				"name",
+				"nct_id",
+				"study_search_id",
+				"updated_at"]
+    }
+  ]
+}
+

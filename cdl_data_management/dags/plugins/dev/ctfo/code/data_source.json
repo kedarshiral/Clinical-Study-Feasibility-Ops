@@ -1,0 +1,17 @@
+{
+      "meta_data_source" :
+      {
+          "ctms": ["Y", "%Y%m%d", "csv"],
+          "ir": ["N", "%Y%m%d", "xlsx"],
+          "aact": ["Y", "%Y%m%d%H%M%S", "parquet"],
+          "citeline": ["Y", "%Y%m%d%H%M%S", "parquet"],
+          "diversity": ["Y", "%Y%m%d", "xlsx"]
+      },
+      "datasources":{
+          "800": "ctms",
+          "1100": "ir",
+          "300": "aact",
+          "200": "citeline",
+          "1800": "diversity"
+      }
+    }

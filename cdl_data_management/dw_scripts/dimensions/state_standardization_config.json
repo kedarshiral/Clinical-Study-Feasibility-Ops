@@ -1,0 +1,75 @@
+
+{
+  "data_source_details": {
+    "citeline": {
+      "location": "",
+      "database": "ctfo_internal_datastore_staging_tbl_env",
+      "table": "citeline_organization",
+      "temp_table": "citeline_organization"
+    },
+
+    "citeline1": {
+      "location": "",
+      "database": "ctfo_internal_datastore_staging_tbl_env",
+      "table": "citeline_investigator",
+      "temp_table": "citeline_investigator"
+    },
+
+    "dqs": {
+      "location": "",
+      "database": "ctfo_internal_datastore_staging_tbl_env",
+      "table": "dqs",
+      "temp_table": "dqs"
+    },
+
+    "aact": {
+      "location": "",
+      "database": "ctfo_internal_datastore_staging_tbl_env",
+      "table": "aact_facilities",
+      "temp_table": "aact_facilities"
+    }
+  },
+  "standardization_details": {
+        "primary_column": "sponsor_name",
+        "standardized_column": "standard_sponsor",
+        "standardization_file_location": "applications/standardization/state_mapping/Standardized_States.csv",
+        "new_data_file_location": "applications/standardization/delta/sponsor_standardization/",
+        "union_table": "temp_all_sponsor_data"
+      },
+  "latest_data_on_hdfs": true,
+  "refresh_latest_data": false,
+  "existing_state_mapping_file_available": false,
+  "training_file_path":"s3://aws-a0220-use1-00-q-s3b-shrd-shr-data01/clinical-data-lake/applications/standardization/state_standardization/state_training_file.csv",
+  "threshold": 0.70,
+  "s3_bucket": "aws-a0220-use1-00-q-s3b-shrd-shr-data01",
+  "s3_base_sub_path": "applications/standardization/",
+  "state_standardization_sub_path": "state_standardization/mapping_file/",
+  "manual_validation_input": "state_standardization/manual_validation/input/",
+  "manual_validation_output": "state_standardization/manual_validation/output/",
+  "notification_settings": {
+    "standardization_refresh": {
+      "email_template": "standardization_refresh_email_template.html",
+      "email_sender": "ishaan.sharma@zs.com",
+      "email_recipients": [
+        "ishaan.sharma@zs.com"
+      ],
+      "ses_region": "us-east-1",
+      "email_subject": "state Standardization Refresh Notification - $date$",
+      "send_notification": "N",
+      "point_of_contact_email": "ishaan.sharma@zs.com",
+      "point_of_contact_name": "Ishaan Sharma"
+    },
+    "standardization_failure": {
+      "email_template": "standardization_failure_email_template.html",
+      "email_sender": "ishaan.sharma@zs.com",
+      "email_recipients": [
+        "ishaan.sharma@zs.com"
+      ],
+      "ses_region": "us-east-1",
+      "email_subject": "state Standardization Failure Notification - $date$",
+      "send_notification": "N",
+      "point_of_contact_email": "ishaan.sharma@zs.com",
+      "point_of_contact_name": "Ishaan Sharma"
+    }
+  }
+}

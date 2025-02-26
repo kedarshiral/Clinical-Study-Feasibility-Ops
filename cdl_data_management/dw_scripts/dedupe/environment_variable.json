@@ -1,0 +1,39 @@
+
+{
+  "get_token_url": "https://identity.pharmaintelligence.informa.com/connect/token",
+  "trialtrove_username": "arushi.jain@zs.com",
+  "databricks_token": "ZGFwaWJiNjg1Mjk3MDRmMTQ5MDYzYjUxYmQyM2Q3YTExYzUz",
+  "job_id": "50369",
+  "trialtrove_passwd": "YXByQDIwMTg=",
+  "bearer_token": "Y3VzdG9tZXJfYXBpX2NsaWVudF9uYXRpdmU6NTIwNzhjMGItMTI5Mi00MGVhLWFkYjAtOWE4MWY4OGNjZDMy",
+  "trialtrove_host_url": "https://api.pharmaintelligence.informa.com/v1/",
+  "environment": "prod",
+  "pharma_host_url": "https://api.pharmaintelligence.informa.com/v1/",
+  "bucket_name": "aws-a0220-use1-00-q-s3b-shrd-shr-data01",
+  "cluster_id": "1210-074821-final91",
+  "working_database_name": "",
+  "application_name": "DI_Test",
+  "publish_database_name": "clinical_data_lake_publish_test",
+  "landing_database_name": "clinical_data_lake_landing_test",
+  "src_aact_database": "clinical_data_lake_landing_test",
+  "logging_db_username": "a1qa0220cusappshrd01u",
+  "logging_db_password": "pt0D1K@*7rW#",
+  "logging_db_host": "aws-a0220-use1-00-q-aur-shrd-cus-mys01.cluster-cikckwft6kay.us-east-1.rds.amazonaws.com",
+  "logging_db_port": "5432",
+  "logging_database_name": "qa_shrd_a0220_cus_01",
+  "aact_db_name": "postgresql",
+  "aact_host_name": "aact-db.ctti-clinicaltrials.org",
+  "aact_port_number": "5432",
+  "aact_database_name": "aact",
+  "aact_username": "rakeshaact",
+  "aact_password": "YWFjdF8yMDIy=",
+  "emr_keypair_path": "/home/a1-d220cuscdl01/key-pair/aws-a0220-use1-00-q-kpr-shrd-cus-cdl01.pem",
+  "airflow_db_host": "localhost",
+  "airflow_db_port": "3306",
+  "airflow_db_username": "root",
+  "airflow_db_password": "QWRtaW5AMTIzNDU=",
+  "airflow_db_name": "airflow"
+}
+
+
+

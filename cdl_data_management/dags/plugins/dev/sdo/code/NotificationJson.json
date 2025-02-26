@@ -1,0 +1,21 @@
+{
+  "@CommentsHeader": {
+    "JSON-Instance": "ingestion_environment_params.json",
+    "Purpose": "This json is used to define the Ingestion-level global variables",
+    "Created by": "ZS Associates",
+    "Created on": "20th November 2017",
+    "Consuming module": "All Python modules",
+    "Last changed on": "",
+    "Last changed by": "",
+    "Reason for change": ""
+  },
+  "NotificationUtility":{
+  "SES_REGION_KEY":"us-east-1",
+  "SUBJECT_KEY":"Notification Utility Check",
+  "SENDER_KEY":"sushant.choudhary@zs.com",
+  "RECIPIENT_LIST_KEY":["shubham.kankane@zs.com"],
+  "EMAIL_TEMPLATE_KEY":"abc.html",
+  "EMAIL_BODY_KEY":"",
+  "PARAM_REPLACE_KEY":""
+  }
+}

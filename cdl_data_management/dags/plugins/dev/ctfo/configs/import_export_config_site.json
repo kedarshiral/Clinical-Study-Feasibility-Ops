@@ -1,0 +1,44 @@
+
+{
+  "db_connection_details": {
+    "host": "$$host",
+    "port": "$$port",
+    "username": "$$username",
+    "password": "$$password",
+    "database_name": "$$database_name"
+  },
+  "csv_downlaod_flag": "Y",
+  "image_download_flag": "N",
+  "action": "import",
+  "run_import_view_details": "N",
+  "import_view_details": {
+    "view_names": [
+      "pub_trial_details_view"
+    ],
+    "schema": "public",
+    "view_definitions": {
+      "pub_trial_details_view": ""
+    }
+  },
+  "import_table_details": {
+    "table_1": {
+      "flag_table": "N",
+      "location": "/app/clinical_design_center/data_management/zs_ctfo/code/tmp/rds_table_data",
+      "s3_location": "s3://aws-a0220-use1-00-d-s3b-shrd-cus-cdl01/clinical-data-lake/publish/staging/temp/TAG/final_site_tag_csv/",
+      "schema": "ctfo_app_fa_$$environment",
+      "curr_table": "f_rpt_site_tags",
+      "prev_table": "f_rpt_site_tags_prev",
+      "refresh_view": [],
+      "refresh_view_query": {},
+      "refresh_index_name": ""
+  }
+  },
+
+  "import_images": {
+    "location": "/var/www/html/images",
+    "s3_location": "s3://aws-a0220-use1-00-q-s3b-shrd-cus-cdl01/clinical_data_lake/data/pre_landing/pmc/latest_image_snapshot"
+  }
+}
+
+
+

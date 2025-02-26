@@ -1,0 +1,66 @@
+{
+  "data_source_details": {
+    "citeline": {
+      "location": "",
+      "database": "ctfo_internal_datastore_staging_db_env",
+      "table": "citeline_trialtrove",
+      "temp_table": "citeline_trialtrove"
+    },
+
+    "aact": {
+      "location": "",
+      "database": "ctfo_internal_datastore_staging_db_env",
+      "table": "aact_sponsors",
+      "temp_table": "aact_sponsors"
+    }
+  },
+  "standardization_details": {
+        "primary_column": "sponsor_name",
+        "standardized_column": "standard_sponsor",
+        "standardization_file_location": "applications/standardization/sponsor_mapping/sponsor_mapping.csv",
+        "new_data_file_location": "applications/standardization/delta/sponsor_standardization/",
+        "union_table": "temp_all_sponsor_data"
+      },
+  "latest_data_on_hdfs": true,
+  "refresh_latest_data": false,
+  "existing_sponsor_mapping_file_available": false,
+
+  "training_file_path":"s3://aws-a0220-use1-00-q-s3b-shrd-shr-data01/clinical-data-lake/applications/standardization/sponsor/sponsor_training_file.csv",
+  "threshold": {
+	"iaware":0.58,
+	"who": 0.7,
+	"other": 0.55
+  },
+  "s3_bucket": "aws-a0220-use1-00-q-s3b-shrd-shr-data01",
+  "s3_base_sub_path": "applications/standardization/sponsor/",
+  "sponsor_standardization_sub_path": "sponsor_standardization/mapping_file/",
+  "manual_validation_input": "manual_validation/input/",
+  "manual_validation_output": "manual_validation/output/",
+  "trial_sponsor_standardization_sub_path": "study_sponsor_standardization/mapping_file/",
+  "notification_settings": {
+    "standardization_refresh": {
+      "email_template": "standardization_refresh_email_template.html",
+      "email_sender": "ishaan.sharma@zs.com",
+      "email_recipients": [
+        "ishaan.sharma@zs.com"
+      ],
+      "ses_region": "us-east-1",
+      "email_subject": "Sponsor Standardization Refresh Notification - $date$",
+      "send_notification": "N",
+      "point_of_contact_email": "ishaan.sharma@zs.com",
+      "point_of_contact_name": "Ishaan Sharma"
+    },
+    "standardization_failure": {
+      "email_template": "standardization_failure_email_template.html",
+      "email_sender": "ishaan.sharma@zs.com",
+      "email_recipients": [
+        "ishaan.sharma@zs.com"
+      ],
+      "ses_region": "us-east-1",
+      "email_subject": "Sponsor Standardization Failure Notification - $date$",
+      "send_notification": "N",
+      "point_of_contact_email": "ishaan.sharma@zs.com",
+      "point_of_contact_name": "Ishaan Sharma"
+    }
+  }
+}

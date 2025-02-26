@@ -1,0 +1,258 @@
+
+{
+  "latest_data_on_hdfs": true,
+  "standardization_entity_details": {
+    "study_phase": {
+      "delimiter": ",",
+      "data_source_details": {
+        "citeline": {
+          "database_name": "ctfo_internal_datastore_staging_db_env",
+          "table_name": "citeline_trialtrove",
+          "s3_location": "",
+          "temp_table": "temp_citeline_phase_data",
+          "column_name": "trial_phase"
+        },
+        "aact": {
+          "database_name": "ctfo_internal_datastore_staging_db_env",
+          "table_name": "aact_studies",
+          "s3_location": "",
+          "temp_table": "temp_aact_phase_data",
+          "column_name": "phase"
+        },
+
+        "dqs": {
+          "database_name": "ctfo_internal_datastore_staging_db_env",
+          "table_name": "dqs",
+          "s3_location": "",
+          "temp_table": "temp_dqs_phase_data",
+          "column_name": "phase"
+        }
+      },
+      "standardization_details": {
+        "primary_column": "trial_phase",
+        "standardized_column": "standardized_phase",
+        "standardization_file_location": "applications/standardization/study_phase/study_phase.csv",
+        "new_data_file_location": "applications/standardization/delta/phase_standardization/",
+        "union_table": "temp_all_phase_data"
+      }
+    },
+    "study_status": {
+      "delimiter": ",",
+      "data_source_details": {
+        "citeline": {
+          "database_name": "ctfo_internal_datastore_staging_db_env",
+          "table_name": "citeline_trialtrove",
+          "s3_location": "",
+          "temp_table": "temp_citeline_status_data",
+          "column_name": "trial_status"
+        },
+        "aact": {
+          "database_name": "ctfo_internal_datastore_staging_db_env",
+          "table_name": "aact_studies",
+          "s3_location": "",
+          "temp_table": "temp_aact_status_data",
+          "column_name": "overall_status"
+        },
+
+        "dqs": {
+          "database_name": "ctfo_internal_datastore_staging_db_env",
+          "table_name": "dqs",
+          "s3_location": "",
+          "temp_table": "temp_dqs_status_data",
+          "column_name": "site_status"
+        }
+      },
+      "standardization_details": {
+        "primary_column": "trial_status",
+        "standardized_column": "standardized_status",
+        "standardization_file_location": "applications/standardization/study_status/study_status.csv",
+        "new_data_file_location": "applications/standardization/delta/status_standardization/",
+        "union_table": "temp_all_status_data"
+      }
+    },
+    "city": {
+      "delimiter": ",",
+      "data_source_details": {
+        "citeline": {
+          "database_name": "ctfo_internal_datastore_staging_db_env",
+          "table_name": "citeline_organization",
+          "s3_location": "",
+          "temp_table": "temp_citeline_city_data",
+          "column_name": "site_location_city"
+        },
+        "aact": {
+          "database_name": "ctfo_internal_datastore_staging_db_env",
+          "table_name": "aact_facilities",
+          "s3_location": "",
+          "temp_table": "temp_aact_city_data",
+          "column_name": "city"
+        },
+        "dqs": {
+          "database_name": "ctfo_internal_datastore_staging_db_env",
+          "table_name": "dqs",
+          "s3_location": "",
+          "temp_table": "temp_dqs_city_data",
+          "column_name": "facility_city"
+        }
+
+      },
+      "standardization_details": {
+        "primary_column": "city",
+        "standardized_column": "standardized_city",
+        "standardization_file_location": "applications/standardization/city_standardization/city_standardization.csv",
+        "new_data_file_location": "applications/standardization/delta/city_standardization/",
+        "union_table": "temp_all_city_data"
+      }
+    },
+    "country": {
+      "delimiter": ",",
+      "data_source_details": {
+        "citeline": {
+          "database_name": "ctfo_internal_datastore_staging_db_env",
+          "table_name": "citeline_organization",
+          "s3_location": "",
+          "temp_table": "temp_citeline_country_data",
+          "column_name": "site_location_country"
+        },
+        "aact": {
+          "database_name": "ctfo_internal_datastore_staging_db_env",
+          "table_name": "aact_facilities",
+          "s3_location": "",
+          "temp_table": "temp_aact_country_data",
+          "column_name": "country"
+        },
+        "drg": {
+          "database_name": "ctfo_internal_datastore_staging_db_env",
+          "table_name": "drg",
+          "s3_location": "",
+          "temp_table": "temp_drg_country_data",
+          "column_name": "country"
+        },
+                "data_monitor": {
+          "database_name": "ctfo_internal_datastore_staging_db_env",
+          "table_name": "data_monitor",
+          "s3_location": "",
+          "temp_table": "temp_data_monitor_country_data",
+          "column_name": "country"
+        },
+        "globocan": {
+          "database_name": "ctfo_internal_datastore_staging_db_env",
+          "table_name": "globocan",
+          "s3_location": "",
+          "temp_table": "temp_globocan_country_data",
+          "column_name": "country"
+        },
+
+        "dqs": {
+          "database_name": "ctfo_internal_datastore_staging_db_env",
+          "table_name": "dqs",
+          "s3_location": "",
+          "temp_table": "temp_dqs_country_data",
+          "column_name": "facility_country"
+        }
+      },
+      "standardization_details": {
+        "primary_column": "country",
+        "standardized_column": "standardized_country",
+        "standardization_file_location": "applications/standardization/country_standardization/country_standardization.csv",
+        "new_data_file_location": "applications/standardization/delta/country_standardization/",
+        "union_table": "temp_all_country_data"
+      }
+    },
+  "sponsor": {
+      "delimiter": ",",
+      "data_source_details": {
+        "citeline": {
+          "database_name": "ctfo_internal_datastore_staging_db_env",
+          "table_name": "citeline_trialtrove",
+          "s3_location": "",
+          "explode_flag": "Y",
+          "delimiter": "|",
+          "temp_table": "temp_citeline_sponsor_data",
+          "column_name": "sponsor_name"
+        },
+        "aact": {
+          "database_name": "ctfo_internal_datastore_staging_db_env",
+          "table_name": "aact_sponsors",
+          "s3_location": "",
+          "temp_table": "temp_aact_sponsor_data",
+          "column_name": "name"
+        },
+
+
+        "dqs": {
+          "database_name": "ctfo_internal_datastore_staging_db_env",
+          "table_name": "dqs",
+          "s3_location": "",
+          "explode_flag": "Y",
+          "delimiter": ";",
+          "temp_table": "temp_dqs_sponsor_data",
+          "column_name": "sponsor"
+        }
+
+      },
+      "standardization_details": {
+        "primary_column": "sponsor_name",
+        "standardized_column": "standard_sponsor",
+        "standardization_file_location": "applications/standardization/sponsor_mapping/sponsor_mapping.csv",
+        "new_data_file_location": "applications/standardization/delta/sponsor_standardization/",
+        "union_table": "temp_all_sponsor_data"
+      }
+    },
+        "drug": {
+      "delimiter": ",",
+      "data_source_details": {
+        "citeline": {
+          "database_name": "ctfo_internal_datastore_staging_db_env",
+          "table_name": "citeline_pharmaprojects",
+          "s3_location": "",
+          "explode_flag": "Y",
+          "delimiter": "|",
+          "temp_table": "temp_citeline_drug_data",
+          "column_name": "drugprimaryname"
+        },
+        "aact": {
+          "database_name": "ctfo_internal_datastore_staging_db_env",
+          "table_name": "aact_interventions",
+          "s3_location": "",
+          "temp_table": "temp_aact_drug_data",
+          "column_name": "drug_name"
+        }
+
+      },
+      "standardization_details": {
+        "primary_column": "drugprimaryname",
+        "standardized_column": "standard_drug",
+        "standardization_file_location": "applications/standardization/drug_standardization/drug_mapping.csv",
+        "new_data_file_location": "applications/standardization/delta/drug_standardization/",
+        "union_table": "temp_all_drug_data"
+      }
+    }
+},
+  "notification_details": {
+    "standardization_refresh": {
+      "email_template": "standardization_refresh_email_template.html",
+      "email_sender": "ishaan.sharma@zs.com",
+      "email_recipients": [
+        "ishaan.sharma@zs.com"
+      ],
+      "ses_region": "us-east-1",
+      "email_subject": "Standardization Refresh Notification - $date$",
+      "send_notification": "N",
+      "point_of_contact_email": "ishaan.sharma@zs.com",
+      "point_of_contact_name": "Ishaan Sharma"
+    },
+    "standardization_failure": {
+      "email_template": "data_standardization_failure_email_template.html",
+      "email_sender": "ishaan.sharma@zs.com",
+      "email_recipients": [
+        "ishaan.sharma@zs.com"
+      ],
+      "ses_region": "us-east-1",
+      "email_subject": "Standardization Failure Notification - $date$",
+      "send_notification": "N",
+      "point_of_contact_email": "ishaan.sharma@zs.com",
+      "point_of_contact_name": "Ishaan Sharma"
+    }
+  }
+}

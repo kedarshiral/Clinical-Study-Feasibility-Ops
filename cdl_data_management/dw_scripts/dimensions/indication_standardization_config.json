@@ -1,0 +1,77 @@
+
+{
+  "data_source_details": {
+    "citeline": {
+      "location": "",
+      "database": "ctfo_internal_datastore_staging_db_env",
+      "table": "citeline_trialtrove",
+      "temp_table": "citeline_trialtrove"
+    },
+
+    "aact_browse_conditions": {
+      "location": "",
+      "database": "ctfo_internal_datastore_staging_db_env",
+      "table": "aact_browse_conditions",
+      "temp_table": "aact_browse_conditions"
+    },
+    "aact_conditions": {
+      "location": "",
+      "database": "ctfo_internal_datastore_staging_db_env",
+      "table": "aact_conditions",
+      "temp_table": "aact_conditions"
+    },
+    "dqs": {
+      "location": "",
+      "database": "ctfo_internal_datastore_staging_db_env",
+      "table": "dqs",
+      "temp_table": "dqs"
+    }
+  },
+  "latest_data_on_hdfs": true,
+  "refresh_latest_data": false,
+  "existing_disease_mapping_file_available": false,
+  "mesh_details": {
+    "refresh_mesh_flag": true,
+    "refresh_mesh_url": "http://ctdbase.org/reports/CTD_diseases.csv.gz",
+    "mesh_file_location":
+    "s3://jrd-fido-datastore-tbl_env/temp/disease-standardization/original-disease/"
+  },
+  "training_file_path":"s3://aws-a0220-use1-00-q-s3b-shrd-shr-data01/clinical-data-lake/applications/standardization/indication/disease_training_file.csv",
+  "threshold": {
+        "iaware":0.58,
+        "who": 0.7,
+        "other": 0.55
+  },
+  "s3_bucket": "aws-a0220-use1-00-q-s3b-shrd-shr-data01",
+  "s3_base_sub_path": "applications/standardization/indication/",
+  "disease_standardization_sub_path": "indication_standardization/mapping_file/",
+  "manual_validation_input": "manual_validation/input/",
+  "manual_validation_output": "manual_validation/output/",
+  "trial_disease_standardization_sub_path": "study_indication_standardization/mapping_file/",
+  "notification_settings": {
+    "standardization_refresh": {
+      "email_template": "standardization_refresh_email_template.html",
+      "email_sender": "ishaan.sharma@zs.com",
+      "email_recipients": [
+        "ishaan.sharma@zs.com"
+      ],
+      "ses_region": "us-east-1",
+      "email_subject": "Disease Standardization Refresh Notification - $date$",
+      "send_notification": "N",
+      "point_of_contact_email": "ishaan.sharma@zs.com",
+      "point_of_contact_name": "Ishaan Sharma"
+    },
+    "standardization_failure": {
+      "email_template": "standardization_failure_email_template.html",
+      "email_sender": "ishaan.sharma@zs.com",
+      "email_recipients": [
+        "ishaan.sharma@zs.com"
+      ],
+      "ses_region": "us-east-1",
+      "email_subject": "Disease Standardization Failure Notification - $date$",
+      "send_notification": "N",
+      "point_of_contact_email": "ishaan.sharma@zs.com",
+      "point_of_contact_name": "Ishaan Sharma"
+    }
+  }
+}

@@ -1,0 +1,182 @@
+
+
+{
+  "cluster_configurations": {
+    "small": {
+      "Name": "aws-a0220-use1-00-d-emr-zs-ctf-adaptor",
+      "LogUri": "s3:///clinical-data-lake/emr_logs/",
+      "AmiVersion": "emr-5.30.0",
+      "ReleaseLabel": "emr-5.30.0",
+      "SecurityConfiguration": "aws-a0220-use1-00-d-sec-shrd-shr-cdl01",
+      "Instances": {
+        "InstanceGroups": [
+          {
+            "Name": "Main node",
+            "Market": "ON_DEMAND",
+            "InstanceRole": "MASTER",
+            "InstanceType": "r4.xlarge",
+            "InstanceCount": 1,
+            "Configurations": [
+              {
+                "Classification": "yarn-site",
+                "Properties": {
+                  "yarn.resourcemanager.scheduler.class": "org.apache.hadoop.yarn.server.resourcemanager.scheduler.fair.FairScheduler"
+                }
+              },
+              {
+                "Classification": "hive-site",
+                "Properties": {
+                  "hive.metastore.client.factory.class": "com.amazonaws.glue.catalog.metastore.AWSGlueDataCatalogHiveClientFactory"
+                }
+              },
+              {
+                "Classification": "spark-hive-site",
+                "Properties": {
+                  "hive.metastore.client.factory.class": "com.amazonaws.glue.catalog.metastore.AWSGlueDataCatalogHiveClientFactory"
+                }
+              }
+            ]
+          },
+          {
+            "Name": "Worker nodes",
+            "Market": "ON_DEMAND",
+            "InstanceRole": "CORE",
+            "InstanceType": "r4.xlarge",
+            "InstanceCount": 2,
+            "Configurations": [
+              {
+                "Classification": "yarn-site",
+                "Properties": {
+                  "yarn.resourcemanager.scheduler.class": "org.apache.hadoop.yarn.server.resourcemanager.scheduler.fair.FairScheduler"
+                }
+              },
+              {
+                "Classification": "hive-site",
+                "Properties": {
+                  "hive.metastore.client.factory.class": "com.amazonaws.glue.catalog.metastore.AWSGlueDataCatalogHiveClientFactory"
+                }
+              },
+              {
+                "Classification": "spark-hive-site",
+                "Properties": {
+                  "hive.metastore.client.factory.class": "com.amazonaws.glue.catalog.metastore.AWSGlueDataCatalogHiveClientFactory"
+                }
+              }
+            ]
+          },
+          {
+            "Name": "Worker nodes",
+            "Market": "SPOT",
+            "InstanceRole": "TASK",
+            "BidPrice": "1",
+            "InstanceType": "r4.xlarge",
+            "InstanceCount": 2,
+            "Configurations": [
+              {
+                "Classification": "yarn-site",
+                "Properties": {
+                  "yarn.resourcemanager.scheduler.class": "org.apache.hadoop.yarn.server.resourcemanager.scheduler.fair.FairScheduler"
+                }
+              },
+              {
+                "Classification": "hive-site",
+                "Properties": {
+                  "hive.metastore.client.factory.class": "com.amazonaws.glue.catalog.metastore.AWSGlueDataCatalogHiveClientFactory"
+                }
+              },
+              {
+                "Classification": "spark-hive-site",
+                "Properties": {
+                  "hive.metastore.client.factory.class": "com.amazonaws.glue.catalog.metastore.AWSGlueDataCatalogHiveClientFactory"
+                }
+              }
+            ]
+          }
+        ],
+        "KeepJobFlowAliveWhenNoSteps": true,
+        "TerminationProtected": true,
+        "Ec2KeyName": "aws-a0220-use1-00-d-kpr-shrd-cus-cdl01",
+        "Ec2SubnetId": "subnet-046d18cf840ab1be6",
+        "EmrManagedMasterSecurityGroup": "sg-08b870f2c378f434c",
+        "EmrManagedSlaveSecurityGroup": "sg-0c1a972e7823b349f",
+        "ServiceAccessSecurityGroup": "sg-059727fed56ff06ed"
+
+      },
+      "Applications": [
+        {
+          "Name": "Hive"
+        },
+        {
+          "Name": "Pig"
+        },
+        {
+          "Name": "Ganglia"
+        },
+        {
+          "Name": "Hue"
+        },
+        {
+          "Name": "Sqoop"
+        },
+        {
+          "Name": "Spark"
+        }
+      ],
+      "VisibleToAllUsers": true,
+      "JobFlowRole": "aws-a0220-glbl-00-d-rol-shrd-cdl-EMR_EC2_role01",
+      "ServiceRole": "aws-a0000-glbl-00-t-rol-ccoe-shr-emrservice01",
+      "Configurations": [
+        {
+          "Classification": "spark-env",
+          "Configurations": [
+            {
+              "Classification": "export",
+              "Properties": {
+                "PYSPARK_PYTHON": "/usr/bin/python3"
+              }
+            }
+          ]
+        }
+      ],
+      "BootstrapActions": [
+        {
+          "Name": "Install crowstrike and splunk",
+          "ScriptBootstrapAction": {
+            "Path": "s3://aws-a0023-use1-00-p-s3b-shrd-shr-ec2mgmt01/scripts/ec2provision.sh"
+          }
+        },
+        {
+          "Name": "Run environment setup and deploy code",
+          "ScriptBootstrapAction": {
+            "Path": "s3:///clinical-data-lake/code/bootstrap/python37_emr_bootstrap.sh",
+            "Args": [
+              "",
+              "/usr/local/airflow/dags/plugins/dev/ctfo",
+              "DEV",
+              "feature/nirmal_aact_specific_columns",
+              "integration",
+              "ht19292",
+              "b9tZRHMKr5A9EvdN93V4"
+            ]
+          }
+        }
+      ],
+      "Tags": [
+        {
+          "Key": "ZS_Project_Code",
+          "Value": "9901ZS5393"
+        },
+        {
+          "Key": "Project_Name",
+          "Value": "ZS_CTFO"
+        },
+        {
+          "Key": "Name",
+          "Value": "aws-a0220-use1-00-d-emr-zs-ctf-adaptor"
+        }
+      ],
+      "Region": "us-east-1"
+    }
+  }
+}
+

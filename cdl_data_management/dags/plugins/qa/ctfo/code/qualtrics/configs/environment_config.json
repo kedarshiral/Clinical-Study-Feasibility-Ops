@@ -1,0 +1,17 @@
+{
+  "host_ip": "0.0.0.0",
+  "host_port": "80",
+  "host": "",
+  "port": "5432",
+  "username": "",
+  "database_name": "",
+  "schema": "",
+  "environment": "dev",
+  "schema_reporting": "",
+  "bucket_name": "s3://aws-a0220-use1-00-q-s3b-shrd-shr-data01",
+  "secret_name": "",
+  "smtp_server": "10.121.0.176",
+  "smtp_port": "25",
+  "db_region_name": "us-east-1",
+  "client_name": "zs"
+}

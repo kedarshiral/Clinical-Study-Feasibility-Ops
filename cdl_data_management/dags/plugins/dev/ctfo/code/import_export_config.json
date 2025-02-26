@@ -1,0 +1,120 @@
+{
+  "db_connection_details": {
+    "host": "$$host",
+    "port": "$$port",
+    "username": "$$username",
+    "password": "$$password",
+    "database_name": "$$database_name"
+  },
+  "csv_downlaod_flag": "Y",
+  "image_download_flag": "N",
+  "action": "import",
+  "run_import_view_details": "N",
+  "import_view_details": {
+    "view_names": [
+      "pub_trial_details_view"
+    ],
+    "schema": "public",
+    "view_definitions": {
+      "pub_trial_details_view": ""
+    }
+  },
+  "import_table_details": {
+    "table_1": {
+      "flag_table": "Y",
+      "location": "/usr/local/airflow/dags/plugins/dev/ctfo/code/tmp/rds_table_data",
+      "s3_location": "s3:///clinical-data-lake/applications/commons/temp/kpi_output_dimension/f_rpt_site_study_details_csv/",
+      "schema": "ctfo_app_fa_$$environment",
+      "curr_table": "f_rpt_site_study_details",
+      "prev_table": "f_rpt_site_study_details_prev",
+      "refresh_view": [],
+      "refresh_view_query": {},
+      "refresh_index_name": ""
+    },
+        "table_2": {
+      "flag_table": "Y",
+      "location": "/usr/local/airflow/dags/plugins/dev/ctfo/code/tmp/rds_table_data",
+      "s3_location": "s3:///clinical-data-lake/applications/commons/temp/kpi_output_dimension/f_rpt_filters_setup_all_csv/",
+      "schema": "ctfo_app_fa_$$environment",
+      "curr_table": "f_rpt_filters_setup_all",
+      "prev_table": "f_rpt_filters_setup_all_prev",
+      "refresh_view": [],
+      "refresh_view_query": {},
+      "refresh_index_name": ""
+    },
+        "table_3": {
+      "flag_table": "Y",
+      "location": "/usr/local/airflow/dags/plugins/dev/ctfo/code/tmp/rds_table_data",
+      "s3_location": "s3:///clinical-data-lake/applications/commons/temp/kpi_output_dimension/f_rpt_country_csv/",
+      "schema": "ctfo_app_fa_$$environment",
+      "curr_table": "f_rpt_country",
+      "prev_table": "f_rpt_country_prev",
+      "refresh_view": [],
+      "refresh_view_query": {},
+      "refresh_index_name": ""
+    },
+      "table_4": {
+      "flag_table": "Y",
+      "location": "/usr/local/airflow/dags/plugins/dev/ctfo/code/tmp/rds_table_data",
+      "s3_location": "s3:///clinical-data-lake/applications/commons/temp/kpi_output_dimension/f_rpt_drug_details_csv/",
+      "schema": "ctfo_app_fa_$$environment",
+      "curr_table": "f_rpt_drug_details",
+      "prev_table": "f_rpt_drug_details_prev",
+      "refresh_view": [],
+      "refresh_view_query": {},
+      "refresh_index_name": ""
+    },
+        "table_5": {
+      "flag_table": "Y",
+      "location": "/usr/local/airflow/dags/plugins/dev/ctfo/code/tmp/rds_table_data",
+      "s3_location": "s3:///clinical-data-lake/applications/commons/temp/kpi_output_dimension/f_rpt_investigator_site_study_details_csv/",
+      "schema": "ctfo_app_fa_$$environment",
+      "curr_table": "f_rpt_investigator_site_study_details",
+      "prev_table": "f_rpt_investigator_site_study_details_prev",
+      "refresh_view": [],
+      "refresh_view_query": {},
+      "refresh_index_name": ""
+    },
+        "table_6": {
+      "flag_table": "Y",
+      "location": "/usr/local/airflow/dags/plugins/dev/ctfo/code/tmp/rds_table_data",
+      "s3_location": "s3:///clinical-data-lake/applications/commons/temp/kpi_output_dimension/f_rpt_filters_trial_csv/",
+      "schema": "ctfo_app_fa_$$environment",
+      "curr_table": "f_rpt_filters_trial",
+      "prev_table": "f_rpt_filters_trial_prev",
+      "refresh_view": [],
+      "refresh_view_query": {},
+      "refresh_index_name": ""
+    },
+        "table_7": {
+      "flag_table": "Y",
+      "location": "/usr/local/airflow/dags/plugins/dev/ctfo/code/tmp/rds_table_data",
+      "s3_location": "s3:///clinical-data-lake/applications/commons/temp/kpi_output_dimension/f_rpt_filters_site_inv_csv/",
+      "schema": "ctfo_app_fa_$$environment",
+      "curr_table": "f_rpt_filters_site_inv",
+      "prev_table": "f_rpt_filters_site_inv_prev",
+      "refresh_view": [],
+      "refresh_view_query": {},
+      "refresh_index_name": ""
+
+  },
+
+       "table_8": {
+      "flag_table": "Y",
+      "location": "/usr/local/airflow/dags/plugins/dev/ctfo/code/tmp/rds_table_data",
+      "s3_location": "s3:///clinical-data-lake/applications/commons/temp/kpi_output_dimension/f_rpt_patient_details_csv/",
+      "schema": "ctfo_app_fa_$$environment",
+      "curr_table": "f_rpt_patient_details",
+      "prev_table": "f_rpt_patient_details_prev",
+      "refresh_view": [],
+      "refresh_view_query": {},
+      "refresh_index_name": ""
+  }
+  },
+
+  "import_images": {
+    "location": "/var/www/html/images",
+    "s3_location": "s3:///clinical_data_lake/data/pre_landing/pmc/latest_image_snapshot"
+  }
+}
+

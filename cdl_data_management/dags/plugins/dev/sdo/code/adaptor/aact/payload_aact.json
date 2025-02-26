@@ -1,0 +1,118 @@
+{
+  "payload_details": [
+    {
+      "aact_database_name": "aact",
+      "table_name": "baseline_counts",
+      "condition": "",
+      "params": ""
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "brief_summaries",
+      "condition": "",
+      "params": ""
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "browse_conditions",
+      "condition": "",
+      "params": ""
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "conditions",
+      "condition": "",
+      "params": ""
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "countries",
+      "condition": "",
+      "params": ""
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "design_groups",
+      "condition": "",
+      "params": ""
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "eligibilities",
+      "condition": "",
+      "params": ""
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "facilities",
+      "condition": "",
+      "params": ""
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "facility_contacts",
+      "condition": "",
+      "params": ""
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "facility_investigators",
+      "condition": "",
+      "params": ""
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "interventions",
+      "condition": "",
+      "params": ""
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "keywords",
+      "condition": "",
+      "params": ""
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "milestones",
+      "condition": "",
+      "params": ""
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "outcomes",
+      "condition": "",
+      "params": ""
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "responsible_parties",
+      "condition": "",
+      "params": ""
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "result_groups",
+      "condition": "",
+      "params": ""
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "sponsors",
+      "condition": "",
+      "params": ""
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "studies",
+      "condition": "",
+      "params": ""
+    },
+    {
+      "aact_database_name": "aact",
+      "table_name": "id_information",
+      "condition": "",
+      "params": ""
+    }
+  ]
+}

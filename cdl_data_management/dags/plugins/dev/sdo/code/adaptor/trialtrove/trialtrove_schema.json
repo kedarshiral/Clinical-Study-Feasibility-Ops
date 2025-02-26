@@ -1,0 +1,317 @@
+{
+  "trialIdentifiedSites": "",
+  "trialPatientCriteria": {
+    "minAgeUnits": "",
+    "gender": "",
+    "minAge": "",
+    "maxAge": "",
+    "maxAgeUnits": ""
+  },
+  "trialTargetAccrualText": "",
+  "trialStudyDesign": "",
+  "trialPrimaryDrugsTested": [
+    {
+      "drugParentNames": [],
+      "drugNameId": "",
+      "drugName": "",
+      "drugApprovalStatus": "",
+      "mechanismsOfAction": [
+        {
+          "mechanismSynonyms": [],
+          "directMechanism": ""
+        },
+        {
+          "mechanismSynonyms": [
+            ""
+          ],
+          "directMechanism": ""
+        },
+        {
+          "mechanismSynonyms": [
+            ""
+          ],
+          "directMechanism": ""
+        }
+      ],
+      "drugId": "",
+      "drugNames": [
+        ""
+      ],
+      "drugTherapeuticClassSynonyms": [
+        ""
+      ],
+      "drugPrimaryName": "",
+      "drugTherapeuticClasses": [
+        ""
+      ]
+    }
+  ],
+  "trialTargetAccrual": "",
+  "trialOutcomes": [
+    ""
+  ],
+  "trialRegions": [
+    "",
+    ""
+  ],
+  "trialNotes": [
+    {
+      "date": "",
+      "details": ""
+    },
+    {
+      "date": "",
+      "details": ""
+    },
+    {
+      "date": "",
+      "details": ""
+    },
+    {
+      "date": "",
+      "details": ""
+    },
+    {
+      "date": "",
+      "details": ""
+    }
+  ],
+  "trialPriorConcurrentTherapy": "",
+  "trialTherapeuticAreas": [
+    {
+      "trialDiseases": [
+        {
+          "trialPatientSegments": [
+            {
+              "id": "",
+              "name": ""
+            },
+            {
+              "id": "",
+              "name": ""
+            },
+            {
+              "id": "",
+              "name": ""
+            },
+            {
+              "id": "",
+              "name": ""
+            },
+            {
+              "id": "",
+              "name": ""
+            }
+          ],
+          "id": "",
+          "name": "",
+          "trialMeshTerms": [
+            {
+            "name": "",
+            "meshId": ""
+            }
+           ],
+          "trialSnomed": [
+            {
+              "name": "",
+              "snomedId": ""
+            },
+            {
+              "name": "",
+              "snomedId": ""
+            }
+          ],
+          "trialIcd9": [
+            {
+              "icd9Id": "",
+              "name": ""
+            }
+          ],
+          "trialIcd10": [
+            {
+              "name": "",
+              "icd10Id": ""
+            }
+          ]
+        }
+      ],
+      "id": "",
+      "name": ""
+     }
+  ],
+  "trialPatientPopulation": "",
+  "trialOutcomeDetails": "",
+  "trialCountries": [
+    ""
+  ],
+  "trialTreatmentPlan": "",
+  "trialSource": "Trialtrove",
+  "trialStudyKeywords": [
+    ""
+  ],
+  "trialPrimaryCompletionDate": "",
+  "trialStatus": "",
+  "trialTitle": "",
+  "trialReportedSites": "",
+  "trialCtGovMeshTerms": [
+    "",
+    ""
+  ],
+  "trialTiming": {
+    "actualEnrollmentPeriodCloseDate": "",
+    "actualTreatmentDuration": "",
+    "anticipatedTotalTrialCloseDate": "",
+    "trialpredictMinPeakEnrollmentPeriodCloseDate": "",
+    "trialpredictMinPeakTotalTrialDuration": "",
+    "trialpredictMaxPeakTreamentPeriodEndDate": "",
+    "anticipatedEnrollmentDuration": "",
+    "actualPrimaryCompletionDate": "",
+    "trialpredictMinTotalTrialCloseDate": "",
+    "trialpredictMaxPeakEnrollmentDuration": "",
+    "trialpredictMaxPeakTotalTrialDuration": "",
+    "trialpredictMaxTotalTrialCloseDate": "",
+    "anticipatedEnrollmentPeriodCloseDate": "",
+    "anticipatedTreatmentDuration": "",
+    "trialpredictMaxPeakTreatmentDuration": "",
+    "anticipatedTrialStartDate": "",
+    "trialpredictMinPeakTreatmentDuration": "",
+    "trialpredictMinPeakTreamentPeriodEndDate": "",
+    "actualTrialStartDate": "",
+    "totalTrialDuration": "",
+    "actualTotalTrialCloseDate": "",
+    "actualEnrollmentDuration": "",
+    "trialpredictMinPeakEnrollmentDuration": "",
+    "trialpredictMaxPeakEnrollmentPeriodCloseDate": "",
+    "anticipatedPrimaryCompletionDate": ""
+  },
+  "trialPatientDispositions": "",
+  "trialResults": [
+    {
+      "date": "",
+      "details": ""
+    },
+    {
+      "date": "",
+      "details": ""
+    }
+  ],
+  "recordUrl": "",
+  "trialId": "",
+  "trialTags": [
+    "",
+    ""
+  ],
+  "trialStartDate": "",
+  "trialProtocolIDs": [
+    ""
+  ],
+  "copyrightNotice": "",
+  "trialObjective": "",
+  "trialPatientsPerSitePerMonth": "",
+  "trialLastModifiedDate": "",
+  "trialAssociatedCRO": [],
+  "$type": "",
+  "trialInclusionCriteria": "",
+  "trialExclusionCriteria": "",
+  "trialPrimaryEndpoint":{
+    "details":"",
+    "primaryEndpoints":[{
+            "primaryEndpointGroup": "",
+            "primaryEndpointSubGroup": "",
+            "primaryEndpoint": ""
+          }]
+  },
+  "trialOtherEndpoint":{
+    "details":"",
+    "otherEndpoints": [
+          {
+            "otherEndpointGroup": "",
+            "otherEndpointSubGroup": "",
+            "otherEndpoint": ""
+          }]
+  },
+  "trialPhase": "",
+  "trialOtherDrugsTested": [
+    {
+      "drugParentNames": [],
+      "drugNameId": "",
+      "drugName": "",
+      "drugApprovalStatus": "",
+      "mechanismsOfAction": [
+        {
+          "mechanismSynonyms": [],
+          "directMechanism": ""
+        },
+        {
+          "mechanismSynonyms": [
+            ""
+          ],
+          "directMechanism": ""
+        }
+      ],
+      "drugId": "",
+      "drugNames": [
+        ""
+      ],
+      "drugTherapeuticClassSynonyms": [
+        ""
+      ],
+      "drugPrimaryName": "",
+      "drugTherapeuticClasses": [
+        "",
+        ""
+      ]
+    },
+    {
+      "drugParentNames": [],
+      "drugNameId": "",
+      "drugName": "",
+      "drugApprovalStatus": "",
+      "mechanismsOfAction": [
+        {
+          "mechanismSynonyms": [],
+          "directMechanism": ""
+        },
+        {
+          "mechanismSynonyms": [
+            ""
+          ],
+          "directMechanism": ""
+        }
+      ],
+      "drugId": "",
+      "drugNames": [
+        ""
+      ],
+      "drugTherapeuticClassSynonyms": [
+        ""
+      ],
+      "drugPrimaryName": "",
+      "drugTherapeuticClasses": [
+        ""
+      ]
+    }
+  ],
+  "trialActualAccrualText": "",
+  "trialPrimaryEndpointsReported": "",
+  "trialInvestigators": [
+    "",
+    ""
+  ],
+  "trialActualAccrual": "",
+  "trialSponsors": [
+    {
+      "type": "",
+      "name": ""
+    },
+    {
+      "type": "",
+      "name": ""
+    }
+  ],
+  "trialSupportingUrls": [
+    "",
+    ""
+  ]
+}
+

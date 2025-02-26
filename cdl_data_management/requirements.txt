@@ -1,0 +1,19 @@
+--constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.6.3/constraints-3.10.txt"
+boto3
+boto
+ConfigParser
+fpdf
+mysqlclient
+mysql-connector-python
+openpyxl
+paramiko
+pandasql
+pyhive
+pysftp
+pyspark
+requests
+selenium
+pyarrow
+thrift
+python3-logstash
+xlsxwriter

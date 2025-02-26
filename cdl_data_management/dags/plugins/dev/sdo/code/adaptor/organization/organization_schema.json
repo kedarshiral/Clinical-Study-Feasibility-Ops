@@ -1,0 +1,58 @@
+{
+  "recordUrl": "",
+  "organizationDiseaseTypes": [
+    {
+      "pastTrials": "",
+      "name": "",
+      "totalTrials": ""
+    }
+  ],
+  "diseaseHierarchy": [],
+  "organizationAffiliatedInvestigators": [],
+  "organizationRegions": [],
+  "copyrightNotice": "",
+  "organizationType": "",
+  "organizationCountryName": "",
+  "organizationFaxNumbers": [],
+  "ongoingTrials": [],
+  "organizationLastTrialStartDate": "",
+  "$type": "",
+  "organizationLocation": {
+    "city": "",
+    "streetAddress": "",
+    "country": "",
+    "state": "",
+    "postCode": ""
+  },
+  "organizationPrimaryInvestigators": [],
+  "pastTrials": [],
+  "organizationSupportingUrls": [
+    ""
+  ],
+  "organizationTotalTrials": "",
+  "organizationName": "",
+  "organizationTrialInvestigators": [
+    {
+      "investigatorId": "",
+      "trialId": []
+    }
+  ],
+  "organizationId": "",
+  "organizationTotalPastTrials": "",
+  "organizationPhoneNumbers": [
+        ""
+  ],
+  "organizationTrials": [
+    {
+      "trialStatus": "",
+      "trialStartDate": "",
+      "trialPhase": "",
+      "id": ""
+    }
+  ],
+  "organizationTotalOngoingTrials": "",
+  "organizationGeoLocation": {
+    "lat": "",
+    "lon": ""
+  }
+}

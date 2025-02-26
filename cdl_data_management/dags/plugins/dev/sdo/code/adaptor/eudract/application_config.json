@@ -1,0 +1,283 @@
+
+
+{
+  "@CommentsHeader": {
+    "JSON-Instance": "ingestor_environment_params.json",
+    "Purpose": "This json is used to define the Ingestion-level global variables hadoop options/s3 disct cp options can be provided depending on versions",
+    "Created by": "ZS Associates",
+    "Created on": "1st February 2021",
+    "Consuming module": "All Python modules",
+    "Last changed on": "26th April 2022",
+    "Last changed by": "Salmanul Faris",
+    "Reason for change": "Development of config"
+  },
+  "adapter_details": {
+    "generic_config": {
+      "local_temp_path": "/tmp/DI/",
+      "s3_temp_path": "s3://aws-a0220-use1-00-d-s3b-shrd-cus-sdocdl01/clinical-data-lake/dev/temp/",
+      "emr_code_path": "/usr/local/airflow/dags/plugins",
+      "env": "dev",
+      "mysql_host": "aws-a0220-use1-00-d-ars-shrd-cus-mys02.cluster-cikckwft6kay.us-east-1.rds.amazonaws.com",
+      "s3_bucket_name": "aws-a0220-use1-00-d-s3b-shrd-cus-sdocdl01",
+      "mysql_port": "3306",
+      "mysql_username": "a1da0220cusappshrd01u",
+      "mysql_password": "7*YqUe@G25l$",
+      "rds_password_secret_name": "arn:aws:secretsmanager:us-east-1:737121104911:secret:aws-a0220-use1-00-d-sem-shrd-cus-mys02-hLEIKI",
+      "mysql_db": "dev_shrd_a0220_cus_01_sdo",
+      "cluster_mode": "EMR",
+      "s3_region": "us-east-1",
+      "aws_region": "us-east-1",
+      "s3_region_endpoint": "s3-us-east-1.amazonaws.com",
+      "private_key_loaction": "/home/a1-d220cuscdl01/key-pair/aws-a0220-use1-00-d-kpr-shrd-cus-cdl01.pem",
+      "ses_region": "us-east-1"
+    },
+    "who": {
+      "cluster_type": "small",
+      "local_path": "/usr/local/airflow/dags/plugins/dev/sdo/code",
+      "who_url": "http://apps.who.int/trialsearch/",
+      "create_investigator_table": "Y",
+      "who_disease_filter": {
+        "who_file_names": [
+          "ICTRP-Results_disease_area"
+        ],
+        "who_lynx_names": "ICTRP-Results_disease_area;disease_area.txt"
+      },
+      "who_phase_filter": {
+        "phase0": {
+          "who_file_names": [
+            "ICTRP-Results0"
+          ],
+          "who_lynx_names": "ICTRP-Results0;phase0.txt"
+        },
+        "phase1": {
+          "who_file_names": [
+            "ICTRP-Results1"
+          ],
+          "who_lynx_names": "ICTRP-Results1;phase1.txt"
+        },
+        "phase2": {
+          "who_file_names": [
+            "ICTRP-Results2"
+          ],
+          "who_lynx_names": "ICTRP-Results2;phase2.txt"
+        },
+        "phase3": {
+          "who_file_names": [
+            "ICTRP-Results3"
+          ],
+          "who_lynx_names": "ICTRP-Results3;phase3.txt"
+        },
+        "phase4": {
+          "who_file_names": [
+            "ICTRP-Results4"
+          ],
+          "who_lynx_names": "ICTRP-Results4;phase4.txt"
+        }
+      },
+      "who_delta_load_filter": {
+        "who_file_names": [
+          "ICTRP-Results_delta_load"
+        ],
+        "who_lynx_names": "ICTRP-Results_delta_load;delta_load.txt"
+      },
+      "who_full_load_filter": {
+        "who_file_names": [
+          "ICTRP-Results_full_load"
+        ],
+        "who_lynx_names": "ICTRP-Results_full_load;full_load.txt"
+      },
+      "execution_module": "DataIngestionAdapter"
+    },
+    "trialtrove": {
+      "cluster_type": "small",
+      "get_token_url": "https://identity.pharmaintelligence.informa.com/connect/token",
+      "delta_refresh": "feed/trial/changes",
+      "token_header": "Basic Y3VzdG9tZXJfYXBpX2NsaWVudF9uYXRpdmU6NTIwNzhjMGItMTI5Mi00MGVhLWFkYjAtOWE4MWY4OGNjZDMy",
+      "token_pay_load": {
+        "username": "himanshi.n.himanshi@zs.com",
+        "scope": "customer-api",
+        "password": "Himsanofi_2022",
+        "grant_type": "password"
+      },
+      "search_api_url": "search/trial",
+      "full_load": "feed/trial",
+      "host_url": "https://api.pharmaintelligence.informa.com/v1/",
+      "execution_module": "DataIngestionAdapter"
+    },
+    "organization": {
+      "bearer_token": "",
+      "schema_path": "",
+      "parquet_query": "",
+      "cluster_type": "small",
+      "get_token_url": "https://identity.pharmaintelligence.informa.com/connect/token",
+      "delta_refresh": "feed/organization/changes",
+      "token_header": "Basic Y3VzdG9tZXJfYXBpX2NsaWVudF9uYXRpdmU6NTIwNzhjMGItMTI5Mi00MGVhLWFkYjAtOWE4MWY4OGNjZDMy",
+      "token_pay_load": {
+        "username": "himanshi.n.himanshi@zs.com",
+        "scope": "customer-api",
+        "password": "Himsanofi_2022",
+        "grant_type": "password"
+      },
+      "search_api_url": "search/organization",
+      "full_load": "feed/organization",
+      "host_url": "https://api.pharmaintelligence.informa.com/v1/",
+      "execution_module": "DataIngestionAdapter"
+    },
+    "pharmaprojects": {
+      "bearer_token": "",
+      "schema_path": "",
+      "parquet_query": "",
+      "cluster_type": "small",
+      "get_token_url": "https://identity.pharmaintelligence.informa.com/connect/token",
+      "delta_refresh": "feed/drug/changes",
+      "token_header": "Basic Y3VzdG9tZXJfYXBpX2NsaWVudF9uYXRpdmU6NTIwNzhjMGItMTI5Mi00MGVhLWFkYjAtOWE4MWY4OGNjZDMy",
+      "token_pay_load": {
+        "username": "himanshi.n.himanshi@zs.com",
+        "scope": "customer-api",
+        "password": "Himsanofi_2022",
+        "grant_type": "password"
+      },
+      "search_api_url": "search/drug",
+      "full_load": "feed/drug",
+      "host_url": "https://api.pharmaintelligence.informa.com/v1/",
+      "execution_module": "DataIngestionAdapter"
+    },
+    "investigator": {
+      "bearer_token": "",
+      "schema_path": "",
+      "parquet_query": "",
+      "cluster_type": "small",
+      "get_token_url": "https://identity.pharmaintelligence.informa.com/connect/token",
+      "delta_refresh": "feed/investigator/changes",
+      "token_header": "Basic Y3VzdG9tZXJfYXBpX2NsaWVudF9uYXRpdmU6NTIwNzhjMGItMTI5Mi00MGVhLWFkYjAtOWE4MWY4OGNjZDMy",
+      "token_pay_load": {
+        "username": "himanshi.n.himanshi@zs.com",
+        "scope": "customer-api",
+        "password": "Himsanofi_2022",
+        "grant_type": "password"
+      },
+      "search_api_url": "search/investigator",
+      "full_load": "feed/investigator",
+      "host_url": "https://api.pharmaintelligence.informa.com/v1/",
+      "execution_module": "DataIngestionAdapter"
+    },
+    "aact": {
+      "bearer_token": "",
+      "schema_path": "",
+      "parquet_query": "",
+      "cluster_type": "small",
+      "emr_region_name": "us-east-1",
+      "aact_db_name": "aact",
+      "target_hdfs_path": "s3://$$s3_bucket_name/temp/",
+      "aact_host_name": "aact-db.ctti-clinicaltrials.org",
+      "aact_port_number": "5432",
+      "aact_username": "sarunrajan",
+      "aact_password": "YWFjdGNvbm5lY3Q=",
+      "query": "",
+      "lastValue": "",
+      "aact_column_datatype_mapping": {
+        "calculated_values": {
+          "nlm_download_date": "String"
+        },
+        "studies": {
+          "study_first_submitted_date": "String",
+          "results_first_submitted_date": "String",
+          "disposition_first_submitted_date": "String",
+          "last_update_submitted_date": "String",
+          "study_first_submitted_qc_date": "String",
+          "study_first_posted_date": "String",
+          "results_first_submitted_qc_date": "String",
+          "results_first_posted_date": "String",
+          "disposition_first_submitted_qc_date": "String",
+          "disposition_first_posted_date": "String",
+          "disposition_first_posted_date_type": "String",
+          "last_update_submitted_qc_date": "String",
+          "last_update_posted_date": "String",
+          "start_date": "String",
+          "verification_date": "String",
+          "completion_date": "String",
+          "primary_completion_date": "String",
+          "created_at": "String",
+          "updated_at": "String"
+        },
+        "outcome_analyses": {
+          "param_value": "String",
+          "dispersion_value": "String",
+          "ci_percent": "String",
+          "ci_lower_limit": "String",
+          "ci_upper_limit": "String"
+        },
+        "outcome_measurements": {
+          "param_value_num": "String",
+          "dispersion_value_num": "String",
+          "dispersion_lower_limit": "String",
+          "dispersion_upper_limit": "String"
+        },
+        "outcomes": {
+          "anticipated_posting_date": "String"
+        }
+      },
+      "aact_table_names": [
+        "baseline_counts",
+        "baseline_measurements",
+        "brief_summaries",
+        "browse_conditions",
+        "browse_interventions",
+        "calculated_values",
+        "central_contacts",
+        "conditions",
+        "countries",
+        "design_group_interventions",
+        "design_groups",
+        "design_outcomes",
+        "designs",
+        "detailed_descriptions",
+        "documents",
+        "drop_withdrawals",
+        "eligibilities",
+        "facilities",
+        "facility_contacts",
+        "facility_investigators",
+        "id_information",
+        "intervention_other_names",
+        "interventions",
+        "keywords",
+        "links",
+        "milestones",
+        "outcome_analyses",
+        "outcome_analysis_groups",
+        "outcome_counts",
+        "outcome_measurements",
+        "outcomes",
+        "overall_officials",
+        "participant_flows",
+        "pending_results",
+        "reported_events",
+        "responsible_parties",
+        "result_agreements",
+        "result_contacts",
+        "result_groups",
+        "sponsors",
+        "studies",
+        "study_references"
+      ]
+    },
+     "eudract": {
+      "cluster_type": "small",
+      "download_url": "https://www.clinicaltrialsregister.eu/ctr-search/rest/download/full",
+      "search_url": "https://www.clinicaltrialsregister.eu/ctr-search/search?",
+      "columns_config_path": "/appdata/dev/clinical_data_lake/v0_0_4/code/eudract/column_config.json",
+      "local_directory_path": "/tmp/eudract/$$batch_id/",
+      "local_directory_text_path": "/tmp/eudract/$$batch_id/text/",
+      "local_directory_csv_path": "/tmp/eudract/$$batch_id/csv/",
+      "file_prefix": "eudract_$$disease_area_col_name_$$batch_id",
+      "s3_tmp_path": "s3://aws-a0220-use1-00-d-s3b-shrd-cus-sdocdl01/clinical-data-lake/dev/temp/eudract/",
+      "csv_tmp_path_location": "s3://aws-a0220-use1-00-d-s3b-shrd-cus-sdocdl01/clinical-data-lake/dev/temp/eudract/eudract_csv/",
+      "parquet_temp_path": "s3://aws-a0220-use1-00-d-s3b-shrd-cus-sdocdl01/clinical-data-lake/dev/temp/eudract/eudract_parquet/",
+      "drop_duplicates": "N",
+      "datasource": "eudract"
+    }
+  }
+}
+
+

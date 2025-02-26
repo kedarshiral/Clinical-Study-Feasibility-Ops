@@ -1,0 +1,102 @@
+{
+   "ecs": {
+    "environment": "$$environment$$",
+    "ecs_cluster_name": "$$ecs_cluster_name$$",
+    "subnet": [
+      "$$ecs_subnet1$$",
+      "$$ecs_subnet2$$"
+    ],
+    "security_group": [
+      "$$ecs_security_group$$"
+    ],
+    "capacity_provider_name": "",
+    "optimization_file_path": "/clinical_design_center/data_science/cdl_ctfo/optimization_model/main.py",
+    "region": "$$ecs_region$$",
+    "instance_memory_capacity_GB": 30,
+    "instance_core_capacity_cpu": 4,
+    "task_definition_container_name": "$$ecs_task_definition_container_name$$",
+    "task_definition": "$$ecs_task_definition$$",
+    "max_task_threshold": 20
+  },
+   "tags":{
+    "ZS_Requestor":"$$ZS_Requestor$$",
+    "ZS_Environment":"$$ZS_Environment$$",
+    "ZS_Project_Code":"$$ZS_Project_Code$$",
+    "ZS_Client":"$$ZS_Client$$",
+    "ZS_Product":"$$ZS_Product$$",
+    "ZS_Project_Name":"$$ZS_Project_Name$$"
+  },
+  "ctfo_services": {
+    "rds_queries": {
+
+
+      "async_queries": {
+        "insert_async_log_query": "INSERT INTO $$schema$$.log_async_service_dtl VALUES (%(task_id)s, %(assessment_type)s, %(status)s, %(created_time)s, %(updated_time)s )",
+        "update_async_log_query": "UPDATE $$schema$$.log_async_service_dtl SET progress_status = %(status)s, updated_timestamp = %(updated_time)s WHERE task_id = %(task_id)s",
+        "update_async_log_query_comments": "UPDATE $$schema$$.log_async_service_dtl SET progress_status = %(status)s, updated_timestamp = %(updated_time)s,comments = %(comments)s WHERE task_id = %(task_id)s",
+        "select_async_log_query": "SELECT * from $$schema$$.log_async_service_dtl where task_id = %(task_id)s",
+        "select_async_log_query_multiple_task_id": "SELECT * from $$schema$$.log_async_service_dtl where task_id in (%(inv_task_id)s, %(site_task_id)s, %(country_task_id)s, %(highest_inv_task_id)s)"
+      }
+
+    },
+    "host_ip": "$$host_ip$$",
+    "host_port": "$$host_port$$",
+    "schema": "$$schema$$",
+    "schema_reporting": "$$schema_reporting$$",
+    "foreign_server" : "$$foreign_server$$",
+    "schema_reporting_snapshot": "$$schema_reporting_snapshot$$",
+    "r1_pt_cycle_id": "$$r1_pt_cycle_id$$",
+    "environment": "$$environment$$",
+    "s3_target_file": "s3://$$bucket_name$$/clinical-data-lake/$$environment$$/",
+    "frontend_url": "$$frontend_url$$",
+    "client_name": "$$client_name$$",
+    "db_connection_details": {
+      "host": "$$host$$",
+      "port": "$$port$$",
+      "username": "$$username$$",
+      "database_name": "$$database_name$$",
+      "secret_name": "$$secret_name$$",
+      "db_region_name": "$$db_region_name$$",
+      "schema": "$$schema$$"
+    },
+    "s3_details": {
+      "bucket_name": "$$bucket_name$$",
+      "country_head_s3_path": "clinical-data-lake/uploads/country_head_details.csv",
+      "export_qualtrics_response": "s3://$$bucket_name$$/clinical-data-lake/$$environment$$/applications/export_service/",
+      "metric_data_country_file": "s3://$$bucket_name$$/clinical-data-lake/$$environment$$/applications/uploads/country_metric/user_id={user_id}/scenario_id={scenario_id}/time_stamp/",
+      "metric_data_site_file": "s3://$$bucket_name$$/clinical-data-lake/$$environment$$/applications/uploads/site_metric/user_id={user_id}/scenario_id={scenario_id}/time_stamp/",
+      "tag_data_site_file": "s3://$$bucket_name$$/clinical-data-lake/$$environment$$/applications/uploads/site_tag/user_id={user_id}/scenario_id={scenario_id}/time_stamp/",
+      "EXPORT_PATH": "s3://$$bucket_name$$/clinical-data-lake/$$environment$$/applications/export_service/{file_name}",
+      "EXPORT_ENROLLMENT_S3_PATH": "s3://$$bucket_name$$/temp/clinical-data-lake/applications/export_service/project_enrollment",
+      "EXPORT_VISUALIZATION": "s3://$$bucket_name$$/temp/clinical-data-lake/applications/export_service/outreach_visualization_export/{scenario_id}",
+      "EXPORT_OUTREACH": "s3://$$bucket_name$$/temp/clinical-data-lake/applications/export_service/outreach_export/{scenario_id}",
+      "visualization_file": "clinical-data-lake/$$environment$$/applications/uploads/visualization/{category}/user_id={user_id}/scenario_id={scenario_id}/{time_stamp}/"
+    },
+    "smtp_details": {
+      "smtp_server": "$$smtp_server$$",
+      "smtp_port": "$$smtp_port$$"
+    },
+    "time_interval_in_days": 2,
+    "user_roles_queries" : {
+      "check_superuser" : "SELECT app_user_group FROM $$schema$$.f_rpt_user_details_temp WHERE user_access_id  = %(user_id)s and active_flag = True ;",
+      "get_user_group" : "SELECT user_group, write_access FROM $$schema$$.f_rpt_user_scenario_details_temp WHERE user_access_id = %(user_id)s AND scenario_id = %(scenario_id)s AND active_flag = true ;",
+      "check_if_authorized_to_edit_screen" :"SELECT COUNT(DISTINCT user_access_id) FROM $$schema$$.f_rpt_user_activity_scenario_details WHERE user_group in ('gfl', 'superuser', 'mda') AND scenario_id = %(scenario_id)s AND user_active_flag = true AND is_locked = true ;",
+      "edit_lock_list_user": "SELECT DISTINCT user_access_id FROM $$schema$$.f_rpt_user_activity_scenario_details WHERE scenario_id = %(scenario_id)s AND user_active_flag = true AND is_locked = true ;",
+      "update_user_session_time" : "UPDATE $$schema$$.f_rpt_user_session_activity_log SET session_end_timestamp = %(updated_timestamp)s WHERE user_id = %(user_id)s AND session_id = %(session_id)s ",
+      "check_superuser_in_main_table" : "SELECT app_user_group FROM $$schema$$.f_rpt_user_details WHERE user_access_id  = '$$user_id$$' and active_flag = True",
+      "check_user_query": "SELECT user_group FROM $$schema$$.f_rpt_user_scenario_details WHERE user_access_id = '$$user_id$$' and scenario_id = '$$scenario_id$$' and active_flag = True ",
+      "get_client_role": "SELECT client_role FROM $$schema$$.$$table_name$$ WHERE $$condition$$",
+      "get_scenario_client_role" : "SELECT client_role FROM $$schema$$.f_rpt_scenario_stdy_sumry WHERE scenario_id = %(scenario_id)s AND active_flag = 'Y' ;",
+      "update_scenario_timestamp": "update $$schema$$.f_rpt_user_activity_scenario_details set last_updated_timestamp = current_timestamp , updated_by = 'api-decorator' where user_access_id = %(user_access_id)s and scenario_id = %(scenario_id)s and user_active_flag=True"
+    },
+    "misc_queries" : {
+      "get_table_cols" : "SELECT DISTINCT lower(column_name) AS column_names FROM information_schema.columns WHERE table_schema = '$$schema$$'   AND table_name   = '$$table_name$$';"
+
+    },
+    "maintenance_queries" : {
+      "check_maintenance_mode" : " Select value::boolean from $$schema$$.app_config where key_name = 'maintenance_mode'",
+      "check_allowed_users" : "Select value::text[] from $$schema$$.app_config where key_name = 'allowed_maintenance_users';"
+
+    }
+  }
+}

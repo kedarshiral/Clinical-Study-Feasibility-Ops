@@ -1,0 +1,18 @@
+{
+	"EnvironmentParams": {
+		"environment": "DEV",
+		"env": "dev",
+
+		"mysql_host": "",
+		"s3_bucket_name": "aws-a0220-use1-00-d-s3b-shrd-shr-data01",
+		"mysql_port": "3306",
+		"mysql_username": "",
+		"mysql_password": "",
+		"mysql_db": "audit_information",
+		"cluster_mode": "EMR",
+		"s3_region": "us-east-1",
+		"rds_password_secret_name": "arn:aws:secretsmanager:us-east-1:737121104911:secret:aws-a0220-use1-00-d-sem-shrd-cus-mys02-hLEIKI",
+		"aws_region": "us-east-1"
+
+	}
+}

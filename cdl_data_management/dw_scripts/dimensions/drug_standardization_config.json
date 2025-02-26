@@ -1,0 +1,63 @@
+{
+  "data_source_details": {
+    "citeline": {
+      "location": "",
+      "database": "ctfo_internal_datastore_staging_db_env",
+      "table": "citeline_pharmaprojects",
+      "temp_table": "citeline_pharmaprojects"
+    },
+
+    "aact_browse_conditions": {
+      "location": "",
+      "database": "ctfo_internal_datastore_staging_db_env",
+      "table": "aact_interventions",
+      "temp_table": "aact_interventions"
+    }
+
+  },
+  "latest_data_on_hdfs": true,
+  "refresh_latest_data": false,
+  "existing_drug_mapping_file_available": false,
+  "mesh_details": {
+    "refresh_mesh_flag": true,
+    "refresh_mesh_url": "",
+    "mesh_file_location": ""
+  },
+  "training_file_path":"s3://aws-a0220-use1-00-q-s3b-shrd-shr-data01/clinical-data-lake/applications/standardization/drug/drug_training_file.csv",
+  "threshold": {
+	"other": 0.55
+  },
+  "dqs_flag": 0,
+  "s3_bucket": "aws-a0220-use1-00-q-s3b-shrd-shr-data01",
+  "s3_base_sub_path": "applications/standardization/drug/",
+  "drug_standardization_sub_path": "drug_standardization/mapping_file/",
+  "manual_validation_input": "manual_validation/input/",
+  "manual_validation_output": "manual_validation/output/",
+  "trial_drug_standardization_sub_path": "study_drug_standardization/mapping_file/",
+  "notification_settings": {
+    "standardization_refresh": {
+      "email_template": "standardization_refresh_email_template.html",
+      "email_sender": "ishaan.sharma@zs.com",
+      "email_recipients": [
+        "ishaan.sharma@zs.com"
+      ],
+      "ses_region": "us-east-1",
+      "email_subject": "Drug Standardization Refresh Notification - $date$",
+      "send_notification": "N",
+      "point_of_contact_email": "ishaan.sharma@zs.com",
+      "point_of_contact_name": "Ishaan Sharma"
+    },
+    "standardization_failure": {
+      "email_template": "standardization_failure_email_template.html",
+      "email_sender": "ishaan.sharma@zs.com",
+      "email_recipients": [
+        "ishaan.sharma@zs.com"
+      ],
+      "ses_region": "us-east-1",
+      "email_subject": "Drug Standardization Failure Notification - $date$",
+      "send_notification": "N",
+      "point_of_contact_email": "ishaan.sharma@zs.com",
+      "point_of_contact_name": "Ishaan Sharma"
+    }
+  }
+}

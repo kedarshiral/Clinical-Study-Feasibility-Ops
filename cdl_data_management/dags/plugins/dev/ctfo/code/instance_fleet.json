@@ -1,0 +1,64 @@
+{
+"Instances": {
+    "InstanceFleets": [
+    {
+        "Name": "Masterfleet",
+        "InstanceFleetType": "MASTER",
+        "TargetSpotCapacity": 1,
+        "LaunchSpecifications": {
+            "SpotSpecification": {
+                "TimeoutDurationMinutes": 120,
+                "TimeoutAction": "SWITCH_TO_ON_DEMAND"
+            }
+        },
+        "InstanceTypeConfigs": [
+            {
+                "InstanceType": "r4.xlarge",
+                "BidPrice": "0.89"
+            }
+        ]
+    },
+    {
+        "Name": "Corefleet",
+        "InstanceFleetType": "CORE",
+        "TargetSpotCapacity": 1,
+        "LaunchSpecifications": {
+            "SpotSpecification": {
+                "TimeoutDurationMinutes": 120,
+                "TimeoutAction": "TERMINATE_CLUSTER"
+            }
+        },
+        "InstanceTypeConfigs": [
+            {
+                "InstanceType": "r4.xlarge",
+                "BidPriceAsPercentageOfOnDemandPrice": 100
+            }
+        ]
+    },
+    {
+        "Name": "Taskfleet",
+        "InstanceFleetType": "TASK",
+        "TargetSpotCapacity": 1,
+        "LaunchSpecifications": {
+            "SpotSpecification": {
+                "TimeoutDurationMinutes": 120,
+                "TimeoutAction": "TERMINATE_CLUSTER"
+            }
+        },
+        "InstanceTypeConfigs": [
+            {
+                "InstanceType": "r4.xlarge",
+                "BidPrice": "0.89"
+            }
+        ]
+    }
+],
+    "KeepJobFlowAliveWhenNoSteps": true,
+    "TerminationProtected": true,
+    "Ec2KeyName": "aws-bigdatapod-emr-keypair",
+    "Ec2SubnetId": "subnet-45475169",
+    "EmrManagedMasterSecurityGroup": "sg-75b36107",
+    "EmrManagedSlaveSecurityGroup": "sg-21b66453",
+    "ServiceAccessSecurityGroup": "sg-764ba104"
+  }
+  }

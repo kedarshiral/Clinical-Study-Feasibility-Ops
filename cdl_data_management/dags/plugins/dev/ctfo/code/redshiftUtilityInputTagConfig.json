@@ -1,0 +1,21 @@
+{"table_paths": {
+    "f_rpt_partner_site_tags":"s3:///clinical-data-lake/publish/staging/TAG_RDS_Data/partner_site_tag_parquet/",
+    "f_rpt_other_site_tags":"s3:///clinical-data-lake/publish/staging/TAG_RDS_Data/other_site_tag_parquet/"
+        },
+    "host": "aws-a0220-use1-00-p-red-snfi-cus-red01.cmg9fi8m3efq.us-east-1.redshift.amazonaws.com",
+    "port": "5439",
+    "user": "a1p199cusappsnfi01u",
+    "password": "Nhdf#862fWWLf",
+    "db": "prod_snfi_0199_cus_01",
+    "iam_role": "arn:aws:iam::881414793107:role/aws-a0220-use1-00-p-rol-snfi-cus-mgmtred01",
+    "parallel_loads": 2,
+    "retry_limit": 1,
+    "timeout": 120000000,
+    "operation": "LOAD",
+    "source_s3_location": "",
+    "schema": "ctfo_app_fa_prod",
+    "table": "",
+    "table_format": "parquet",
+    "delimiter": "|",
+    "process_id": "1300"
+}

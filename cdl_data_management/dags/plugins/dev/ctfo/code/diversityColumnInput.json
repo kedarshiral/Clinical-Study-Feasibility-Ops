@@ -1,0 +1,28 @@
+{
+  "s3": {
+    "bucket_name": "aws-a0220-use1-00-d-s3b-shrd-cus-cdl01",
+    "file_key": "clinical-data-lake/uploads/h1_diversity.xlsx",
+    "output_file_key_pattern": "clinical-data-lake/pre-ingestion/H1_DIVERSITY/h1_diversity/h1_diversity_{timestamp}.xlsx"
+  },
+  "column_mappings": {
+    "diversity_columns": {
+      "Patient Race - White / Non-Hispanic": "percent_white",
+      "Patient Race - Black / Non-Hispanic": "percent_african_american",
+      "Patient Race - Hispanic": "percent_hispanic",
+      "Patient Race - Not Identified": "percent_unknown",
+      "Patient Race - Asian / Pacific Islander": "percent_asian_pacific_islander",
+      "Patient Race - American Indian or Alaska Native": "percent_american_indian_alaska",
+      "Patients Age - Under 19": "patients_age_under_19",
+      "Patients Age - 19-39": "patients_age_19_to_39",
+      "Patients Age - 40-59": "patients_age_40_to_59",
+      "Patients Age - 60-79": "patients_age_60_to_79",
+      "Patients Age - Over 80": "patients_age_over_80",
+      "Patients Sex - Male": "patients_male",
+      "Patients Sex - Female": "patients_female",
+      "Patients Sex - Other": "patients_sex_other"
+    },
+    "overview_columns": [
+      "Tags", "NPI Number", "Person ID", "City 1", "State 1", "Zip Code 1", "Specialty"
+    ]
+  }
+}

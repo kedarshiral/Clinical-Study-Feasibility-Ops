@@ -1,0 +1,90 @@
+import datetime
+from pyspark.sql.functions import *
+from pyspark.sql import *
+from pyspark.sql.types import *
+from pyspark.sql import DataFrame
+from pyspark.sql import SQLContext
+from pyspark.sql import SparkSession
+from CommonUtils import *
+from pyspark.sql.types import StructType, StructField, IntegerType, StringType
+import CommonConstants as CommonConstants
+from ConfigUtility import JsonConfigUtility
+from MySQLConnectionManager import MySQLConnectionManager
+import MySQLdb
+import os
+
+configuration = JsonConfigUtility(CommonConstants.AIRFLOW_CODE_PATH + '/' + CommonConstants.ENVIRONMENT_CONFIG_FILE)
+bucket_path = configuration.get_configuration([CommonConstants.ENVIRONMENT_PARAMS_KEY, "bucket_path"])
+audit_db = configuration.get_configuration([CommonConstants.ENVIRONMENT_PARAMS_KEY, "mysql_db"])
+mysql_connection = MySQLConnectionManager().get_my_sql_connection()
+cursor = mysql_connection.cursor(MySQLdb.cursors.DictCursor)
+
+spark.conf.set("spark.sql.crossJoin.enabled", "true")
+spark.sql("""set hive.exec.dynamic.partition.mode=nonstrict""")
+spark.conf.set("mapreduce.fileoutputcommitter.algorithm.version", "2")
+spark.conf.set("spark.sql.crossJoin.enabled", "True")
+
+##Reading file from s3 to read the input file
+
+inv_file = spark.read.format("csv").option("header", "true") \
+    .load(
+    "{bucket_path}/applications/commons/temp/km_validation/MSD_cluster_update/identified_records/".format(bucket_path=bucket_path))
+inv_file.registerTempTable('inv_file')
+
+inv_records = spark.sql("""
+select * from inv_file where lower(trim(module)) = 'investigator'""")
+inv_records.registerTempTable('inv_records')
+
+inv_records_new_id = spark.sql("""
+select * , row_number() over(order by null) as new_golden_id from inv_records where lower(trim(type)) = 'c'
+union
+select *, null as new_golden_id from inv_records where lower(trim(type)) = 'd' """)
+inv_records_new_id.registerTempTable('inv_records_new_id')
+
+inv_records_explode = spark.sql("""
+select exp_golden_id, type, new_golden_id  from inv_records_new_id 
+lateral view outer explode(split(golden_id, '\\\,'))one as exp_golden_id """)
+inv_records_explode.registerTempTable('inv_records_explode')
+
+# mapping the golden id with hash_uid
+
+cursor.execute(
+    """select cycle_id ,data_date from {orchestration_db_name}.log_cycle_dtl where trim(lower(cycle_status)) = 'succeeded' and process_id = 2000 order by cycle_start_time desc limit 1 """.format(
+        orchestration_db_name=audit_db))
+
+fetch_enable_flag_result = cursor.fetchone()
+latest_stable_data_date = str(fetch_enable_flag_result['data_date']).replace("-", "")
+latest_stable_cycle_id = str(fetch_enable_flag_result['cycle_id'])
+print(latest_stable_data_date, latest_stable_cycle_id)
+xref_src_inv_precedence_int = spark.read.parquet(
+    "{bucket_path}/applications/commons/dimensions/xref_src_inv_precedence_int/pt_data_dt={}/pt_cycle_id={}/".format(
+        latest_stable_data_date, latest_stable_cycle_id, bucket_path=bucket_path))
+xref_src_inv_precedence_int.write.mode('overwrite').saveAsTable('xref_src_inv_precedence_int')
+
+final_inv_output = spark.sql("""
+select distinct
+b.data_src_nm, 
+b.src_investigator_id,
+b.hash_uid,
+a.exp_golden_id as golden_id, 
+ investigator_name, investigator_phone, investigator_email,a.type,
+case when lower(trim(a.type)) ='c' then concat("new_cluster_",a.new_golden_id)
+else null end as new_cluster_id ,
+ '0.99' as new_score,
+'UPDATED' as comment
+from
+inv_records_explode a
+inner join xref_src_inv_precedence_int b on trim(a.exp_golden_id) = trim(b.ctfo_investigator_id)
+order by 
+golden_id,new_cluster_id 
+""")
+final_inv_output.write.mode('overwrite').saveAsTable('final_inv_output')
+
+# move input file to archieve
+
+
+csv_path = bucket_path + '/applications/commons/temp/km_validation/MSD_cluster_update/archive/output/inv/pt_data_dt=$$data_dt/pt_cycle_id=$$cycle_id'
+csv_write_path = csv_path.replace('table_name', 'final_inv_output')
+final_inv_output.repartition(1).write.mode('overwrite').format('csv').option(
+    'header', 'true').option('delimiter', ',').option('quoteAll', 'true').save(csv_write_path)
+

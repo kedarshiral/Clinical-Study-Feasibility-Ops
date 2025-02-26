@@ -1,0 +1,51 @@
+{
+  "@CommentsHeader": {
+    "JSON-Instance": "ingestor_environment_params.json",
+    "Purpose": "This json is used to define the Ingestion-level global variables hadoop options/s3 disct cp options can be provided depending on versions",
+    "Created by": "ZS Associates",
+    "Created on": "1st February 2021",
+    "Consuming module": "All Python modules",
+    "Last changed on": "1st February 2021",
+    "Last changed by": "Himanshi",
+    "Reason for change": "Development of config"
+  },
+  "adapter_details": {
+    "generic_config": {
+      "local_temp_path": "/tmp/DI/",
+      "s3_temp_path": "s3://aws-a0220-use1-00-q-s3b-shrd-shr-data01/clinical-data-lake/qa/temp/",
+      "emr_code_path": "/usr/local/airflow/dags/plugins/qa/ctfo",
+      "env": "qa",
+      "mysql_host": "aws-a0220-use1-00-d-ars-shrd-cus-mys02.cluster-cikckwft6kay.us-east-1.rds.amazonaws.com",
+      "rds_password_secret_name": "arn:aws:secretsmanager:us-east-1:737121104911:secret:aws-a0220-use1-00-d-sem-shrd-cus-mys02-hLEIKI",
+      "adaptor_password_secret_name": "arn:aws:secretsmanager:us-east-1:737121104911:secret:aws-a0220-use1-00-d-secm-shrd-shr-usr02-mYCXur",
+      "s3_bucket_name": "aws-a0220-use1-00-q-s3b-shrd-shr-data01",
+      "mysql_port": "3306",
+      "mysql_username": "a1da0220cusappshrd01u",
+      "mysql_db": "qa_shrd_a0220_cus_01_ctfo",
+      "cluster_mode": "EMR",
+      "s3_region": "us-east-1",
+      "aws_region": "us-east-1",
+      "s3_region_endpoint": "s3-us-east-1.amazonaws.com",
+      "private_key_loaction": "/home/a1-d220cuscdl01/key-pair/aws-a0220-use1-00-d-kpr-shrd-cus-cdl01.pem",
+      "emr_ssh_secret": "",
+      "ses_region": "us-east-1"
+    },
+    "drugtrends": {
+      "bearer_token": "",
+      "schema_path": "",
+      "parquet_query": "",
+      "cluster_type": "small",
+      "get_token_url": "https://api.citeline.com/token",
+      "delta_refresh": "feed/drug/trends/changes",
+      "token_header": "Basic Y3VzdG9tZXJfYXBpX2NsaWVudF9uYXRpdmU6NTIwNzhjMGItMTI5Mi00MGVhLWFkYjAtOWE4MWY4OGNjZDMy",
+      "token_pay_load": {
+        "email": "vivek.pangasa@zs.com"
+      },
+      "search_api_url": "search/drug/trends",
+      "full_load": "feed/drug/trends",
+      "host_url": "https://api.citeline.com/v1/",
+      "execution_module": "DataIngestionAdapter"
+    }
+  }
+}
+

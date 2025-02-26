@@ -1,0 +1,190 @@
+{
+    "language": "EN",
+    "api_token": "NFhmUHpTYnpEdWlzdUZ1Zjkzdmk0TVI4RTEwbXpmQUxQMDJ1djBjZg==",
+    "data_center": "zsassociates.co1",
+    "link_type": "Individual",
+    "directory": "POOL_3Ou9yohxxMYZw2x",
+    "service_account_id": "UR_eA8xEDBRDDOzp9c",
+    "sender_name": "ctfo_qualtrics@zs.com",
+    "CC_DL_email": "zs.clinical@zs.com",
+    "email_template_path": {
+        "send_country_survey": "../configs/email_template/country_outreach/send_country_survey.html",
+        "send_country_survey_completion": "../configs/email_template/country_outreach/send_country_survey_completion.html",
+        "send_site_survey": "../configs/email_template/site_outreach/send_site_survey.html",
+        "send_site_survey_completion": "../configs/email_template/site_outreach/send_site_survey_completion.html",
+        "send_country_survey_reminder": "../configs/email_template/country_outreach/send_reminder_country_survey.html",
+        "send_site_survey_reminder": "../configs/email_template/site_outreach/send_reminder_site_survey.html"
+    },
+    "email_subject": {
+        "send_country_survey": "Country Questionnaire for $$study_code$$ in $$ta_name$$ on behalf of zs",
+        "send_site_survey": "Operational Feasibility Questionnaire for $$study_code$$ in $$ta_name$$ on behalf of zs",
+        "send_country_survey_reminder": "Reminder to fill zs's Country Questionnaire for $$study_code$$ in $$ta_name$$",
+        "send_site_survey_reminder": "Reminder to fill zs's Operational Feasibility Questionnaire for $$study_code$$ in $$ta_name$$"
+    },
+    "survey_job": {
+        "sender_email": "lokesh.gk@zs.com",
+        "job_failure": {
+          "subject": "[$$env$$] Survey batch job execution status for $$timestamp$$",
+          "email_body": "../configs/email_template/survey_job/survey_job_failure.html",
+          "recipient_list": ["piyush.ghate@zs.com"],
+          "cc_recipient_list": ["nitin.desai@zs.com", "lokesh.gk@zs.com"]
+        }
+      },
+    "survey_questionnaire": {
+        "country_outreach": {
+          "protocol_fit": {
+            "q1": {
+              "question_id": "QID8",
+              "question": ".*Taking into account the feedback from the contacted investigators and the CSU internal evaluation.*"
+            }
+          },
+          "number_of_sites_contacted_diverse_backgrounds": {"question_id": "QID1","question": ".*Number of sites contacted for the Feasibility with Investigators from a previously.*"},
+          "precision_sites": {"question_id": "QID2", "question": ".*Please precise number of sites mentioned above that are interested in participation in the study.*"},
+          "covid_impact": {"question_id": "QID4", "question": ".*To what extent the covid-19 crisis will lower your.*"},
+          "investigators_declining_operational_feasibility": {"question_id": "QID6", "question": ".*How many investigators have declined this operational feasibility due to COVID-19 workload.*"},
+          "inv_interested_in_study": {"question_id": "QID11", "question": ".*What is the level of interest of investigators for this study in your country.*"},
+          "degree_of_compliance": {"question_id": "QID15", "question": ".*Is the study design in accordance with the standard of care and acceptable by the sites in your.*"},
+          "degree_of_burden_patient": {"question_id": "QID17", "question": ".*Are you of the opinion that this study design would add a significant burden to the patient.*"},
+          "concern_on_include_exclude_criteria": {"question_id": "QID19", "question": ".*Do you anticipate any major concerns with inclusion / exclusion criteria.*"},
+          "screen_failure_rate": {"question_id": "QID21", "question": ".*screen failure rate do you expect.*"},
+          "dropout_rate": {"question_id": "QID23", "question": ".*dropout rate do you expect.*"},
+          "operational_capacity": {"question_id": "QID25", "question": ".*Do the sites in your country have the operational capacity to conduct this trial.*"},
+          "is_delay_expected": {"question_id": "QID28", "question": ".*Do you anticipate any issues likely to delay or prevent approval of this proposed study by the.*"},
+          "feasibility_or_protocol_fit": {"question_id": "QID30", "question": ".*Can you confirm that local Medical Affairs contact has been contacted for this feasibility.*"},
+          "any_competing_ongoing_planned_trials_patients": {"question_id": "QID32", "question": ".*country which may compete with this study at site level for the recruitment of patients.*"},
+          "any_competing_ongoing_planned_trials_staff": {"question_id": "", "question": ".*country which may compete with our study at site level for the site staff resources.*"},
+          "regulatory_fit": {"question_id": "QID35", "question": ".*Do you have adequate resources at CSU level to manage this study, and at affiliate level.*"},
+          "pa_groups_involved": {"question_id": "QID37", "question": ".*Are there any Patient Advocacy Groups in your country, which could potentially be involved.*"},
+          "first_site_initiated_response": {"question_id": "QID45", "question": ".*First site initiated.*"},
+          "fifty_percent_sites_initiated_response": {"question_id": "QID46", "question": ".*50% sites initiated.*"},
+          "all_sites_initiated_response": {"question_id": "QID47", "question": ".*All sites initiated.*"},
+          "avg_time_for_site_initiation_response": {"question_id": "QID48", "question": ".*Average time from site initiation to first patient in.*"},
+          "last_patient_in_response": {"question_id": "QID49", "question": ".*Last Patient In.*"},
+          "last_patient_visit": {"question_id": "QID50", "question": ".*Last Patient Visit.*"},
+          "first_patient_in_date": {"question_id": "QID51", "question": ".*First-patient-in date"},
+          "recruitment_duration": {"question_id": "QID52", "question": ".*Recruitment duration.*"},
+          "no_of_sites": {"question_id": "QID53", "question": ".*Please specify the number of sites.*"},
+          "no_of_patients": {"question_id": "QID54", "question": ".*Please specify the number of patients.*"},
+          "participation_will": {"question_id": "QID57", "question": ".*country_participation.*"}
+        },
+        "site_outreach": {
+          "protocol_fit": {
+            "q1": {
+			  "question_id": "QID17",
+              "question": ".*Does your site have the equipment for conducting the study, and the ability to perform.*[ the appropriate procedures for disease assessment?]?"
+            },
+            "q2": {
+			  "question_id": "QID1",
+              "question": ".*Based on the study synopsis, would you be interested in participating.*[ in this study:]?"
+            },
+            "q3": {
+			  "question_id": "QID8",
+              "question": ".*Does the study interest you from a scientific.* [standpoint?]?"
+            },
+            "q4": {
+			  "question_id": "QID9",
+              "question": ".*Would the study add an operational burden for your site compared to usual trials in .*[the same pathology].*"
+            }
+          },
+          "interested_in_study": {
+            "question_id": "QID1",
+            "question": ".*Based on the study synopsis, would you be interested in participating.*[ in this study:]?"},
+          "reason_not_interested_in_study": {
+            "question_id": "QID2",
+            "question": ".*If not interested, please indicate why.*"},
+          "patients_committed": {
+		    "question_id": "QID28",
+            "question": ".*Taking into account your current cohort of patients, the constraints of the protocol, .*[the eligibility criteria, and the other studies planned at your site, please provide an estimate for the recruitment commitment (randomized patients) that you can make for this study?]?"
+          },
+          "degree_of_interest_scientific": {
+			  "question_id": "QID8",
+              "question": ".*Does the study interest you from a scientific.*[ standpoint?]?"
+          },
+          "degree_of_interest_medical": {
+			"question_id": "QID11",
+            "question": ".*Does this study have a medical interest .*[for your patients?]?"
+          },
+          "degree_of_burden_operation": {
+			  "question_id": "QID9",
+              "question": ".*Would the study add an operational burden for your site compared to usual trials in .*[the same pathology]?"
+          },
+          "degree_of_burden_patient": {
+			"question_id": "QID12",
+            "question": ".*Are you of the opinion that this study design would add a significant burden to the patient.* [during the study?]?"
+          },
+          "covid_impact": {
+			"question_id": "QID4",
+            "question": ".*To what extent the covid-19 crisis will lower your ability to manage clinical trials around.*"
+          },
+          "main_inv_medical_specialty": {
+			"question_id": "QID7",
+            "question": ".*Please precise Principal Investigator main medical specialty.*"
+          },
+          "exp_in_comparable_complex_study": {
+			"question_id": "QID15",
+            "question": ".*Does your site have experience in participating in studies of comparable complexity.*"
+          },
+          "study_procedure_availability": {
+			"question_id": "QID17",
+            "question": ".*Does your site have the equipment for conducting the study, and the ability to perform the.*"
+          },
+          "competition_for_patient_recruitment": {
+			"question_id": "QID19",
+            "question": ".*Considering all clinical studies performed at your site.*"
+          },
+          "patient_followed_last_year": {
+				"question_id": "QID22",
+				"question": ".*How many patients have you or your research group seen/followed within the last year at your site.*"
+				},
+          "patients_allowed_on_criteria": {
+				"question_id": "QID23",
+				"question": ".*Of these patients how many could meet all other selection criteria described in the study.*"
+				},
+          "screen_failure_rate": {
+				"question_id": "QID24",
+				"question": ".*Please provide an estimate for the screen failure rate.*"
+				},
+          "dropout_rate": {
+				"question_id": "QID26",
+				"question": ".*Please provide an estimate for the drop out rate.*"
+				},
+          "is_delay_expected": {
+				"question_id": "QID30",
+				"question": ".*What is the risk of receiving any questions from your Ethics committee/IRB likely.*"
+				},
+          "percentage_patients_enrolled": {
+				"question_id": "QID33",
+				"question": ".*please provide an estimate.*[(%)].*of patients previously enrolled on similar studies.*"
+				},
+          "female_participated_on_similar_study": {
+				"question_id": "QID34",
+				"question": ".*please provide an estimate.*[(%)].*of female patients previously enrolled.*"
+				},
+          "patients_above_64_participated_on_similar_study": {
+				"question_id": "QID35",
+				"question": ".*please provide an estimate.*[(%)].*of patients of age greater or equal to 65.*"
+				},
+          "count_of_patients_enrolled": {
+				"question_id": "QID36",
+				"question": ".*How many of the above-mentioned patients.*[(in Q14)].*is expected to be :.*"
+				},
+          "female_patient_followed_last_year": {
+				"question_id": "QID37",
+				"question": ".*How many of the above-mentioned patients.*[(in Q14)].*is expected to be Female patients.*"
+				},
+          "patient_above_64_followed_last_year": {
+                "question_id": "QID38",
+				"question": ".*How many of the above-mentioned patients.*[(in Q14)].*is expected to be of age greater or equal to 65.*"
+				}
+        },
+        "responses": {
+          "survey_response_yes": "Yes",
+          "survey_response_no": "No",
+          "survey_response_yes_hi": "Yes, Highly interested",
+          "survey_response_yes_mi": "Yes, Moderately interested",
+          "survey_response_high_medium": ["High", "Medium"],
+          "survey_response_type_gl": "gl",
+          "survey_response_type_anonymous": "anonymous"
+        }
+    }
+}
