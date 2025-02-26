@@ -1,0 +1,23 @@
+// ZSUI core styles package
+
+// Variables
+@zs-lib-path: '../../lib';
+
+// Definitions
+@import '@{zs-lib-path}/less/theme.less';
+@import '@{zs-lib-path}/less/mixins.less';
+
+// Styles
+@import '@{zs-lib-path}/less/global.less'; // should go first
+@import '@{zs-lib-path}/less/fonts.less';
+@import '@{zs-lib-path}/less/icons.less';
+@import '@{zs-lib-path}/less/relative.less';
+@import '@{zs-lib-path}/less/grid.less';
+
+// Application custom overrides
+@import 'custom.less'; 
+
+// Package level overrides should be at the bottom
+@zs-components-path: '../../components';
+@zs-images: '@{zs-lib-path}/images';
+@zs-fonts: '@{zs-lib-path}/fonts'; 

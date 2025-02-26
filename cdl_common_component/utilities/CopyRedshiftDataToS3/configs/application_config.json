@@ -1,0 +1,41 @@
+
+{
+  "s3_base_path": "s3://aws-a0049-use1-00-d-s3b-bpod-bdp-data01/RedshiftLoadPOC",
+  "format_string": "CSV/PARQUET",
+  "truncate_load_s3_flag": true,
+  "unload_template_query": "select * from $$table_name$$",
+  "unload_command": "unload ('$$unload_query$$') to '$$s3_path$$' iam_role '$$iam_role$$' allowoverwrite $$format_string$$  $$partition_string$$",
+  "unload_schemas" : {
+    "flag": false,
+    "schema_name": ["poc_redshift"]
+  },
+  "unload_tables": {
+    "flag": true,
+    "table_list": [
+      {"table_name": "poc_redshift.ctl_user_login_dtl", "table_partition_columns": []},
+      {"table_name": "poc_redshift.user_study_detailed_info", "table_partition_columns": ["created_by","theme_id","study_id"]}
+    ]
+  },
+  "query_based_unload": {
+    "flag": false,
+    "table_query_map": [
+      {
+        "table_name": "poc_redshift.user_study_details",
+        "unload_query": "select * from poc_redshift.user_study_details",
+        "table_partition_columns": ["created_by","theme_id"]
+      }
+    ]
+  },
+  "db_connection_details": {
+    "host": "",
+    "port": "",
+    "username": "",
+    "password": "",
+    "iam_role": "",
+    "database_name": ""
+  },
+  "get_table_names_query": "select table_name from information_schema.tables where table_schema = '$$schema_name$$' "
+
+}
+
+

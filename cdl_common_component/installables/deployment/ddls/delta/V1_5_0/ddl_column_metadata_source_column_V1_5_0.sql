@@ -1,0 +1,1 @@
+ALTER TABLE ctl_column_metadata ADD COLUMN source_column_name VARCHAR(255) AFTER column_description;

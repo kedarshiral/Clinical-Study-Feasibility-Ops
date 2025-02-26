@@ -1,0 +1,48 @@
+{
+  "replace_param": {
+    "key1": "key2",
+    "key3": "key4"
+  },
+  "generic_config": {
+    "local_temp_path": "/tmp/",
+    "s3_temp_path": "",
+    "emr_code_path": "",
+    "mysql_connection_details": {
+      "mysql_host": "",
+      "mysql_port": "3306",
+      "mysql_username": "",
+      "mysql_password": "",
+      "mysql_db": ""
+    },
+    "cluster_mode": "EMR",
+    "s3_region": "us-east-1",
+    "aws_region": "eu-central-1",
+    "s3_region_endpoint": "s3-us-east-1.amazonaws.com",
+    "private_key_loaction": "",
+    "ses_region": "us-east-1"
+  },
+  "datasource_details": [
+    {
+      "data_source_name": "rdbms",
+      "active_flag": "Y/N"
+    },
+    {},
+    {}
+  ],
+  "rdbms": {
+    "datasource_connection_details": {
+      "database_type": "oracle",
+      "service_name": "rdbms_service_name$$",
+      "host": "rdbms_host$$",
+      "port": "rdbms_port$$",
+      "username": "rdbms_username$$",
+      "password": "rdbms_password$$",
+      "database": "rdbms_database$$"
+    },
+    "misc_configs": {
+      "path": "",
+      "cluster_type": "small",
+      "file_format": "%Y%m%d%H%M%S"
+    }
+  }
+}

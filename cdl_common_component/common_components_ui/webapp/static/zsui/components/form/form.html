@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Forms</title>
+
+	<!-- zsui styles -->
+	<link rel="stylesheet" href="../../themes/zs/core.css" />
+	<link rel="stylesheet" href="form.css" />
+	<link rel="stylesheet" href="../table/table.css" />
+</head>
+
+<body class="zs-style" style="padding: 2em;">
+
+	<div data-page="forms">
+		<form id="myForm" class="zs-form zs-grid-row">
+			<div class="zs-grid-col-2-3 zs-space" padding="0,1,0,0">
+				<p class="zs-message" style="display:none">Validation message for the form</p>
+				<fieldset>
+					<legend>Field group label</legend>
+					<p validate>
+						<label>Text</label>
+						<input type="text" placeholder="Text" />
+						<span class="zs-message" style="display:none">Validation message for the field</span>
+					</p>
+					<p validate>
+						<label>Textarea</label>
+						<textarea placeholder="Textarea"></textarea>
+						<span class="zs-message" style="display:none">Validation message for the field</span>
+					</p>
+					<p validate>
+						<label>Select</label>
+						<span class="zs-select">
+							<select>
+								<option>Select...</option>
+							</select>
+						</span>
+						<span class="zs-message" style="display:none">Validation message for the field</span>
+					</p>
+					<p validate>
+						<label>Checkboxes</label>
+						<span class="zs-checkbox-group">
+					<span class="zs-checkbox">
+						<input type="checkbox" />Check</span>
+						<br/>
+						<span class="zs-checkbox">
+						<input type="checkbox" />Check</span>
+						</span>
+						<span class="zs-message" style="display:none">Validation message for the field</span>
+					</p>
+					<p validate>
+						<label>Inline checkboxes</label>
+						<span class="zs-checkbox">
+					<input type="checkbox" />Check</span>
+						<span class="zs-checkbox">
+					<input type="checkbox" />Check</span>
+						<span class="zs-message" style="display:none">Validation message for the field</span>
+					</p>
+					<p validate>
+						<label>Single checkbox</label>
+						<span class="zs-checkbox"><input type="checkbox" />Check</span>
+						<span class="zs-message" style="display:none">Validation message for the field</span>
+					</p>
+					<p validate>
+						<label>Radiobuttons</label>
+						<span class="zs-radio-group">
+					<input type="radio" name="radiobutton" />Option 1
+					<br/>
+					<input type="radio" name="radiobutton" />Option 2</span>
+						<span class="zs-message" style="display:none">Validation message for the field</span>
+					</p>
+					<p validate>
+						<label>Search icon field</label>
+						<span class="zs-input-icon zs-icon-search  zs-field" validate>					
+							<input type="text" class="zs-input" placeholder="Search...">
+						</span>
+						<span class="zs-message" style="display:none">Validation message for the field</span>
+					</p>
+
+				</fieldset>
+
+				<table class="zs-data-table">
+					<caption>Compact validation</caption>
+					<tbody>
+						<tr>
+							<td>Compact validation</td>
+							<td class="zs-field zs-compact" validate><input type="text" class="zs-input" /><span class="zs-message" style="display:none">Validation message for the field</span></td>
+						</tr>
+						<tr>
+							<td>Normal validation</td>
+							<td class="zs-field" validate><input type="text" class="zs-input" /><span class="zs-message" style="display:none">Validation message for the field</span></td>
+						</tr>
+					</tbody>
+				</table>
+
+
+				<p class="zs-search-button zs-field">
+					<span class="zs-input-icon zs-icon-search" validate>
+						<input type="text" class="zs-input" placeholder="Search...">
+					</span>
+					<button class="zs-button zs-button-action">Search</button>
+				</p>
+
+				<p>
+					<button type="reset" class="zs-button">Button</button>
+					<button class="zs-button zs-button-action">Action</button>
+					<input type="submit" value="Submit">
+					<input type="button" value="Input button" />
+				</p>
+				<p>
+					<a href="javascript:void(0)">Cancel</a>
+					<button type="submit" class="zs-button zs-button-action">Submit</button>
+				</p>
+
+				<p><a href="javascript:;" class="zs-button">Link button</a><a href="javascript:;" class="zs-button zs-button-action">Link button</a></p>
+				<table class="zs-data-table">
+					<tr><td><a href="javascript:;" class="zs-button">Link button in a table</a></td></tr>
+				</table>
+
+				<h2>Input boxes with an attached button</h2>
+				<div class="zs-button-attached">
+					<input type="text" class="zs-input" placeholder="Search...">
+					<button class="zs-button zs-button-action zs-icon-search"></button>
+				</div>
+			</div>
+			<div class="zs-grid-col-1-3">
+				<div class="zs-radio-group zs-callout-box zs-right">
+					<header>Settings</header>
+					<section>
+						<h3>Validation messages</h3>
+						<input type="radio" name="validationChoice" value="zs-error">Show errors <br/>
+						<input type="radio" name="validationChoice" value="zs-warning">Show warnings <br/>
+						<input type="radio" name="validationChoice" value="zs-info">Show notes<br/>
+						<input type="radio" name="validationChoice" value="zs-success">Show success
+
+						<h3>Page level message</h3>
+						<button class="zs-button" showMessage>Show message</button>
+
+					</section>
+
+
+				</div>
+			</div>
+
+		</form>
+	</div>
+	<script src="../../lib/js/jquery.min.js"></script>
+	<script src="../tooltip/jquery.zsTooltip.js" defer></script>
+	<script defer>
+		function showMessages(type) {
+			$('#myForm').find('.zs-error,.zs-warning,.zs-info,.zs-success')
+				.removeClass('zs-error')
+				.removeClass('zs-warning')
+				.removeClass('zs-info')
+				.removeClass('zs-success');
+
+			// Add validation state for the field
+			$('#myForm').find('[validate]').addClass(type);
+
+			// Inline messages
+			$('#myForm').find('p>.zs-message,.zs-field>.zs-message').show();
+
+			// Form message
+			$('#myForm').find('>div>.zs-message').addClass(type).show();
+
+		}
+
+		$(document).ready(function () {
+
+			$('#myForm input[type="radio"]').click(function () {
+				var value = $(this).val();
+				showMessages(value);
+
+			});
+			$('[data-page="forms"] [showMessage]').click(function () {
+				app.params.message = 'Save changes';
+				app.applyParams();
+				return false;
+			});
+
+
+			$('.zs-field.zs-compact .zs-message').each(function (i, e) {
+				var msg = $(e).text();
+				$(e).zsTooltip({
+					alignment: 'center',
+					arrowAlignment: 'center',
+					text: msg,
+					triggers: 'click hover'
+				});
+			});
+
+		});
+
+	</script>
+</body>
+</html>

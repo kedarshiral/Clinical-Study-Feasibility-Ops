@@ -1,0 +1,120 @@
+// requires: theme.less, icons.less, global.less
+.zs-pagination {	
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	a {	
+		min-width:34px;
+		display:inline-block;
+		border:1px solid @zs-border-color;
+		border-radius: @zs-border-radius;
+		.padding(@zs-input-padding,0.75,@zs-input-padding,0.75);
+		cursor:pointer;
+		.margin(0,0,0,1);
+		&:hover {
+			border-color: @zs-link-hover;
+		}
+		vertical-align: middle;
+		text-align: center;
+	} 
+	
+	a[current], a[current]:visited {
+		color: @zs-background;
+		background: @zs-nav-color;
+		border:1px solid @zs-nav-color;
+		&:hover {
+			color: @zs-background;
+		}		
+	}
+	background: transparent;
+	font-size:@zs-font-size-base;
+	
+	a:first-child {
+		margin-left:0;
+	}
+	
+	.zs-icon {
+		.margin(0,0,0,0.5*14/24) !important;
+		.padding(@zs-input-padding,0,@zs-input-padding,0);
+		border:0px;
+		cursor:pointer;
+	}
+	
+	.zs-icon + a {
+		//margin-left:0;
+	}
+	
+	span[current] {
+		vertical-align: middle;
+		.margin(0,0,0,1);
+		color: @zs-background;
+		background: @zs-nav-color;
+		border-radius: @zs-border-radius;
+		border: 1.5px solid @zs-nav-color;	//Fix for white border bottom issue on IE browsers
+		position:relative;
+		cursor: pointer;
+		.padding(@zs-input-padding,0.75,@zs-input-padding,0.75);
+		select {
+			padding-right: @zs-icon-width;
+			-moz-appearance:none; // Required for Mozilla see https://bugzilla.mozilla.org/show_bug.cgi?id=649849
+			appearance: none;
+			-webkit-appearance:none;
+			background-color: transparent;
+			border: 0;
+			border-radius:0;
+			outline: 0;
+			font-weight: normal;
+			border: 1px solid @zs-brand-gray;
+			color: @zs-background;
+			&:focus {
+			 	color: @zs-text-color;
+			}
+			border:0px !important;
+			cursor:pointer;	
+			text-align:center;	
+			text-align-last:center;	//Center aligns selected option text. Works only on Chrome currently.
+				
+		}
+		select::-ms-expand {
+			display: none;
+		}
+
+		
+		&:first-child {
+			margin-left:0;
+		}
+		&:after, &:hover:after {
+			content: '\4b';
+			.zs-icon-font();
+			font-size: @zs-icon-width;
+			color: @zs-background;
+			right: 0.25em;
+			top:50%;
+			margin-top:-1*@zs-icon-width/2;			
+			position:absolute;
+			pointer-events:none;
+			//display:inline-block;
+		}
+	}
+	
+}
+
+.zs-data-table thead>tr>td.zs-pagination, thead .zs-pagination {
+	font-size: @zs-font-size-base;	
+	text-align:right;
+	background: none;
+	border:0px;
+	font-weight: normal;
+	padding-right:0.25*@zs-font-padding-ratio;	
+	
+}
+
+tfoot .zs-pagination {
+	border-bottom:0px;
+	padding-right:0.25*@zs-font-padding-ratio;
+}
+	
+	

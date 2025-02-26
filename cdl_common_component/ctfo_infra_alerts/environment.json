@@ -1,0 +1,26 @@
+{
+
+    "hard_disk": {
+        "ses_region": "us-east-1",
+        "subject": "Notification: Airflow Hard Disk Utilization more than",
+        "sender": "Salmanul.faris@zs.com",
+        "recipient_list": ["Salmanul.faris@zs.com", "bhushan.thakare@zs.com", "himanshu.khatri@zs.com"],
+        "threshold_value": "85.0"
+    },
+    "root_volume": {
+        "ses_region": "us-east-1",
+        "subject": "Notification: Airflow Root Volume Utilization more than",
+        "sender": "Salmanul.faris@zs.com",
+        "recipient_list": ["Salmanul.faris@zs.com", "bhushan.thakare@zs.com", "himanshu.khatri@zs.com"],
+        "threshold_value": "85.0",
+        "root_dir": "/dev/xvda2"
+    },
+    "cpu_utilization": {
+        "ses_region": "us-east-1",
+        "subject": "Notification: Airflow CPU  Utilization more than",
+        "sender": "Salmanul.faris@zs.com",
+        "recipient_list": ["Salmanul.faris@zs.com", "bhushan.thakare@zs.com", "himanshu.khatri@zs.com"],
+        "threshold_value": "85.0"
+    }
+
+}

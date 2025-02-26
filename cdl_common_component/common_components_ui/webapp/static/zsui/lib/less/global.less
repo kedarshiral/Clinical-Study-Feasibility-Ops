@@ -1,0 +1,336 @@
+// Global styles override for JCPM
+
+.reset() {
+  margin: 0;
+  padding: 0;
+  border: 0;   
+  box-sizing: border-box;
+}
+
+// Reset for all zs styles
+
+/*
+Typography
+
+Typography and content elements
+
+Markup:
+<main>
+	<header>Page title</header>
+	<section>
+		<h2>Heading 2</h2>
+		<p>Lorem ipsum dolor sit amet, <b>consectetur</b> 	<i>adipiscing elit. Drag</i>. <b>	<i>Donec bibendum</i></b>, dui id gravida mattis, tortor neque imperdiet dolor, ut vehicula lectus massa at purus. Pellentesque dapibus elit molestie hendrerit rhoncus. Aenean at vulputate magna. Suspendisse eget lorem et magna auctor pulvinar. <a href="#">Donec accumsan</a> dictum dui. Maecenas pretium consequat sapien quis iaculis. Fusce ultricies vehicula posuere.</p>
+		<h3>Heading 3</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum, dui id gravida mattis, tortor neque imperdiet dolor, ut vehicula lectus massa at purus. Pellentesque dapibus elit molestie hendrerit rhoncus. Aenean at vulputate magna. Suspendisse eget lorem et magna auctor  pulvinar. Donec accumsan dictum dui. Maecenas pretium consequat sapien quis iaculis. Fusce ultricies vehicula posuere.</p>
+		<h2>Heading 2 followed by 3</h2>
+		<h3>Heading 3</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum, dui id gravida mattis, tortor neque imperdiet dolor, ut vehicula lectus massa at purus. Pellentesque dapibus elit molestie hendrerit rhoncus. Aenean at vulputate magna. Suspendisse eget lorem et magna auctor  ulvinar. Donec accumsan dictum dui. Maecenas pretium consequat sapien quis iaculis. Fusce ultricies	vehicula posuere.</p> 
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum, dui id gravida mattis, tortor neque imperdiet dolor, ut vehicula lectus massa at purus. Pellentesque dapibus elit molestie hendrerit rhoncus. Aenean at vulputate magna. Suspendisse eget lorem et magna auctor   ulvinar. Donec accumsan dictum dui. Maecenas pretium consequat sapien quis iaculis. Fusce ultricies vehicula posuere.</p>
+	</section>
+</main>
+
+Styleguide Typography
+*/
+.zs-style, .zs-style *, .zs-stye:before, .zs-style:after, .zs-style *:before, .zs-style *:after {
+	.reset();
+}
+.zs-style {
+    font-family: @zs-font-family-base;
+    font-size: @zs-font-size-base;
+	color: @zs-text-color;
+    //line-height:1; // TODO: line-height: 1 could mess fluid layout
+
+    input::-ms-clear { // Remove IE clear icon from inputs
+        display: none;
+    }
+	
+    a {
+        color: @zs-link-normal;
+		text-decoration: none;
+    }
+
+    a:hover {
+        color: @zs-link-hover;
+		text-decoration: none;
+    }
+
+    a:active {
+        color: @zs-link-active;
+    }
+
+    .zs-icon:hover, icon-large:hover { // Reset icon hover styles
+        cursor: inherit;
+        background-position: inherit;
+    }
+
+    button.zs-disabled, button[disabled], a.zs-disabled, a[disabled], *[disabled], .zs-disabled {
+        cursor: pointer;
+        opacity: 0.4;
+        pointer-events: none;
+    }
+	
+	em, b {
+		font-weight: bold;
+	}
+	
+	i {
+		font-style:italic;
+	}
+    
+
+    h2 {
+        font-size:@zs-font-size-large + 2; 
+		font-weight: normal;
+		.margin(2.5,0,1.5,0);
+		border:0;
+    }	
+	
+	h1 {
+		font-size: @zs-font-size-large + 10;
+		font-weight: normal;
+		.margin(2.5,0,1.5,0);
+	}
+	
+	h3 {
+		font-size: @zs-font-size-base;
+		font-weight: bold;
+		.margin(2,0,1,0);
+	}
+	
+	
+	p {	
+		.margin(1.5,0,1,0);
+	}
+	
+	hr {
+		border-bottom:1px solid @zs-border-color;
+		.clearfix;	
+	}
+}
+
+// Font sizes
+.zs-font-large {
+    font-size: @zs-font-size-large;
+}
+.zs-font-small {
+    font-size: @zs-font-size-small;
+}
+.zs-font-normal {
+    font-size: @zs-font-size-base;
+}
+
+.zs-hidden {
+	display: none;
+}
+
+.zs-data-grid td.clickable:hover {
+    cursor: pointer;
+    background: darken(@zs-background, 5%);
+}
+
+.zs-clear { 
+    .clearfix;
+}
+
+
+.zs-style .zs-layout-main, .zs-style main, main.zs-style {
+    .padding(0,0,1,0);
+    background: darken(@zs-background, 5%);
+}
+
+.zs-style main >header, .zs-style .zs-page-header, .zs-layout-table>section>main>header {
+    font-size: @zs-font-size-large + 2;
+    line-height: @zs-font-size-large;
+	&:before {
+		content: '';
+		display: block;
+		.margin(1,0,0,0);
+	}
+	>h1 { 
+		.margin(1,0,0,0); 
+        font-weight: normal;
+	}
+	>h1:first-child {
+		.margin(1.5,0,0,0);
+	} 
+    .padding(0,0,1.5,0); // Should match left navigation first item bottom border
+}
+
+.zs-style {	
+	 &.zs-layout-table>section>main>header, &.zs-layout-table>section>main>section, .zs-layout-table>section>main>header, .zs-layout-table>section>main>section { 
+		margin-left: @zs-layout-aside-width + @zs-font-size-base*@zs-font-padding-ratio*2;
+		margin-right:0px + @zs-font-size-base*@zs-font-padding-ratio*2;		
+	 }
+	 
+	 &.zs-layout-1col, .zs-layout-1col {		  
+		 >section>main>header, main>section, &.zs-layout-table>section>main>section, &.zs-layout-table>section>main>header {
+		 	margin-left: 0px + @zs-font-size-base*@zs-font-padding-ratio*2;
+	 	}
+		>section>main>.zs-action-message {
+			 margin-left: 0px;
+		}
+	 } 
+}
+
+main >section, .zs-page-block, .zs-page, .zs-style main>section {
+	.clearfix;
+    .padding(2,2,2,2);
+    border-radius: @zs-border-radius;
+    border-color: @zs-border-color;
+    background: @zs-background;
+    box-shadow: 0px 1px 3px 0px @zs-shadow-color;
+	
+	h1, h2, h3, p, table {
+		&:first-child,  {
+			//padding-top:0;
+			margin-top:0;
+		}
+	}
+	
+	>h1, >h2, >h3, >p, >table {
+		&:last-child {
+			//padding-bottom:0;
+			margin-bottom:0;
+		}
+	}
+}
+
+.zs-box {
+    .padding;
+    display:inline-block;
+    border:1px solid @zs-border-color;
+    border-radius: @zs-border-radius;
+}
+
+
+.keyframes (@name) {
+	@-webkit-keyframes @name {.frames}
+	@-moz-keyframes @name {.frames}
+	@-ms-keyframes @name {.frames}
+	@-o-keyframes @name {.frames}
+	@keyframes @name {.frames}
+}
+
+.frames() {
+	from {.transform(rotate(0deg))}
+	to {.transform(rotate(360deg))}
+}
+.keyframes(spin);
+	
+
+
+.zs-loading:extend(.zs-disabled all) {
+    //opacity: 0.5;
+	position: relative;
+	min-height: 2em;
+	min-width: 2em;
+	
+    
+
+
+	&.zs-button {
+		padding-left: 2.5em; // TODO: make spacing the same as from the right;
+		&:after {
+			left:1.71em;
+		}
+		//padding-right:0.5em;
+		
+	}
+	//
+	&:after:extend(.zs-icon-spinner:before) {		
+		left:50%;
+		top:50%;
+		margin-left:-0.5em;
+		margin-top:-0.5em;
+		display: inline-block;
+		position: absolute!important;	
+		color: @zs-text-color;
+		.animation(spin,2s,infinite, steps(8));	
+	}
+	
+	&.zs-data-table {
+		&:after {
+			font-size:2em;
+			opacity:0.5;
+			
+		}
+	}
+
+
+}
+
+
+.zs-left {
+	float:left;
+	display:inline-block;	
+}
+
+.zs-right {
+	float:right;
+	display:inline-block;
+}
+
+.zs-lib-version:after {
+	content: @zs-lib-version; 
+}
+.zs-theme-name:after {
+	content: @zs-theme-name; 
+}
+.zs-theme-version:after {
+	content: @zs-theme-version; 
+}
+
+.zs-paragraph:extend(.zs-style p all) { }
+
+.zs-overflow-hidden {
+	overflow: hidden;
+}
+
+/*
+Lists
+
+Unordered and ordered lists
+
+Markup:
+<ul class="zs-list">
+	<li>Item 1</li>
+	<li>Item 2</li>
+	<li>Item 3</li>
+</ul>
+
+Styleguide Typography.Lists
+*/
+.zs-list, ol, .zs-ordered-list {
+	padding:0;
+	.margin(0,0,0,1.5);
+	display:block;
+
+	>li {
+		display:list-item;
+		.margin(0.5,0,0.5,0);
+
+	}
+	list-style-position: outside;
+}
+
+
+/*
+Highlight
+
+Highlight
+
+Markup:
+<p>Lorem ipsum dolor sit amet, <span class="zs-highlight">consectetur</span> adipiscing elit. Drag. <mark>Donec bibendum</mark>, dui id gravida mattis, tortor neque imperdiet dolor, ut vehicula lectus massa at purus. Pellentesque dapibus elit molestie hendrerit rhoncus. Aenean at vulputate magna. Suspendisse eget lorem et magna auctor pulvinar.</p>
+
+Styleguide Typography
+*/
+@zs-highlight-color: lighten(@zs-status-warning, 30%);
+.zs-highlight, mark { 
+	background-color:@zs-highlight-color;
+	color:inherit;
+}
+
+// We have inline and block elements by default but sometimes we need to turn things into inline blocks
+.zs-inline-block {
+	display:inline-block;
+}

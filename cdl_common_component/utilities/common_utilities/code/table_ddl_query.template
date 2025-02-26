@@ -1,0 +1,9 @@
+create $$table_type table IF NOT EXISTS $$table_name
+(
+$$column_name_datatype_list
+)
+$$partition_column_string
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '$$table_delimiter'
+STORED AS $$table_format
+LOCATION '$$table_location'

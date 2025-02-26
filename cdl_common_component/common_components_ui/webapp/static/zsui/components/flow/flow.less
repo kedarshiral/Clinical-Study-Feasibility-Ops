@@ -1,0 +1,68 @@
+zs-flow{
+    position: relative;
+    -webkit-transform: translateZ(0);
+    
+    & > svg{
+         
+        text{
+            stroke: @zs-brand-darkgray;
+            stroke-width: @zs-font-size-base / 14;
+        }
+
+        [shape]{
+            stroke-width: 0.5;
+            fill: @zs-background;
+            stroke: @zs-brand-darkgray;
+            cursor: pointer;
+        }
+        [shape][selected]{
+            stroke: @zs-brand-primary;
+        }
+        [arrow]{
+            stroke-width: 1;
+            stroke: @zs-brand-darkgray;
+        }
+
+        [dot]{
+            stroke-width:0;
+            fill: @zs-brand-darkgray;
+            cursor: pointer;
+        }
+        
+        // [dot]:hover,
+        [dot][hovered]{
+            fill: @zs-brand-primary;
+        }
+        [link]{
+            stroke: @zs-brand-darkgray;
+            stroke-width: 1;
+        }
+        [link][hovered], 
+        [arrow][hovered],
+        [link][selected], 
+        [arrow][selected]{
+            stroke: @zs-brand-primary;
+            cursor: pointer;
+        }
+
+        [shape][draggable],
+        [text][draggable],
+        [link][draggable]{
+            cursor: move;
+        }
+
+        [shape][dragged],
+        [link][dragged]{
+           stroke: @zs-status-info;
+        }
+
+        [glow]{
+            stroke-width:5;
+            stroke: @zs-shadow-color;
+        }
+    }
+
+    draw-link-container{
+        position: absolute;
+    }
+}

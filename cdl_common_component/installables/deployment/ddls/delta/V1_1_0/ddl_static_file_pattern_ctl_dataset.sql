@@ -1,0 +1,1 @@
+alter table ctl_dataset_master add column static_file_pattern varchar(10);

@@ -1,0 +1,32 @@
+/* 
+Accordion
+
+An accordion is a bar, that when clicked, slides open a panel below with detailed content related to the bar content. 
+
+*/
+
+// Parameters
+@zs-accordion-bar-border-color:@zs-border-color;
+@zs-accordion-panel-background:darken(@zs-background,3%);
+
+.zs-accordion{
+	.zs-accordion-bar{
+		border: solid 1px @zs-accordion-bar-border-color;
+		box-shadow: 2px 2px 0px @zs-shadow-color;
+		.padding(1.2,1.4,1.2,1.4);
+
+		.zs-icon.zs-icon-expand:before,.zs-icon.zs-icon-collapse:before{
+			//margin-right: 0;
+		}
+
+		cursor: pointer;
+	}
+	.zs-accordion-panel{
+		.padding(1.4,1.4,1.4,1.4);
+		.margin(0,1.4,0,1.4);
+
+		background: @zs-accordion-panel-background;
+		border: solid 1px @zs-accordion-bar-border-color;
+	}
+	margin-bottom:2px;
+}

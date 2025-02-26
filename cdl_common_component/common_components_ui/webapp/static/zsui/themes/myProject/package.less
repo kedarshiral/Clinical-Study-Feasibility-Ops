@@ -1,0 +1,55 @@
+// ZSUI application styles package
+
+// Variables
+@zs-lib-path: '../../lib';
+
+// Definitions
+@import '@{zs-lib-path}/less/theme.less';
+@import '@{zs-lib-path}/less/mixins.less';
+
+// Styles
+@import '@{zs-lib-path}/less/global.less'; // should go first
+@import '@{zs-lib-path}/less/fonts.less';
+@import '@{zs-lib-path}/less/icons.less';
+@import '@{zs-lib-path}/less/layout.less'; 
+@import '@{zs-components-path}/table/table.less';
+@import '@{zs-lib-path}/less/brand.less';
+@import '@{zs-components-path}/form/form.less';
+@import '@{zs-lib-path}/less/grid.less';
+@import '@{zs-lib-path}/less/relative.less';
+//@import '@{zs-lib-path}/less/complexGrids.less';
+@import '@{zs-lib-path}/less/responsive.less';
+
+// Components
+@import '@{zs-components-path}/treeView/treeView.less';
+@import '@{zs-components-path}/modal/modal.less';
+@import '@{zs-components-path}/breadCrumbs/breadCrumbs.less';
+@import '@{zs-components-path}/popupMenu/popupMenu.less';
+@import '@{zs-components-path}/tabs/tabs.less';
+@import '@{zs-components-path}/mobile/header.less';
+@import '@{zs-components-path}/user/user.less';
+@import '@{zs-components-path}/datePicker/datePicker.less';
+@import '@{zs-components-path}/pagination/pagination.less';
+//@import '@{zs-components-path}/wizard/wizard.less';
+//@import '@{zs-components-path}/searchDropdown/searchDropdown.less';
+//@import '@{zs-components-path}/tooltip/tooltip.less';
+//@import '@{zs-components-path}/toggle/toggle.less';
+//@import '@{zs-components-path}/slider/slider.less';
+//@import '@{zs-components-path}/flow/flow.less';
+//@import '@{zs-components-path}/flow/flow.panel.less';
+//@import '@{zs-components-path}/progressBar/progressBar.less';
+//@import '@{zs-components-path}/accordion/accordion.less';
+//@import '@{zs-components-path}/toaster/zsToast.less';
+//@import '@{zs-components-path}/choice/zsChoice.less';
+//@import '@{zs-components-path}/tags/tags.less';
+//@import '@{zs-components-path}/dragDropTable/dragDropTable.less';
+
+
+// Application custom overrides
+@import 'custom.less'; 
+@import 'app.less';
+
+// Package level overrides should be at the bottom
+@zs-components-path: '../../components';
+@zs-images: '@{zs-lib-path}/images';
+@zs-fonts: '@{zs-lib-path}/fonts';

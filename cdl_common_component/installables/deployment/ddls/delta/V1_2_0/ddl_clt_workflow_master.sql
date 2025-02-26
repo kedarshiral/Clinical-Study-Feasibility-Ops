@@ -1,0 +1,1 @@
+ALTER TABLE ctl_workflow_master ADD COLUMN spark_config varchar(1000);

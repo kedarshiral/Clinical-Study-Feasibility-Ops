@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<script src="../../lib/js/customElements.poly.js"></script>		
+		<script src="../../lib/js/customElements.js"></script>
+		<script src="zsProgressBar.js"></script>
+		<link rel="stylesheet" href="../../themes/zs/app.css"/>
+	</head>	
+	<body class="zs-style zs-space" style="padding:2em">
+		<h1>Progress Bar</h1>
+		
+		<h2>Basics</h2>
+		<section>
+			<h5>Default</h5>
+			<section>
+				<zs-progress-bar class="zs-progress-bar"></zs-progress-bar>
+			</section>
+			<br><br>
+			<section>
+				<h5>Set value</h5>
+				<zs-progress-bar class="zs-progress-bar" max="100" value="50"></zs-progress-bar>
+			</section>
+			<br><br>
+			<section>
+				<h5>With label</h5>
+				<zs-progress-bar class="zs-progress-bar" max="100" value="50" label="true"></zs-progress-bar>
+			</section>
+			<br><br>
+			<section>
+				<h5>Animated</h5>
+				<zs-progress-bar class="zs-progress-bar" max="100" value="50" label="true" animate="true"></zs-progress-bar>
+			</section>
+			<br><br>
+			<section>
+				<h5>Different metrics</h5>
+				<zs-progress-bar class="zs-progress-bar" max="100" value="50" label="true" animate="true" metrics=" cm"></zs-progress-bar>
+			</section>
+			<br><br>
+			<section>
+				<h5>Different animation duration</h5>
+				<zs-progress-bar class="zs-progress-bar" max="100" value="50" label="true" animate="true" metrics=" cm" duration="1000"></zs-progress-bar>
+			</section>
+			<br><br>
+			<section>
+				<h5>Different max</h5>
+				<zs-progress-bar class="zs-progress-bar" max="1000" value="50" label="true" animate="true" metrics=" cm" duration="1000"></zs-progress-bar>
+			</section>
+			<br><br>
+			<h5>Setup programmatically</h5>
+			<section id="programmatically"></section><br>
+			<button class="zs-button">Set value +50 and metrics to 'cm'</button>
+			<br><br>
+		</section>
+		
+		<h2>Different colors</h2>
+		<section>
+			<section>
+				<h5>Regular</h5>
+				<zs-progress-bar class="zs-progress-bar" max="100" value="5" ></zs-progress-bar>
+			</section>
+			<br><br>	
+			<section>
+				<h5>Green</h5>
+				<zs-progress-bar class="zs-progress-bar zs-chart-color1"  max="100" value="10" ></zs-progress-bar>
+			</section>
+			<br><br>
+			<section>
+				<h5>Dark blue</h5>
+				<zs-progress-bar class="zs-progress-bar zs-chart-color2" max="100" value="20" ></zs-progress-bar>
+			</section>
+			<br><br>
+			<section>
+				<h5>Purple</h5>
+				<zs-progress-bar class="zs-progress-bar zs-chart-color3" max="100" value="30" ></zs-progress-bar>
+			</section>
+			<br><br>
+			<section>
+				<h5>Yellow</h5>
+				<zs-progress-bar class="zs-progress-bar zs-chart-color4" max="100" value="40" ></zs-progress-bar>
+			</section>
+			<br><br>
+			<section>
+				<h5>Blue</h5>
+				<zs-progress-bar class="zs-progress-bar zs-chart-color5" max="100" value="50" ></zs-progress-bar>
+			</section>
+			<br><br>
+			<section>
+				<h5>Green-gray</h5>
+				<zs-progress-bar class="zs-progress-bar zs-chart-color6" max="100" value="60" ></zs-progress-bar>
+			</section>
+			<br><br>
+		</section>
+		<h2>No outline</h2>
+		<section>
+			<section>
+				<h5>Regular</h5>
+				<zs-progress-bar class="zs-progress-bar no-outline" max="100" value="5" ></zs-progress-bar>
+			</section>
+			<br><br>	
+			<section>
+				<h5>Green</h5>
+				<zs-progress-bar class="zs-progress-bar zs-chart-color1 no-outline"  max="100" value="10" ></zs-progress-bar>
+			</section>
+			<br><br>
+			<section>
+				<h5>Dark blue</h5>
+				<zs-progress-bar class="zs-progress-bar zs-chart-color2 no-outline" max="100" value="20" ></zs-progress-bar>
+			</section>
+			<br><br>
+			<section>
+				<h5>Purple</h5>
+				<zs-progress-bar class="zs-progress-bar zs-chart-color3 no-outline" max="100" value="30" ></zs-progress-bar>
+			</section>
+			<br><br>
+			<section>
+				<h5>Yellow</h5>
+				<zs-progress-bar class="zs-progress-bar zs-chart-color4 no-outline" max="100" value="40" ></zs-progress-bar>
+			</section>
+			<br><br>
+			<section>
+				<h5>Blue</h5>
+				<zs-progress-bar class="zs-progress-bar zs-chart-color5 no-outline" max="100" value="50" ></zs-progress-bar>
+			</section>
+			<br><br>
+			<section>
+				<h5>Green-gray</h5>
+				<zs-progress-bar class="zs-progress-bar zs-chart-color6 no-outline" max="100" value="60" ></zs-progress-bar>
+			</section>
+			<br><br>
+		</section>
+		
+		<h2>Different sizes</h2>
+		<section>
+			<section>
+				<h5>XS size</h5>
+				<zs-progress-bar class="zs-progress-bar zs-chart-color7 size-xs" max="100" value="80" ></zs-progress-bar>
+			</section>
+			<br><br>
+			<section>
+				<h5>SM size</h5>
+				<zs-progress-bar class="zs-progress-bar zs-chart-color7 size-sm" max="100" value="80" ></zs-progress-bar>
+			</section>
+			<br><br>
+			<section>
+				<h5>MD size</h5>
+				<zs-progress-bar class="zs-progress-bar zs-chart-color7" max="100" value="80" ></zs-progress-bar>
+			</section>
+			<br><br>
+			<section>
+				<h5>L size</h5>
+				<zs-progress-bar class="zs-progress-bar zs-chart-color7 size-lg" max="100" value="80" ></zs-progress-bar>
+			</section>
+			<br><br>
+			<section>
+				<h5>XL size</h5>
+				<zs-progress-bar class="zs-progress-bar zs-chart-color7 size-xl" max="100" value="80" ></zs-progress-bar>
+			</section>
+			<br><br>
+		</section>
+
+		<h2>Combined</h2>
+		<section class="combined">
+			<section>
+				<h5>Regular</h5>
+				<zs-progress-bar class="zs-progress-bar zs-chart-color4" max="100" value="80"></zs-progress-bar>
+				<zs-progress-bar class="zs-progress-bar zs-chart-color3" max="100" value="20" style="top:-1.5em;background:rgba(255,255,255,0)"></zs-progress-bar>
+			</section>
+			<br><br>
+			<section>
+				<h5>No outline</h5>
+				<zs-progress-bar class="zs-progress-bar zs-chart-color4 no-outline" max="100" value="80"></zs-progress-bar>
+				<zs-progress-bar class="zs-progress-bar zs-chart-color3 no-outline" max="100" value="20" style="top:-1.5em;background:rgba(255,255,255,0)"></zs-progress-bar>
+			</section>
+		</section>
+		<br><br>
+		<h2>As a chart</h2>
+		<section class="combined">
+			<table>
+				<tr>
+					<td>HCP Channel Spend</td>
+					<td style="width:300px">
+						<zs-progress-bar class="zs-progress-bar zs-chart-color4 no-outline" max="100" value="100"></zs-progress-bar>
+					</td>
+					<td>$130.5M</td>
+				</tr>
+				<tr>
+					<td>Consumer Channel Spend</td>
+					<td style="width:300px">
+						<zs-progress-bar class="zs-progress-bar zs-chart-color3 no-outline" max="100" value="75"></zs-progress-bar>						
+					</td>
+					<td>$50M</td>
+				</tr>
+				<tr>
+					<td>Base Sales</td>
+					<td style="width:300px">
+						<zs-progress-bar class="zs-progress-bar zs-chart-color1 no-outline" max="100" value="95"></zs-progress-bar>						
+					</td>
+					<td>$600M</td>
+				</tr>
+			</table>
+			<table class="zs-data-table">
+				<tr>
+					<td>HCP Channel Spend</td>
+					<td style="width:300px">
+						<zs-progress-bar class="zs-progress-bar zs-chart-color4 no-outline" max="100" value="100"></zs-progress-bar>
+						<zs-progress-bar class="zs-progress-bar zs-chart-color3 no-outline" max="100" value="75" label="true" style="top:-1.5em;background:rgba(255,255,255,0)"></zs-progress-bar>						
+					</td>
+					<td>75%/$25B</td>
+				</tr>
+			</table>
+		</section>
+		<br><br><br>
+		<script>
+			var elm  = document.createElement('zs-progress-bar');
+			// you can set each parameter as property ob object
+			elm.classList.add('zs-progress-bar');
+			elm.max = 1000;
+			elm.metrics = '';
+			elm.animate = true;
+
+			// or as a tag attribute
+			elm.setAttribute('value', 550);
+			elm.setAttribute('label', true);
+			elm.setAttribute('duration', 1000);
+			// Properties and attributes are synced
+
+			document.getElementById('programmatically').appendChild(elm);
+			
+			document.querySelector('.zs-button').addEventListener('click', function(){
+				if(elm.value >= 1000){
+					return;
+				}
+				elm.setAttribute('norender', true); // or elm.norender = true;
+				elm.value = +elm.value + 50;
+				elm.metrics = ' cm';
+
+				elm.norender = false; // or elm.setAttribute('norender', false);
+				elm.render();
+			})
+		</script>
+	</body>
+</html>

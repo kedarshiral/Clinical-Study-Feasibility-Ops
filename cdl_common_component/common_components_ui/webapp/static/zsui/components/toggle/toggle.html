@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="../../themes/zs/app.css"/>
+	</head>	
+	<body class="zs-style zs-space" style="padding:2em">
+		<h2>Toggle</h2>
+		<div class="toggle-component" on="false"></div>
+
+		<p>
+		<button class="zs-button">Show</button>
+		<div style="display:none" hidden>
+			<div class="toggle-component" on="false"></div>
+		</div>
+		</p>
+
+	</body>
+	<script src="../../lib/js/jquery.min.js"></script>	
+	<script src="jquery.zsToggle.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('.toggle-component').zsToggle({
+				on: function () {
+					if (this.$container.is('[on="true"]')) {
+						return true;
+					} else {
+						return false;
+					}
+				},
+				onClick: function() {
+					console.log('is active? ' + this.isActive);
+				}
+			});
+
+			$('button').click(function () {
+				$('[hidden]').show();
+			});
+		});
+	</script>	
+</html>

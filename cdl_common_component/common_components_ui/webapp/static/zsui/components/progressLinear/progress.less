@@ -1,0 +1,43 @@
+/* 
+Progress Bar
+
+Progress bars are generally used to visually indicate progress of an ongoing task.
+
+*/
+
+// Progress parameters
+@zs-progress-bar-color:#fff;
+@zs-current-progress-color:#01a6dc;
+@zs-progress-label-color:@zs-background;
+@zs-progress-bar-border:solid 1px #d0dde6;
+@zs-progress-opacity:0.4;
+
+.progress-container {
+	height: 100%;
+	width:100%;
+	position:relative;
+	background-color:@zs-progress-bar-color;
+	border: @zs-progress-bar-border;
+	border-radius: @zs-border-radius;
+
+	.current-progress{
+		position: relative;
+		width:0%;
+		height: 100%;
+		background-color:@zs-current-progress-color;
+		opacity: @zs-progress-opacity;
+		border-bottom-left-radius: @zs-border-radius - 0.05em;
+    	border-top-left-radius:@zs-border-radius - 0.05em;
+		
+		.progress-value{
+			color:@zs-progress-label-color;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+			-webkit-transform: translate(-50%,-50%);
+			-ms-transform: translate(-50%,-50%);				
+		}
+	}
+}
+

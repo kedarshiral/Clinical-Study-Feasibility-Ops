@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Custom elements for applications</title>
+
+	<!-- zsui styles -->
+	<link rel="stylesheet" href="../../themes/zs/core.css" />
+	<link rel="stylesheet" href="../form/form.css" />
+	<link rel="stylesheet" href="table.css" />
+
+
+</head>
+
+<body class="zs-style" style="padding:1em">
+
+	<section id = "pivot">
+		<h2>Pivot table</h2>
+		<!-- zs custom elements library -->
+		<script src="../../lib/js/customElements.poly.js"></script>
+		<script src="../../lib/js/customElements.js"></script>
+
+		<!-- zs custom elements-->
+		<script src="../form/zsLoading.js"></script>
+		<script src="zsTable.js"></script>
+		<script src="../form/zsField.js"></script>
+		<script>
+			function getData() {
+				return new Promise(function (resolve, reject) {
+					var arr = [];
+					for (i = 0; i <= 15; i++) {
+						var row = [];
+						for (j = 0; j < 10; j++) {
+
+							if (i == 0 && j == 2) {
+								row.push(10 * i + j + '<br>test'); // multi line
+							} else if (i == 0 && j == 5) {
+								row.push(10 * i + j + 'unbreakableLongText'); // unbreakable
+							} else if (i > 0 && (j == 2 || j == 6)) {
+								//row.push('fieldunbreakablelong');
+								//row.push('<input type="text" value="test"/>');
+								//var el = new zs.fieldElement();
+								//el.setAttribute('type', 'text');
+								//el.setAttribute('value', 'test');
+
+								row.push('<p is="zs-field" type="text" label="test" value="my value"></p>');
+							} else {
+								row.push(10 * i + j);
+							}
+						}
+						arr.push(row);
+					}
+					resolve(arr);
+				});
+			}
+		</script>
+		<script>
+			zs.customElement(zs.tableElement, 'zs-pivot-table', 'div', zs.tablePivot);
+
+			var t1 = performance.now();
+			var table5 = document.createElement('div', 'zs-pivot-table');
+			table5.addEventListener('render', function () {
+				var t2 = performance.now();
+				console.info("Rendered by: ", (t2 - t1).toFixed(3) + 'ms');
+			});
+
+			table5.renderTable = table5.renderPivotTable; // override main render
+
+			table5.renderPivotHead = function () {
+				var i, props;
+				this.thead = document.createElement('thead');
+
+				// --- //
+				tr = document.createElement('tr');
+				tr.appendChild(this.createPivotItem({
+					name: 'th',
+					rowSpan: 2
+				}));
+
+				tr.appendChild(this.createPivotItem({
+					name: 'th',
+					text: 'Type',
+					valign: 'middle',
+					'border-left': "true",
+					'border-right': "true",
+					style: {
+						padding: '10px'
+					}
+				}));
+
+				tr.appendChild(this.createPivotItem({
+					name: 'th',
+					text: 'NPV',
+					'border-right': "true",
+					valign: 'middle',
+					align: 'center',
+					colSpan: 2
+				}));
+
+				tr.appendChild(this.createPivotItem({
+					name: 'th',
+					text: 'IPV',
+					valign: 'middle',
+					align: 'center',
+					colSpan: 2
+				}));
+
+				this.thead.appendChild(tr);
+
+				// --- //
+				tr = document.createElement('tr');
+				tr.appendChild(this.createPivotItem({
+					name: 'th',
+					text: 'Year',
+					valign: 'middle',
+					'border-left': "true",
+					'border-right': "true",
+					style: {
+						padding: '10px'
+					}
+				}));
+
+				tr.appendChild(this.createPivotItem({
+					name: 'th',
+					text: '2011',
+					valign: 'top',
+					align: 'center',
+					style: {
+						padding: '10px'
+					},
+					rowSpan: 2
+				}));
+
+				tr.appendChild(this.createPivotItem({
+					name: 'th',
+					text: '2012',
+					'border-right': "true",
+					valign: 'top',
+					align: 'center',
+					style: {
+						padding: '10px'
+					},
+					rowSpan: 2
+				}));
+
+				tr.appendChild(this.createPivotItem({
+					name: 'th',
+					text: '2011',
+					valign: 'top',
+					align: 'center',
+					style: {
+						padding: '10px'
+					},
+					rowSpan: 2
+				}));
+
+				tr.appendChild(this.createPivotItem({
+					name: 'th',
+					text: '2012',
+					valign: 'top',
+					align: 'center',
+					style: {
+						padding: '10px'
+					},
+					rowSpan: 2
+				}));
+
+				this.thead.appendChild(tr);
+				// --- //
+				tr = document.createElement('tr');
+				tr.appendChild(this.createPivotItem({
+					name: 'th',
+					text: 'Case',
+					valign: 'middle',
+					'border-right': "true",
+					style: {
+						padding: '0 10px'
+					}
+				}));
+				tr.appendChild(this.createPivotItem({
+					name: 'th'
+				}));
+				this.thead.appendChild(tr);
+				return this.thead;
+			};
+
+			table5.renderPivotBody = function () {
+				var tr, i, text;
+				this.tbody = document.createElement('tbody');
+				for (i = 0; i < 10; i++) {
+					tr = document.createElement('tr');
+					tr.appendChild(this.createPivotItem({
+						name: 'th',
+						text: 'Field ' + i,
+						valign: "middle",
+						'border-right': "true",
+						colSpan: 2
+					}));
+					tr.appendChild(this.createPivotItem({
+						name: 'td',
+						text: '$' + parseInt(Math.random() * 1000) + 'k',
+						valign: 'middle',
+						align: 'center',
+					}));
+					tr.appendChild(this.createPivotItem({
+						name: 'td',
+						text: '$' + parseInt(Math.random() * 1000) + 'k',
+						valign: 'middle',
+						align: 'center',
+						border: "right",
+						'border-right': "true"
+					}));
+					tr.appendChild(this.createPivotItem({
+						name: 'td',
+						text: '$' + parseInt(Math.random() * 1000) + 'k',
+						valign: 'middle',
+						align: 'center',
+					}));
+					tr.appendChild(this.createPivotItem({
+						name: 'td',
+						text: '$' + parseInt(Math.random() * 1000) + 'k',
+						valign: 'middle',
+						align: 'center',
+					}));
+					this.tbody.appendChild(tr);
+				}
+
+				return this.tbody;
+			}
+
+			table5.getTableData = getData;
+			table5.refreshTable();
+			table5.style.maxWidth = '500px';
+			document.body.appendChild(table5);
+		</script>
+	</section>
+
+</html>

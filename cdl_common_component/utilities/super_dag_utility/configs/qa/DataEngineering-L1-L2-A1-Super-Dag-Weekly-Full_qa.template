@@ -1,0 +1,63 @@
+{
+  "DW": {
+    "DataEngineering-L2-DedupingProcess-Monthly_qa": {
+      "process_id": 10000,
+      "data_date": "$$data_date",
+      "enable_flag": "Y",
+      "frequency": "Monthly",
+      "user": "Admin",
+      "process_interruption_flag": "NULL"
+    },
+    "DataEngineering-L2-PostDedupeProcess-Monthly_qa": {
+      "process_id": 80000,
+      "data_date": "$$data_date",
+      "enable_flag": "Y",
+      "frequency": "Monthly",
+      "user": "Admin",
+      "process_interruption_flag": "NULL"
+    },
+	"DataEngineering-L2-Fact-A1-Reporting-Monthly_qa": {
+      "process_id": 30000,
+      "data_date": "$$data_date",
+      "enable_flag": "Y",
+      "frequency": "Monthly",
+      "user": "Admin",
+      "process_interruption_flag": "NULL"
+    }
+    },
+
+    "Ingestion":{
+    "DataEngineering-L1-AACT-Monthly-Full_3000_qa": {
+      "process_id": 3000,
+      "data_date": "$$data_date",
+      "enable_flag": "Y",
+      "frequency": "Monthly",
+      "user": "Admin",
+      "process_interruption_flag": "NULL"
+    },
+    "DataEngineering-L1-Citeline-Monthly-Full_2000_qa": {
+      "process_id": 2000,
+      "data_date": "$$data_date",
+      "enable_flag": "Y",
+      "frequency": "Monthly",
+      "user": "Admin",
+      "process_interruption_flag": "NULL"
+    },
+    "DataEngineering-L1-WHO-Monthly-Full_7000_qa": {
+      "process_id": 7000,
+      "data_date": "$$data_date",
+      "enable_flag": "Y",
+      "frequency": "Monthly",
+      "user": "Admin",
+      "process_interruption_flag": "NULL"
+    },
+    "DataEngineering-L1-DQS-Monthly-Full_6000_qa": {
+      "process_id": 6000,
+      "data_date": "$$data_date",
+      "enable_flag": "Y",
+      "frequency": "Monthly",
+      "user": "Admin",
+      "process_interruption_flag": "NULL"
+    }
+  }
+}

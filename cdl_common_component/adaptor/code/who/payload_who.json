@@ -1,0 +1,14 @@
+{
+  "payload_details": [
+    {
+      "disease_area_col_value": "ALL",
+      "load_type": "full",
+      "file_available": "N",
+      "external_file_location": "s3://jrd-fido-inbound-dev/clinical/WHO/ICTRPFullExport-632787-19-05-2020.zip",
+      "who_data_weekly_dates": [
+      ]
+    }
+  ],
+  "stitching_flag" : "Y",
+  "stitching_columns" : "TRIALID"
+}

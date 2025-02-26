@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Custom elements for applications</title>
+	
+	<!-- zsui styles -->
+	<link rel="stylesheet" href="../../themes/zs/core.css" />
+	<link rel="stylesheet" href="../form/form.css" />
+	<link rel="stylesheet" href="table.css" />
+
+	<!-- zs custom elements library -->
+	<script src="../../lib/js/customElements.poly.js"></script>
+	<script src="../../lib/js/customElements.js"></script>
+
+	<!-- zs custom elements-->
+	<script src="../form/zsLoading.js"></script>
+	<script src="zsTable.js"></script>
+	<script src="../form/zsField.js"></script>
+
+	
+	<style>
+		body {padding:40px}
+		thead td a{
+			cursor: pointer;
+		}
+	</style>
+	<script>
+		function getData() {
+			return new Promise(function (resolve, reject) {
+				var arr = [];
+				for (i=0;i<=15;i++) {
+					var row = [];
+					for (j = 0; j < 10; j++) {
+
+						if (i == 0 && j == 2) {
+							row.push(10 * i + j + '<br>test'); // multi line
+						} else if (i == 0 && j == 5) {
+							row.push(10 * i + j + 'unbreakableLongText'); // unbreakable
+						} else if (i > 0 && (j == 2 || j == 6)) {
+							//row.push('fieldunbreakablelong');
+							//row.push('<input type="text" value="test"/>');
+							//var el = new zs.fieldElement();
+							//el.setAttribute('type', 'text');
+							//el.setAttribute('value', 'test');
+							
+							row.push('<p is="zs-field" type="text" label="test" value="my value"></p>');						
+						} else {
+							row.push(10 * i + j);
+						}
+					}
+					arr.push(row);
+				}
+				resolve(arr);
+			});
+		}
+	</script>
+</head>
+
+<body class="zs-style" style="padding:1em">
+
+	<h2>Simple table</h2>
+	<script>
+
+		var table = document.createElement('div', 'zs-table');
+		table.getTableData = getData;
+		table.refreshTable();
+		document.body.appendChild(table);
+
+	</script>
+
+	
+
+	
+
+	<h2>Sortable table</h2>
+
+	<script>
+		var sortedField, sortedDirection;
+		zs.customElement(zs.tableElement, 'zs-sortable-table', 'div', zs.tableSortable);
+		var table4 = document.createElement('div', 'zs-sortable-table');
+		table4.getTableData = getData;
+
+		table4.renderHead = function(rowIndex, colIndex, data){ // add sortable flag to necessary elems
+			var th 	 = zs.table.renderHead.apply(this, arguments);
+
+
+			// Add sorting
+			th.setAttribute('sortable', true);
+			th.setAttribute('index', rowIndex + colIndex);
+			var sortOrder = null
+			if (sortedField === rowIndex + colIndex) {
+				if (sortedDirection == 'asc') {
+					sortedDirection = 'desc';
+				} else {
+					sortedDirection = 'asc';
+				}
+				sortOrder = sortedDirection;
+			}
+			
+			this.addSortableListener(th, sortOrder);
+			
+
+			// additionaly u can choose different sorting event and/or element
+			// th.setAttribute('sorting-elm', 'span');
+			// th.setAttribute('sorting-event', 'mouseover');
+			return th;
+		}
+
+		
+		table4.addEventListener('sort', function(e){ // listen to sort event and do whatever u wanna
+			var elm  	= e.detail.elm;
+			sortedField = e.detail.elm.getAttribute('index');
+			table4.getTableData = getData;
+			table4.refreshTable();
+		});
+
+		table4.refreshTable();
+		document.body.appendChild(table4);
+	</script>
+		
+
+</html>
+
+
+

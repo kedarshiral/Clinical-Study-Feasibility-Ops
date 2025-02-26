@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Catalog</title>
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+    <link href="../static/zsui/themes/zs/app.css" rel="stylesheet">
+     <link href="../static/css/style.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="../static/zsui/lib/js/customElements.js"></script>
+    <script src="../static/zsui/lib/js/customElements.poly.js"></script>
+
+    <script src="../static/js/dataTable.js"></script>
+    <script src="../static/zsui/components/modal/jquery.zsModal.js"></script>
+    <script src="../static/zsui/components/modal/zsDialog.js"></script>
+</head>
+<body class="zs-style zs-reset zs-layout-1col zs-layout-table">
+{% include 'header.html' %}
+<section>
+    <main>
+        <header>
+					<h1>Search Registered Data</h1>
+        </header>
+        <section>
+            <div style="margin: 0 auto;width:300px">
+                <h2>Input Data Tag Name To Search</h2>
+                <div class="zs-button-attached">
+                    <input id="searchESIndex" type="text" class="zs-input" placeholder="Search...">
+                    <button id="searchES" class="zs-button zs-button-action zs-icon-search"></button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <table id='catalog_table' class="zs-data-table">
+                <thead>
+                    <tr>
+                            <th>DS Name</th>
+                            <th>DS Description</th>
+                            <th>Subject Area</th>
+                            <th>Last Data Refresh Time</th>
+                            <th>Data Details</th>
+                    </tr>
+                </thead>
+             </table>
+        </section>
+    </main>
+</section>
+</body>
+</html>

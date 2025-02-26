@@ -1,0 +1,45 @@
+// Relative box model
+@zs-font-padding-ratio: 0.71em;
+.padding(@t:1, @r:1, @b:1, @l:1) {
+	@zs-padding-gutter: @zs-font-padding-ratio; // In case we have font-size of 14px the horizontal padding should be 10px
+	padding: 1*@t*@zs-padding-gutter @r*@zs-padding-gutter 1*@b*@zs-padding-gutter @l*@zs-padding-gutter;
+}
+.margin(@t:1, @r:1, @b:1, @l:1) {
+	@zs-padding-gutter: @zs-font-padding-ratio; // In case we have font-size of 14px the horizontal padding should be 10px
+	margin: 1*@t*@zs-padding-gutter @r*@zs-padding-gutter 1*@b*@zs-padding-gutter @l*@zs-padding-gutter;
+}
+.border(@t:1, @r:1, @b:1, @l:1) {
+	@zs-padding-gutter: @zs-font-padding-ratio; // In case we have font-size of 14px the horizontal padding should be 10px
+	border: 1*@t*@zs-padding-gutter @r*@zs-padding-gutter 1*@b*@zs-padding-gutter @l*@zs-padding-gutter;
+}
+
+// Customization support
+.spaceType(@type, @t, @r, @b, @l) when (@type = padding) {
+	.padding(@t, @r, @b, @l);
+}
+.spaceType(@type, @t, @r, @b, @l) when (@type = margin) {
+	.margin(@t, @r, @b, @l);;
+}
+.spaceType(@type, @t, @r, @b, @l) when (@type = border) {
+	.border(@t, @r, @b, @l);;
+}
+.space(@type, @t) {
+	@selector: ~'.zs-space[@{type}="@{t}"]';
+	@{selector} {
+		.spaceType(@type, @t, @t, @t, @t);
+	}
+	
+}
+.space(@type, @t, @r) {
+	@selector: ~'.zs-space[@{type}="@{t},@{r}"]';
+	@{selector} {
+		.spaceType(@type, @t, @r, @t, @r);
+	}	
+}
+.space(@type, @t, @r, @b, @l) {		
+	@selector: ~'.zs-space[@{type}="@{t},@{r},@{b},@{l}"]';
+	@{selector} {
+		.spaceType(@type, @t, @r, @b, @l);				
+	}		
+}
+

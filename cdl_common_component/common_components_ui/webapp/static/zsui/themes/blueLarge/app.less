@@ -1,0 +1,27 @@
+// Style tweaks
+.zs-style .zs-top-navigation {
+    @zs-border-overlap-width: 3px;
+    @zs-border-width: 3px;
+
+    >a.zs-active {
+        color: @zs-brand-darkgray;
+        font-weight: 550;
+        padding:12px  @zs-border-overlap-width (10px -  @zs-border-width);
+        border-bottom: @zs-border-width solid  @zs-link-normal;
+    }
+}
+
+// Change the logo image 
+.zs-header {	
+   .zs-brand-stripe {
+        background: @zs-brand-primary;
+    }
+	.zs-brand-bar {		
+		.zs-logo-javelin {
+			width: 136px;
+            min-width:136px; // because of flexbox
+			height: 32px;
+			background: url('logo.png') left center no-repeat;
+		}
+	}
+}

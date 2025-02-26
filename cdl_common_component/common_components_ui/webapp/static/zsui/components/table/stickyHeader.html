@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Sticky header table</title>
+
+	<!-- zsui styles -->
+	<link rel="stylesheet" href="../../themes/zs/core.css" />
+	<link rel="stylesheet" href="../form/form.css" />
+	<link rel="stylesheet" href="table.css" />
+
+</head>
+
+<body class="zs-style" style="padding:1em">
+
+	<h2>Sticky header table</h2>
+
+	<!-- zs custom elements library -->
+	<script src="../../lib/js/customElements.poly.js"></script>
+	<script src="../../lib/js/customElements.js"></script>
+
+	<!-- zs custom elements-->
+	<script src="../form/zsLoading.js"></script>
+	<script src="zsTable.js"></script>
+	<script src="../form/zsField.js"></script>
+	<script>
+		function getData() {
+			return new Promise(function (resolve, reject) {
+				var arr = [];
+				for (i = 0; i <= 15; i++) {
+					var row = [];
+					for (j = 0; j < 10; j++) {
+
+						if (i == 0 && j == 2) {
+							row.push(10 * i + j + '<br>test'); // multi line
+						} else if (i == 0 && j == 5) {
+							row.push(10 * i + j + 'unbreakableLongText'); // unbreakable
+						} else if (i > 0 && (j == 2 || j == 6)) {
+							//row.push('fieldunbreakablelong');
+							//row.push('<input type="text" value="test"/>');
+							//var el = new zs.fieldElement();
+							//el.setAttribute('type', 'text');
+							//el.setAttribute('value', 'test');
+
+							row.push('<p is="zs-field" type="text" label="test" value="my value"></p>');
+						} else {
+							row.push(10 * i + j);
+						}
+					}
+					arr.push(row);
+				}
+				resolve(arr);
+			});
+		}
+
+	</script>
+
+	<script>
+		(function () {
+			var stickyTableElement = zs.customElement(zs.tableElement, 'zs-sticky-table', 'div', zs.tableStickyHeader);
+
+			var table2 = document.createElement('div', 'zs-sticky-table');
+
+			table2.getTableData = getData;
+			var tableContainer = document.createElement('div');
+			tableContainer.setAttribute('style', 'width:600px;height:400px;overflow:auto');
+			table2.appendChild(tableContainer);
+			table2.addEventListener('render', function () {
+				table2.stickHeader(table2.table, null, table2.tableContainer);
+			});
+			table2.tableContainer = tableContainer;
+			table2.refreshTable();
+
+			document.body.appendChild(table2);
+		})();
+
+	</script>
+
+
+	<h2>Sticky header sortable</h2>
+
+	<script>
+		var stickyTableSortableElement = zs.customElement(zs.tableElement, 'zs-sticky-table-sortable', 'div', [zs.tableStickyHeader, zs.tableSortable]);
+		var table21 = document.createElement('div', 'zs-sticky-table-sortable');
+		table21.addEventListener('sort', function () {
+			alert('sort');
+		});
+
+		var sortedField21, sortedDirection21;
+		var stickyContainer21 = document.createElement('div'); // !!! sticky header table requires an extra container
+		table21.appendChild(stickyContainer21);
+
+		var tableContainer21 = document.createElement('div');
+		tableContainer21.setAttribute('style', 'width:600px;height:400px;overflow:auto');
+		table21.appendChild(tableContainer21);
+		table21.addEventListener('render', function () {
+			table21.stickHeader(table21.table, stickyContainer21, table21.tableContainer);
+
+			var cells = stickyContainer21.querySelectorAll('td,th');
+			console.log('sortable', sortedDirection21, sortedField21);
+			for (var i = 0; i < cells.length; i++) {
+				var th = cells[i];
+
+				var colIndex = i;
+				var rowIndex = 0;
+
+				th.setAttribute('sortable', true);
+				th.setAttribute('index', rowIndex + colIndex);
+				var sortOrder = null
+
+				if (sortedField21 == rowIndex + colIndex) {
+					if (sortedDirection21 == 'asc') {
+						sortedDirection21 = 'desc';
+					} else {
+						sortedDirection21 = 'asc';
+					}
+					sortOrder = sortedDirection21;
+				}
+
+				table21.addSortableListener(th, sortOrder); // sortOrder: null, 'asc', 'desc';
+			}
+			// add sortable listeners 
+		});
+		table21.tableContainer = tableContainer21;
+
+
+
+		table21.getTableData = getData;
+		table21.addEventListener('sort', function (e) {
+			var elm = e.detail.elm;
+			sortedField21 = e.detail.elm.getAttribute('index');
+			table21.getTableData = getData;
+			table21.refreshTable();
+		});
+		table21.refreshTable();
+		document.body.appendChild(table21);
+	</script>
+</body>

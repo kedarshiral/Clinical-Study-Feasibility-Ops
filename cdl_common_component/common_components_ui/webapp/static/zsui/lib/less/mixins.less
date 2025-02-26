@@ -1,0 +1,91 @@
+
+
+/* Flexbox mixins */
+// TODO: could be useful to include full set of mixins https://gist.github.com/jayj/4012969
+.flexbox (@display, @flow) {
+	display: ~"-ms-@{display}";
+    display: ~"-webkit-@{display}";
+    display: @display;
+	
+    flex-flow: @flow;
+    -webkit-flex-flow: @flow;
+	-ms-flex-flow: @flow;
+	-ms-flex-direction: @flow;
+}
+.flex(@columns: initial) {
+    -webkit-flex: @columns;
+	-ms-flex: @columns;
+    flex: @columns;
+
+}
+
+// Relative box model TODO: Moved to relative.less as of 2.1
+@zs-font-padding-ratio: 0.71em;
+.padding(@t:1, @r:1, @b:1, @l:1) {
+	@zs-padding-gutter: @zs-font-padding-ratio; // In case we have font-size of 14px the horizontal padding should be 10px
+	padding: 1*@t*@zs-padding-gutter @r*@zs-padding-gutter 1*@b*@zs-padding-gutter @l*@zs-padding-gutter;
+}
+.margin(@t:1, @r:1, @b:1, @l:1) {
+	@zs-padding-gutter: @zs-font-padding-ratio; // In case we have font-size of 14px the horizontal padding should be 10px
+	margin: 1*@t*@zs-padding-gutter @r*@zs-padding-gutter 1*@b*@zs-padding-gutter @l*@zs-padding-gutter;
+}
+
+// Outset shadow
+.outset() {
+    box-shadow: 0px 1px 3px 0px @zs-shadow-color;
+}
+
+
+// The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
+.clearfix() {
+    *zoom:1;
+	display:block!important;
+    &:before,
+    &:after {
+        content:"";
+        display:table;
+    }
+    &:after {
+        clear:both;
+    }
+}
+
+// Animation
+.transform(@string){
+	-webkit-transform: @string;
+	-moz-transform: 	 @string;
+	-ms-transform: 		 @string;
+	-o-transform: 		 @string;
+	transform:  		 @string;
+}
+.animation (@name, @duration: 300ms, @delay: 0, @ease: ease) {
+	-webkit-animation: @name @duration @delay @ease;
+	-moz-animation:    @name @duration @delay @ease;
+	-ms-animation:     @name @duration @delay @ease;
+	animation:     @name @duration @delay @ease;
+}
+
+// Icon font
+.zs-icon-font() {
+	font-family: @zs-icon-font-family;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Enable Ligatures ================ */
+	-webkit-font-feature-settings: "liga";
+	-moz-font-feature-settings: "liga=1";
+	-moz-font-feature-settings: "liga";
+	-ms-font-feature-settings: "liga" 1;
+	-o-font-feature-settings: "liga";
+	font-feature-settings: "liga";
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	position: relative;
+}

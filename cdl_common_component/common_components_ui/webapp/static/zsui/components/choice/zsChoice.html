@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>ZSUI Choice componentnt</title>
+	
+	<!-- zsui styles -->
+	<link rel="stylesheet" href="../../themes/zs/app.css" />
+
+	<!-- zs custom elements library -->
+	<script src="../../lib/js/customElements.poly.js"></script>
+	<script src="../../lib/js/customElements.js"></script>
+
+	<!-- zs custom elements-->
+	<script src="../../components/form/zsField.js"></script>
+	<script src="zsChoice.js"></script>	
+</head>
+
+<body class="zs-style" style="padding: 2em;">
+	<h1>Choice component</h1>
+	<form class="zs-form zs-menu" style="padding:1em">
+		<zs-choice class="zs-choice" label="Color" labels="Red,Green" values="red,green" name="color"></zs-choice>
+		<br/>
+		<zs-choice class="zs-choice" label="Size" labels="XS,S,M,L,XL" values="XS,S,M,L,XL" value="M" type="radio" name="size"></zs-choice>
+	</form>
+	<h2>Actions</h2>
+	<button id="clear" class="zs-button">Clear</button>	
+	<button id="all" class="zs-button">Select all</button>
+
+	<script>
+		var el1 =document.querySelector('zs-choice[name="color"]');
+		var el2 =document.querySelector('zs-choice[name="size"]');
+		el1.addEventListener('change', function(e) {
+			console.log('color', this.value);
+		});
+
+		el2.addEventListener('change', function(e) {
+			console.log('size', this.value);
+		});
+
+		var btnClear = document.querySelector('#clear');
+		var btnAll = document.querySelector('#all');
+
+		btnClear.addEventListener('click', function(e) {
+			el1.value = "";
+			el2.value = "";
+		});
+
+		btnAll.addEventListener('click', function(e) {
+			el1.value = el1.getAttribute('values');			
+		});
+	</script>
+</body>
+</html>
+
+
+

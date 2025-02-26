@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Form elements</title>
+
+	<!-- zsui styles -->
+	<link rel="stylesheet" href="../../themes/zs/core.css" />
+	<link rel="stylesheet" href="form.css" />
+	<link rel="stylesheet" href="../table/table.css" />
+
+
+	<!-- zs custom elements library -->
+	<script src="../../lib/js/customElements.poly.js"></script>
+	<script src="../../lib/js/customElements.js"></script>
+
+	<!-- zs custom elements-->
+	<script src="zsClear.js"></script>
+	<script src="zsValidation.js"></script>
+
+	<script src="zsField.js"></script>
+	<script src="../../lib/js/jquery.min.js"></script>
+	<script src="../datePicker/jquery.zsDatePicker.js"></script>
+	<script src="../datePicker/zsDateField.js"></script>
+
+
+	<style>
+		thead td a {
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body class="zs-style" style="padding: 2em;">
+
+	<h2>Form elements</h2>
+	<form class="zs-form">
+
+		<fieldset>
+			<legend>Normal field</legend>
+			<p is="zs-field" label="Text field" type="text" id="field1" clear></p>
+
+			<p is="zs-field" label="Search field" type="text" value="test" clear id="field2">
+				<span class="zs-input-icon zs-icon-search"></span>
+			</p>
+
+			<script>
+				var elem1 = document.querySelector('#field1');
+				elem1.addEventListener('change', function () {
+					console.info('field1 changed');
+				})
+			</script>
+
+			<p is="zs-field" label="Validation" type="text" id="field3" clear class="zs-field">
+			</p>
+		</fieldset>
+	</form>
+	<form class="zs-form">
+		<fieldset class="zs-inline-block">
+			<h3>Compact validation</h3>
+			<p is="zs-field" label="" type="text" id="field5" clear class="zs-field zs-compact" placeholder="compact"></p>
+		</fieldset>
+	</form>
+	<div class="zs-grid-row">
+		<div class="zs-grid-col-1-3">
+			<table class="zs-data-table">
+				<caption>In a table</caption>
+				<tr>
+					<th>Header</th>
+					<th>Header</th>
+					<th>Header</th>
+				</tr>
+				<tr>
+					<td>
+						<p is="zs-field" label="" type="text" id="field4" clear class="zs-compact"></p>
+					</td>
+					<td>value</td>
+					<td>value</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<script>
+		var elem = new zs.fieldElement();
+		document.body.appendChild(elem);
+
+		var elem3 = document.querySelector('#field3');
+		// set rules
+		elem3.validate = function () {
+
+			if (!this.value) { // Valid when empty
+				this.isValid = true;
+				return;
+			}
+
+			// Example of error message
+			this.isValid = false;
+			this.showMessage({ type: 'warning', text: 'not a valid value', element: this });
+
+		};
+
+		elem3.addEventListener('change', function (e) {
+			console.log('elem3', 'change');
+			elem3.clearMessages();
+			elem3.validate();
+		});
+
+		var elem5 = document.querySelector('#field5');
+		// set rules
+		elem5.validate = function () {
+
+			if (!this.value) { // Valid when empty
+				this.isValid = true;
+				return;
+			}
+
+			// Example of error message
+			this.isValid = false;
+			this.showMessage({ type: 'warning', text: 'not a valid value', element: this });
+
+		};
+
+		elem5.addEventListener('change', function (e) {
+			console.log('elem3', 'change');
+			elem5.clearMessages();
+			elem5.validate();
+		});
+
+		var elem4 = document.querySelector('#field4');
+
+
+		elem4.validate = function () {
+
+			if (!this.value) { // Valid when empty
+				this.isValid = true;
+				return;
+			}
+
+			// Example of error message
+			this.isValid = false;
+			this.showMessage({ type: 'error', text: 'not a valid value', element: this });
+			this.showMessage({ type: 'warning', text: 'not a valid value', element: this });
+
+		};
+		elem4.addEventListener('change', function (e) {
+			console.log('elem4', 'change');
+			elem4.clearMessages();
+			elem4.validate();
+		});
+	</script>
+
+	<fieldset id="dateFieldset">
+		<legend>Date</legend>
+		<p is="zs-date-field" label="normal date" value=""></p>
+		<p is="zs-date-field" label="has value" value="7/13/2017"></p>
+		<p is="zs-date-field" label="View mode" view value="7/13/2017"></p>
+		<p is="zs-date-field" label="View mode null" view></p>
+		<p is="zs-date-field" label="date with clear and validation" clear id="field6" placeholder="placeholder"></p>
+		<p is="zs-date-field" label="View mode set manually" view id="field61"></p>
+		<script>
+			var elem61 = document.getElementById('field61');
+			//debugger
+			elem61.value = new Date();
+
+			var elem = new zs.dateFieldElement();
+			//elem.value = new Date('2012-03-26T00:00:00-05:00');
+			elem.setAttribute('value', '3/7/2017');
+			elem.setAttribute('clear', '');
+			elem.setAttribute('label', 'Created in javascript');
+			document.getElementById('dateFieldset').appendChild(elem);
+			var btn = document.createElement('button');
+			btn.classList.add('zs-button');
+			btn.innerText = 'Change date'
+			btn.addEventListener('click', function (event) {
+				elem.changeDate(new Date('2017-03-08'));
+				event.stopPropagation();
+				event.preventDefault();
+			});
+			document.getElementById('dateFieldset').appendChild(btn);
+
+			// Change mode
+			var btn2 = document.createElement('button');
+			btn2.classList.add('zs-button');
+			btn2.innerText = 'View mode'
+			btn2.addEventListener('click', function (event) {
+				elem.setAttribute('view', '');
+				event.stopPropagation();
+				event.preventDefault();
+			});
+			document.getElementById('dateFieldset').appendChild(btn2);
+		</script>
+	</fieldset>
+	<div class="zs-grid-row">
+		<div class="zs-grid-col-1-3">
+			<table class="zs-data-table">
+				<caption>In the table</caption>
+				<tr>
+					<th>Header</th>
+					<th>Header</th>
+					<th>Header</th>
+				</tr>
+				<tr>
+					<td>
+						<p is="zs-date-field" label="" clear id="field7" placeholder="placeholder" class="zs-compact"></p>
+					</td>
+					<td>value</td>
+					<td>value</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<script>
+				var elem6 = document.querySelector('#field6');
+				// set rules
+				elem6.validate = function () {
+
+					if (!this.value) { // Valid when empty
+						this.isValid = true;
+						return;
+					}
+
+					// Example of error message
+					this.isValid = false;
+					this.showMessage({ type: 'error', text: 'not a valid value', element: this });
+					this.showMessage({ type: 'warning', text: 'not a valid value', element: this });
+
+				},
+					elem6.addEventListener('change', function (e) {
+						console.log('elem3', 'change');
+						elem6.clearMessages();
+						elem6.validate();
+					});
+
+				var elem7 = document.querySelector('#field7');
+				// set rules
+				elem7.validate = function () {
+
+					if (!this.value) { // Valid when empty
+						this.isValid = true;
+						return;
+					}
+
+					// Example of error message
+					this.isValid = false;
+					this.showMessage({ type: 'error', text: 'not a valid value', element: this });
+					//this.showMessage({ type: 'warning', text: 'not a valid value', element: this });
+
+				},
+					elem7.addEventListener('change', function (e) {
+						console.log('elem3', 'change');
+						elem7.clearMessages();
+						elem7.validate();
+					});
+	</script>
+	</form>
+
+
+</body>
+
+</html>

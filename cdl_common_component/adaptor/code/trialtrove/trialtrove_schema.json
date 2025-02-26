@@ -1,0 +1,283 @@
+{
+  "$type": "",
+  "copyrightNotice": "",
+  "recordUrl": "",
+  "trialId": "",
+  "trialTitle": "",
+  "trialStatus": "",
+  "trialPhase": "",
+  "trialStartDate": "",
+  "trialPrimaryCompletionDate": "",
+  "trialPrimaryEndpointsReported": "",
+  "trialCountries": [],
+  "trialRegions": [],
+  "trialTherapeuticAreas": [
+    {
+      "id": "",
+      "name": "",
+      "trialDiseases": [
+        {
+          "id": "",
+          "name": "",
+          "tag": "",
+          "trialPatientSegments": [
+            {
+              "id": "",
+              "name": "",
+              "tag": ""
+            }
+          ],
+          "trialMeshTerms": [
+            {
+              "tag": "",
+              "meshId": "",
+              "name": ""
+            }
+          ],
+          "trialIcd9": [
+            {
+              "icd9Id": "",
+              "name": ""
+            }
+          ],
+          "trialIcd10": [
+            {
+              "icd10Id": "",
+              "name": ""
+            }
+          ],
+          "trialSnomed": [
+            {
+              "snomedId": "",
+              "name": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ctGovListedLocations": [
+    {
+      "country": "",
+      "sitesCount": ""
+    }
+  ],
+  "trialObjective": "",
+  "trialNotes": [
+    {
+      "details": "",
+      "date": ""
+    }
+  ],
+  "trialInclusionCriteria": "",
+  "trialExclusionCriteria": "",
+  "trialPrimaryEndpoint": {
+    "details": "",
+    "primaryEndpoints": [
+      {
+        "primaryEndpointGroup": "",
+        "primaryEndpointSubGroup": "",
+        "primaryEndpoint": ""
+      }
+    ]
+  },
+  "trialOtherEndpoint": {
+    "details": "",
+    "otherEndpoints": [
+      {
+        "otherEndpointGroup": "",
+        "otherEndpointSubGroup": "",
+        "otherEndpoint": ""
+      }
+    ]
+  },
+  "trialStudyDesign": "",
+  "trialStudyKeywords": [],
+  "trialPatientPopulation": "",
+  "trialTreatmentPlan": "",
+  "trialSource": "Trialtrove",
+  "trialProtocolIDs": [],
+  "trialSponsors": [
+    {
+      "name": "",
+      "type": "",
+      "parentCompanyName": "",
+      "parentCompanyHQCountry": "",
+      "parentCompanyHQCity": "",
+	  "parentCompanyHQState": "",
+      "parentCompanyHQPostCode": ""
+    }
+  ],
+  "trialPrimaryDrugsTested": [
+    {
+      "drugId": "",
+      "drugNameId": "",
+      "drugName": "",
+      "drugPrimaryName": "",
+      "drugApprovalStatus": "",
+      "drugNames": [],
+      "drugParentNames": [],
+      "drugTherapeuticClasses": [],
+      "drugTherapeuticClassSynonyms": [],
+      "mechanismsOfAction": [
+        {
+          "directMechanism": "",
+          "mechanismSynonyms": []
+        }
+      ]
+    }
+  ],
+  "trialOtherDrugsTested": [
+    {
+      "drugId": "",
+      "drugNameId": "",
+      "drugName": "",
+      "drugPrimaryName": "",
+      "drugApprovalStatus": "",
+      "drugNames": [],
+      "drugParentNames": [],
+      "drugTherapeuticClasses": [],
+      "drugTherapeuticClassSynonyms": [],
+      "mechanismsOfAction": [
+        {
+          "directMechanism": "",
+          "mechanismSynonyms": []
+        }
+      ]
+    }
+  ],
+  "bmtPrimaryDrugsTested": [
+    {
+      "drugId": "",
+      "drugNameId": "",
+      "ppDrugNameId": "",
+      "drugName": "",
+      "bmtDrugId": "",
+      "bmtBrandName": ""
+    }
+  ],
+  "bmtOtherDrugsTested": [
+    {
+      "drugId": "",
+      "drugNameId": "",
+      "ppDrugNameId": "",
+      "drugName": "",
+      "bmtDrugId": "",
+      "bmtBrandName": ""
+    }
+  ],
+  "trialPriorConcurrentTherapy": "",
+  "trialResults": [
+    {
+      "date": "",
+      "details": ""
+    }
+  ],
+  "trialInvestigators": [],
+  "trialLastModifiedDate": "",
+  "trialTargetAccrual": "",
+  "trialTargetAccrualText": "",
+  "trialActualAccrual": "",
+  "trialActualAccrualText": "",
+  "trialPatientsPerSitePerMonth": "",
+  "trialTiming": {
+    "actualTrialStartDate": "",
+    "anticipatedTrialStartDate": "",
+    "actualEnrollmentDuration": "",
+    "anticipatedEnrollmentDuration": "",
+    "actualEnrollmentPeriodCloseDate": "",
+    "anticipatedEnrollmentPeriodCloseDate": "",
+    "actualTreatmentDuration": "",
+    "anticipatedTreatmentDuration": "",
+    "actualPrimaryCompletionDate": "",
+    "anticipatedPrimaryCompletionDate": "",
+    "totalTrialDuration": "",
+    "actualTotalTrialCloseDate": "",
+    "anticipatedTotalTrialCloseDate": "",
+    "actualPrimaryEndpointsReported": "",
+    "anticipatedPrimaryEndpointsReported": ""
+  },
+  "trialIdentifiedSites": "",
+  "trialReportedSites": "",
+  "trialSupportingUrls": [],
+  "trialOutcomes": [],
+  "trialOutcomeDetails": "",
+  "trialTags": [],
+  "trialDctAttributes": [],
+  "trialPatientCriteria": {
+    "minAge": "",
+    "maxAge": "",
+    "minAgeUnits": "",
+    "maxAgeUnits": "",
+    "ageGroup": [],
+    "gender": ""
+  },
+  "trialRecordType": "",
+  "trialPatientDispositions": [],
+  "trialAssociatedCRO": [],
+  "trialCtGovMeshTerms": [
+    {
+      "meshTerm": "",
+      "tag": ""
+    }
+  ],
+  "biomarkers": {
+    "trialTitle": [
+      {
+        "caption": "",
+        "synonyms": [],
+        "commonUses": []
+      }
+    ],
+    "trialObjective": [
+      {
+        "caption": "",
+        "synonyms": [],
+        "commonUses": []
+      }
+    ],
+    "trialPatientPopulation": [
+      {
+        "caption": "",
+        "synonyms": [],
+        "commonUses": []
+      }
+    ],
+    "trialInclusionCriteria": [
+      {
+        "caption": "",
+        "synonyms": [],
+        "commonUses": []
+      }
+    ],
+    "trialExclusionCriteria": [
+      {
+        "caption": "",
+        "synonyms": [],
+        "commonUses": []
+      }
+    ],
+    "trialPrimaryEndpoint": [
+      {
+        "caption": "",
+        "synonyms": [],
+        "commonUses": []
+      }
+    ],
+    "trialOtherEndpoint": [
+      {
+        "caption": "",
+        "synonyms": [],
+        "commonUses": []
+      }
+    ],
+    "trialResults": [
+      {
+        "caption": "",
+        "synonyms": [],
+        "commonUses": []
+      }
+    ]
+  },
+  "updatedDate": ""
+}

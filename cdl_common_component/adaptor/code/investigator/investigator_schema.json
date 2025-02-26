@@ -1,0 +1,83 @@
+[
+  {
+    "$type": "",
+    "copyrightNotice": "",
+    "recordUrl": "",
+    "investigatorId": "",
+    "investigatorNPI": "",
+    "investigatorFirstName": "",
+    "investigatorMiddleInitial": "",
+    "investigatorLastName": "",
+    "investigatorGoldenId": "",
+    "investigatorPrimaryOrganization": {
+      "id": "",
+      "name": "",
+      "type": ""
+    },
+    "investigatorEmails": [],
+    "investigatorPhoneNumbers": [],
+    "investigatorFaxes": [],
+    "investigatorLocation": {
+      "streetAddress": "",
+      "city": "",
+      "state": "",
+      "postCode": "",
+      "country": ""
+    },
+    "investigatorGeoLocation": {
+      "lat": "",
+      "lon": ""
+    },
+    "investigatorDiseaseTiers": [
+      {
+        "name": "",
+        "tier": ""
+      }
+    ],
+    "investigatorRegions": [],
+    "investigatorSpecialties": [],
+    "investigatorLastTrialStartDate": "",
+    "investigatorLastRegulatoryAction": {
+      "action": "",
+      "date": "",
+      "flag": "",
+      "details": ""
+    },
+    "investigatorRegulatoryActionHistory": [
+      {
+        "action": "",
+        "date": "",
+        "flag": "",
+        "details": ""
+      }
+    ],
+    "investigatorSupportingUrls": [],
+    "ongoingTrials": [
+      {
+        "id": "",
+        "status": "",
+        "phase": ""
+      }
+    ],
+    "pastTrials": [
+      {
+        "id": "",
+        "status": "",
+        "phase": ""
+      }
+    ],
+    "investigatorAllAffiliatedOrganizationIds":[] ,
+    "sponsorRelationships": [],
+    "investigatorDegrees": [],
+    "investigatorTrialOrganizations": [
+      {
+        "organizationId": "",
+        "trialId": []
+      }
+    ],
+    "diseaseHierarchy": [
+      ""
+    ],
+    "updatedDate": ""
+  }
+]

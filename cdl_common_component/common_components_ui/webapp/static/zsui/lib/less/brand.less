@@ -1,0 +1,450 @@
+/*
+Brand elements
+
+Brand specific elements
+
+Styleguide Brand
+*/
+
+/*
+Header
+
+Application header
+
+Markup:
+<div class="zs-header">
+	<div class="zs-brand-stripe"></div>
+	<div class="zs-brand-bar">
+		<div class="zs-logo zs-logo-javelin"></div>
+		<div class="zs-brand-name">Compellium</div>
+	</div>
+</div>
+
+Styleguide Brand.Header
+*/
+.zs-header {
+    box-shadow: 0px 1px 3px 0px @zs-shadow-color;
+    z-index: @zs-layer-3;
+	position: relative; // Required for shadow and z-index to work 
+	
+   .zs-brand-stripe {
+        min-height:4px;
+        background: #faa44e url('@{zs-images}/header.png') top center no-repeat;  // TODO;
+    }
+
+    a, a:visited {
+        text-decoration:none;
+    }
+
+    .zs-brand-bar {
+		.clearfix;
+		position: relative;
+        border-bottom: 1px solid @zs-border-color;
+
+        .zs-logo {
+			margin: 15px 40px (14px - 2px) 0px; // TODO: Logo has 2 extra pixels of margin at the bottom
+			float: left;
+			display: inline;
+			vertical-align:middle;
+        }
+
+		.zs-logo-javelin {
+			width: 97px;
+            min-width:97px; // because of flexbox
+			height: 16px;
+			background: url('@{zs-images}/logo.png') left center no-repeat;
+		}
+
+        .zs-brand-name {
+			float: left;
+			display: inline-block;
+			position: absolute;
+			top: 50%;
+			margin-top: -0.5em;
+            font-size:@zs-font-size-large;          
+            padding: 0px 30px; // 30px
+			h1 {
+				font-size: @zs-font-size-large;
+				padding:0;
+				margin:0;
+			}
+        }
+
+        .zs-brand-select-app{
+
+            @zs-select-arrow-size: @zs-font-size-base;
+            .zs-select {
+                margin:auto;
+                select, select:focus {
+					font-size:@zs-font-size-large;
+                    border:1px solid lighten(@zs-border-color, 5%);
+					color:@zs-text-light;
+                }
+            }
+        }
+
+        .zs-identity-bar {
+            font-size: @zs-font-size-small;
+            padding: 4px 30px 0; // 40px from the right
+            .flex(1);
+            a {
+                padding:0 @zs-padding-horizontal;
+                white-space:nowrap;
+            }
+
+            a:nth-of-type(1) {
+                padding-left: 30px;
+                margin-right: 150px - @zs-padding-horizontal;//*@zs-padding-horizontal-large;
+            }
+
+            text-align:right;
+        }
+    }
+}
+.zs-brand-logo {
+
+}
+
+/*
+Top Navigation
+
+Application top navigation
+
+Markup:
+<nav class="zs-top-navigation">
+	<a class="zs-active">Home</a>
+	<a>Page1</a>
+	<a>Page2</a>
+	<a>Page3</a>
+</nav>
+
+Styleguide Brand.TopNavigation
+*/
+.zs-style .zs-top-navigation {
+    border-bottom: 1px solid @zs-border-color;
+    border-top:0;
+	background:@zs-background;
+    .flexbox(flex, row);
+    align-items: center;
+    @zs-border-overlap-width: 3px;
+    @zs-border-width: 3px;
+
+    >a, >a:visited {
+        color: @zs-text-light;
+        padding:12px @zs-border-overlap-width 10px;
+        display:inline-block;
+        margin-right: 40px;
+        cursor: pointer;
+        text-decoration:none;
+    }
+    >a:hover, >a.zs-active:hover {
+        color: @zs-brand-primary;
+		text-decoration: none;
+    }
+    >a.zs-active {
+        color: @zs-brand-darkgray;
+        font-weight: 550;
+        padding:12px  @zs-border-overlap-width (10px -  @zs-border-width);
+        border-bottom: @zs-border-width solid @zs-brand-primary;
+    }
+}
+
+.breadcrumb li {
+	display: inline;
+	font-size: 12px;				
+}
+
+.breadcrumb span{
+	margin-left: 4px;
+	margin-right: 4px;	
+}
+
+.breadcrumb .current {
+	background: none;
+	/* Makes sure that the current text is gray even if the breadcrumb
+	style is used outside of the navigation header.
+	*/
+	color: @zs-brand-primary;
+}
+
+/*
+Side Navigation
+
+Application side navigation
+
+Markup:
+<nav class="zs-side-navigation">
+    <a class="zs-active">Sub1</a>
+    <a>Sub2</a>
+    <a>Sub3</a>
+    <a>Sub4</a>
+</nav>
+
+2d level:
+<nav class="zs-side-navigation">
+    <a class="zs-active">Sub1</a>
+    <a>Sub2</a>
+    <a>Sub3</a>
+    <nav>
+        <a class="zs-active">Sub1</a>
+        <a>Sub2</a>
+        <a>Sub3</a>
+        <a>Sub4</a>
+    </nav>
+    <a>Sub4</a>
+</nav>
+
+3d level:
+<nav class="zs-side-navigation">
+    <a class="zs-active">Sub1</a>
+    <a>Sub2</a>
+    <a>Sub3</a>
+    <nav>
+        <a class="zs-active">Sub1</a>
+        <a>Sub2</a>
+        <a>Sub3</a>
+        <nav>
+            <a class="zs-active">Sub1</a>
+            <a>Sub2</a>
+            <a>Sub3</a>
+            <a>Sub4</a>
+        </nav>
+        <a>Sub4</a>
+    </nav>
+    <a>Sub4</a>
+</nav>
+Styleguide Brand.SideNavigation
+*/
+.zs-side-navigation {
+    @border-width: 4px;
+    @left-margin: 10px;
+    @item-height: 3em;
+	.padding(1,0,0,0);
+    width: 100%;
+	
+	>a:first-child, >li:first-child >a {
+	  border-top: 1px solid @zs-border-color;
+	}
+	
+    a, a:visited {
+        cursor: pointer;
+        text-decoration: none;
+        display:block;
+        color: @zs-text-light;
+        //border-right: 1px solid @zs-border-color;
+        border-bottom: 1px solid @zs-border-color;
+        position:relative;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        .padding;
+        line-height: 1.25em;
+        padding-left: @zs-layout-left-margin;
+        white-space: normal;
+
+        small {
+            // We need to keep even the height of items of 2 lines or 1 line
+            display:block;
+            left: @left-margin;
+            line-height: 1em;
+
+            margin-top: -0.5*@item-height + 0.25em;
+            margin-bottom: 1.75em;
+            top: @zs-font-size-base;
+            font-size: @zs-font-size-small;
+        }
+
+        &:before {
+            content: " "; // ZSUI-564: because iOS 10.*.* required two clicks otherwise: first for hovering, second for action. This fix prevents it
+        }
+    } 
+    a.zs-active, li.zs-active >a {
+		
+        color: @zs-nav-color;
+		&:hover {
+			color: darken(@zs-nav-color, 5);
+		}
+
+        font-weight: bold;//550;
+    }
+	
+    a.zs-active:before, li.zs-active >a:before {
+        content: " ";
+        position: absolute;
+        height: @item-height+2;
+        top: -1px;
+        left: 0px;
+        border-left: @border-width solid @zs-nav-color;
+    }
+	a:hover:before {
+        position: absolute;
+        height: @item-height+2;
+        top: -1px;
+        left: 0px;
+		border-left: @border-width solid lighten(@zs-brand-primary, 30);
+	}
+	
+    a.zs-active:hover:before, li.zs-active >a:hover:before {
+		border-left: @border-width solid @zs-brand-primary;
+	}
+    
+    a:hover  {
+        color: @zs-brand-primary;
+    }
+
+    .child-nav(@background-darkness, @font-size, @left-margin){
+        background: darken(@zs-background, @background-darkness);
+        box-shadow: inset 0 3px 3px -3px @zs-shadow-color;
+        padding: 1px 0px;
+
+        >a, 
+        >a:visited {
+            .padding;
+            line-height: 1.25em;
+            padding-left: @zs-layout-left-margin + @left-margin;
+            font-size: @font-size;
+            white-space: normal;
+        } 
+        
+        >a:before, 
+        >a:visited:before {
+            content: " ";
+            position: absolute;
+            height: @item-height+2;
+            top: -1px;
+            left: 0px;
+            border-left: @border-width solid @zs-border-color;
+        }
+
+        >a:hover:before, 
+        >a:visited:hover:before{
+            border-left: @border-width solid lighten(@zs-nav-color, 30);
+        }
+
+        >a.zs-active:before, 
+        >a:visited.zs-active:before{
+            border-left: @border-width solid @zs-nav-color;
+        }
+
+        > a:last-child{
+            border-bottom: 0;
+        }
+
+        & + a {
+            box-shadow: 2px -3px 3px -3px @zs-shadow-color;
+        }
+
+        > & + a:before, 
+        > & + a:visited:before{
+            box-shadow: 2px -3px 3px -3px @zs-shadow-color;
+        }
+    }
+    
+    > nav {
+        .child-nav(2.5, @zs-font-size-base, @left-margin);
+        > nav {
+            .child-nav(5, @zs-font-size-small, @left-margin * 2);
+        }
+    }
+
+    >nav + a {
+        /* TODO: Pull from LESS variable? */
+        // box-shadow: 3px -3px 0px -1px #dee3e3; // Shadow
+        
+    }
+}
+
+.zs-layout-classic >section aside, .zs-layout-classic .zs-layout-aside, .zs-layout-table >section >main >aside, .zs-layout-table .zs-layout-aside, {
+    border-right:1px solid @zs-border-color;
+	background: @zs-background;
+   
+}
+
+//Footer
+.zs-layout-table >footer, .zs-layout-footer, .zs-layout-classic >footer {
+	div:first-child {
+		display:inline-block;
+		border-right:1px solid @zs-border-color;
+		width: @zs-layout-aside-width;
+		float:left;
+		height: 3em;
+		background: @zs-background;
+	}
+	div:first-child+div {
+		.padding(0,2,0,0);
+		span {
+			white-space: no-wrap;
+			margin-left:1em;
+		}
+	}
+
+	text-align:right;
+	font-size: @zs-font-size-small;
+	color: lighten(@zs-text-color, 30);
+	background: darken(@zs-background, 5%);
+	
+}
+
+
+// Custom margin to line-up elements on the page. Should be consistent across elements
+@zs-brand-margin: 40px;
+.zs-side-navigation {
+    a, a:visited {
+        padding-left: @zs-brand-margin;
+    }
+
+}
+.zs-top-navigation {
+    padding-left: @zs-brand-margin;
+	white-space: nowrap;
+}
+.zs-header .zs-brand-bar .zs-logo {
+    margin-left: @zs-brand-margin;
+}
+
+
+// Brand panel
+.zs-panel {
+    font-size: @zs-font-size-small;
+    @background: @zs-background;
+    opacity: 0.75;
+    //rgba(255,255,255,0.75);
+    position: absolute;
+    top:0;
+    right: 1em;
+    background: @background;
+    border-radius: 0 0 2*@zs-border-radius 2*@zs-border-radius;
+    .outset;
+
+    >section {
+        //min-width: 200px;
+        .padding;
+        display: none;
+
+        >nav {
+            .padding(2,0,2,0);
+            a {
+                display: block;
+                .padding(1,1,1,0);
+            }
+        }
+
+    }
+    &.zs-active {
+        opacity: 1;
+    }
+
+    &.zs-active >section {
+        display:block;
+    }
+   
+}
+
+.zs-toolbar {	
+	display:inline-block;
+	//border:1px solid red;
+	position: absolute;
+	right:@zs-font-padding-ratio*2;
+	top:50%;
+	margin-top: -0.5em;
+}
+

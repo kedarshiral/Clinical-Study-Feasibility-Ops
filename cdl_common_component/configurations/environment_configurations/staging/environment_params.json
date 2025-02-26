@@ -1,0 +1,294 @@
+{
+  "@CommentsHeader": {
+    "JSON-Instance": "ingestion_environment_params.json",
+    "Purpose": "This json is used to define the Ingestion-level global variables hadoop options/s3 disct cp options can be provided depending on versions",
+    "Created by": "ZS Associates",
+    "Created on": "20th November 2017",
+    "Consuming module": "All Python modules",
+    "Last changed on": "",
+    "Last changed by": "",
+    "Reason for change": ""
+  },
+  "EnvironmentParams": {
+    "delta_automator_env" : "staging",
+    "environment": "staging",
+    "env": "staging",
+    "environment_logging": "",
+    "client_name":"zs",
+    "logging_elk_host": "",
+    "logging_elk_port": "",
+    "kibana_port": "",
+    "hive_port": "",
+    "athena_work_group":"aws-a0220-use1-00-q-wkg-shrd-rde-rde06",
+    "dqm_database_name":"zs_ctfo_datastore_dqm_stg",
+    "mysql_host": "aws-a0220-use1-00-s-ars-shrd-cus-mys01.cluster-cikckwft6kay.us-east-1.rds.amazonaws.com",
+    "s3_bucket_name": "aws-a0220-use1-00-s-s3b-shrd-shr-sandboxdata01",
+    "bucket_path": "s3://aws-a0220-use1-00-s-s3b-shrd-shr-sandboxdata01/clinical-data-lake",
+    "ingestion_lineage_history_path": "dev/lineage/ingestion/history/dataset_id={dataset_id}/",
+    "ingestion_lineage_latest_path": "dev/lineage/ingestion/latest/dataset_id={dataset_id}/",
+    "dw_lineage_history_path": "dev/lineage/dw/history/process_id={process_id}/cycle_id={cycle_id}/",
+    "dw_lineage_latest_path": "dev/lineage/dw/latest/process_id={process_id}/cycle_id={cycle_id}/",
+    "dw_s3_rule_file_history": "dev/dw_rules_history/process_id={process_id}/cycle_id={cycle_id}",
+    "dw_s3_rule_file_latest": "dev/dw_rules_latest/process_id={process_id}/cycle_id={cycle_id}",
+    "mysql_port": "3306",
+    "bitbucket_username": "archit_agg",
+    "default_cc_branch_name": "stg",
+    "default_dm_branch_name": "mwaa-stg",
+    "mysql_username": "a1sa0220cusappshrd01u",
+    "emr_ssh_secret": "",
+    "mysql_db": "stg_shrd_a0220_cus_01_ctfo",
+    "ftp_aws_region": "us-east-1",
+    "aws_region": "us-east-1",
+    "postgres_host": "",
+    "postgres_port": "",
+    "postgres_username": "",
+    "postgres_password": "",
+    "postgres_databasename": "",
+    "postgres_url": "",
+    "postgres_schemaname": "",
+    "ftp_connection_details": {
+      "1": {
+        "ftp_server": "",
+        "ftp_username": "",
+        "ftp_pwd_secret_name": ""
+      }
+    },
+    "cluster_mode": "EMR",
+    "airflow_environment": "MyAirflowEnvironment",
+    "s3_region": "us-east-1",
+    "rds_password_secret_name": "arn:aws:secretsmanager:us-east-1:737121104911:secret:aws-a0220-use1-00-s-secm-shrd-cus-mys01-YFPiIQ",
+    "bitbucket_password_secret_name": "arn:aws:secretsmanager:us-east-1:737121104911:secret:aws-a0220-use1-00-d-secm-shrd-shr-usr01-ZP5mAp",
+    "adaptor_password_secret_name": "arn:aws:secretsmanager:us-east-1:737121104911:secret:aws-a0220-use1-00-d-secm-shrd-shr-usr02-mYCXur",
+    "redshift_password_secret_name": "arn:aws:secretsmanager:us-east-1:737121104911:secret:aws-a0220-use1-00-s-sem-shrd-cus-red01-cvRi0d",
+    "spline_enable_flag": "N",
+    "s3_region_endpoint": "s3-us-east-1.amazonaws.com",
+    "keytab_file": "",
+    "kerberos_principal": "",
+    "spark_max_thread_limit": 2,
+    "private_key_loaction": "/home/a1-q220cuscdl01-s/key-pair/aws-a0220-use1-00-q-kpr-shrd-cdl-emr01.pem",
+    "ses_region": "10.121.0.176",
+    "smtp_server": "10.121.0.176",
+    "smtp_port": "25",
+    "email_template_path": "/usr/local/airflow/dags/plugins/staging/ctfo/code",
+    "delta_email_type_configurations":{
+      "ses_sender": "zaidyn.studyfeasibility@zs.com",
+      "ses_recipient_list": [
+          "sankarshana.kadambari@zs.com",
+          "vivek.pangasa@zs.com",
+          "archit.s.aggarwal@zs.com",
+          "ujjwal.u.kumar@zs.com",
+          "shivangi.jain@zs.com",
+          "himanshi.n.himanshi@zs.com",
+          "kashish.mogha@zs.com"
+      ]
+    },
+    "email_type_configurations": {
+      "batch_status": {
+        "template_name": "ingestion_status.html",
+        "subject": "[$$env$$] Data Ingestion Process: $$status$$",
+        "ses_sender": "zaidyn.studyfeasibility@zs.com",
+        "ses_recipient_list": [
+          "sankarshana.kadambari@zs.com",
+          "vivek.pangasa@zs.com",
+          "archit.s.aggarwal@zs.com",
+          "ujjwal.u.kumar@zs.com",
+          "shivangi.jain@zs.com",
+          "himanshi.n.himanshi@zs.com",
+          "kashish.mogha@zs.com"
+        ],
+        "notification_flag": "Y"
+      },
+      "dqm": {
+        "template_name": "dqm_status.html",
+        "subject": "[$$env$$] Data Ingestion Process: DQM SUMMARY",
+        "ses_sender": "zaidyn.studyfeasibility@zs.com",
+        "ses_recipient_list": [
+          "sankarshana.kadambari@zs.com",
+          "vivek.pangasa@zs.com",
+          "archit.s.aggarwal@zs.com",
+          "ujjwal.u.kumar@zs.com",
+          "shivangi.jain@zs.com",
+          "himanshi.n.himanshi@zs.com",
+          "kashish.mogha@zs.com"
+        ],
+        "notification_flag": "Y"
+      },
+      "variable_file_ingestion": {
+        "template_name": "Variable_File_Ingestion_Template.html",
+        "subject": "[$$env$$] Data Ingestion Process: VARIABLE FILE INGESTION SUMMARY",
+        "sender": "zaidyn.studyfeasibility@zs.com",
+        "recipient_list": [
+          "sankarshana.kadambari@zs.com",
+          "vivek.pangasa@zs.com",
+          "archit.s.aggarwal@zs.com",
+          "ujjwal.u.kumar@zs.com",
+          "shivangi.jain@zs.com",
+          "himanshi.n.himanshi@zs.com",
+          "kashish.mogha@zs.com"
+        ],
+        "notification_flag": "Y"
+      },
+      "cycle_status": {
+        "template_name": "dw_status.html",
+        "subject": "[$$env$$] DW Process: $$status$$",
+        "ses_sender": "zaidyn.studyfeasibility@zs.com",
+        "ses_recipient_list": [
+          "sankarshana.kadambari@zs.com",
+          "vivek.pangasa@zs.com",
+          "archit.s.aggarwal@zs.com",
+          "ujjwal.u.kumar@zs.com",
+          "shivangi.jain@zs.com",
+          "himanshi.n.himanshi@zs.com",
+          "kashish.mogha@zs.com"
+        ],
+        "notification_flag": "Y"
+      },
+      "dw_dqm_status": {
+        "template_name": "dw_dqm_status.html",
+        "subject": "[$$env$$] DW DQM Process: $$status$$",
+        "sender": "zaidyn.studyfeasibility@zs.com",
+        "environment": "DEV",
+        "recipient_list": [
+          "sankarshana.kadambari@zs.com",
+          "vivek.pangasa@zs.com",
+          "archit.s.aggarwal@zs.com",
+          "ujjwal.u.kumar@zs.com",
+          "shivangi.jain@zs.com",
+          "himanshi.n.himanshi@zs.com",
+          "kashish.mogha@zs.com"
+        ],
+        "notification_flag": "Y"
+      },
+      "ganglia_report": {
+        "template_name": "Ganglia_Report_Template.html",
+        "subject": "[$$env$$] Ganglia report for cluster: $$master_node_dns$$",
+        "ses_sender": "zaidyn.studyfeasibility@zs.com",
+        "ses_recipient_list": [
+          "sankarshana.kadambari@zs.com",
+          "vivek.pangasa@zs.com",
+          "archit.s.aggarwal@zs.com",
+          "ujjwal.u.kumar@zs.com",
+          "shivangi.jain@zs.com",
+          "himanshi.n.himanshi@zs.com",
+          "kashish.mogha@zs.com"
+        ]
+      },
+      "auto_terminate": {
+        "subject": "[URGENT] - Action Required - Long Running EMRs detected",
+        "ses_sender": "zaidyn.studyfeasibility@zs.com",
+        "ses_recipient_list": [
+          "sankarshana.kadambari@zs.com",
+          "vivek.pangasa@zs.com",
+          "archit.s.aggarwal@zs.com",
+          "ujjwal.u.kumar@zs.com",
+          "shivangi.jain@zs.com",
+          "himanshi.n.himanshi@zs.com",
+          "kashish.mogha@zs.com"
+        ]
+      },
+      "orphan_terminate": {
+        "subject": "[CC] Orphan EMR Clusters Termination",
+        "ses_sender": "zaidyn.studyfeasibility@zs.com",
+        "ses_recipient_list": [
+          "sankarshana.kadambari@zs.com",
+          "vivek.pangasa@zs.com",
+          "archit.s.aggarwal@zs.com",
+          "ujjwal.u.kumar@zs.com",
+          "shivangi.jain@zs.com",
+          "himanshi.n.himanshi@zs.com",
+          "kashish.mogha@zs.com"
+        ]
+      }
+    },
+    "countrySCD_column_check": {
+      "template_name": "countrySCD_column_check.html",
+      "subject": "[$$env$$] DW SCD/Country column check Process: $$status$$",
+      "ses_sender": "",
+      "ses_recipient_list": [
+        ""
+      ],
+      "notification_flag": "N"
+    },
+    "dqm_s3_error_location": "s3://aws-a0220-use1-00-s-s3b-shrd-shr-sandboxdata01/clinical-data-lake/dqm/dqm_error_details",
+    "dw_dqm_error_location": "s3://aws-a0220-use1-00-s-s3b-shrd-shr-sandboxdata01/clinical-data-lake/dqm/dqm_error_details/dw/",
+    "dqm_s3_summary_location": "s3://aws-a0220-use1-00-s-s3b-shrd-shr-sandboxdata01/clinical-data-lake/dqm/dqm_summary",
+    "validation_s3_error_location": "/clinical-data-lake/applications/dqm/dqm_summary",
+    "spark_logs_s3_path": "s3://aws-a0220-use1-00-s-s3b-shrd-shr-sandboxdata01/sparklogs/sparkapphistory/",
+    "redshift_params": {
+      "SERVER": {
+        "host": "",
+        "port": 5439,
+        "user": "redshiftbdpod",
+        "redshift_password_secret_name": "arn:aws:secretsmanager:us-east-1:737121104911:secret:aws-a0220-use1-00-s-sem-shrd-cus-red01-cvRi0d",
+        "db": "redshiftbdpod",
+        "iam_role": "arn:aws:iam::077462103551:role/cc_redshift_role",
+        "s3_access_key": "",
+        "s3_secret_key": "",
+        "ssl": "True",
+        "cluster": "redshiftbdpod",
+        "interval": "10 min",
+        "region": "us-east-1",
+        "debug": "True"
+      },
+      "APPLICATION": {
+        "s3_bucket": "aws-a0220-use1-00-s-s3b-shrd-shr-sandboxdata01",
+        "table_format": "parquet",
+        "delimiter": "|",
+        "retry_limit": 5,
+        "timeout": 120000000
+      }
+    },
+    "wlm_params": {
+      "APPLICATION": {
+        "aws_region": "us-east-1",
+        "parameter_group": "redshift-dev"
+      }
+    }
+  },
+  "hadoop_options": {
+    "fs.s3a.multipart.uploads.enabled": "",
+    "fs.s3a.multipart.uploads.block.size": "",
+    "mapred.job.queue.name": "",
+    "fs.s3a.server-side-encryption-algorithm": "",
+    "mapreduce.map.memory.mb": "",
+    "mapreduce.reduce.memory.mb": ""
+  },
+  "s3_distcp__options": {
+    "multipartUploadChunkSize": "",
+    "outputCodec": "",
+    "s3Endpoint": "",
+    "storageClass": ""
+  },
+  "s3_options": {
+    "server_side_encryption": false,
+    "uri_scheme": "s3"
+  },
+  "airflow_db_config": {
+    "db_host": "localhost",
+    "db_port": 3306,
+    "db_username": "",
+    "db_password": "",
+    "db_name": ""
+  },
+  "rdbms_configs": {
+    "rdbms_qa_service_name": "ZS.COM",
+    "rdbms_qa_host": "",
+    "rdbms_qa_port": "",
+    "rdbms_qa_username": "",
+    "rdbms_qa_password": "",
+    "rdbms_qa_database": "",
+    "rdbms_prd_service_name": "ZS.COM",
+    "rdbms_prd_host": "",
+    "rdbms_prd_port": "",
+    "rdbms_prd_username": "",
+    "rdbms_prd_password": "",
+    "rdbms_prd_database": "",
+    "rdbms_latam_service_name": "ZS.COM",
+    "rdbms_latam_host": "",
+    "rdbms_latam_port": "",
+    "rdbms_latam_username": "",
+    "rdbms_latam_password": "",
+    "rdbms_latam_database": ""
+  }
+}
+

@@ -1,0 +1,14 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+AUTHOR = 'ZS Associates'
+
+from CommonUtils import CommonUtils
+import CommonConstants as CommonConstants
+
+try:
+
+$$query
+
+except Exception as exception:
+    raise exception
+

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {#<meta charset="UTF-8">#}
+    <title>Register Data</title>
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+    <link href="../static/zsui/themes/zs/app.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/jquery.datetimepicker.css" rel="stylesheet">
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/jquery.datetimepicker.full.js"></script>
+
+    <script src="../static/js/functions.js"></script>
+
+
+</head>
+<body class="zs-style zs-reset zs-layout-1col zs-layout-table">
+{% include 'header.html' %}
+<section>
+    <main>
+        <header>
+					{#nav class="zs-breadcrumbs"><a href="forms.html" class="">Components</a><a href="forms.html" class="subNavHeader" active="">Forms</a><a href="forms.html" class="">Form controls</a></nav>#}
+					<h1>Data Registration</h1>
+        </header>
+        <section>
+            <div>
+                <zs-tabs-container class="zs-tabs">
+                    <ul>
+                    <li id="tab1" active><a href="javascript:void(0)">Data Provider</a></li><li id="tab2"><a href="javascript:void(0)">DataSet Metadata</a></li><li id="tab3"><a href="javascript:void(0)">DataSet Target</a></li><li id="tab4"><a href="javascript:void(0)">Review & submit</a></li></ul>
+                </zs-tabs-container>
+	        </div>
+        </section>
+        <section>
+            <form id="data-register-form" class="zs-form">
+
+		<fieldset id="set1" class="show-fieldset">
+			<legend>Data Provider</legend>
+			<p is="zs-field"><label>Data Source:</label><input id="dataset_provider" name="dataset_provider" type="text" required></p>
+            <p is="zs-field"><label>Dataset Description:</label><input id="dataset_description" name="dataset_description" type="text" required></p>
+            <p >
+				<label>Load Frequency:</label>
+				<span class="zs-select">
+					<select required id="dataset_arrivals_frequency" name="dataset_arrivals_frequency">
+						<option selected value="">Select...</option>
+                        <option value="Daily">Daily</option>
+                        <option value="Weekly">Weekly</option>
+                        <option value="Monthly">Monthly</option>
+					</select>
+
+				</span>
+
+                <span id="dataset_dataprovider_sla" name="dataset_dataprovider_sla">
+                    <spam id='daily_selector'  name='daily_selector' class='spam_hidden'>
+                        <br>
+                         <input id="daily_selector_time" type='text' placeholder='Select Time' class='datetimepicker topmargin-1'>
+                    </spam>
+
+                    <spam id='weekly_selector' name = 'weekly_selector' class='spam_hidden' >
+                        <br>
+                        <spam class='zs-select'>
+                            <select id='weekly_selector_day' autofocus class='topmargin-1'>
+                                <option selected value="">Choose Day</option>
+                                <option value='1'>Mon</option>
+                                <option value='2'>Tue</option>
+                                <option value='3'>Wed</option>
+                                <option value='4'>Thu</option>
+                                <option value='5'>Fri</option>
+                                <option value='6'>Sat</option>
+                                <option value='7'>Sun</option>
+                            </select>
+                        </spam>
+                        <br>
+                        <spam>
+                            <input id='weekly_selector_time' type='text' placeholder='Select Time' class='datetimepicker topmargin-1'>
+                         </spam>
+                    </spam>
+
+
+                    <spam id='monthly_selector' name = 'monthly_selector' class='spam_hidden' >
+                        <br>
+                         <spam class='zs-select'>
+                            <select id='monthly_selector_week' autofocus  class='topmargin-1'>
+                            <option selected value="">Choose Week</option>
+                            <option value='1'>week1</option>
+                            <option value='2'>week2</option>
+                            <option value='3'>week3</option>
+                            <option value='4'>week4</option>
+                            <option value='5'>week5</option>
+                            </select>
+                         </spam>
+                         <br>
+                          <spam class='zs-select'>
+                            <select id='monthly_selector_day' autofocus  class='topmargin-1'>
+                                <option selected value="">Choose Day</option>
+                                <option value='1'>Mon</option>
+                                <option value='2'>Tue</option>
+                                <option value='3'>Wed</option>
+                                <option value='4'>Thu</option>
+                                <option value='5'>Fri</option>
+                                <option value='6'>Sat</option>
+                                <option value='7'>Sun</option>
+                            </select>
+                          </spam>
+
+                        <br>
+                        <spam>
+                            <input id='monthly_selector_time' type='text' placeholder='Select Time' class='datetimepicker topmargin-1'>
+                        </spam>
+
+                </spam>
+
+                </span>
+
+			</p>
+
+            <p >
+				<label>Load Type:</label>
+				<span class="zs-select">
+					<select required id="dataset_load_type" name="dataset_load_type">
+						<option selected value="">Select...</option>
+                        <option value="Full">Full</option>
+                        <option value="Incremental">Incremental</option>
+					</select>
+				</span>
+			</p>
+
+            <p is="zs-field"><label>Tags:</label><input id="dataset_tags" name="dataset_tags" type="text" required></p>
+
+            <p is="zs-field"><label>Subject Area:</label><input id="dataset_subject_area" name="dataset_subject_area" type="text" required></p>
+            <p is="zs-field"><label>Subject Area Description:</label><input id="dataset_subject_area_desc" name="dataset_subject_area_desc" type="text" required></p>
+
+
+		</fieldset>
+
+
+		<fieldset id="set2" class="hide-fieldset">
+			<legend>DataSet Metadata</legend>
+            <p >
+				<label>Source Location:</label>
+				<span class="zs-select">
+					<select required id="dataset_file_source_type" name="dataset_file_source_type">
+						<option selected value="">Select...</option>
+                        <option value="S3">S3</option>
+                        <option value="FTP">FTP</option>
+					</select>
+				</span>
+			</p>
+
+            <p is="zs-field"><label>Location Path:</label>
+                <input id="dataset_file_source_location" name="dataset_file_source_location" type="text" required>
+            </p>
+
+            <p >
+				<label>File Type:</label>
+				<span class="zs-select">
+					<select required id="dataset_file_format" name="dataset_file_format">
+						<option selected value="">Select...</option>
+                        <option value="Text">Text</option>
+                        <option value="CSV">CSV</option>
+					</select>
+				</span>
+			</p>
+
+            <p >
+				<label>Delimiter:</label>
+				<span class="zs-select">
+					<select required id="dataset_file_filed_delimiter" name="dataset_file_filed_delimiter">
+						<option selected value="">Select...</option>
+                        <option value=",">Comma</option>
+                        <option value="\t">Tab</option>
+                        <option value="|">Pipe</option>
+					</select>
+				</span>
+			</p>
+
+            <p>
+				<label>File Compression:</label>
+				<span class="zs-select">
+					<select required id="dataset_file_compression_codec" name="dataset_file_compression_codec">
+						<option selected value="">Select...</option>
+                        <option value="NA">NA</option>
+                        <option value="ZIP">ZIP</option>
+					</select>
+				</span>
+			</p>
+
+            <p is="zs-field" ><label>File Naming Pattern:</label>
+                <input id="dataset_file_name_pattern" name="dataset_file_name_pattern" type="text" required></p>
+
+
+            <p is="zs-field"><label>Expiration Date:</label><input class="expirationtime" id="dataset_expiry_date" name="dataset_expiry_date" type="text" required></p>
+		</fieldset>
+
+        <fieldset id="set3" class="hide-fieldset">
+			<legend>DataSet Target</legend>
+
+            <p is="zs-field" ><label>Pre Landing Table Name:</label><input id="dataset_hdfs_pre_landing_table" name="dataset_hdfs_pre_landing_table" type="text" required></p>
+            <p is="zs-field" ><label>Pre Landing Table Name Description:</label><input id="dataset_hdfs_pre_landing_table_desc" name="dataset_hdfs_pre_landing_table_desc" type="text" required></p>
+            <p is="zs-field" ><label>Pre Landing Table Tags:</label><input id="dataset_hdfs_pre_landing_table_tags" name="dataset_hdfs_pre_landing_table_tags" type="text" required></p>
+
+            <p is="zs-field" ><label>Landing Table Name:</label><input id="dataset_hdfs_landing_table" name="dataset_hdfs_landing_table" type="text" required></p>
+            <p is="zs-field" ><label>Landing Table Name Description:</label><input id="dataset_hdfs_landing_table_desc" name="dataset_hdfs_landing_table_desc" type="text" required></p>
+            <p is="zs-field" ><label>Landing Table Tags:</label><input id="dataset_hdfs_landing_table_tags" name="dataset_hdfs_landing_table_tags" type="text" required></p>
+
+            <p is="zs-field" ><label>Staging Table Name:</label><input id="dataset_hdfs_staging_table" name="dataset_hdfs_staging_table" type="text" required></p>
+            <p is="zs-field" ><label>Staging Table Name Description:</label><input id="dataset_hdfs_staging_table_desc" name="dataset_hdfs_staging_table_desc" type="text" required></p>
+            <p is="zs-field" ><label>Staging Table Tags:</label><input id="dataset_hdfs_staging_table_tags" name="dataset_hdfs_staging_table_tags" type="text" required></p>
+
+
+            <p>
+
+            <p>
+				<label>Enable Data Profiling:</label>
+				<span class="zs-select">
+					<select required id="dataset_profiling_flag" name="dataset_profiling_flag">
+						<option selected value="">Select...</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+					</select>
+				</span>
+			</p>
+
+		</fieldset>
+        <fieldset>
+            <button id = "submit-data-form" class="zs-button zs-button-action" style="margin-top: 1%;" type="submit">Submit</button>
+        </fieldset>
+	</form>
+        </section>
+        <section>
+            <table id="schmea-inference-table" class="zs-data-table">
+                <caption>Schema Inference <spam id="add-rows">(click to add)<i class="fa fa-plus"></i></spam></caption>
+
+                <thead>
+
+                    <tr><th>Column Name</th>
+                        <th>Column Type</th>
+                        <th>Description</th>
+                        <th>Sequence</th>
+                        <th>Tag</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                </tbody>
+            </table>
+        </section>
+
+        <section id="schema-section">
+            <div>
+                <p id="schema-selection">
+                    <label>Select Schema Inference Options -</label>
+                    <span class="zs-select">
+                        <select id="schema-inference" name="schema-inference">
+                            <option selected value="">Select...</option>
+                            <option value="upload">Upload Sample</option>
+                            <option value="manual">Create Manually</option>
+                        </select>
+                    </span>
+                </p>
+            </div>
+            <form id="upload-file" method="post" enctype="multipart/form-data" class="zs-form">
+                <fieldset class="fieldsetblock">
+                    <label for="file">Select a file</label>
+                    <input name="file" type="file">
+                </fieldset>
+                <fieldset class="fieldsetblock">
+                    <button class="zs-button-action" style="margin-top: 1%;" id="upload-file-btn" type="button">Upload</button>
+                </fieldset>
+            </form>
+        </section>
+
+    </main>
+</section>
+
+</body>
+
+</html>

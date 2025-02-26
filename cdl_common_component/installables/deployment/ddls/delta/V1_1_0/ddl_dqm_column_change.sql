@@ -1,0 +1,1 @@
+alter table ctl_dqm_master modify column column_name varchar(500);

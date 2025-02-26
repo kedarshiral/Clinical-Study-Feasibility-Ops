@@ -1,0 +1,33 @@
+@zs-tag-color: #d6ebf2;
+.zs-tag {
+	color: @zs-link-normal;
+	background-color: @zs-tag-color;
+	border-radius: @zs-border-radius;
+	.padding(0.4,1,0.4,1);
+	white-space: nowrap;
+	display: inline-block;
+	margin-right: @zs-font-padding-ratio;
+	margin-bottom: @zs-font-padding-ratio;
+	cursor: pointer;
+	
+	&[dismissable] {
+		.padding(@zs-input-padding,4,@zs-input-padding,2);
+		position: relative;
+		
+		.zs-icon-remove {
+			&:extend(.zs-input-icon [clear] all);
+			@height: 2em; // same height as clear icon
+			margin-top: -@height/2 + 0.065em; // Modified to make the icon vertically center
+			position: absolute;
+		}
+	}
+	
+	&[nonclickable] {
+		cursor: default;
+		background-color: darken(@zs-background, 5%);
+		border-color: @zs-border-color;
+		color: @zs-text-color;
+	}
+	
+	&.zs-highlight:extend(.zs-highlight all){}
+}

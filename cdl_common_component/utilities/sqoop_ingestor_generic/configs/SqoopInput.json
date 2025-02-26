@@ -1,0 +1,17 @@
+{
+  "dbType": "postgresql",
+  "clusterId": "",
+  "host": "",
+  "port": "5432",
+  "dbname": "",
+  "username": "",
+  "password": "",
+  "secretName": "",
+  "targetPath": "",
+  "tableNames": ["conditions"],
+  "query": "",
+  "targetPrefix": "",
+  "whereClause": "",
+  "outputFileType": "parquet",
+  "params": ""
+}

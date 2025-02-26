@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="../../themes/zs/app.css" />
+	<script src="../../lib/js/customElements.poly.js"></script>
+	<script src="../../lib/js/customElements.js"></script>
+	<script src="../../lib/js/jquery.min.js"></script>
+	<script src="../../lib/js/domHelper.js"></script>
+	<script src="../app/zsApp.js"></script>
+	<script src="zsNav.js"></script>
+	<script>
+			// Apply shared configuration for all menus on the page
+			zs.topNavigationElement.prototype.config = {
+				navigation: [
+					{
+						label: 'item1',
+						url: '#item1'
+					},
+					{
+						label: 'item2',
+						url: '#item2'
+					},
+					{
+						label: 'item3',
+						url: '#item3',
+						navigation: [
+							{
+								label: 'item31',
+								url: '#item31'
+							},
+							{
+								label: 'item32',
+								url: '#item32'
+							},
+							{
+								label: 'item33',
+								url: '#item33'
+							}
+						]
+					},
+
+				]
+
+				
+			}
+	</script>
+</head>
+
+<body class="zs-style zs-reset zs-layout-table zs-layout-1col">
+	<header class="zs-mobile-header">
+		<div class="zs-brand-stripe"></div>
+		<div class="zs-brand-bar">
+			<div class="zs-row">
+				<div class="zs-logo">
+					<img src="../../lib/images/logo-small.png" class="zs-small"/>
+					<img src="../../lib/images/logo.png" class="zs-normal"/>
+				</div>
+				<div class="zs-nav">
+					<zs-top-navigation class="zs-top-navigation">
+					</zs-top-navigation>
+					<zs-top-navigation compact class="zs-select">
+					</zs-top-navigation>
+				</div>
+				<div class="zs-user-bar">					
+					<div role="help">
+						<a href="javascript:void(0);">
+							<span class="zs-icon zs-icon-help"></span>
+							<span class="zs-icon zs-icon-large zs-icon-help"></span>
+							<label>Help</label>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<zs-top-navigation class="zs-top-navigation">		
+		</zs-top-navigation>
+
+	</header>
+	<script>
+		// Dropdown navigation in the header
+		var selectNav = document.querySelector('.zs-mobile-header zs-top-navigation.zs-select');
+		
+		// Redirect browse when we select a menu item
+		selectNav.addEventListener('change', function(event) {					
+			var url = event.target.options[event.target.selectedIndex].value
+			window.location = url;										
+		});
+
+		// Listen to a state change
+		selectNav.addEventListener('statechange', function(event) {
+			console.log('compactTopNavigation', 'statechange', event)
+		});
+
+		// Mini top navigation in the header (Portrait)
+		var miniTopNav = document.querySelector('.zs-mobile-header .zs-nav zs-top-navigation');
+		
+		// Highlight active
+		miniTopNav.addEventListener('statechange', function(event) {								
+			this.render();					
+		});
+
+
+		// Full top navigation in the header (Landscape, laptop)
+		var topNav = document.querySelector('.zs-mobile-header > zs-top-navigation');
+		
+		// Highlight active
+		topNav.addEventListener('statechange', function(event) {								
+			this.render();					
+		});
+
+
+		
+
+
+	</script>
+	<section>
+		<main>
+			<header>
+				<h1>Top navigation</h1>
+			</header>
+			<section>
+				See header
+			</section>
+			
+		</main>
+	</section>
+</html>

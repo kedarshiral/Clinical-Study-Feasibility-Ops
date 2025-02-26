@@ -1,0 +1,143 @@
+// requires: theme.less, icons.less
+@zs-calendar-icon-height: @zs-icon-height*24/16;
+
+.zs-calendar {	
+	display:block;
+	background: @zs-background;
+	border-radius: @zs-border-radius;
+	border: 1px solid @zs-border-color;
+	box-shadow: 0 1px 3px @zs-shadow-color;
+	position:absolute;
+	z-index:@zs-layer-2;
+	font-size: @zs-font-size-base;
+	.padding(0.5,0.5,0.5,0.5);
+	>header {	
+		.padding(0,3.5,0.6,1);
+		margin-bottom:0.5em;
+		margin-top:0.5em;
+		position:relative;
+		white-space: nowrap;	
+		
+		[role="prev"] ~ span { // Year wrapper
+			.margin(0,0.5,0,3);
+			select:focus{
+				width:inherit;
+			}
+		}
+		
+		[role="prev"] ~ span ~ span { // Month wrapper
+			.margin(0,0.5,0,1); 
+		}	
+		
+		span:extend(.zs-select all) {
+			width: inherit;
+			min-width: inherit;
+		} 
+		
+		[role="prev"]:extend(.zs-icon all,.zs-icon-prev all,.zs-icon-large all), [role="next"]:extend(.zs-icon all,.zs-icon-next all,.zs-icon-large all) {
+			position:absolute;
+			top:50%;
+			margin-top:-1*@zs-calendar-icon-height/2 + 0.4*@zs-font-padding-ratio; // Why we have to devide by 4 instead of 2?
+		}
+		[role="prev"]{
+			left:0em;
+		}
+		[role="next"]{
+			right:0em;
+		}
+		
+		a:hover:before {
+			color: @zs-link-hover;
+		}
+		
+		[name="year"],[name="month"] {
+			width: inherit;
+			min-width: inherit;
+		}
+	}
+	
+	
+	>table {
+		width:100%;
+		
+		th {
+			padding-bottom:0.5em;
+		}
+	}
+	
+	td {
+		
+		cursor:pointer;
+		text-align:center;
+		vertical-align: middle;
+		width: 34/14em;
+		height: 34/14em;
+		border: 1px solid @zs-background;
+		&:hover {
+			color: @zs-link-hover;
+			border: 1px solid @zs-link-hover;
+			border-radius: @zs-border-radius;
+		}		
+	}
+	
+	td[disabled]:extend(.zs-disabled all) {
+		background: darken(@zs-background, 10%);
+		border-radius: @zs-border-radius;
+		border: 1px solid darken(@zs-background, 10%);
+	}
+	
+	td[notinmonth] {
+		opacity: 0.5;
+	}
+	
+	td[today] {
+		background: @zs-background-tab;
+		border: 1px solid @zs-background-tab;
+		border-radius: @zs-border-radius;
+		font-weight: bold;
+	}
+	
+	td[current] {
+		border: 1px solid @zs-nav-color;
+		background: @zs-nav-color;
+		color: @zs-background;
+		border-radius: @zs-border-radius;
+		&:hover {
+			color: @zs-background;
+		}		
+	}
+}
+
+.zs-input-icon .zs-icon-calendar {
+    &:hover {
+		&:before {
+			color: @zs-link-hover;
+		}
+	}
+    &:before {
+		color: @zs-link-active;
+		
+	}
+	&.zs-icon{
+		display: inline-block;
+	    .padding(0,0.7,0,0.7);
+	    .margin(-0.7,0,0,0);
+	    background: transparent;
+	    position: absolute;
+	    right: 0em;
+	    top: 50%;
+	}
+}
+
+// Calendar inside table has some styling issues
+.zs-data-table .zs-calendar {
+	th {
+		border:0;
+		text-align:center;
+	}
+	td,th {
+		text-align:center;
+		padding-left:0;
+		padding-right:0;
+	}
+}

@@ -1,0 +1,183 @@
+[{
+  "$type": "",
+  "origin": "",
+  "casNumbers": [
+
+  ],
+  "drugNameSynonyms": [
+  ],
+  "recordUrl": "",
+  "drugCountries": [
+        {
+          "status": "",
+          "name": "",
+          "licensingOpportunity": "",
+          "yearLaunched": ""
+        }
+  ],
+  "overview": "",
+  "chemicalStructure": [],
+  "chemicalData": [
+        {
+          "hBondAcceptors": "",
+          "notableBonds": "",
+          "rotatableBonds": "",
+          "hBondDonors": "",
+          "logP": ""
+        }
+  ],
+  "indicationGroups": [
+        {
+          "id": "",
+          "name": "",
+          "indications": [
+            {
+              "diseaseName": "",
+              "diseaseStatus": "",
+              "drugMeshTerms": [
+                {
+                  "meshId": "",
+                  "name": ""
+                }
+              ],
+              "drugIcd9": [
+                {
+                  "icd9Id": "",
+                  "name": ""
+                }
+              ],
+              "drugIcd10": [
+                {
+                  "icd10Id": "",
+                  "name": ""
+                }
+              ],
+              "drugSnomed": [
+                {
+                  "snomedId": "",
+                  "name": ""
+                }
+              ]
+            }
+          ]
+        }
+  ],
+  "bmtDrug": [
+        {
+          "ppDrugNameId": "",
+          "bmtDrugId": "",
+          "bmtBrandName": ""
+        }
+  ],
+  "phaseII": "",
+  "licensing": "",
+  "pharmacokinetics": [
+        {
+          "model": "",
+          "parameter": "",
+          "unit": "",
+          "score": ""
+        }
+  ],
+  "phaseI": "",
+  "latestChangeDate": "",
+  "copyrightNotice": "",
+  "targets": [
+        {
+          "targetECNumbers": [
+
+          ],
+          "targetSynonyms": [
+
+          ],
+          "targetName": "",
+          "targetFamilies": [
+
+          ],
+          "entrezGeneId": ""
+        }
+  ],
+  "drugPrimaryName": "",
+  "marketing": "",
+  "phaseIII": "",
+  "latestChange": "",
+  "isPharmaProjectsDrug": "",
+  "originatorCompanyKey": "",
+  "drugId": "",
+  "licensee": [
+        {
+          "licenseeStatus": "",
+          "licenseeCountry": "",
+          "licenseeCompanyKey": "",
+          "licenseeName": "",
+          "licenseeParentCompanyName": ""
+        }
+
+  ],
+  "keyEvents": [
+        {
+          "keyEventHistory": "",
+          "keyEventDetail": "",
+          "keyEventDate": ""
+        },
+        {
+          "keyEventHistory": "",
+          "keyEventDate": ""
+        }
+  ],
+"mechanismsOfAction": [
+           {
+               "directMechanism": "",
+               "mechanismSynonyms": [
+                   "",
+                   "",
+                   ""
+               ],
+               "mechanismHierarchy": ""
+}],
+  "originatorCountry": "",
+  "originatorStatus": "",
+  "drugSource": "",
+  "globalStatus": "",
+  "developmentStatus": "",
+  "deliveryRoutes": [
+
+  ],
+  "drugSupportingUrls": [
+
+  ],
+  "trialIds": [
+
+  ],
+  "preClinical": "",
+  "originatorName": "",
+  "therapeuticClasses": [
+        {
+          "therapeuticClassName": "",
+          "therapeuticClassStatus": ""
+        },
+        {
+          "therapeuticClassName": "",
+          "therapeuticClassStatus": ""
+        }
+  ],
+  "deliveryTechnologies": [],
+  "deliveryMediums": [
+
+  ],
+  "patents": [
+        {
+          "patentNumber":"",
+          "patentPriorityCountryDate":""
+    }
+  ],
+  "chemicalName": "",
+  "originatorParentName": "",
+  "originatorParentKey": "",
+  "molecularFormula": "",
+  "molecularWeight": "",
+  "nce": "",
+  "updatedDate": ""
+}]
+
+

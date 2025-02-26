@@ -1,0 +1,241 @@
+{
+  "@CommentsHeader": {
+    "JSON-Instance": "ingestor_environment_params.json",
+    "Purpose": "This json is used to define the Ingestion-level global variables hadoop options/s3 disct cp options can be provided depending on versions",
+    "Created by": "ZS Associates",
+    "Created on": "15th March 2019",
+    "Consuming module": "All Python modules",
+    "Last changed on": "2nd September 2021",
+    "Last changed by": "Salmanul Faris K",
+    "Reason for change": "CCF code migration"
+  },
+  "adapter_details": {
+    "generic_config": {
+      "local_temp_path": "/tmp/DI/",
+      "s3_temp_path": "s3://aws-a0220-use1-00-q-s3b-shrd-shr-data01/clinical-data-lake/qa/temp/",
+      "emr_code_path": "/usr/local/airflow/dags/plugins/qa/ctfo/code",
+      "env": "qa",
+      "mysql_host": "aws-a0220-use1-00-d-ars-shrd-cus-mys02.cluster-cikckwft6kay.us-east-1.rds.amazonaws.com",
+      "s3_bucket_name": "aws-a0220-use1-00-q-s3b-shrd-shr-data01",
+      "mysql_port": "3306",
+      "mysql_username": "a1da0220cusappshrd01u",
+      "mysql_db": "qa_shrd_a0220_cus_01_ctfo",
+      "cluster_mode": "EMR",
+      "adaptor_password_secret_name": "arn:aws:secretsmanager:us-east-1:737121104911:secret:aws-a0220-use1-00-d-secm-shrd-shr-usr02-mYCXur",
+      "s3_region": "us-east-1",
+      "aws_region": "us-east-1",
+      "s3_region_endpoint": "s3-us-east-1.amazonaws.com",
+      "private_key_loaction": "/home/a1-d220cuscdl01/key-pair/aws-a0220-use1-00-d-kpr-shrd-cus-cdl01.pem",
+      "emr_ssh_secret": "",
+      "ses_region": "us-east-1"
+    },
+    "trialtrove": {
+      "cluster_type": "small",
+      "get_token_url": "https://api.citeline.com/token",
+      "delta_refresh": "feed/trial/changes",
+      "token_header": "Basic Y3VzdG9tZXJfYXBpX2NsaWVudF9uYXRpdmU6NTIwNzhjMGItMTI5Mi00MGVhLWFkYjAtOWE4MWY4OGNjZDMy",
+      "pre_landing_layer":"s3://aws-a0220-use1-00-q-s3b-shrd-shr-data01/clinical-data-lake/inbound/CITELINE/CITELINE_TRIALTROVE",
+      "token_pay_load": {
+        "email": "vivek.pangasa@zs.com"
+      },
+      "search_api_url": "search/trial",
+      "full_load": "feed/trial",
+      "host_url": "https://api.citeline.com/v1/",
+      "execution_module": "DataIngestionAdapter"
+    },
+    "organization": {
+      "bearer_token": "",
+      "schema_path": "",
+      "parquet_query": "",
+      "cluster_type": "small",
+      "get_token_url": "https://api.citeline.com/token",
+      "delta_refresh": "feed/organization/changes",
+      "token_header": "Basic Y3VzdG9tZXJfYXBpX2NsaWVudF9uYXRpdmU6NTIwNzhjMGItMTI5Mi00MGVhLWFkYjAtOWE4MWY4OGNjZDMy",
+      "pre_landing_layer":"s3://aws-a0220-use1-00-q-s3b-shrd-shr-data01/clinical-data-lake/inbound/CITELINE/CITELINE_ORGANIZATION",
+      "token_pay_load": {
+        "email": "vivek.pangasa@zs.com"
+      },
+      "search_api_url": "search/organization",
+      "full_load": "feed/organization",
+      "host_url": "https://api.citeline.com/v1/",
+      "execution_module": "DataIngestionAdapter"
+    },
+    "organizationtrials": {
+      "bearer_token": "",
+      "schema_path": "",
+      "parquet_query": "",
+      "cluster_type": "small",
+      "get_token_url": "https://api.citeline.com/token",
+      "delta_refresh": "feed/organization/trials/changes",
+      "token_header": "Basic Y3VzdG9tZXJfYXBpX2NsaWVudF9uYXRpdmU6NTIwNzhjMGItMTI5Mi00MGVhLWFkYjAtOWE4MWY4OGNjZDMy",
+      "pre_landing_layer":"s3://aws-a0220-use1-00-q-s3b-shrd-shr-data01/clinical-data-lake/inbound/CITELINE/CITELINE_ORGANIZATIONTRIALS",
+      "token_pay_load"  : {
+        "username": "vivek.pangasa@zs.com",
+        "scope": "customer-api",
+        "grant_type": "password"
+      },
+      "search_api_url": "search/organization/trials?pagesize=2500",
+      "full_load": "feed/organization/trials?pagesize=2500",
+      "host_url": "https://api.citeline.com/v1/",
+      "execution_module": "DataIngestionAdapter"
+    },
+    "pharmaprojects": {
+      "bearer_token": "",
+      "schema_path": "",
+      "parquet_query": "",
+      "cluster_type": "small",
+      "get_token_url": "https://api.citeline.com/token",
+      "delta_refresh": "feed/drug/changes",
+      "token_header": "Basic Y3VzdG9tZXJfYXBpX2NsaWVudF9uYXRpdmU6NTIwNzhjMGItMTI5Mi00MGVhLWFkYjAtOWE4MWY4OGNjZDMy",
+      "pre_landing_layer":"s3://aws-a0220-use1-00-q-s3b-shrd-shr-data01/clinical-data-lake/inbound/CITELINE/CITELINE_PHARMAPROJECTS",
+      "token_pay_load": {
+        "email": "vivek.pangasa@zs.com"
+      },
+      "search_api_url": "search/drug",
+      "full_load": "feed/drug",
+      "host_url": "https://api.citeline.com/v1/",
+      "execution_module": "DataIngestionAdapter"
+    },
+    "investigator": {
+      "bearer_token": "",
+      "schema_path": "",
+      "parquet_query": "",
+      "cluster_type": "small",
+      "get_token_url": "https://api.citeline.com/token",
+      "delta_refresh": "feed/investigator/changes",
+      "token_header": "Basic Y3VzdG9tZXJfYXBpX2NsaWVudF9uYXRpdmU6NTIwNzhjMGItMTI5Mi00MGVhLWFkYjAtOWE4MWY4OGNjZDMy",
+      "pre_landing_layer":"s3://aws-a0220-use1-00-q-s3b-shrd-shr-data01/clinical-data-lake/inbound/CITELINE/CITELINE_INVESTIGATOR",
+      "token_pay_load": {
+        "email": "vivek.pangasa@zs.com"
+      },
+      "search_api_url": "search/investigator",
+      "full_load": "feed/investigator",
+      "host_url": "https://api.citeline.com/v1/",
+      "execution_module": "DataIngestionAdapter"
+    },
+    "drugprogram": {
+      "bearer_token": "",
+      "schema_path": "",
+      "parquet_query": "",
+      "cluster_type": "small",
+      "get_token_url": "https://api.citeline.com/token",
+      "delta_refresh": "feed/drug/program/changes",
+      "token_header": "Basic Y3VzdG9tZXJfYXBpX2NsaWVudF9uYXRpdmU6NTIwNzhjMGItMTI5Mi00MGVhLWFkYjAtOWE4MWY4OGNjZDMy",
+      "pre_landing_layer":"s3://aws-a0220-use1-00-q-s3b-shrd-shr-data01/clinical-data-lake/inbound/CITELINE/CITELINE_DRUGPROGRAM",
+      "token_pay_load": {
+        "email": "vivek.pangasa@zs.com"
+      },
+      "search_api_url": "search/drug/program?pagesize=2500",
+      "full_load": "feed/drug/program?pagesize=2500",
+      "host_url": "https://api.citeline.com/v1/",
+      "execution_module": "DataIngestionAdapter"
+    },
+    "drugtrends": {
+      "bearer_token": "",
+      "schema_path": "",
+      "parquet_query": "",
+      "cluster_type": "small",
+      "get_token_url": "https://api.citeline.com/token",
+      "delta_refresh": "feed/drug/trends/changes",
+      "token_header": "Basic Y3VzdG9tZXJfYXBpX2NsaWVudF9uYXRpdmU6NTIwNzhjMGItMTI5Mi00MGVhLWFkYjAtOWE4MWY4OGNjZDMy",
+      "pre_landing_layer":"s3://aws-a0220-use1-00-q-s3b-shrd-shr-data01/clinical-data-lake/inbound/CITELINE/CITELINE_DRUGTRENDS",
+      "token_pay_load": {
+        "email": "vivek.pangasa@zs.com"
+      },
+      "search_api_url": "search/drug/trends?pagesize=2500",
+      "full_load": "feed/drug/trends?pagesize=2500",
+      "host_url": "https://api.citeline.com/v1/",
+      "execution_module": "DataIngestionAdapter"
+    },
+    "drugcompany": {
+      "bearer_token": "",
+      "schema_path": "",
+      "parquet_query": "",
+      "cluster_type": "small",
+      "get_token_url": "https://api.citeline.com/token",
+      "delta_refresh": "feed/drug/company/changes",
+      "token_header": "Basic Y3VzdG9tZXJfYXBpX2NsaWVudF9uYXRpdmU6NTIwNzhjMGItMTI5Mi00MGVhLWFkYjAtOWE4MWY4OGNjZDMy",
+      "pre_landing_layer":"s3://aws-a0220-use1-00-q-s3b-shrd-shr-data01/clinical-data-lake/inbound/CITELINE/CITELINE_DRUGCOMPANY",
+      "token_pay_load": {
+        "email": "vivek.pangasa@zs.com"
+      },
+      "search_api_url": "search/drug/company?pagesize=2500",
+      "full_load": "feed/drug/company?pagesize=2500",
+      "host_url": "https://api.citeline.com/v1/",
+      "execution_module": "DataIngestionAdapter"
+    },
+    "organizationhierarchy": {
+      "bearer_token": "",
+      "schema_path": "",
+      "parquet_query": "",
+      "cluster_type": "small",
+      "get_token_url": "https://api.citeline.com/token",
+      "delta_refresh": "feed/organization/hierarchy/changes",
+      "token_header": "Basic Y3VzdG9tZXJfYXBpX2NsaWVudF9uYXRpdmU6NTIwNzhjMGItMTI5Mi00MGVhLWFkYjAtOWE4MWY4OGNjZDMy",
+      "pre_landing_layer":"s3://aws-a0220-use1-00-q-s3b-shrd-shr-data01/clinical-data-lake/inbound/CITELINE/CITELINE_ORGANIZATIONHIERARCHY",
+      "token_pay_load": {
+        "email": "vivek.pangasa@zs.com"
+      },
+      "search_api_url": "search/organization/hierarchy?pagesize=2500",
+      "full_load": "feed/organization/hierarchy?pagesize=2500",
+      "host_url": "https://api.citeline.com/v1/",
+      "execution_module": "DataIngestionAdapter"
+    },
+    "aact": {
+      "bearer_token": "",
+      "schema_path": "",
+      "parquet_query": "",
+      "cluster_type": "small",
+      "emr_region_name": "us-east-1",
+      "aact_db_name": "aact",
+      "target_hdfs_path": "s3://$$s3_bucket_name/temp/",
+      "aact_host_name": "aact-db.ctti-clinicaltrials.org",
+      "aact_port_number": "5432",
+      "aact_username": "dhananjayaact",
+      "query": "",
+      "lastValue": "",
+      "aact_column_datatype_mapping": {
+        "calculated_values": {
+          "nlm_download_date": "String"
+        },
+        "studies": {
+          "study_first_submitted_date": "String",
+          "results_first_submitted_date": "String",
+          "disposition_first_submitted_date": "String",
+          "last_update_submitted_date": "String",
+          "study_first_submitted_qc_date": "String",
+          "study_first_posted_date": "String",
+          "results_first_submitted_qc_date": "String",
+          "results_first_posted_date": "String",
+          "disposition_first_submitted_qc_date": "String",
+          "disposition_first_posted_date": "String",
+          "disposition_first_posted_date_type": "String",
+          "last_update_submitted_qc_date": "String",
+          "last_update_posted_date": "String",
+          "start_date": "String",
+          "verification_date": "String",
+          "completion_date": "String",
+          "primary_completion_date": "String",
+          "created_at": "String",
+          "updated_at": "String"
+        },
+        "outcome_analyses": {
+          "param_value": "String",
+          "dispersion_value": "String",
+          "ci_percent": "String",
+          "ci_lower_limit": "String",
+          "ci_upper_limit": "String"
+        },
+        "outcome_measurements": {
+          "param_value_num": "String",
+          "dispersion_value_num": "String",
+          "dispersion_lower_limit": "String",
+          "dispersion_upper_limit": "String"
+        },
+        "outcomes": {
+          "anticipated_posting_date": "String"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Custom elements for applications</title>
+
+	<!-- zsui styles -->
+	<link rel="stylesheet" href="../../themes/zs/core.css" />
+	<link rel="stylesheet" href="../form/form.css" />
+	<link rel="stylesheet" href="table.css" />
+
+	<!-- zs custom elements library -->
+	<script src="../../lib/js/customElements.poly.js"></script>
+	<script src="../../lib/js/customElements.js"></script>
+
+	<!-- zs custom elements-->
+	<script src="../form/zsLoading.js"></script>
+	<script src="zsTable.js"></script>
+	<script src="../form/zsField.js"></script>
+
+
+	<style>
+		body {
+			padding: 40px;
+		}
+
+		thead td a {
+			cursor: pointer;
+		}
+	</style>
+	<script>
+		zs.tableSmartElement = zs.customElement(HTMLElement, 'zs-smart-table', null, [zs.loading, zs.table, zs.tableSmartRender]);
+		zs.tableSmartElement.prototype.getTableData = getDataObject;
+		zs.tableElement.prototype.getTableData = getDataObject;
+
+		
+		function onRender() {
+			console.log('render');
+			if (!this.startTime) {return;}		
+
+			renderTime = performance.now() - (this.startTime || 0);
+			if (!this.timerElement) {
+				this.timerElement = this.parentNode.querySelector('.timer');
+				if (!this.timerElement) {return;}
+			}
+			this.timerElement.innerHTML = 'Rendered in ' + Math.round(renderTime) + ' ms';
+		}
+
+		function add1() {
+			var prom = getDataObject({start: table1.data.length, count: 1});
+			prom.then(function(data) {
+				table1.data.push(data[0]);
+				table2.data.push(data[0]);
+				table1.startTime = performance.now();
+				table1.renderTable(table1.data);
+				table2.startTime = performance.now();
+				table2.renderChanges();
+
+			})
+		}
+
+		function del1() {
+			table1.data.splice(table1.data.length - 1);
+			table1.startTime = performance.now();
+			table1.renderTable(table1.data);
+			table2.data.splice(table2.data.length - 1);
+			table2.startTime = performance.now();
+			table2.renderChanges();
+		}
+
+		function change1() {
+			var i = Math.round(Math.random() * (table1.data.length - 1));
+
+			table1.data[i]['Column1'] = '<b>' + table1.data[i]['Column1'] + '</b>';
+			table1.startTime = performance.now();
+			table1.renderTable(table1.data);
+			table2.data[i]['Column1'] = '<b>' + table2.data[i]['Column1'] + '</b>';
+			table2.startTime = performance.now();
+			table2.renderChanges();
+		}
+
+
+		function getDataObject(params) {
+			params = Object.assign({
+				size: 5,
+				count: 100,
+				start: 0,
+			}, params);
+			return new Promise(function (resolve, reject) {
+				var arr = [];
+				for (i = params.start; i < params.start + params.count; i++) {
+					var row = {};
+					for (j = 1; j <= params.size; j++) {
+						row['Column' + j] = 'Cell ' + (i + 1) + ', ' + j;						
+					}
+					arr.push(row);
+				}
+				resolve(arr);
+			});
+		}
+
+		function getDataArray() {
+			return new Promise(function (resolve, reject) {
+				var arr = [];
+				for (i = 0; i <= 15; i++) {
+					var row = [];
+					for (j = 0; j < 10; j++) {
+						row.push(10 * i + j);
+					}
+					arr.push(row);
+				}
+				resolve(arr);
+			});
+		}
+	</script>
+
+</head>
+
+<body class="zs-style" style="padding:1em">
+	<h1>Smart table</h1>
+	<p>Can detect and render only changed records saving time.</p>
+	<p>
+		<button id="add1" class="zs-button" onclick="add1()">Add 1</button>
+		<button id="change1"class="zs-button" onclick="change1()">Change 1</button>
+		<button id="del1"class="zs-button" onclick="del1()">Del 1</button>
+	</p>
+	<div class="zs-grid-row">
+		<div class="zs-grid-col-1-2">
+
+			<h2>Normal table</h2>
+			<p class="timer"></p>
+			<div is="zs-table" id="table1"></div>
+
+		</div>
+		<div class="zs-grid-col-1-2">
+			<h2>Smart table</h2>
+			<p class="timer"></p>
+			<zs-smart-table id="table2"></zs-smart-table>
+
+		</div>
+	</div>
+
+
+	<script>
+			var table1 = document.getElementById('table1');
+			var table2 = document.getElementById('table2');
+			table1.startTime = performance.now();
+			table2.startTime = performance.now();
+
+			table1.addEventListener('render', onRender);
+			table2.addEventListener('render', onRender);
+	
+			table1.refreshTable();
+			table2.refreshTable();
+
+
+			
+		</script>
+
+
+</html>

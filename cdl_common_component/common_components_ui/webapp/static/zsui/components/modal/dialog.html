@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Custom elements for applications</title>
+	<!-- zsui styles -->
+	<link rel="stylesheet" href="../../themes/zs/app.css" />
+
+
+	<!-- zs custom elements library -->
+	<script src="../lib/js/customElements.poly.js"></script>
+	<script src="../../lib/js/customElements.js"></script>
+
+	<!-- zs custom elements-->
+	<script src="../../lib/js/jquery.min.js"></script>
+	<script src="zsDialog.js"></script>	
+	<script src="../modal/jquery.zsModal.js"></script>	
+</head>
+
+<body class="zs-style" style="padding: 2em;">
+	
+	<h2>Auto open</h2>
+	<zs-dialog class="zs-modal" open style="display:none">
+		<header>
+			<span>Title</span>
+			
+		</header>
+		<section>
+			<a href="#"><span class="zs-icon zs-icon-close"></span><span>Text</span></a>
+			Content
+		</section>
+		<footer>
+			<a href="javascript:void(0)" close>Close</a><button submit class="zs-button zs-button-action">OK</button>
+		</footer>
+	</zs-dialog>
+	
+	<h2>Open on button</h2>
+	<script>
+		function btnClick() {
+			var dialog = document.getElementById('dialog2');
+			if (dialog) {
+				if (dialog.getAttribute('open') == null) {
+					dialog.open();
+				} else {
+					dialog.close();
+				}
+			}
+			return false;
+
+		}
+	</script>
+	<button class="zs-button" onclick="btnClick()">Toggle open</button>
+	<zs-dialog class="zs-modal" style="display:none" id="dialog2">
+		<header>
+			Title
+		</header>
+		<section>
+			Content
+		</section>
+		<footer>
+			<a href="javascript:void(0)" close>Close</a><button submit class="zs-button zs-button-action">OK</button>
+		</footer>
+	</zs-dialog>
+
+	<h2>Manual</h2>
+	<button class="zs-button" onclick="btnClick3()">Toggle open</button>
+	<script>
+		function btnClick3() {
+
+			var dialog = document.querySelector('#dialog3');
+
+			function toggle() {
+				if (dialog.getAttribute('open') == null) {
+					dialog.open();
+				} else {
+					dialog.close();
+				}
+			}
+
+
+			if (!dialog) {
+				dialog = new zs.dialogElement();
+				dialog.addEventListener('configure', function () {
+					toggle();
+				});
+
+				dialog.classList.add('zs-modal');
+				dialog.setAttribute('id', 'dialog3');
+				dialog.innerHTML = '<header>Title</header><section>Content</section>'
+				document.body.appendChild(dialog);
+			} else {
+				toggle();
+			}
+		}
+
+	</script>
+	
+		
+</body>
+</html>
+
+
+

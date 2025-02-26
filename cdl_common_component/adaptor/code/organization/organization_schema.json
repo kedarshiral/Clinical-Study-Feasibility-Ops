@@ -1,0 +1,78 @@
+{
+  "recordUrl": "",
+  "organizationDiseaseTypes": [
+    {
+      "pastTrials": "",
+      "name": "",
+      "totalTrials": ""
+    }
+  ],
+  "organizationAffiliatedInvestigators": [],
+  "organizationRegions": [],
+  "copyrightNotice": "",
+  "organizationType": "",
+  "orgHierarchyDiseaseTypes": [
+    {
+      "name": "",
+      "totalTrials": "",
+      "pastTrials": "",
+      "ongoingtrials": "",
+      "diseaseHierarchy" : ""
+    }
+  ],
+  "orgHierarchyTrialCounts": {
+    "totalTrials": "",
+    "totalOngoingTrials": "",
+    "totalCompletedTrials": "",
+    "totalTerminatedTrials": "",
+    "totalPlannedTrials": ""
+  },
+  "organizationCountryName": "",
+  "organizationFaxNumbers": [],
+  "ongoingTrials": [],
+  "organizationLastTrialStartDate": "",
+  "$type": "",
+  "organizationLocation": {
+    "city": "",
+    "streetAddress": "",
+    "country": "",
+    "state": "",
+    "postCode": ""
+  },
+  "organizationPrimaryInvestigators": [],
+  "pastTrials": [],
+  "organizationSupportingUrls": [
+    ""
+  ],
+  "organizationTotalTrials": "",
+  "organizationName": "",
+  "organizationTrialInvestigators": [
+    {
+      "investigatorId": "",
+      "trialId": []
+    }
+  ],
+  "organizationId": "",
+  "organizationTotalPastTrials": "",
+  "organizationPhoneNumbers": [
+        ""
+  ],
+  "organizationTotalOngoingTrials": "",
+  "organizationGeoLocation": {
+    "lat": "",
+    "lon": ""
+  },
+  "updatedDate": "",
+  "organizationNPI":[],
+  "organizationGoldenId":[],
+  "ongoingStatusTrials": [
+        {
+          "id": "",
+          "status": "",
+          "phase": ""
+        }
+      ],
+  "relatedTrials": [],
+  "plannedTrials": [],
+  "diseaseHierarchy": []
+}

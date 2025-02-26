@@ -1,0 +1,1 @@
+ALTER TABLE ctl_dataset_master ADD COLUMN publish_type varchar(50) AFTER dataset_publish_flag;

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link href="../../themes/zs/app.css" rel="stylesheet" />
+	<title>ZS Flow </title>
+	<script src="../../lib/js/customElements.poly.js"></script>
+    <script src="./raphael.min.js"></script>
+	<script src="../../lib/js/jquery.min.js"></script>
+	<script src="../modal/jquery.zsModal.js"></script>
+	<style>
+		/* for demo purpose only */
+		.zs-style svg{ 
+			border: 1px solid #ccc;
+		}
+		.zs-modal svg{
+			top:0 !important;
+			left: 0px !important;
+		}
+	</style>
+</head>
+<body class="zs-style zs-reset zs-layout-table zs-layout-1col">
+	<header class="zs-header">
+		<div class="zs-brand-stripe"></div>
+		<div class="zs-brand-bar">
+			<div class="zs-logo"><img src="../../lib/images/logo.png"></div>
+			<div class="zs-brand-name">
+				<h1>Flow component</h1>
+			</div>
+			<div class="zs-user-bar"></div>
+		</div>
+	</header>
+	<section>
+		<main>
+			<header>					
+			</header>
+			<section>
+				<div class="zs-row">
+					<div class="zs-col-xs-9">
+						<zs-flow></zs-flow>
+					</div>
+					<div class="zs-col-xs-3">
+						<zs-flow-panel>
+							<div nodes-panel>
+								<h2>Main panel</h2>
+								<form class="zs-form">
+									<p validate="">
+										<span class="zs-checkbox"><input type="checkbox" allow-dragging>Allow dragging</span>
+										<span class="zs-checkbox zs-hidden"><input type="checkbox" allow-drawing-links>Allow drawing links</span>
+									</p>
+									<p>
+										<button type="button" add-node class="zs-button">Add node</button>
+										<button type="button" flow-export class="zs-button">Export</button>
+									</p>
+								</form>
+							</div>
+							<br>
+							<div property-panel class="zs-hidden">							
+								<h2>Selected node panel</h2>
+								<form class="zs-form">
+									<p validate="">
+										<textarea placeholder="Textarea"></textarea>
+										<span class="zs-message" style="display:none">Validation message for the field</span>
+									</p>
+									<p>
+										<button type="button" remove-node class="zs-button">Remove</button>
+										<button type="button" open-sublow class="zs-button zs-hidden">Subflow</button>
+									</p>
+									
+								</form>
+							</div>
+						</zs-flow-panel>
+					</div>
+					<div class="zs-col-3  zs-hidden">
+						<form class="zs-form">
+							<p>
+								<button type="button" add-node-button class="zs-button zs-button-action">Add node</button>
+							</p>
+						</form>
+					</div>
+					
+				</div>
+			</section>
+		</main>
+	</section>
+	<div class="zs-modal" hidden>
+		<header><span>Representing of subflow</span><a class="zs-icon zs-icon-close zs-icon-large" close></a></header>
+		<section>
+			<zs-flow></zs-flow>
+		</section>
+	</div>
+	<script src="../../lib/js/customElements.js"></script>	
+    <script src="./nodes/base.js"></script>
+    <script src="./nodes/rect.js"></script>
+    <script src="./nodes/circle.js"></script>
+    <script src="./links/base.js"></script>
+    <script src="./links/line.js"></script>
+    <script src="./flow.js"></script>
+	<script src="./flow.panel.js"></script>
+	<script>
+		$('.zs-modal').zsModalDialog({
+			autoOpen: false,
+			style:{
+				translateX:0,
+				translateY:0,
+				width: '632px',
+				height:'470px',
+				marginTop:'-235px',
+				marginLeft:'-315px',
+			}
+		});
+
+		var t1 = performance.now();
+		var flow = document.querySelectorAll('zs-flow')[0];
+		var panel = document.querySelector('zs-flow-panel');
+
+		var data = {
+			nodes: [{
+					x: 20,
+					y: 20,
+					text: 'Node 1',
+					key: 'node1',
+					type: 'rect',
+					subflow:{
+						"nodes":[{
+							"shapeW":120,
+							"shapeH":60,
+							"x":20,
+							"y":20,
+							"text":"Node sub 1",
+							"key":"node1",
+							"type":"rect"
+						},{
+							"shapeW":120,
+							"shapeH":60,
+							"x":200,
+							"y":20,
+							"text":"Node sub 2",
+							"key":"node2",
+							"type":"rect"
+						},{
+							"shapeW":50,
+							"x":410,
+							"y":50,
+							"text":"Node sub 3",
+							"key":"node3",
+							"type":"circle"
+						}],
+						"links":[{
+							"nodeFrom":"node1",
+							"nodeTo":"node2",
+							"dotFrom":"right",
+							"dotTo":"left",
+							"key":"link1",
+							"arrowSize":10,
+							"arrowEnd":true,
+							"arrowStart":true,
+							"type":"line"
+						},{
+							"nodeFrom":"node2",
+							"nodeTo":"node3",
+							"dotFrom":"right",
+							"dotTo":"left",
+							"key":"link2",
+							"arrowSize":10,
+							"arrowEnd":false,
+							"arrowStart":true,
+							"type":"line"
+						}],
+						draggable:true
+					}
+				},{
+					x: 200,
+					y: 20,
+					text: 'Node 2',
+					key: 'node2',
+					type: 'rect'
+				},{
+					x: 380,
+					y: 20,
+					text: 'Node 3',
+					key: 'node3',
+					type: 'rect'
+				},{
+					x: 80,
+					y: 150,
+					text: 'Node 4',
+					key: 'node4',
+					type: 'circle',
+					shapeW: 50
+				},{
+					x: 200,
+					y: 120,
+					text: 'Node 5',
+					key: 'node5',
+					type: 'rect'
+				},{
+					x: 440,
+					y: 150,
+					text: 'Node 6',
+					key: 'node6',
+					type: 'circle',
+					shapeW: 50
+				},{
+					x: 20,
+					y: 220,
+					text: 'Node 7',
+					key: 'node7',
+					type: 'rect'
+			}],
+			links: [{
+					nodeFrom: 'node1', 
+					nodeTo: 'node2',
+					dotFrom: 'right',
+					dotTo: 'left',
+					key: 'link1',
+					type: 'line',
+					arrowEnd: true,
+					arrowStart: true
+				},{
+					nodeFrom: 'node2', 
+					nodeTo: 'node3',
+					dotFrom: 'right',
+					dotTo: 'left',
+					key: 'link2',
+					type: 'line',
+					arrowStart: true
+				},{
+					nodeFrom: 'node2', 
+					nodeTo: 'node4',
+					dotFrom: 'left',
+					dotTo: 'right',
+					key: 'link3',
+					type: 'line',
+					arrowEnd: true,
+				},{
+					nodeFrom: 'node2', 
+					nodeTo: 'node5',
+					dotFrom: 'bottom',
+					dotTo: 'top',
+					key: 'link4',
+					type: 'line',
+					arrowStart: true
+				},{
+					nodeFrom: 'node3', 
+					nodeTo: 'node6',
+					dotFrom: 'bottom',
+					dotTo: 'top',
+					key: 'link5',
+					type: 'line',
+					arrowStart: true
+				},{
+					nodeFrom: 'node5', 
+					nodeTo: 'node7',
+					dotFrom: 'bottom',
+					dotTo: 'right',
+					key: 'link6',
+					type: 'line',
+					arrowStart: true
+			}],
+			draggable:false
+		};	
+
+
+		// add more configs if needed
+		var panelData = {
+			flow: flow,
+			// newNodeW: 20,
+			// newNodeH : 10,
+			// newNodeX: 100,
+			// newNodeY: 100,
+			// newNodeText: 'Hello there!',
+			// newNodeType: 'circle'
+		};
+
+		flow.addEventListener('render', function(){
+			setTimeout(function(){
+				console.log('Rendered on:', performance.now() - t1);
+			},0);
+		});
+
+		panel
+			.configure(panelData)
+			.render();
+
+		flow
+			.configure(data)
+			.render();	
+		
+		// allow or disallow drawinf new links
+		document.querySelector('[allow-drawing-links]').addEventListener('click', function(){
+			if(this.checked){
+				flow.config.linkDrawingMode = true;
+			}else{
+				flow.config.linkDrawingMode = false;
+			}
+		});
+		
+		document.querySelector('[allow-dragging]').addEventListener('click', function(){
+			if(this.checked){
+				flow.config.draggable = true;
+			}else{
+				flow.config.draggable = false;
+			}
+
+			flow.dispatchEvent(new CustomEvent("changedragable"));
+		});
+
+		document.querySelector('[add-node-button]').addEventListener('click', function(){
+			flow.dispatchEvent(new CustomEvent("rendernode", {
+                detail: { 
+                    data: {
+                        shapeW: 50,
+                        x: 50,
+                        y: 50,
+                        key: 'node' + Date.now(),
+                        text: '',
+                        type: 'circle'  
+                    }
+                }
+            }));
+		});
+	</script>
+</body>
+</html>

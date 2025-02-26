@@ -1,0 +1,24 @@
+{
+    "table_paths": {
+        "f_rpt_site_study_details_non_performance": "s3://az-ofr-advanced-analytics-publish-$$env/applications/feasibility-analytics/facts/f_rpt_site_study_details_non_performance/",
+        "f_rpt_site_study_details": "s3://az-ofr-advanced-analytics-publish-$$env/applications/feasibility-analytics/facts/f_rpt_site_study_details/",
+        "f_rpt_investigator_details": "s3://az-ofr-advanced-analytics-publish-$$env/applications/feasibility-analytics/facts/f_rpt_investigator_details/",
+        "f_rpt_site_study_details_filters": "s3://az-ofr-advanced-analytics-publish-$$env/applications/feasibility-analytics/facts/f_rpt_site_study_details_filters/",
+        "f_rpt_src_site_details": "s3://az-ofr-advanced-analytics-publish-$$env/applications/feasibility-analytics/facts/f_rpt_src_site_details/"
+        },
+    "host": "az-ofr-advanced-analytics-redshift-dev-and-test.ckupxdabfvk3.eu-west-1.redshift.amazonaws.com",
+    "port": "5439",
+    "user": "ofr_adv_ana_svc_developer",
+    "password": "az-ofr-advanced-analytics-redshift-$$env",
+    "db": "ofr_advanced_analytics_$$env",
+    "iam_role": "arn:aws:iam::592549787542:role/AWS-OFR-Advanced-Analytics-Redshift-Service-Dev",
+    "parallel_loads": 2,
+    "retry_limit": 1,
+    "timeout": 120000000,
+    "operation": "LOAD",
+    "source_s3_location": "s3://az-ofr-advanced-analytics-sandbox-$$env/temp/ixrs_xml/redshift_unload_test/op1",
+    "schema": "ofr_advanced_analytics_app_fa_$$env",
+    "table": "utilitytest",
+    "table_format": "parquet",
+    "delimiter": "|"
+}

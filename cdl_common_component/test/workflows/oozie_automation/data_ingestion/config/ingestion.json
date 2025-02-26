@@ -1,0 +1,41 @@
+{
+  "dataset_id": 3000006,
+  "process_steps": [
+    {
+      "function_name": "copy_to_pre_landing_zone",
+      "python_utility": "spark_file_download.sh",
+      "enable_flag": "Y",
+      "execution_sequence": "0"
+    },
+    {
+      "function_name": "copy_parquet_to_landing_zone",
+      "python_utility": "spark_copy_to_landing.sh",
+      "enable_flag": "Y",
+      "execution_sequence": "2"
+    },
+    {
+      "function_name": "pre_dqm_standardization",
+      "python_utility": "spark_file_pre_dqm.sh",
+      "enable_flag": "Y",
+      "execution_sequence": "3"
+    },
+    {
+      "function_name": "dqm",
+      "python_utility": "spark_file_dqm.sh",
+      "enable_flag": "Y",
+      "execution_sequence": "4"
+    },
+    {
+      "function_name": "staging",
+      "python_utility": "spark_file_staging.sh",
+      "enable_flag": "Y",
+      "execution_sequence": "5"
+    },
+     {
+      "function_name": "audit_success_status_update",
+      "python_utility": "spark_update_audit_success.sh",
+      "enable_flag": "Y",
+      "execution_sequence": "6"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+ALTER TABLE ctl_cluster_config ADD COLUMN frequency varchar(50) AFTER process_name;

@@ -1,0 +1,109 @@
+.zs-wizard {
+	
+	&:not([clickable]) .chevron > a {
+		pointer-events: none;
+		color: @zs-brand-darkgray;
+		opacity: 0.4;
+	}
+		
+	.chevron {
+		width: 200px;
+		color: @zs-text-color;
+		position: relative;
+		text-align: center;
+		padding: 10px 0;
+		.padding(1.25,0,1.25,0);
+		display: table-cell;
+		vertical-align: middle;
+	
+		&:first-child {
+			
+			&:before, &:after {
+				transform: skew(0deg, 0deg);
+			}
+			
+			&:before {
+				border-radius: @zs-border-radius 0 0 0;
+			}
+			
+			&:after {
+				border-radius: 0 0 0 @zs-border-radius;
+			}
+		}
+	
+		&[active] {
+			font-weight: bold;
+			color: @zs-brand-primary;
+			a {
+				opacity: 1;
+				color: @zs-brand-primary;
+			}
+			
+			~ .chevron {
+				&:before, &:after {
+					background: @zs-background-tab;
+				}
+			}
+		}
+	
+		a {
+			position: inherit;
+			z-index: 1;
+			.step-count {
+				font-size: 12em/14;
+				display: inline-block;
+				width: 100%;
+			}
+		}
+		
+		&:before, &:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			height: 50%;
+			width: 100%;
+			border: 1px solid @zs-table-border-color;
+			border-right-width: 0px;
+			background: @zs-background;
+		}
+		
+		&:last-child {
+			&:before, &:after {
+				border-right-width: 1px;
+			} 
+		}
+		
+		@chevron-sharpness: 30deg;
+		
+		&:before {
+			top: 0;
+			border-bottom: none;
+			.transform(skew(@chevron-sharpness, 0deg));
+		}
+		
+		&:after {
+			top: 48%; // A white hair line is seen on IE and FF if 50% is used
+			border-top: none;
+			.transform(skew(-@chevron-sharpness, 0deg));
+		}
+
+	}
+		
+	&[clickable] .chevron {
+		cursor: pointer;
+	}
+	
+	> ul {
+		.margin(0,0,1,0); 
+	}
+
+	.zs-button.zs-icon-prev:before {
+		vertical-align: middle;
+	}
+
+	.zs-button.icon-next-arrow:after {
+		&:extend(.zs-button.zs-icon:before);
+		&:extend(.zs-icon-next:before);
+		vertical-align: middle;
+	}
+}

@@ -1,0 +1,66 @@
+{
+  "@CommentsHeader": {
+    "JSON-Instance": "ingestor_environment_params.json",
+    "Purpose": "This json is used to define the Ingestion-level global variables hadoop options/s3 disct cp options can be provided depending on versions",
+    "Created by": "ZS Associates",
+    "Created on": "15th March 2019",
+    "Consuming module": "All Python modules",
+    "Last changed on": "",
+    "Last changed by": "",
+    "Reason for change": ""
+  },
+  "adapter_details": {
+    "generic_config": {
+      "local_temp_path": "",
+      "s3_temp_path": "",
+      "emr_code_path": "",
+      "env": "dev",
+      "mysql_host": "",
+      "s3_bucket_name": "",
+      "mysql_port": "3306",
+      "mysql_username": "",
+      "mysql_password": "",
+      "mysql_db": "",
+      "cluster_mode": "EMR",
+      "s3_region": "us-east-1",
+      "aws_region": "us-east-1",
+      "s3_region_endpoint": "m",
+      "private_key_loaction": "",
+      "ses_region": "us-east-1"
+    },
+	"salesforce": {
+	  "cluster_type": "small",
+	  "base_url": "https://ap8.salesforce.com/services"
+	},
+    "organization": {
+      "bearer_token": "",
+      "schema_path": "",
+      "parquet_query": ""
+    },
+    "pharmaproject": {
+      "bearer_token": "",
+      "schema_path": "",
+      "parquet_query": ""
+    },
+    "investigator": {
+      "bearer_token": "",
+      "schema_path": "",
+      "parquet_query": ""
+    },
+    "ct_gov": {
+      "bearer_token": "",
+      "schema_path": "",
+      "parquet_query": ""
+    },
+    "aact": {
+      "bearer_token": "",
+      "schema_path": "",
+      "parquet_query": ""
+    },
+    "pubmed": {
+      "bearer_token": "",
+      "schema_path": "",
+      "parquet_query": ""
+    }
+  }
+}

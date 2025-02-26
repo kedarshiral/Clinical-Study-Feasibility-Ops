@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="../../themes/zs/app.css" />
+</head>
+
+<body class="zs-style zs-space" style="padding:2em">
+	<h2>Tabs</h2>
+	<div>
+		<zs-tabs-container class="zs-tabs">
+			<ul>
+
+			</ul>
+			<div source-id="tab1">
+				<h3>Tab 1</h3> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum, dui id gravida mattis, tortor neque imperdiet
+				dolor, ut vehicula lectus massa at purus. Pellentesque dapibus elit molestie hendrerit rhoncus. Aenean at vulputate magna.
+				Suspendisse eget lorem et magna auctor pulvinar. Donec accumsan dictum dui. Maecenas pretium consequat sapien quis iaculis.
+				Fusce ultricies vehicula posuere.
+			</div>
+			<div source-id="tab2" style="display:none">
+				<h3>Tab 2</h3> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum, dui id gravida mattis, tortor neque imperdiet
+				dolor, ut vehicula lectus massa at purus. Pellentesque dapibus elit molestie hendrerit rhoncus. Aenean at vulputate magna.
+				Suspendisse eget lorem et magna auctor pulvinar. Donec accumsan dictum dui. Maecenas pretium consequat sapien quis iaculis.
+				Fusce ultricies vehicula posuere.
+			</div>
+			<div source-id="tab3" style="display:none">
+				<h3>Tab 3</h3> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum, dui id gravida mattis, tortor neque imperdiet
+				dolor, ut vehicula lectus massa at purus. Pellentesque dapibus elit molestie hendrerit rhoncus. Aenean at vulputate magna.
+				Suspendisse eget lorem et magna auctor pulvinar. Donec accumsan dictum dui. Maecenas pretium consequat sapien quis iaculis.
+				Fusce ultricies vehicula posuere.
+			</div>
+
+		</zs-tabs-container>
+	</div>
+</body>
+<script src="../../../zsui/lib/js/customElements.poly.js"></script>
+<script src="../../../zsui/lib/js/customElements.js"></script>
+<script src="zsTab.js"></script>
+<script>
+	(function() {
+			var tabContainer = document.getElementsByClassName('zs-tabs')[0];
+			
+			var tabItem = new zs.tabElement();
+			tabItem.innerHTML = "<a href='javascript:void(0)'>Tab1</a>";
+			tabItem.isActive = true;
+			tabItem.tabId = "tab1";
+			tabContainer.tabsContainer.appendChild(tabItem);
+			
+			tabItem = new zs.tabElement();
+			tabItem.innerHTML = "<a href='javascript:void(0)'>Tab2</a>";
+			tabItem.tabId = "tab2";
+			tabContainer.tabsContainer.appendChild(tabItem);
+			
+			tabItem = new zs.tabElement();
+			tabItem.innerHTML = "<a href='javascript:void(0)'>Tab3</a>";
+			tabItem.tabId = "tab3";
+			tabContainer.tabsContainer.appendChild(tabItem);
+			
+		})();
+
+</script>
+
+</html>

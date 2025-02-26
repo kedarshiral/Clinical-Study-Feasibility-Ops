@@ -1,0 +1,92 @@
+.spam_hidden{
+    display: none;
+}
+
+.fieldsetblock{
+    display: block !important;
+}
+
+.filedset-3{
+    float: left;
+    width: 33%;
+}
+
+
+.topmargin-1{
+    margin-top:1%;
+}
+
+.dropbtn {
+    background-color: #ed8b00;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 7px 0px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ed8b00}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #ed8b00;
+}
+
+.hide-fieldset{
+    width: 400px;
+    margin: auto;
+    display: none !important;
+}
+
+.show-fieldset{
+    width: 400px;
+    margin: auto;
+    display: block !important;
+
+}
+
+
+	.TFtable{
+		width:100%;
+		border-collapse:collapse;
+	}
+	.TFtable td{
+		padding:7px;
+	}
+	/* provide some minimal visual accomodation for IE8 and below */
+	.TFtable tr{
+		background: #ffffff;
+	}
+	/*  Define the background color for all the ODD background rows  */
+	.TFtable tr:nth-child(odd){
+		background: #e5eaef;
+	}
+	/*  Define the background color for all the EVEN background rows  */
+	.TFtable tr:nth-child(even){
+		background: #ffffff;
+	}
+ .dataTables_filter input {
+     border: 1px solid #98a4ae;
+ }

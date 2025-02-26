@@ -1,0 +1,279 @@
+/*
+Layout
+
+Layout
+
+Styleguide Layout
+*/
+
+html {
+	height:100%
+}
+body {
+	margin:0;
+	padding:0;
+	height:100%;
+}
+
+ 
+/*
+Flexbox layout
+
+Classic layout using flexbox.
+
+Markup:
+<div class="zs-layout-classic">
+	<header>Header</header>
+	<section>
+		<main>
+			<header>Page title</header>
+			<section>Content</section>
+		</main>
+		<aside>
+			Side nav 
+		</aside>	
+	</section>
+	<footer>footer</footer>
+</div>
+
+--Styleguide Layout.Flexbox
+*/
+/*
+.zs-layout-classic, .zs-layout-demo {
+	display: flex;
+	height: 100%;
+	width: 100%;
+	flex-flow: column;
+	>header, .zs-layout-header, .zs-layout-footer, >footer {
+		 flex: none;
+	}	
+	
+	.zs-layout-body, >section {	
+		display: flex;
+  		flex: 1 0 auto;
+  		flex-flow: row;
+	}
+	
+	.zs-layout-aside, >section>aside {
+		order: -1;
+		flex: 0 0 @zs-layout-aside-width;
+		max-width: @zs-layout-aside-width;
+		overflow: hidden;
+	}
+	.zs-layout-main, >section>main, .zs-layout-body>main {
+		flex: 1 1 auto;
+		overflow:hidden;
+		display: block;
+	}
+}
+*/
+
+
+.zs-layout-demo {
+	>header {
+		.padding;
+		background: darken(@zs-background, 20%);
+	}
+
+	>section {
+		.padding;
+		background: darken(@zs-background, 20%);
+		
+	}
+	>section>main, {
+		.padding;
+		background: darken(@zs-background,0%);
+		>aside {
+			.padding;
+			background: darken(@zs-background, 40%);
+		}		
+
+	}
+
+	>footer {
+		.padding;
+		background: darken(@zs-background, 30%);
+	}
+}
+
+/*
+Standard layout
+
+Standard layout
+
+Markup:
+<div class="zs-layout-table">
+	<header>Header</header>
+	<section>
+		<main>
+			<header>Page title</header>
+			<section>Content</section>
+			<aside>
+				Side nav
+			</aside>			
+		</main>
+	</section>
+	<footer>footer</footer>
+</div>
+
+Styleguide Layout.Standard
+*/
+.zs-layout-table {
+	height: 100%;
+	display: table;
+	width: 100%;
+	>header, .zs-layout-header {
+		// display: table-cell; // removed due to ZSUI-556
+	} 
+	.zs-layout-footer, >footer {
+		display: table-row;
+	}	
+	
+	.zs-layout-body, >section {	
+		height: 100%;
+		display: table-row;
+		width: 100%;
+	}
+	
+	.zs-layout-aside, >section >main >aside {
+		width: @zs-layout-aside-width;
+		position:absolute;
+		left: 0;
+		top:0;
+		height: 100%;
+		overflow: hidden;
+		display:table-cell;	
+	}
+	.zs-layout-main, >section>main, .zs-layout-body>main {
+		display: table; /* required */
+		height:100%;
+		width: 100%;
+		position: relative;		
+	}
+	
+	.zs-layout-main, >section>main, .zs-layout-body>main {
+			>header, >section {
+				margin-left: @zs-layout-aside-width;
+			}
+	}
+	
+	&.zs-layout-1col, .zs-layout-1col {
+		.zs-layout-main, >section>main, .zs-layout-body>main {
+			>header, >section {
+				margin-left: 0;
+			}
+		}
+		
+		.zs-layout-aside, >section >main >aside {
+			display: none;
+		}
+		
+		
+		>footer, .zs-layout-footer {
+			div:first-child {
+				display:none;
+			}
+			div:last-child {
+				height: 3em;
+			}
+		}
+	}
+}
+
+
+/*
+Action message
+
+A message at the page level related to a page action
+
+Markup:
+<div class="zs-layout-table {{modifier_class}}">
+	<header>Header</header>
+	<section>
+		<main>
+			<div class="zs-action-message">Message text<div class="zs-right"><a href="#">Cancel</a><button class="zs-button zs-button-action">OK</button></div></div>
+			<header>Page title</header>
+			<section>Content</section>
+			<aside>
+				Side nav
+			</aside>			
+		</main>
+	</section>
+	<footer>footer</footer>
+</div>
+
+.zs-layout-1col - 1 column layout
+
+Styleguide Layout.ActionMessage
+*/
+main>.zs-action-message {
+	margin-left: @zs-layout-aside-width ;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+
+}
+main>section>.zs-action-message{
+	margin-left:-1.42em;
+	margin-top:-1.42em;
+	margin-right:-1.42em;	
+}
+.zs-action-message {
+	font-size:@zs-font-size-base;
+	background: lighten(@zs-status-warning, 52%);
+	display:block;
+	border-top-left-radius: @zs-border-radius;
+	border-top-right-radius: @zs-border-radius;	
+	position:relative;
+	line-height:2.2em;
+	.padding(1,2,1,2);
+	button {
+		.margin(0,0,0,3);
+		line-height:1.25em; // IE11 fix
+	}
+	border-bottom:1px solid @zs-border-color;
+	&:before,
+    &:after {
+        content:"";
+        display:table;
+    }
+    &:after {
+        clear:both;
+    }		
+}
+
+/*
+Callout box
+
+An information box with a stylized header and body to be displayed to the side of a primary container element.
+
+Markup:
+<div class="zs-callout-box">
+	<header>Header</header>
+	<section>
+		<ul class="zs-list">
+			<li>List item</li>
+		</ul>
+	</section>
+</div>
+
+Styleguide Layout.CalloutBox
+*/
+.zs-callout-box {
+	border: 1px solid @zs-table-border-color;
+	border-radius: @zs-border-radius;
+	display: block;
+	width: 100%;
+
+	>header:extend(.zs-data-table thead td all) {
+		.padding;
+		height: 34em/14;
+	}
+
+	>section {
+		.padding;
+	}
+	a {
+		display:inline-block;
+		word-break:break-all;
+	}
+}

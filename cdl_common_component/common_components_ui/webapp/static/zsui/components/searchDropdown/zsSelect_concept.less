@@ -1,0 +1,155 @@
+/**
+ * ZS Select styles
+ */
+.zs-style zs-select{
+    @search-height: 1em + 2*@zs-font-padding-ratio; // Adjust that
+    @line-height: 1em + 2*@zs-font-padding-ratio; // 2 padding + line-height
+
+    font-family: @zs-font-family-base;
+    color:@zs-text-color;
+    font-size: 1em;
+    
+    padding: 0;
+    display:inline-block;
+    min-width: 250em/14;
+
+    overlay{
+        cursor: pointer;
+        padding-bottom:5px;	
+        background-color: transparent;
+        border-radius:0;
+        outline: 0;
+        font-weight: normal;
+        border: 1px solid @zs-brand-gray;
+        color: @zs-text-color;
+        .padding(@zs-input-padding,0.6,@zs-input-padding,0.6);
+        padding-right: (@zs-padding-horizontal-large - 1) + 1em;
+        cursor:pointer;		
+        width:100%;
+        max-width: 400px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+        position:relative;
+        select::-ms-expand { // Fix for IE to remove border arround arrow
+            display: none;
+        }
+        
+            
+        &:after {
+            content: '\4b';
+            .zs-icon-font();
+            font-size: @zs-icon-width;
+            color: @zs-brand-dark;
+            right: 0.25em;
+            top:50%;
+            margin-top:-@zs-icon-width/2;
+            position:absolute;
+            pointer-events:none;
+            display:inline-block;
+        }
+        
+        &:hover:after {
+            color: darken(@zs-brand-dark, 10%);
+        }
+    }
+
+    
+    /* TODO: Move to zs-menu component */
+    menu {
+        display: none;
+
+        > a, > a:visited, > a:hover, > li, > nav > a, > nav > a:visited {
+            color: @zs-text-color;
+            display:block;
+            overflow:hidden;
+            text-overflow: ellipsis;
+            white-space:nowrap;
+            .padding;
+            
+            &.zs-active {
+                background: @zs-table-header-background;
+            }
+
+            &:hover {
+                background: lighten(@zs-table-header-background,5%); 
+            }
+
+            &li {
+                a {
+                    color: @zs-text-color;
+                    display:block;
+                    white-space:nowrap;
+                }	
+            }
+            
+        }	
+         
+        > nav{
+            max-height: @line-height*5 + @search-height;
+            overflow: auto;
+
+            >a[hover] {
+                color: @zs-link-hover;
+                text-decoration: none;
+                background: lighten(@zs-table-header-background,5%);
+            }
+
+            >a[active] {
+                background: @zs-table-header-background;
+            }
+        }
+
+        > p{
+            .margin(1,1,1,1);
+            margin-top: @zs-font-padding-ratio!important;
+            display:block;
+            > input {
+                width:100%;
+                min-width: 100%;
+            }
+            > [clear] { // Fix close icon
+                margin-top: -0.5*@zs-icon-height;
+                padding:2px 2px; 
+            }
+        }	
+        
+        margin-top:-1px;
+        [highlight] { // Remove when we have it in the package
+            background-color: @zs-highlight-color;
+        }
+        
+        // make a darker border 
+        border: 1px solid @zs-brand-gray;
+    }
+
+    &[opened]{
+        menu{
+            display:block;
+        }
+
+        overlay:after{
+            content: '\58';
+        }
+    } 
+
+    // Always open searchable dropdown
+    .zs-open-dropdown {
+        &.zs-select:after {
+            content: '';
+        }
+
+        .zs-menu {
+            box-shadow: none;
+        }
+
+        p .zs-input {
+            min-width: 100%;
+        }
+
+        a:focus {
+            outline: 0;
+        }
+    }
+ }

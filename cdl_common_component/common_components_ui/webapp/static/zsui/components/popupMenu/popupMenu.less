@@ -1,0 +1,48 @@
+/*
+Popup menu
+
+Popup menu
+
+Markup:
+<div class="zs-menu">
+	<a href="#">Link 1</a>
+	<a href="#">link 2 </a>
+	<a href="#" class="zs-active">Link 3</a>
+	<a href="#">Link 4</a>		
+</div>
+
+Styleguide Components.PopupMenu
+*/
+.zs-menu {
+	background: @zs-background;
+	border-radius: @zs-border-radius;
+	border: 1px solid @zs-border-color;
+	box-shadow: 0 3px 6px @zs-shadow-color;
+	box-sizing:border-box;
+	display: inline-block;
+	min-width:150px;
+	max-width:400px;
+	z-index:@zs-layer-2;
+	>a, >a:visited, >a:hover, >li, >ul>li>a, >nav>a, >nav>a:visited {
+		color: @zs-text-color;
+		display:block;
+		overflow:hidden;
+		text-overflow: ellipsis;
+		white-space:nowrap;
+		.padding;
+		&.zs-active {
+			background: @zs-table-header-background;
+		}
+		&:hover {
+			background: lighten(@zs-table-header-background,5%); 
+		}		
+		&li {
+			a {
+				color: @zs-text-color;
+				display:block;
+				white-space:nowrap;
+			}	
+		}
+		
+	}	
+}

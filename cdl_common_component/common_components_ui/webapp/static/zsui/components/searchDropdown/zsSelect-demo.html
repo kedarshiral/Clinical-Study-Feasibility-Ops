@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Custom elements for applications</title>
+	<!-- zsui styles -->
+	<link rel="stylesheet" href="../../themes/zs/app.css" />
+
+	<!-- zs custom elements library -->
+	<script src="../../lib/js/customElements.poly.js"></script>
+	<script src="../../lib/js/customElements.js"></script>
+
+	<!-- zs custom elements-->
+	<script src="../clear/zsClear.js"></script>	
+	<script src="../form/zsValidation.js"></script>
+	<script src="../../lib/js/jquery.min.js"></script>
+	<script src="jquery.zsSearchDropdown.js"></script>
+
+	<script src="zsSelect.js"></script>
+</head>
+
+<body class="zs-style" style="padding: 2em;">
+	<section>
+		<h2>Select</h2>
+		<div class="zs-grid-row">
+			<div class="zs-grid-col-1-3">
+				<div is="zs-select" class="zs-select" >
+					<select >
+						<option value="1">Option 1</option>
+						<option value="2">Option 2</option>
+						<option value="3">Option 3</option>
+						<option value="4">Option 4</option>
+						<option value="5">Option 5</option>
+						<option value="6">Option 6</option>
+					</select>
+				</div>
+			</div>
+		</div>	
+	</section>
+	<br>
+	<br>
+	<br>
+	<section>
+		<h2>Searchable dropdown</h2>
+		<div class="zs-grid-row">
+			<div class="zs-grid-col-1-3">
+				<div is="zs-select" class="zs-select" searchableDropdown zs-clear>
+					<select >
+						<option value="1">Option 1</option>
+						<option value="2">Option 2</option>
+						<option value="3">Option 3</option>
+						<option value="4">Option 4</option>
+						<option value="5">Option 5</option>
+						<option value="6">Option 6</option>
+					</select>
+				</div>
+			</div>
+		</div>	
+	</section>
+	<br>
+	<br>
+	<br>
+	<section>
+		<div class="zs-grid-row">
+			<div class="zs-grid-col-1-3">
+				<table class="zs-data-table">
+					<caption>Select in table</caption>
+					<tr><th>Header</th><th>Header</th><th>Header</th></tr>
+					<tr>
+						<td>
+							<div is="zs-select" class="zs-select" >
+								<select >
+									<option value="1">Option 1</option>
+									<option value="2">Option 2</option>
+									<option value="3">Option 3</option>
+									<option value="4">Option 4</option>
+									<option value="5">Option 5</option>
+									<option value="6">Option 6</option>
+								</select>
+							</div>
+						</td>
+						<td>value</td>
+						<td>value</td>
+					</tr>
+				</table>
+			</div>
+		</div>	
+	</section><br>
+	<br>
+	<br>
+	<section>
+		<div class="zs-grid-row">
+			<div class="zs-grid-col-1-3">
+				<table class="zs-data-table">
+					<caption>Searchable dropdown in table</caption>
+					<tr><th>Header</th><th>Header</th><th>Header</th></tr>
+					<tr>
+						<td>
+							<div is="zs-select" class="zs-select" searchableDropdown>
+								<select >
+									<option value="1">Option 1</option>
+									<option value="2">Option 2</option>
+									<option value="3">Option 3</option>
+									<option value="4">Option 4</option>
+									<option value="5">Option 5</option>
+									<option value="6">Option 6</option>
+								</select>
+							</div>
+						</td>
+						<td>value</td>
+						<td>value</td>
+					</tr>
+				</table>
+			</div>
+		</div>	
+	</section>
+</body>
+</html>
+
+
+

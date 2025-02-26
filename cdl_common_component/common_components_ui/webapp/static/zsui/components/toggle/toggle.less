@@ -1,0 +1,78 @@
+/* 
+Toggle
+
+Toggles are used to visually indicate whether or not something is turned on or off. They are frequently found in Settings.
+
+*/
+
+// Toggle parameters
+@zs-toggle-button-height: 1.429em; // Equivalent to 20px with 14px as base value
+@zs-toggle-button-width: 3.786em; // 53px
+@zs-toggle-button-handle-height: 1.929em; // 27px
+@zs-toggle-button-handle-width: 1.929em; // 27px
+@zs-toggle-background-on: @zs-status-success;
+@zs-toggle-background-off: @zs-border-color;
+@zs-toggle-button-handle-background: @zs-background;
+@zs-toggle-box-shadow: 0 1px 1px @zs-shadow-color;
+@zs-toggle-text-color-on: @zs-background;
+@zs-toggle-text-color-off: lighten(@zs-text-color, 40%);
+
+.toggle-container {
+	height: @zs-toggle-button-height;
+	width: @zs-toggle-button-width;
+	position:relative;
+}
+
+.zs-toggle {
+	overflow: hidden;
+    cursor: pointer;
+	border-radius: 9999px;
+}
+
+.toggle-inner {
+	width: @zs-toggle-button-width * 2;
+    margin-left: (@zs-toggle-button-width - (@zs-toggle-button-handle-width / 2)) * -1;
+
+    &.active {
+        margin-left: 0px;
+    }
+}
+
+.zs-toggle .zs-toggle-on,
+.zs-toggle .zs-toggle-off,
+.zs-toggle .zs-toggle-button {
+    float: left;
+}
+
+.zs-toggle .zs-toggle-on,
+.zs-toggle .zs-toggle-off {
+	width: @zs-toggle-button-width;
+	height: @zs-toggle-button-height;
+	line-height: @zs-toggle-button-height;
+    box-shadow: @zs-toggle-box-shadow;
+}
+
+.zs-toggle-on {
+	background: @zs-toggle-background-on;
+    color: @zs-toggle-text-color-on;
+	padding: 0.036em 0 0 0.429em;
+}
+
+.zs-toggle-off {
+	background: @zs-toggle-background-off;
+    color: @zs-toggle-text-color-off;
+	padding: 0.036em 0 0 0.357em;
+}
+
+.zs-toggle-button {
+	width: @zs-toggle-button-handle-width;
+	height: @zs-toggle-button-handle-height;
+	border-radius: 100%;
+    background: @zs-toggle-button-handle-background;
+	box-shadow: @zs-toggle-box-shadow;
+	border: 1px solid @zs-border-color;
+	position: absolute;
+    z-index: 99;
+	margin-left: 2.143em;
+	margin-top: (@zs-toggle-button-handle-height - @zs-toggle-button-height) / 2 * -1;
+}

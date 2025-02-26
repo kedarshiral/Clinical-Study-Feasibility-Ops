@@ -1,0 +1,48 @@
+{
+  "@CommentsHeader": [
+    "#####################################################JSON Configuration Information#################################################",
+    "#   JSON-Instance       :   log_setup.json",
+    "#   Purpose             :   This json is used to define configuration parameters for LogSetup.py",
+    "#   Created by          :   ZS Associates",
+    "#   Created on          :   14th November 2017",
+    "#",
+    "#   Consuming module    :   LogSetup.py",
+    "#   Pre-requisites      :     ",
+    "#",
+    "#   Last changed on     :   14th November 2017",
+    "#   Last changed by     :   amal.kurup@zs.com",
+    "#   Reason for change   :   Added key for environment",
+    "####################################################################################################################################"
+  ],
+  "LogSetup": {
+    "public_machine_list": [],
+    "logstash_port": "5544",
+    "schema_version": "1",
+    "debug_flag": "Y",
+    "environment": "Dev",
+    "logstash_public_ip": "10.228.32.250",
+    "logstash_private_ip": "10.228.32.250",
+    "log_formatter_keys": [
+      "cluster_id",
+      "workflow_id",
+      "process_id",
+      "module_name",
+      "function_name",
+      "traceback",
+      "environment",
+      "dataset_id",
+      "batch_id",
+      "file_id",
+      "cycle_id",
+      "frequency",
+      "data_date",
+      "step_name"
+    ],
+    "file_handler_flag": "N",
+    "file_handler_path": "/tmp/",
+    "console_handler_flag": "Y",
+    "console_logging_level": "DEBUG",
+    "file_logging_level": "DEBUG",
+    "logstash_logging_level": "DEBUG"
+  }
+}

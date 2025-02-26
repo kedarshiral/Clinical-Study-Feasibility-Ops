@@ -1,0 +1,1 @@
+ALTER TABLE ctl_process_dependency_details ADD COLUMN copy_data_s3_to_hdfs_status char(1);

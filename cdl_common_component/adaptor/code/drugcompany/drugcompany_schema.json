@@ -1,0 +1,36 @@
+{
+  "$type": "",
+  "copyrightNotice": "",
+  "recordUrl": "",
+  "companyId": "",
+  "companyName": "",
+  "companySymbol": "",
+  "companyStockExchange": "",
+  "companyAddress1": "",
+  "companyAddress2": "",
+  "companyCountry": "",
+  "companyState": "",
+  "companyCity": "",
+  "companyPostalCode": "",
+  "companyTelephone": "",
+  "companyWebsite": "",
+  "companySummary": "",
+  "subsidiaryActivity": "",
+  "researchFocus": "",
+  "financials": [
+    {
+      "date": "",
+      "revenueUsd": "",
+      "rndSpendUsd": ""
+    }
+  ],
+  "companyEmployees": "",
+  "yearEstablished": "",
+  "ownershipType": "",
+  "supportingURL": [
+
+  ],
+  "parentCompanyId": "",
+  "parentCompanyName": "",
+  "yearAcquired": ""
+}

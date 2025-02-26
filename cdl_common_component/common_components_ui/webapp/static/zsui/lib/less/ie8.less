@@ -1,0 +1,124 @@
+// Layout
+@import 'theme.less';
+@import 'mixins.less';
+.zs-layout-classic-ie8 {
+	@aside-width: 200px;
+	.clearfix;
+	display: table;
+	width: 100%;
+	height: 100%;
+	.zs-layout-body, >section {
+		display: table-row;	
+		background: darken(@zs-background, 5%);
+		height: 100%;
+
+		.zs-layout-aside, >aside {					
+			display:inline-block;			
+			float:left;
+			width: @aside-width;
+			background: @zs-background;
+			>p {
+				display:block;
+				line-height: 3.5em;
+				height:3.5em;
+				border-bottom: 1px solid @zs-border-color;
+			}			
+		}
+		.zs-layout-main, >main {
+			float:left;	
+			display: inline-block;			
+		}	
+	}	
+	.zs-footer, >footer {
+		display: table-row;
+		
+	}	
+	
+	// App name fix	
+	.zs-brand-bar {
+		.clearfix;
+		.zs-logo {
+			float: left;
+			display:inline-block
+		}
+		.zs-brand-name  {
+			float:left;
+			display: inline-block;
+		}			
+	}
+
+}
+
+// Opacity fix for IE8
+.zs-disabled, .zs-loading, .zs-overlay {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+}
+
+// Fallback for a spinner in IE8-9
+.zs-loading {
+	background: url('@{zs-images}/ajax-loader.gif') 50% 50% no-repeat;
+	&.zs-button {
+		background-position: 0% 50%;
+		background-size:50%;
+	}
+	&:after {
+		font-family: @zs-font-family-base;
+		content: '';		
+	}
+}
+
+// Dropdown fix for IE8
+.zs-select,  .zs-calendar >header span, .zs-pagination >span  { // include a datepicker and pagination fix
+    padding:0px;
+    select, select:focus {
+        .padding(0.6,0.6,0.6,0.6);		
+    }
+
+    &:after {
+        content: ''; 
+    }
+}
+
+// Fix for large icon issue and badges
+.zs-icon:before {
+	font-size:14px;
+}
+.zs-icon.zs-icon-large:before {
+	font-size:24px;
+}
+.zs-badge:before, .zs-badge:after {
+	font-size: 0.4*@zs-icon-height*24/16;
+}
+.zs-badge {
+    &.zs-badge-word:before,
+    &.zs-badge-excel:before,
+    &.zs-badge-ppt:before,
+    &.zs-badge-pdf:before,
+    &.zs-badge-txt:before,
+    &.zs-badge-zip:before {
+		margin-top: 1px; // fixes a small gap between an icon and the badge at the bottom.
+        font-size: 0.75em;
+        top: 0;
+        left: 0;
+        line-height: 1; 
+    }
+}
+// Fix for box-sizing issue when iE8 ignores box-sizing: border-box if min/max-width/height is used.
+.zs-button, .zs-data-table td, .zs-data-table th {
+	min-height:auto !important;
+	max-height: auto  !important;
+	height: auto  !important;
+}
+
+/* Fix for icons inside button shifted to the bottom */
+.zs-button.zs-icon {
+	padding-left:1.75*@zs-icon-width;
+}
+.zs-button.zs-icon:before {
+	cursor:pointer;
+	position:absolute;
+	margin-top:-@zs-icon-height/2;
+	top:50%;
+	left: 0.25*@zs-icon-width;	
+}
+

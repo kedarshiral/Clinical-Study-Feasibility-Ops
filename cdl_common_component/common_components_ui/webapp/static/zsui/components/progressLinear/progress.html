@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="../../themes/zs/app.css"/>
+		<style>
+
+		</style>
+	</head>	
+	<body class="zs-style zs-space" style="padding:2em">
+		<h2>Linear Progress Bar</h2>
+		<div class="zs-progress" data-percent="40" style="height:1.5em">
+
+		</div>	
+	</body>
+	<script src="../../lib/js/jquery.min.js"></script>	
+	<script src="jquery.zsProgress.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('.zs-progress').zsProgress({
+				showLabel:true,
+				onChange:function(){
+				}});
+			});
+	</script>	
+</html>

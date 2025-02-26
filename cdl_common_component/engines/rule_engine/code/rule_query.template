@@ -1,0 +1,23 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+AUTHOR = 'ZS Associates'
+
+from PySparkUtility import PySparkUtility
+from CommonUtils import CommonUtils
+import CommonConstants as CommonConstants
+
+spark=PySparkUtility().get_spark_context('$$data_dt_$$cycle_id_$$app_name')
+
+validation_error_path = "$$validation_error_location/pt_data_dt=$$data_dt/pt_cycle_id=$$cycle_id/rule_id=$$rule_id"
+
+spark_config="$$spark_config"
+
+try:
+
+$$query
+
+except Exception as exception:
+    raise exception
+
+finally:
+    spark.stop()

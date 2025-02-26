@@ -1,0 +1,120 @@
+/*
+Tab control
+
+Description of tab control component
+ 
+Markup: 
+<div class="zs-tabs">
+	<ul>
+	  <li class="zs-active"><a href="#">Home</a></li>
+	  <li><a href="#">Profile</a></li>
+	  <li><a href="#">Messages</a></li>
+	</ul>
+	<div>
+		Content
+	</div>
+</div> 
+
+Styleguide Components.Tabs
+*/
+
+@zs-tabs-padding-vertical: @zs-font-padding-ratio;
+@zs-tabs-padding-horizontal: 2.2*@zs-font-padding-ratio;
+@zs-tabs-border-radius: @zs-border-radius; 
+@zs-tabs-height: @zs-font-size-base*22/7;//As per UX standard, sets height and line-height of a tab as 44px.
+@zs-tabs-min-height: 44em/14;
+@zs-tabs-shadow-size: 3px;
+@zs-tabs-spacing: 0.25em;
+@zs-tabs-spacing-px: 0.25*@zs-font-size-base;
+@zs-tabs-shadow: 0px 1px @zs-tabs-shadow-size 0px @zs-shadow-color; 
+@zs-tabs-border-color: @zs-table-border-color;
+@zs-tabs-active-link-color: @zs-brand-primary;
+@zs-tabs-active-link-background: @zs-background;
+@zs-tabs-content-background:  @zs-background;
+@zs-tabs-link-background: @zs-table-header-background;
+@zs-tabs-link-color: @zs-text-light;//@zs-text-color;
+@zs-tabs-link-hover-color: @zs-link-hover;
+@zs-components-path: '../';
+@zs-tabs-layer-content: @zs-layer-2;
+
+.zs-tabs  {
+	position:relative; // Need this to support z-index hierarchy
+	>ul {
+		
+		padding: 0 0px;
+		overflow: hidden;
+		margin-bottom: -1px;
+		height: @zs-tabs-height;
+		min-height: @zs-tabs-min-height;
+		white-space: nowrap;
+		>li {
+			display: inline-block;
+			list-style: none;
+			margin: 0;
+			//padding: 1px 0 0 0;
+			margin-right:@zs-tabs-spacing;
+			
+			height: @zs-tabs-height + 1;
+			min-height: @zs-tabs-min-height + 1;
+			overflow: hidden;
+			position: relative;
+			z-index: @zs-tabs-layer-content - 1;
+			border-bottom: 1px solid @zs-tabs-content-background;
+			&:first-child {
+				padding-left: @zs-tabs-shadow-size/2; // Fix to show shadow to the left of first tab
+			}
+			a:hover {
+				color:@zs-tabs-link-hover-color;
+				
+				//border-color: @zs-tabs-link-hover-color;
+			}	
+			&.zs-active, &[active] {
+				z-index: @zs-tabs-layer-content;
+				background-clip: padding-box;				
+				padding:0px 2px 0 0px; 
+				height: @zs-tabs-height + 1px;
+				min-height: @zs-tabs-min-height + 1px;
+				margin-right: @zs-tabs-spacing-px - 2px;
+				a, a:visited, a:hover {					
+					background: @zs-tabs-content-background;
+					box-shadow: @zs-tabs-shadow;
+					color:@zs-tabs-active-link-color;
+					font-weight:bold;					
+					border: 1px solid @zs-tabs-border-color;
+					border-bottom-color: @zs-background;															
+				}
+				a:hover {
+					color: darken(@zs-brand-primary, 5);
+				}
+			}
+			&.zs-active:first-child, &[active]:first-child {
+				padding-left:2px;
+			}	
+			a {				
+				float: left;
+				height: @zs-tabs-height;
+				line-height: @zs-tabs-height;
+				min-height: @zs-tabs-min-height;
+				border-radius: @zs-tabs-border-radius @zs-tabs-border-radius 0 0;
+				background: @zs-tabs-link-background;
+				border: 1px solid @zs-tabs-border-color;
+				padding: 0 @zs-tabs-padding-horizontal;
+				text-align: center;
+				color: @zs-tabs-link-color;
+				text-decoration: none;
+			}
+		}
+	}
+	>div {
+		clear: left;	
+		z-index: @zs-tabs-layer-content;
+		padding: @zs-tabs-padding-vertical*2 @zs-tabs-padding-horizontal;
+		border: 1px solid @zs-tabs-border-color;
+		background: @zs-tabs-content-background;
+		vertical-align:top;
+		border-radius: @zs-tabs-border-radius;
+		border-top-left-radius: 0px;
+		box-shadow: @zs-tabs-shadow;
+		margin: 0 0 0 2px; // Fix to show shadow to the left of first tab
+	}
+}

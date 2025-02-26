@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link href="../../themes/zs/app.css" rel="stylesheet" />
+		<title>ZS UI Components // Date picker</title>
+	</head>
+	<script src="../../lib/js/jquery.min.js"></script>
+	<script src="jquery.zsDatePicker.js"></script>
+	<body class="zs-style zs-reset" style="padding:2em">
+		<h2>Date picker</h2>
+		<div class="zs-input-icon"><input type="text" class="zs-input"/><a href="javascript:void(0)" class="zs-icon zs-icon-calendar"></a></div>
+		<script>
+			$(document).ready(function() {
+				var d = new Date();			
+				$('input').zsDatePicker({	
+					//maxDate: new Date(d.getFullYear(), d.getMonth(), d.getDate() + 1),				
+					minDate: new Date(d.getFullYear(), d.getMonth()-1, d.getDate() -1)
+				});
+				
+			});
+		</script>
+	</body>
+
+</html>

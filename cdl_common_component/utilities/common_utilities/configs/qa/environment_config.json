@@ -1,0 +1,10 @@
+{
+      "host": "aws-a0036-use1-1a-d-rds-shrd-rwe-rds01.chztorxtt1g3.us-east-1.rds.amazonaws.com",
+      "port": "5432",
+      "username": "rwe_master01",
+      "password": "UndlX21hc3RlcjAx",
+      "database_name": "rwe_master",
+                 "environment" : "qa",
+                 "host_ip":"10.226.33.201",
+                 "host_port":"5000"
+}

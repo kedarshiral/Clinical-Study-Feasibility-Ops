@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="../../themes/zs/app.css"/>
+		<script src="../../lib/js/object-assign.min.js"></script>
+		<script src="../../lib/js/document-register-element.js"></script>
+		<script src="../../lib/js/custom-event-polyfill.js"></script>
+		<script src="../../lib/js/customElements.js"></script>			
+	</head>	
+	<body class="zs-style zs-space" style="padding:2em">
+		<div class="zs-toast-container"></div>
+		<h2>Toaster</h2>	
+
+		<form class="zs-form">
+			<fieldset>
+				<legend>Toaster Settings</legend>
+				<p>
+					<label>Title</label>
+					<input type="text" id="title" placeholder="Title">				
+				</p>
+				<p>
+					<label>Message</label>
+					<input type="text" id="message" placeholder="Message">				
+				</p>
+				<p>
+					<label>Type</label>
+					<span class="zs-radio-group">
+						<input type="radio" name="messagetype" value="error" checked>Error
+						<br>
+						<input type="radio" name="messagetype" value="warning">Warning
+						<br>
+						<input type="radio" name="messagetype" value="success">Success
+						<br>
+						<input type="radio" name="messagetype" value="info">Info
+					</span>				
+				</p>
+				<p>
+					<label>Timeout</label>
+					<input type="text" id="timeout" placeholder="10000">				
+				</p>
+				<p>
+					<label>Show Close Icon</label>
+					<span class="zs-checkbox"><input type="checkbox" checked>Show Close</span>				
+				</p>
+				<p>
+					<input type="button" value="Show Toaster" class="zs-button" id="showToast" />			
+				</p>
+			</fieldset>
+		</form>
+	</body>
+	<script src="zsToast.js"></script>			
+	<script src="../../lib/js/jquery.min.js"></script>			
+	<script>
+		var container=document.getElementsByClassName("zs-toast-container")[0];
+			
+		var defaultConfig={type:"error",timeout:"10000",title:"Toaster Title goes here",body:"This toaster fades out in few seconds. Tap to dismiss.",showClose:"true"};
+
+		document.getElementById("showToast").addEventListener("click",function(){
+			var toast = new zs.toastElement();
+			var config={};
+
+			Object.assign(config,defaultConfig);
+
+			config.type=$('input[name="messagetype"]:checked').val();
+			
+			var timeout=$("#timeout").val();
+			
+			if(!isNaN(timeout) && timeout!=""){
+				config.timeout=timeout;
+			}
+
+			if($("#title").val()!=""){
+				config.title=$("#title").val();
+			}
+
+			if($("#message").val()!=""){
+				config.body=$("#message").val();
+			}
+
+			config.showClose=$("input[type='checkbox']:checked").length?true:false;
+			toast.create(config);
+			container.appendChild(toast);						
+		});
+	</script>	
+</html>

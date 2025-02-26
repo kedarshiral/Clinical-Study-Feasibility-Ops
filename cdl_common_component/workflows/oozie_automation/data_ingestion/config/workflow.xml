@@ -1,0 +1,218 @@
+
+<workflow-app name="wf_3000006" xmlns="uri:oozie:workflow:0.5">
+  <start to="copy_to_pre_landing_zone"/>
+  <kill name="Kill">
+    <message>Action Failed. error message [${wf:errorMessage(wf.lastErrorNode())}]</message>
+  </kill>
+  <action name="copy_to_pre_landing_zone">
+    <shell xmlns="uri:oozie:shell-action:0.1">
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <exec>/user/ak15153/ingestion_workflow/spark_file_download.sh</exec>
+      <argument>3000006</argument>
+      <file>/user/ak15153/ingestion_workflow/ConfigUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/DQMCheckHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/DQMCheckUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/ElasticSearchUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/ExecutionContext.py</file>
+      <file>/user/ak15153/ingestion_workflow/FileCheckHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/FileCheckUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/FileDownloadHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/CommonUtils.py</file>
+      <file>/user/ak15153/ingestion_workflow/CommonConstants.py</file>
+      <file>/user/ak15153/ingestion_workflow/LandingCopyHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/LogSetup.py</file>
+      <file>/user/ak15153/ingestion_workflow/MySQLConnectionManager.py</file>
+      <file>/user/ak15153/ingestion_workflow/ParquetUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/PreDQMHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/PreDQMStandardization.py</file>
+      <file>/user/ak15153/ingestion_workflow/PySparkUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/S3MoveCopyUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/StagingHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/StagingUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/ak15153.keytab</file>
+      <file>/user/ak15153/ingestion_workflow/ak15153_s3_cred_file.json</file>
+      <file>/user/ak15153/ingestion_workflow/ingestion_environment_params.json</file>
+      <file>/user/ak15153/ingestion_workflow/log_setup.json</file>
+      <file>/user/ak15153/ingestion_workflow/spark_copy_to_landing.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_check.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_download.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_dqm.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_pre_dqm.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_staging.sh</file>
+      <capture-output/>
+    </shell>
+    <ok to="copy_parquet_to_landing_zone"/>
+    <error to="Kill"/>
+  </action>
+  <action name="copy_parquet_to_landing_zone">
+    <shell xmlns="uri:oozie:shell-action:0.1">
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <exec>/user/ak15153/ingestion_workflow/spark_copy_to_landing.sh</exec>
+      <argument>3000006</argument>
+      <argument>${wf:actionData('copy_to_pre_landing_zone')['batch_id']}</argument>
+      <file>/user/ak15153/ingestion_workflow/ConfigUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/DQMCheckHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/DQMCheckUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/ElasticSearchUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/ExecutionContext.py</file>
+      <file>/user/ak15153/ingestion_workflow/FileCheckHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/FileCheckUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/FileDownloadHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/CommonUtils.py</file>
+      <file>/user/ak15153/ingestion_workflow/CommonConstants.py</file>
+      <file>/user/ak15153/ingestion_workflow/LandingCopyHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/LogSetup.py</file>
+      <file>/user/ak15153/ingestion_workflow/MySQLConnectionManager.py</file>
+      <file>/user/ak15153/ingestion_workflow/ParquetUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/PreDQMHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/PreDQMStandardization.py</file>
+      <file>/user/ak15153/ingestion_workflow/PySparkUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/S3MoveCopyUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/StagingHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/StagingUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/ak15153.keytab</file>
+      <file>/user/ak15153/ingestion_workflow/ak15153_s3_cred_file.json</file>
+      <file>/user/ak15153/ingestion_workflow/ingestion_environment_params.json</file>
+      <file>/user/ak15153/ingestion_workflow/log_setup.json</file>
+      <file>/user/ak15153/ingestion_workflow/spark_copy_to_landing.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_check.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_download.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_dqm.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_pre_dqm.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_staging.sh</file>
+      <capture-output/>
+    </shell>
+    <ok to="pre_dqm_standardization"/>
+    <error to="Kill"/>
+  </action>
+  <action name="pre_dqm_standardization">
+    <shell xmlns="uri:oozie:shell-action:0.1">
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <exec>/user/ak15153/ingestion_workflow/spark_file_pre_dqm.sh</exec>
+      <argument>3000006</argument>
+      <argument>${wf:actionData('copy_parquet_to_landing_zone')['batch_id']}</argument>
+      <file>/user/ak15153/ingestion_workflow/ConfigUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/DQMCheckHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/DQMCheckUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/ElasticSearchUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/ExecutionContext.py</file>
+      <file>/user/ak15153/ingestion_workflow/FileCheckHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/FileCheckUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/FileDownloadHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/CommonUtils.py</file>
+      <file>/user/ak15153/ingestion_workflow/CommonConstants.py</file>
+      <file>/user/ak15153/ingestion_workflow/LandingCopyHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/LogSetup.py</file>
+      <file>/user/ak15153/ingestion_workflow/MySQLConnectionManager.py</file>
+      <file>/user/ak15153/ingestion_workflow/ParquetUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/PreDQMHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/PreDQMStandardization.py</file>
+      <file>/user/ak15153/ingestion_workflow/PySparkUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/S3MoveCopyUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/StagingHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/StagingUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/ak15153.keytab</file>
+      <file>/user/ak15153/ingestion_workflow/ak15153_s3_cred_file.json</file>
+      <file>/user/ak15153/ingestion_workflow/ingestion_environment_params.json</file>
+      <file>/user/ak15153/ingestion_workflow/log_setup.json</file>
+      <file>/user/ak15153/ingestion_workflow/spark_copy_to_landing.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_check.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_download.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_dqm.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_pre_dqm.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_staging.sh</file>
+      <capture-output/>
+    </shell>
+    <ok to="dqm"/>
+    <error to="Kill"/>
+  </action>
+  <action name="dqm">
+    <shell xmlns="uri:oozie:shell-action:0.1">
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <exec>/user/ak15153/ingestion_workflow/spark_file_dqm.sh</exec>
+      <argument>3000006</argument>
+      <argument>${wf:actionData('pre_dqm_standardization')['batch_id']}</argument>
+      <file>/user/ak15153/ingestion_workflow/ConfigUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/DQMCheckHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/DQMCheckUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/ElasticSearchUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/ExecutionContext.py</file>
+      <file>/user/ak15153/ingestion_workflow/FileCheckHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/FileCheckUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/FileDownloadHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/CommonUtils.py</file>
+      <file>/user/ak15153/ingestion_workflow/CommonConstants.py</file>
+      <file>/user/ak15153/ingestion_workflow/LandingCopyHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/LogSetup.py</file>
+      <file>/user/ak15153/ingestion_workflow/MySQLConnectionManager.py</file>
+      <file>/user/ak15153/ingestion_workflow/ParquetUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/PreDQMHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/PreDQMStandardization.py</file>
+      <file>/user/ak15153/ingestion_workflow/PySparkUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/S3MoveCopyUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/StagingHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/StagingUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/ak15153.keytab</file>
+      <file>/user/ak15153/ingestion_workflow/ak15153_s3_cred_file.json</file>
+      <file>/user/ak15153/ingestion_workflow/ingestion_environment_params.json</file>
+      <file>/user/ak15153/ingestion_workflow/log_setup.json</file>
+      <file>/user/ak15153/ingestion_workflow/spark_copy_to_landing.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_check.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_download.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_dqm.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_pre_dqm.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_staging.sh</file>
+      <capture-output/>
+    </shell>
+    <ok to="staging"/>
+    <error to="Kill"/>
+  </action>
+  <action name="staging">
+    <shell xmlns="uri:oozie:shell-action:0.1">
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <exec>/user/ak15153/ingestion_workflow/spark_file_staging.sh</exec>
+      <argument>3000006</argument>
+      <argument>${wf:actionData('dqm')['batch_id']}</argument>
+      <file>/user/ak15153/ingestion_workflow/ConfigUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/DQMCheckHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/DQMCheckUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/ElasticSearchUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/ExecutionContext.py</file>
+      <file>/user/ak15153/ingestion_workflow/FileCheckHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/FileCheckUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/FileDownloadHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/CommonUtils.py</file>
+      <file>/user/ak15153/ingestion_workflow/CommonConstants.py</file>
+      <file>/user/ak15153/ingestion_workflow/LandingCopyHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/LogSetup.py</file>
+      <file>/user/ak15153/ingestion_workflow/MySQLConnectionManager.py</file>
+      <file>/user/ak15153/ingestion_workflow/ParquetUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/PreDQMHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/PreDQMStandardization.py</file>
+      <file>/user/ak15153/ingestion_workflow/PySparkUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/S3MoveCopyUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/StagingHandler.py</file>
+      <file>/user/ak15153/ingestion_workflow/StagingUtility.py</file>
+      <file>/user/ak15153/ingestion_workflow/ak15153.keytab</file>
+      <file>/user/ak15153/ingestion_workflow/ak15153_s3_cred_file.json</file>
+      <file>/user/ak15153/ingestion_workflow/ingestion_environment_params.json</file>
+      <file>/user/ak15153/ingestion_workflow/log_setup.json</file>
+      <file>/user/ak15153/ingestion_workflow/spark_copy_to_landing.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_check.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_download.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_dqm.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_pre_dqm.sh</file>
+      <file>/user/ak15153/ingestion_workflow/spark_file_staging.sh</file>
+      <capture-output/>
+    </shell>
+    <ok to="End"/>
+    <error to="Kill"/>
+  </action>
+  <end name="End"/>
+</workflow-app>
+

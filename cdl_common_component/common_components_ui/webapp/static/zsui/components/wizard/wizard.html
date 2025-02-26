@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="../../themes/zs/app.css" />
+</head>
+
+<body class="zs-style zs-space" style="padding:2em">
+	<h2>Clickable Wizard</h2>
+	<zs-wizard class="wizard-container" clickable>
+		<ul>
+			<li is="zs-tab" active tab-id="1" class="chevron">
+				<a href="javascript:void(0)"><span>Data Source</span></a>
+			</li>
+			<li is="zs-tab" tab-id="2" class="chevron">
+				<a href="javascript:void(0)"><span>Level Selection</span></a>
+			</li>
+			<li is="zs-tab" tab-id="3" class="chevron">
+				<a href="javascript:void(0)"><span>Attributes</span></a>
+			</li>
+			<li is="zs-tab" tab-id="4" class="chevron">
+				<a href="javascript:void(0)"><span>Options</span></a>
+			</li>
+		</ul>
+		<div source-id="1">Step 1 contents</div>
+		<div source-id="2" style="display: none;">Step 2 contents</div>
+		<div source-id="3" style="display: none;">Step 3 contents</div>
+		<div source-id="4" style="display: none;">Step 4 contents</div>
+	</zs-wizard>
+
+	<h2>Non clickable Wizard</h2>
+	<zs-wizard class="wizard-container">
+		<ul>
+			<li is="zs-tab" active tab-id="1" class="chevron">
+				<a href="javascript:void(0)"><span class="step-count">Step 1</span><span>Data Source</span></a>
+			</li>
+			<li is="zs-tab" tab-id="2" class="chevron">
+				<a href="javascript:void(0)"><span class="step-count">Step 2</span><span>Level Selection</span></a>
+			</li>
+			<li is="zs-tab" tab-id="3" class="chevron">
+				<a href="javascript:void(0)"><span class="step-count">Step 3</span><span>Attributes</span></a>
+			</li>
+			<li is="zs-tab" tab-id="4" class="chevron">
+				<a href="javascript:void(0)"><span class="step-count">Step 4</span><span>Options</span></a>
+			</li>
+		</ul>
+		<div source-id="1">Step 1 contents</div>
+		<div source-id="2" style="display: none;">Step 2 contents</div>
+		<div source-id="3" style="display: none;">Step 3 contents</div>
+		<div source-id="4" style="display: none;">Step 4 contents</div>
+		<div style="padding-top:2em">
+			<button prevbutton class="zs-button zs-icon zs-icon-prev">Previous</button>
+			<button nextbutton class="zs-button icon-next-arrow">Next</button>
+		</div>
+	</zs-wizard>
+</body>
+<script src="../../../zsui/lib/js/customElements.poly.js"></script>
+<script src="../../../zsui/lib/js/customElements.js"></script>
+<script src="../../../zsui/lib/js/domHelper.js"></script>
+<script src="../../../zsui/components/tabs/zsTab.js"></script>
+<script src="zsWizard.js"></script>
+<script>
+	(function() {
+
+	})();
+
+</script>
+
+</html>

@@ -1,0 +1,108 @@
+@zs-progress-bar-color:#fff;
+@zs-current-progress-color:lighten(#01a6dc, 25%);
+@zs-progress-label-color: @zs-background;
+@zs-progress-bar-border:solid 1px #d0dde6;
+@zs-progress-height:1.5em;
+
+.zs-progress-bar{
+	height: @zs-progress-height;
+	width:100%;
+	display: block;
+	position:relative;
+	background-color:@zs-progress-bar-color;
+	border: @zs-progress-bar-border;
+	border-radius: @zs-border-radius;
+	color:@zs-current-progress-color;
+	text-align: center;
+	line-height: @zs-progress-height;
+
+	& > div {
+		width:100%;
+		height: 100%;
+		border-bottom-left-radius: @zs-border-radius - 0.05em;
+		border-top-left-radius:@zs-border-radius - 0.05em;
+		color: @zs-progress-bar-color;
+		background-color: @zs-current-progress-color;
+		overflow: hidden;
+		position: absolute;
+		left: 0;
+		top:0;
+
+		& > div{
+			position: absolute;
+			left: 0%;
+			top: 0%;	
+			white-space: nowrap;
+			color:@zs-progress-bar-color;		
+		}
+	}
+
+	&.zs-chart-color1{
+		color:@zs-chart-color1;
+		& > div {	
+			background-color: @zs-chart-color1;
+		}
+	}
+	&.zs-chart-color2{
+		color:@zs-chart-color2;
+		& > div {	
+			background-color: @zs-chart-color2;
+		}	
+	}
+	&.zs-chart-color3{
+		color:@zs-chart-color3;
+		& > div {	
+			background-color: @zs-chart-color3;
+		}	
+	}
+	&.zs-chart-color4{
+		color:@zs-chart-color4;
+		& > div {	
+			background-color: @zs-chart-color4;
+		}	
+	}
+	&.zs-chart-color6{
+		color:@zs-chart-color6;
+		& > div {	
+			background-color: @zs-chart-color6;
+		}	
+	}
+	&.zs-chart-color7{
+		color:@zs-chart-color7;
+		& > div {	
+			background-color: @zs-chart-color7;
+		}	
+	}
+	&.zs-chart-color5{
+		color:@zs-chart-color5;
+		& > div {	
+			background-color: @zs-chart-color5;
+		}	
+	}
+
+	&.size-xs{
+		height: 0.5em;
+		line-height: 0.5em;
+	}
+
+	&.size-sm{
+		height: 1em;
+		line-height: 1em;
+	}
+	&.size-lg{
+		height: 2em;
+		line-height: 2em;
+	}
+	&.size-xl{
+		height: 2.5em;
+		line-height: 2.5em;
+	}
+	&.no-outline{
+		border: none;
+		border-radius: 0;
+
+		& > div{
+			border-radius: 0;
+		}
+	}
+}

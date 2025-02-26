@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="../../themes/zs/app.css"/>
+		<style>
+
+		</style>
+	</head>	
+	<body class="zs-style zs-space" style="padding:2em">
+		<h2>Accordion</h2>
+		
+		<div class="zs-accordion">
+			<div class="zs-accordion-bar">
+				<span><a>Accordion Panel</a></span>
+			</div>
+			<div class="zs-accordion-panel">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div>
+		</div>
+					
+	</body>
+	<script src="../../lib/js/jquery.min.js"></script>	
+	<script src="jquery.zsAccordion.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('.zs-accordion').zsAccordion({
+				isOpen:true,
+				beforeOpen:function(){
+					console.log("before open",this);
+				},
+				onOpen:function(){
+					console.log("on open",this);
+				},
+				onClose:function(){
+					console.log("on close",this);
+				}
+			});
+		});
+	</script>	
+</html>

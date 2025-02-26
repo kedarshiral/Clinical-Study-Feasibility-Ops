@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../../themes/zs/app.css"/>
+  <style>
+	  body { padding: 15px; }
+  </style>
+</head>
+<body class="zs-reset zs-style">
+	<h1 style="position: relative;">
+		Tooltip at the top
+		<div class="tooltip top">
+			<div class="tooltip-arrow center"></div>
+			<div class="tooltip-content">Content</div>
+		</div>
+	</h1>
+	<h2 class="tooltip-me">Tooltip Demo (hover here)</h2>
+	<h3 class="tooltip-me">Tooltip Demo (hover here)</h3>
+	<div class="tooltip-me">Tooltip Demo (hover here)</div>
+	<p class="tooltip-me">Tooltip Demo (hover here)</p>
+	
+	<p id="icons">
+		<span class="zs-icon zs-icon-ok tooltip-me"></span>
+		<span class="zs-icon zs-icon-warning tooltip-me"></span>
+		<span class="zs-icon zs-icon-error tooltip-me"></span>
+		<span class="zs-icon zs-icon-info tooltip-me"></span>
+	</p>
+	<p id="large-icons">
+		<span class="zs-icon zs-icon-large zs-icon-ok tooltip-me"></span>
+		<span class="zs-icon zs-icon-large zs-icon-warning tooltip-me"></span>
+		<span class="zs-icon zs-icon-large zs-icon-error tooltip-me"></span>
+		<span class="zs-icon zs-icon-large zs-icon-info tooltip-me"></span>
+	</p>
+	
+	<h2>Paragraph with tooltip</h2>
+	<div style="width: 75%;">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum, dui id gravida mattis, tortor neque imperdiet dolor, ut vehicula
+			lectus massa at <b class="tooltip-me">purus</b>. Pellentesque dapibus elit molestie hendrerit rhoncus. Aenean at vulputate magna. Suspendisse eget lorem et magna
+			auctor pulvinar. Donec accumsan dictum dui. Maecenas pretium consequat sapien quis iaculis. Fusce ultricies vehicula posuere.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum, dui id gravida mattis, tortor neque imperdiet dolor, ut vehicula
+			lectus massa at purus. <b class="tooltip-me">Pellentesque</b> dapibus elit molestie hendrerit rhoncus. Aenean at vulputate magna. Suspendisse eget lorem et magna
+			auctor pulvinar. Donec accumsan dictum dui. Maecenas pretium consequat sapien quis iaculis. Fusce ultricies vehicula posuere.
+		</p>
+	</div>
+	
+	<h2>Hover the whole paragraph!</h2>
+	<div style="width: 75%;">
+		<p class="tooltip-me">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum, dui id gravida mattis, tortor neque imperdiet dolor, ut vehicula
+			lectus massa at purus. Pellentesque dapibus elit molestie hendrerit rhoncus. Aenean at vulputate magna. Suspendisse eget lorem et magna
+			auctor pulvinar. Donec accumsan dictum dui. Maecenas pretium consequat sapien quis iaculis. Fusce ultricies vehicula posuere.
+		</p>
+		<p class="tooltip-me">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum, dui id gravida mattis, tortor neque imperdiet dolor, ut vehicula
+			lectus massa at purus. Pellentesque dapibus elit molestie hendrerit rhoncus. Aenean at vulputate magna. Suspendisse eget lorem et magna
+			auctor pulvinar. Donec accumsan dictum dui. Maecenas pretium consequat sapien quis iaculis. Fusce ultricies vehicula posuere.
+		</p>
+	</div>	
+	<script src="../../lib/js/jquery.min.js"></script>
+	<script src="jquery.zsTooltip.js"></script>
+	<script>
+		$(window).load(function () {
+			$('.tooltip-me').each(function (i, e) {
+				$(e).zsTooltip({
+					alignment: 'center',
+					arrowAlignment: 'center', 
+					text: 'Some hover text that is long enough to break into a second line.',
+					triggers: 'click'
+				});
+			});			
+		});
+	</script>
+</body>
+</html>

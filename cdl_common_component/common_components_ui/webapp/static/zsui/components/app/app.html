@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>App helpers</title>
+	
+	<!-- zsui styles -->
+	<link rel="stylesheet" href="../../themes/zs/app.css" />
+
+	<!-- zs custom elements library -->
+	<script src="../../lib/js/customElements.poly.js"></script>
+	<script src="../../lib/js/customElements.js"></script>
+
+	<!-- zs custom elements-->
+	<script src="zsApp.js"></script>	
+</head>
+
+<body class="zs-style" style="padding: 2em;">
+	<h1>Application helpers</h1>
+	<p>We have defined several behaviors with common functionality required to build web applications like configuration, work with data and state management etc...</p>
+	<p>Some of these behaviors add shared properties so application becomes a shared part of every component.</p>	
+	<script>
+			var myComponent = zs.customElement(HTMLElement,'my-component', null,[zs.configuration, zs.service, zs.state, {
+				renderData: function(data) {
+					if (!this.dataEl) {this.dataEl = this.querySelector('.data');}
+					this.dataEl.innerHTML = JSON.stringify(data);
+				},
+				render: function() {
+					this.style = "display:inline-block;border:1px dotted gray;padding:1em;border-radius:0.5em;margin:1em 0em";
+					this.innerHTML = 'Config: <span class="config">' + JSON.stringify(this.config || '') + '</span><br>Data: <span class="data"></span>';
+				},
+				events: {
+					
+					configure: function() {
+						this.render();	
+					}
+				}				
+			}]);		
+	</script>	
+	<h2>App component 1 </h2>
+	<p>Has a shared config</p>
+	<p><my-component id="comp1"></my-component></p>
+	<h2>App component 2 </h2>
+	<p>Has a shared config</p>
+	<p><my-component id="comp2"></my-component></p>
+	<h2>App component 3 </h2>
+	<p>This component will have a unique configuration detached from the rest of the application</p>
+	<p><my-component id="comp3"></my-component></p>
+	<script>	
+		var comp1 = document.querySelector('#comp1');
+		var comp2 = document.querySelector('#comp2');
+		var comp3 = document.querySelector('#comp3');
+		comp3.config = null; // detaching config this way
+		
+		// Render comp2, comp3 when comp1 is configured
+		comp1.addEventListener('configure', function() {
+			comp2.render();
+			comp3.render();
+		});
+
+		// Render comp1, comp3 when comp2 is configured
+		comp2.addEventListener('configure', function() {
+			comp1.render();
+			comp3.render();
+		});
+
+		// Render comp1,comp2 when comp3 is configured
+		comp3.addEventListener('configure', function() {
+			comp1.render();
+			comp2.render();
+		});
+
+		// Set configuration for the application will be shared between component 1 and component 2
+		comp1.configure({
+			locale: 'en-US',
+			debug: false
+		});
+
+		// Unique configuration for component 3
+		comp3.configure({
+			role: 'user'
+		});
+
+		// Registering a service
+		comp1.registerService('data', function(params, resolve, reject) {
+			var arr = [];
+			for (var i=0; i<params.count;i++) {
+				arr.push({
+					name: 'Item' + i
+				});
+			}
+			resolve(arr);
+		});
+		
+		// Call service
+		comp2.service('data', {count: 2}).then(function(data) {
+			// Render data
+			comp2.renderData(data);
+			comp1.renderData(data);
+			comp3.renderData(data);
+		});
+
+
+	</script>
+	<h2>Manage states of components</h2>
+	<p>We have a dedicated behavior to help you with that</p>
+	<script>
+		zs.customElement(HTMLElement,'my-tab-component', null,[zs.configuration, zs.service, zs.state, {				
+			showState: function() {
+				document.querySelector('#state').innerHTML = 'State: ' +JSON.stringify(this.state);
+			},
+			openTab: function() {
+				var tabName = this.state.hash || '#home';
+				var a = this.querySelector('[href="' + tabName + '"]');
+				if (!a) {return;}
+				var content = this.querySelector('[for="' + tabName + '"]');
+				var li = a.parentNode;
+				var active = this.querySelector('.zs-active');
+				if (active) {
+					active.setAttribute('class','');
+				}
+				li.setAttribute('class','zs-active');
+				var containers = this.childNodes;
+				for(var i =0;i<containers.length;i++) {
+					var div = containers[i];
+					if (div.tagName == 'DIV') {
+						if (div.getAttribute('for') == tabName) {
+							Object.assign(div.style,{display:'block'});
+						} else {
+							Object.assign(div.style,{display:'none'});
+						}
+					}
+				}
+
+			},
+			whenRendered: function() {
+
+			},
+			remember: function() {
+				var input = this.querySelector('#toremember');
+				var comp = this;
+				if (this.state.remember) {
+					input.value = this.state.remember;
+				}
+
+				input.addEventListener('change',function() {
+					newValue = this.value;
+					comp.updateState({remember: newValue});
+					comp.saveState('myComp');
+				});
+			},
+			events: {
+				statechange: function(event) {
+					console.log('state changed', event.detail.newState, event.detail.changed);
+					this.openTab();
+					this.showState();
+				},
+				attach: function() {
+					
+					var comp = this;
+					setTimeout(function() { // Yeld to let browser render contents
+						comp.updateUrl();
+						comp.loadState('myComp');
+						comp.openTab();						
+						comp.showState();
+						comp.remember();
+					});
+				}
+			}				
+		}]);			
+	</script>
+	<p id="state"></p>
+	<my-tab-component class="zs-tabs">
+		<ul>
+			<li class="zs-active">
+				<a href="#home" name="home">Home</a>
+			</li>
+			<li>
+				<a href="#profile" name="profile">Profile</a>
+			</li>
+			<li>
+				<a href="#message" name="message">Messages</a>
+			</li>
+		</ul>
+		<div for="#home">
+			<h3>Home</h3>
+			<p>Clicking on tabs will change hash of the window URL</p>
+			<p>Our component reacts on change and reflects it in the state</p>
+		</div>
+		<div style="display:none" for="#profile"> 
+			<h3>Profile</h3>
+			<p>We could reflect search parameters of the URL in the state of our component</p>
+			<p><a href="?n=5#profile">Go to page 5</a></p>			
+		</div>
+		<div style="display:none" for="#message">
+			<h3>Messages</h3>
+			<form class="zs-form">
+				<fieldset>
+					<p>
+						<label>Remember</label>
+						<input type="number" value="0" max="10" class="zs-input" id="toremember">
+					</p>
+				</fieldset>
+			</form>
+			<p>Finally sometimes we want to preserve the state between pages.</p>
+			<p>Refresh the page to see if it remembers our value.</p>
+		</div>
+	</my-tab-component>
+	
+	</body>
+</html>
+
+
+

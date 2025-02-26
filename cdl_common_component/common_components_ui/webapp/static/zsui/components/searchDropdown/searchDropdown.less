@@ -1,0 +1,126 @@
+/*
+*/
+.zs-search-dropdown {
+	margin:-1px;
+	>nav {
+		@search-height: 1em + 2*@zs-font-padding-ratio; // Adjust that
+		@line-height: 1em + 2*@zs-font-padding-ratio; // 2 padding + line-height
+		max-height: @line-height*5 + @search-height;
+		overflow: auto;
+
+		>a:extend(.zs-menu >nav >a all) {
+		}
+
+		>a[hover] {
+			color: @zs-link-hover;
+			text-decoration: none;
+			background: lighten(@zs-table-header-background,5%);
+		}
+
+		>a[active] {
+			background: @zs-table-header-background;
+		}
+	}
+
+	>p {
+		.margin(1,1,1,1)!important;
+		margin-top: @zs-font-padding-ratio!important;
+		display:block;
+		>input.zs-input {
+			width:100%;
+			min-width: 100%;
+		}
+		>[clear] { // Fix close icon
+			margin-top: -0.5*@zs-icon-height;
+			padding:2px 2px; 
+		}
+	}	
+	 
+
+	[highlight] { // Remove when we have it in the package
+		background-color: @zs-highlight-color;
+	}
+	
+	// make a darker border 
+	border: 1px solid @zs-brand-gray;
+
+	.select-all{
+		border-bottom: 1px solid @zs-brand-gray;
+	}
+
+	input[type="checkbox"]{ // ZSUI-560: fixing unnecessary increasing of row height 
+		margin-top:0;
+		margin-bottom:0;
+	}
+}
+
+.zs-select > [overlay] {
+	cursor: pointer;
+	padding-bottom:5px;	
+	background-color: transparent;
+	border-radius:0;
+	outline: 0;
+	font-weight: normal;
+	border: 1px solid @zs-brand-gray;
+	color: @zs-text-color;
+	.padding(@zs-input-padding,0.6,@zs-input-padding,0.6);
+	padding-right: (@zs-padding-horizontal-large - 1) + 1em;
+	cursor:pointer;		
+	width:100%;
+	max-width: 400px;
+	overflow: hidden;
+  	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* TODO: Move to zs-menu component */
+.zs-menu {
+	>a, >a:visited, >a:hover, >li, >nav>a, >nav>a:visited {
+		color: @zs-text-color;
+		display:block;
+		overflow:hidden;
+		text-overflow: ellipsis;
+		white-space:nowrap;
+		.padding;
+		&.zs-active {
+			background: @zs-table-header-background;
+		}
+		&:hover {
+			background: lighten(@zs-table-header-background,5%); 
+		}		
+		&li {
+			a {
+				color: @zs-text-color;
+				display:block;
+				white-space:nowrap;
+			}	
+		}
+		
+	}	
+}
+
+// Always open searchable dropdown
+.zs-open-dropdown {
+    &.zs-select:after {
+        content: '';
+    }
+
+    .zs-menu {
+        box-shadow: none;
+    }
+
+    p .zs-input {
+        min-width: 100%;
+    }
+
+    a:focus {
+        outline: 0;
+    }
+}
+
+ .zs-input{
+	 /**
+	  * @todo a little hack to fix ZSUI-358
+	  */
+	margin-bottom: 0.5px;
+ }

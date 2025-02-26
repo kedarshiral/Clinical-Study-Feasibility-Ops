@@ -1,0 +1,72 @@
+{
+  "DW": {
+    "test_dag": {
+      "process_id": 10000,
+      "data_date": "$$data_date",
+      "enable_flag": "Y",
+      "frequency": "monthly",
+      "user": "Admin",
+      "process_interruption_flag": "NULL"
+    },
+    "cc_dw_enhancement_v4": {
+      "process_id": 40022,
+      "data_date": "$$data_date",
+      "enable_flag": "Y",
+      "frequency": "weekly",
+      "user": "Admin",
+      "process_interruption_flag": "NULL"
+    },
+    "DataEngineering-L2-PostDedupeProcess-Weekly-Latest": {
+      "process_id": 80000,
+      "data_date": "$$data_date",
+      "enable_flag": "Y",
+      "frequency": "weekly",
+      "user": "Admin",
+      "process_interruption_flag": "NULL"
+    },
+        "DataEngineering-L2-Fact-A1-Reporting-Monthly": {
+      "process_id": 30000,
+      "data_date": "$$data_date",
+      "enable_flag": "Y",
+      "frequency": "monthly",
+      "user": "Admin",
+      "process_interruption_flag": "NULL"
+    }
+    },
+
+    "Ingestion":{
+    "CC_glue_cata_testing_100088": {
+      "process_id": 100088,
+      "data_date": "$$data_date",
+      "enable_flag": "Y",
+      "frequency": "weekly",
+      "user": "Admin",
+      "process_interruption_flag": "NULL"
+    },
+    "DataEngineering-L1-Citeline-Monthly-Full_2000": {
+      "process_id": 2000,
+      "data_date": "$$data_date",
+      "enable_flag": "Y",
+      "frequency": "monthly",
+      "user": "Admin",
+      "process_interruption_flag": "NULL"
+    },
+    "DataEngineering-L1-WHO-Monthly-Full_7000": {
+      "process_id": 7000,
+      "data_date": "$$data_date",
+      "enable_flag": "Y",
+      "frequency": "monthly",
+      "user": "Admin",
+      "process_interruption_flag": "NULL"
+    },
+    "DataEngineering-L1-DQS-Monthly-Full_6000": {
+      "process_id": 6000,
+      "data_date": "$$data_date",
+      "enable_flag": "Y",
+      "frequency": "monthly",
+      "user": "Admin",
+      "process_interruption_flag": "NULL"
+    }
+  }
+
+}

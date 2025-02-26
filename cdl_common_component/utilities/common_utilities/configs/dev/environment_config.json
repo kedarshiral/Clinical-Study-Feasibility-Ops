@@ -1,0 +1,9 @@
+{
+      "host": "",
+      "port": "5432",
+      "username": "",
+      "password": "",
+      "database_name": "",
+      "environment" : "dev"
+}
+

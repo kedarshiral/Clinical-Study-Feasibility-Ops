@@ -1,0 +1,28 @@
+{
+  "process_name_list": [
+    "post_dedupe",
+    "usl_ctms",
+    "usl_ir",
+    "dedupe",
+    "citeline_investigator",
+    "citeline_organization",
+    "citeline_trialtrove",
+    "citeline_organization_hierarchy",
+    "aact_studies",
+    "aact_facility_investigators",
+    "aact_facilities"
+  ],
+  "dataset_name_list": [
+    "xref_src_site",
+    "usl_study",
+    "usl_ir",
+    "temp_all_site_dedupe_results_final",
+    "citeline_investigator",
+    "citeline_organization",
+    "citeline_trialtrove",
+    "citeline_organization_hierarchy",
+    "aact_studies",
+    "aact_facility_investigators",
+    "aact_facilities"
+  ]
+}

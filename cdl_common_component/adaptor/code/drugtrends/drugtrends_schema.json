@@ -1,0 +1,45 @@
+{
+  "$type": "",
+  "copyrightNotice": "",
+  "drugId": "",
+  "drugPrimaryName": "",
+  "bmtDrug": [
+
+  ],
+  "years": [
+    {
+      "yearValue": "",
+      "globalStatus": "",
+      "drugDevelopmentStatus": "",
+      "originatorCompanyKey": "",
+      "originatorName": "",
+      "originatorCountry": "",
+      "originatorStatus": "",
+      "licensees": [ {
+        "licenseeCompanyKey": "",
+        "licenseeName": "",
+        "licenseeStatus": "",
+        "licenseeCountry": ""
+      }],
+      "countries": [
+        {
+          "countryName": "",
+          "countryStatus": "",
+          "licensingOpportunity": "",
+          "yearLaunch": ""
+        }
+      ],
+      "mechanisms": [
+        {
+          "mechanismsOfAction": ""
+        }
+      ],
+      "therapeuticClasses": [
+        {
+          "therapeuticClassName": "",
+          "therapeuticClassStatus": ""
+        }
+      ]
+    }
+  ]
+}

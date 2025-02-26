@@ -1,0 +1,23 @@
+SELECT
+      '$$disease_area$$' as disease_area_name,
+       investigatorId                                   AS investigator_id,
+       investigatorNPI                                  AS investigator_npi,
+       latitude                                         AS investigator_latitude,
+       longitude                                        AS investigator_longitude,
+       icd10code                                        AS icd10code,
+       icd10Terms                                       AS icd10Terms,
+       diseaseHierarchy                                 AS diseaseHierarchy,
+       patientCount.totalPatientCount                   AS total_patient_count,
+       patientCount.patientCountMale                    AS patient_count_male,
+       patientCount.patientCountFemale                  AS patient_count_female,
+       patientCount.patientCountAdult                   AS patient_count_adult,
+       patientCount.patientCountChild                   AS patient_count_child,
+       physicianPatientCount.physicianProximity15m      AS physician_proximity_15m,
+       physicianPatientCount.patientProximity15m        AS patient_proximity_15m,
+       physicianPatientCount.physicianProximity25m      AS physician_proximity_25m,
+       physicianPatientCount.patientProximity25m        AS patient_proximity_25m,
+       physicianPatientCount.patientProximity25m        AS patient_proximity_25m,
+       physicianPatientCount.physicianProximity50m      AS physician_proximity_50m,
+       physicianPatientCount.patientProximity50m        AS patient_proximity_50m,
+       updatedDate                                      AS updated_date
+       FROM   $$table$$

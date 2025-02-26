@@ -1,0 +1,1 @@
+ALTER TABLE ctl_rule_config ADD COLUMN spark_config varchar(1000) AFTER script_display_name;

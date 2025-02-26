@@ -1,0 +1,1 @@
+ALTER TABLE ctl_dataset_master ADD COLUMN table_analyze_optional_column_list varchar(500) AFTER table_analyze_flag;

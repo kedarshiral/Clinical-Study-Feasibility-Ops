@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Load Statistics</title>
+    <meta charset="UTF-8">
+    <link href="../static/zsui/themes/zs/app.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <link href="../static/css/search.css" rel="stylesheet">
+    <script src="../static/zsui/lib/js/customElements.js"></script>
+    <script src="../static/zsui/lib/js/customElements.poly.js"></script>
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+    <script src="../static/js/dqmTable.js"></script>
+
+</head>
+<body class="zs-style zs-reset zs-layout-1col zs-layout-table">
+{% include 'header.html'%}
+    <section>
+        <main>
+            <header>
+                <h1>Dataset Load History</h1>
+            </header>
+             <section>
+                            <table id='load_history_table' class="zs-data-table">
+                                <thead>
+                                <tr>
+                                        <th>Dataset Id</th>
+                                        <th>Dataset Subject Area</th>
+                                        <th>Load Week</th>
+                                        <th>Batch Id</th>
+                                        <th>File Id</th>
+                                        <th>Pre Landing Record Count</th>
+                                        <th>Post DQM Count</th>
+                                        <th>DQM Error Count</th>
+                                        <th>Unified Record Count</th>
+                                </tr>
+                                </thead>
+                                 </table>
+          </section>
+         </main>
+    </section>
+</body>
+</html>

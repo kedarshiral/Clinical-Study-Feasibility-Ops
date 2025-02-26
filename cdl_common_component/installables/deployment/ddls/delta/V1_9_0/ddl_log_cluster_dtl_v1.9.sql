@@ -1,0 +1,9 @@
+ALTER TABLE log_cluster_dtl ADD COLUMN master_instance_type varchar(100) DEFAULT NULL AFTER master_node_dns;
+ALTER TABLE log_cluster_dtl ADD COLUMN  core_market_type  varchar(100) DEFAULT NULL AFTER  master_instance_type;
+ALTER TABLE log_cluster_dtl ADD COLUMN  core_instance_type  varchar(100) DEFAULT NULL AFTER  core_market_type;
+ALTER TABLE log_cluster_dtl ADD COLUMN  num_core_instances  varchar(100) DEFAULT NULL AFTER   core_instance_type;
+ALTER TABLE log_cluster_dtl ADD COLUMN  core_spot_bid_price  varchar(100) DEFAULT NULL AFTER  num_core_instances;
+ALTER TABLE log_cluster_dtl ADD COLUMN  task_market_type  varchar(100) DEFAULT NULL AFTER  core_spot_bid_price;
+ALTER TABLE log_cluster_dtl ADD COLUMN  task_instance_type  varchar(100) DEFAULT NULL AFTER  task_market_type;
+ALTER TABLE log_cluster_dtl ADD COLUMN  num_task_instances  varchar(100) DEFAULT NULL AFTER   task_instance_type;
+ALTER TABLE log_cluster_dtl ADD COLUMN  task_spot_bid_price  varchar(100) DEFAULT NULL AFTER  num_task_instances;

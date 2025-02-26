@@ -1,0 +1,149 @@
+/*
+Treeview
+
+A table with a treeview
+
+Markup:
+<table class="zs-tree-table">
+	<caption>Tree table</caption>
+	<thead>
+		<tr>
+			<th>
+				<a href="#">Name</a>
+			</th>
+			<th>
+				<a href="#">Date Published</a>
+			</th>
+			<th align="right">
+				<a href="#" sort="asc">Size</a>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="zs-row-group">
+			<td colspan="3">Rep Reports</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="#"><span class="zs-icon zs-icon-expand"></span><span class="zs-icon zs-icon-folder-closed"></span>January</a>
+			</td>
+			<td>3/31/15 5:42PM</td>
+			<td align="right">4K</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="#"><span class="zs-icon zs-icon-collapse"></span><span class="zs-icon zs-icon-folder-open"></span>February</a>
+			</td>
+			<td>3/31/15 5:42PM</td>
+			<td align="right">4K</td>
+		</tr>
+		<tr>
+			<td class="zs-level-2">
+				<a href="#"><span class="zs-icon zs-icon-collapse"></span><span class="zs-icon zs-icon-folder-open"></span>February Rep Reports</a>
+			</td>
+			<td>3/31/15 5:42PM</td>
+			<td align="right">4K</td>
+		</tr>
+		<tr>
+			<td class="zs-level-3">
+				<a href="#"><span class="zs-icon zs-icon-ppt"></span>Your score card</a>
+			</td>
+			<td>3/31/15 5:42PM</td>
+			<td align="right">4K</td>
+		</tr>
+		<tr class="zs-row-group">
+			<td colspan="3">Manager Reports</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="#"><span class="zs-icon zs-icon-expand"></span><span class="zs-icon zs-icon-folder-closed"></span>January</a>
+			</td>
+			<td>3/31/15 5:42PM</td>
+			<td align="right">4K</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="#"><span class="zs-icon zs-icon-collapse"></span><span class="zs-icon zs-icon-folder-open"></span>February</a>
+			</td>
+			<td>3/31/15 5:42PM</td>
+			<td align="right">4K</td>
+		</tr>
+		<tr>
+			<td class="zs-level-2">
+				<a href="#"><span class="zs-icon zs-icon-collapse"></span><span class="zs-icon zs-icon-folder-open"></span>February Rep Reports</a>
+			</td>
+			<td>3/31/15 5:42PM</td>
+			<td align="right">4K</td>
+		</tr>
+		<tr>
+			<td class="zs-level-3">
+				<a href="#"><span class="zs-icon zs-icon-ppt"></span>Your score card</a>
+			</td>
+			<td>3/31/15 5:42PM</td>
+			<td align="right">4K</td>
+		</tr>
+	</tbody>
+</table>
+
+Styleguide Components.Treeview
+*/ 
+.zs-tree-table:extend(.zs-data-table all) {
+	
+	.zs-row-group td:extend(.zs-style h3 all) {
+		padding-bottom:0;		
+		border-bottom: 1px solid @zs-border-color;
+	}
+	.zs-row-group:first-child td {
+		padding-top:0;
+	}
+
+	thead td, thead th {
+		background: transparent;
+		border-top: 0;	
+    }
+	
+		
+	td, th {
+		@icon-width: @zs-icon-height;
+		border: 0;
+		&:first-child {
+			padding-left:0;
+		}
+		
+		&.zs-level-2 { // TODO: adjust calculations
+			padding-left: 2*@icon-width + 0.5em;
+		}
+		
+		&.zs-level-3 {
+			padding-left: 4*@icon-width + 1.5em;
+		}
+		
+		&.zs-level-4 {
+			padding-left: 6*@icon-width + 2.5em;
+		}
+		
+		&.zs-level-5 {
+			padding-left: 8*@icon-width + 3.5em;
+		}
+		
+		&.zs-level-6 {
+			padding-left: 10*@icon-width+ 4.5em;
+		}
+		
+		&.zs-level-7 {
+			padding-left: 12*@icon-width + 5.5em;
+		}
+		
+		&.zs-level-8 {
+			padding-left: 14*@icon-width + 6.5em;
+		}
+		
+		>a>.zs-icon-large {
+			line-height:0.75em; // this would safely increase the row height for bigger icons
+		}
+
+	}
+	
+	
+	
+}

@@ -1,0 +1,35 @@
+{
+  "db_connection_details": {
+    "host": "",
+    "port": "",
+    "username": "",
+    "password": "",
+    "database_name": ""
+  },
+  "action": "import",
+  "run_import_view_details": "N",
+  "import_view_details": {
+    "view_names": [
+      "pub_trial_details_view"
+    ],
+    "schema": "public",
+    "view_definitions": {
+      "pub_trial_details_view": ""
+    }
+  },
+  "import_table_details": {
+    "f_rpt_site_study_details_test": {
+      "flag_table": "Y",
+      "location": "/home/airflow/as21292/temp",
+      "s3_csv_data_path": "s3://aws-a0049-use1-00-d-s3b-bpod-bdp-data01/as21292/ctfo_header_parquet/3/",
+      "s3_parquet_data_path": "s3://aws-a0049-use1-00-d-s3b-bpod-bdp-data01/as21292/ctfo_header_parquet/2/",
+      "schema": "ctfo_internal_app_fa_dev",
+      "curr_table": "f_rpt_site_study_details_test",
+      "prev_table": "f_rpt_site_study_details_test_prev",
+      "refresh_index_name": "",
+      "file_type" : "parquet",
+      "csv_download_flag": "Y",
+      "delimeter": "|"
+    }
+  }
+}

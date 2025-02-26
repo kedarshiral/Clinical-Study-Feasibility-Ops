@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link href="../../themes/zs/app.css" rel="stylesheet" />
+		<title>ZS UI Components // Searchable dropdown</title>
+		<script src="../../lib/js/jquery.min.js"></script>
+		<script src="../../components/searchDropdown/jquery.zsSearchDropdown.js" defer></script>
+		<script src="../../components/form/jquery.zsClear.js" defer></script>
+		<script>		
+			var ZS = ZS || {};
+		</script>
+	</head>
+	<body class="zs-style zs-reset" style="padding:2em">
+		<h1>Searchable dropdown</h1>
+		<!--<div class="zs-modal" style="position:absolute">-->
+		<section>
+			<h2>ZS</h2>
+			<div class="zs-select demo-generate-list">
+				<select zs></select>
+			</div>
+			
+			<h2>With a clear icon</h2>
+			<div class="zs-select demo-generate-list">
+				<select zsclear></select>
+			</div>
+
+			<h2>Empty value</h2>
+			<div class="zs-select">
+				<select zs>
+					<option value="">Select one</option>
+					<option value="1">one</option>
+					<option value="2">two</option>
+					<option value="3">three</option>
+				</select>
+			</div>
+
+			<h2>Multiple</h2>
+			<div class="zs-select demo-generate-list">
+				<select multiple ></select>
+			</div>
+
+			<h2>Preselected value</h2>
+			<div class="zs-select">
+				<select zspreselected>
+					<option value="1">one</option>
+					<option value="2" >two</option>
+					<option value="3" selected>three</option>
+					<option value="4">four</option>
+					<option value="5">five</option>
+				</select>
+			</div>
+
+			<h2>Multiple w/ preselected options</h2>
+			<div class="zs-select">
+				<select multiple >
+					<option value="1" selected>one</option>
+					<option value="2" >two</option>
+					<option value="3" selected>three</option>
+					<option value="4">four</option>
+					<option value="5" selected>five</option>
+				</select>
+			</div>
+
+			<h2>Multiple w/ 'select all' option</h2>
+			<div class="zs-select">
+				<select multiple select-all>
+					<option value="1" selected>one</option>
+					<option value="2" >two</option>
+					<option value="3" selected>three</option>
+					<option value="4">four</option>
+					<option value="5" selected>five</option>
+					<option value="6" >six</option>
+					<option value="7" >seven</option>
+				</select>
+			</div>
+		</section>
+		<section>
+			<h2>Optgroup and Clear All</h2>
+			<div class="zs-select">
+				<select multiple>
+					<optgroup label="Swedish Cars">
+						<option value="1-1">one</option>
+						<option value="2-1" >two</option>
+						<!-- <option value="2-2" >two and half</option> -->
+					</optgroup>
+					<optgroup label="German Cars">
+						<option value="3-1">three</option>
+						<option value="4-1">four</option>
+						<option value="5-1">five</option>
+					</optgroup>
+				</select>	
+			</div>
+			<br>
+			<button class="zs-button" clearall>Clear all</button>
+		</section>
+		<script defer>
+			function createList() {
+				var i,
+					n = 100,
+					value,
+					possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+				
+				for (i=0;i<n;i++) {
+					value = possible.charAt(Math.floor(Math.random() * possible.length)) + ' Test ' + possible.charAt(Math.floor(Math.random() * possible.length));
+					$('.demo-generate-list select').append('<option value="value-'+ value +'">'+ value +'</option>');
+				}
+				
+			}
+			$(document).ready(function() {
+				
+				createList();			
+				
+				// You can get value from native select
+				$('[zs]').on('change', function() {
+					console.log('handle change on the select', $(this).val());
+				});
+
+				$('[zs]').zsSearchDropdown({
+					events: {
+						change: function () {
+							// You can get value from native select: this.$select.val()
+							console.log('change', this.$select.val());	
+						},
+						beforeOpen: function () {	
+							console.log('beforeOpen');						
+							// Fix the problem when inside a modal							
+							// var	$modal = this.$container.parent('.zs-modal');
+							// if ($modal.length) {
+							// 	var offset = this.$select.offset();
+							// 	var modalOffset = $modal.offset();
+							// 	this.$container.css({
+							// 		top: offset.top -  modalOffset.top - 2, 
+							// 		left: offset.left - modalOffset.left -2 
+							// 	});
+							// }
+							
+							// var offset = this.$overlay.offset();
+							// this.$container.css({
+							// 	top: offset.top,
+							// 	left: offset.left
+							// });
+							
+							// This is a fix to make sure the select underneath an overlay not clickable			
+							// this.$overlay.css({
+							// 	width: this.$select.outerWidth(),
+							// 	height: this.$select.outerHeight() + 2, 
+							// });
+						},
+						open:function(){
+							console.log('open')
+						},
+						beforeClose:function(){
+							console.log('beforeClose')
+						},
+						close:function(){
+							console.log('close');
+							console.log('current value', this.$select.val());	
+						}
+					}
+				});
+				
+				$('[zsclear]').zsSearchDropdown({
+					events: {
+						beforeOpen: function () {	
+							var plugin = this;
+							var $container = this.$input.parent();					
+							if (!$container.data('zsClear')) {								
+								$container.zsClear({
+									events: {
+										clear: function() {
+											plugin.$input.trigger('blur');
+										}
+									}
+								});
+							} else {
+								$container.data('zsClear').show(); // Because we cleared input box manually we need to check and hide the clear icon
+							}
+						}
+					}
+				});
+
+				$('[zspreselected]').zsSearchDropdown({
+
+				});
+
+				$('[multiple]').zsSearchDropdown({
+					multiple: true,
+					// emptyText: 'Choose your destiny!', // you can pick an empty field text
+					// addCheckboxes: true, // you can add checkboxes as well
+					events: {
+						change: function () {
+							// You can get value from native select: this.$select.val()
+							console.log('handle change from the pluging', this.$select.val());	
+						},
+						beforeOpen: function () {	
+							console.log('beforeOpen multiple');						
+						},
+						open:function(){
+							console.log('open multiple')
+						},
+						beforeClose:function(){
+							console.log('beforeClose multiple')
+						},
+						close:function(){
+							console.log('close multiple');
+							console.log('current multiple value', this.$select.val());
+						}
+					}
+				});
+				
+				$('[clearall]').on('click', function(){
+					$(this).parent().find('select').data('zsSearchDropdown').clearAllSelection();
+				});
+
+				$('[select-all]').zsSearchDropdown({
+					addCheckboxes: true,
+					addSelectAll: true,
+					multiple: true
+				});
+			});
+		</script>
+	</body>
+
+</html>

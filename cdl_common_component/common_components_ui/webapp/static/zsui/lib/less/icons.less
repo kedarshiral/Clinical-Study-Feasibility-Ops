@@ -1,0 +1,867 @@
+/*
+Icons
+
+Icons
+
+Styleguide Icons
+*/
+@zs-icon-inactive-color: @zs-brand-gray;
+@zs-icon-font-version: @zs-lib-version;
+@zs-icon-font-family: 'zsIcons'; 
+@font-face {
+	font-family: '@{zs-icon-font-family}';
+	src:url('@{zs-fonts}/@{zs-icon-font-family}.eot?v{zs-icon-font-version}');
+	src:url('@{zs-fonts}/@{zs-icon-font-family}.eot?#iefixv@{zs-icon-font-version}') format('embedded-opentype'),
+		url('@{zs-fonts}/@{zs-icon-font-family}.woff2?v@{zs-icon-font-version}') format('woff2'),
+		url('@{zs-fonts}/@{zs-icon-font-family}.woff?v@{zs-icon-font-version}') format('woff'),		
+		url('@{zs-fonts}/@{zs-icon-font-family}.ttf?v@{zs-icon-font-version}') format('truetype'),
+		url('@{zs-fonts}/@{zs-icon-font-family}.svg?v@{zs-icon-font-version}#@zs-icon-font-family}') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+/**
+ *	@deprecated
+ */
+@font-face { 
+	font-family: 'Javelin-Icons';
+	src:url('@{zs-fonts}/@{zs-icon-font-family}.eot?v{zs-icon-font-version}');
+	src:url('@{zs-fonts}/@{zs-icon-font-family}.eot?#iefixv@{zs-icon-font-version}') format('embedded-opentype'),
+		url('@{zs-fonts}/@{zs-icon-font-family}.woff2?v@{zs-icon-font-version}') format('woff2'),
+		url('@{zs-fonts}/@{zs-icon-font-family}.woff?v@{zs-icon-font-version}') format('woff'),		
+		url('@{zs-fonts}/@{zs-icon-font-family}.ttf?v@{zs-icon-font-version}') format('truetype'),
+		url('@{zs-fonts}/@{zs-icon-font-family}.svg?v@{zs-icon-font-version}#@zs-icon-font-family}') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*
+Icon
+
+Icon example 
+
+Markup:
+<span class="zs-icon {{modifier_class}} zs-icon-search"></span>
+
+zs-icon-large - Large icon
+
+Styleguide Icons.Icon
+*/
+.zs-icon {
+	.zs-icon-font;
+	font-size: @zs-icon-height;
+	color: @zs-brand-dark;
+	display:inline-block;
+}
+.zs-icon-large {
+	font-size: @zs-icon-height*24/16;
+}
+
+/**
+*
+*/
+.zs-icon-font {
+	font-family: @zs-icon-font-family;
+}
+
+/*
+Status icon
+
+Icon example 
+
+Markup:
+<p class="{{modifier_class}}"><span class="zs-icon zs-icon-folder-open"></span></p><p><a href="javascript:void"><span class="zs-icon zs-folder-open {{modifier_class}}"></a>
+
+zs-success - Success
+zs-warning - Warning
+zs-error - Error
+zs-info - Info
+
+Styleguide Icons.StatusIcon
+*/
+.zs-icon.zs-success, .zs-success>.zs-icon, .zs-success.zs-badge:after {
+	color: @zs-status-success;
+}
+.zs-icon.zs-error, .zs-error>.zs-icon, .zs-error.zs-badge:after {
+	color: @zs-status-error;
+}
+.zs-icon.zs-warning, .zs-warning>.zs-icon, .zs-warning.zs-badge:after {
+	color: @zs-status-warning;
+}
+.zs-icon.zs-info, .zs-info>.zs-icon, .zs-info.zs-badge:after {
+	color: @zs-status-info;
+}
+a>.zs-icon.zs-success:hover, .zs-style a:hover>.zs-icon.zs-success {
+	
+	&:before {
+		color: lighten(@zs-status-success, 10%);
+	}
+}
+a>.zs-icon.zs-error:hover, .zs-style a:hover>.zs-icon.zs-error {	
+	&:before {
+		color: lighten(@zs-status-error, 10%);
+	}
+}
+a>.zs-icon.zs-warning:hover, .zs-style a:hover>.zs-icon.zs-warning {
+	&:before {
+		color: lighten(@zs-status-warning, 10%);
+	}
+}
+a.zs-icon.zs-info:hover, .zs-style a:hover>.zs-icon.zs-info {
+	&:before {
+		color: lighten(@zs-status-info, 10%);
+	}
+}
+
+
+
+
+
+/*
+Badge 
+
+Icons with a badge
+
+Markup:
+<span class="zs-icon zs-icon-large zs-icon-tasks"><span class="zs-badge zs-badge-current-item"></span></span><br/>
+<span class="zs-icon zs-icon-large zs-icon-tasks"><span class="zs-badge zs-success zs-badge-current-item"></span></span><br/>
+<span class="zs-icon zs-icon-large zs-icon-tasks"><span class="zs-badge zs-warning zs-badge-warning zs-badge-triangle"></span></span>
+<p class="zs-font-large"><span class="zs-icon zs-icon-large zs-icon-tasks"><span class="zs-badge zs-warning zs-badge-warning zs-badge-triangle"></span></span></p>
+
+
+Styleguide Icons.Badge
+*/
+.zs-badge {
+	font-size: 0.5em;
+	.zs-icon-font();
+	content: '';
+	display:inline-block;
+	position: absolute;
+	top: 1.25em;
+	left: 1.25em;
+    
+    &.zs-badge-word,
+    &.zs-badge-excel,
+    &.zs-badge-ppt,
+    &.zs-badge-pdf,
+    &.zs-badge-txt,
+    &.zs-badge-zip {
+		margin-top: 1px; // fixes a small gap between an icon and the badge at the bottom.
+        font-size: 1em;
+        top: 0;
+        left: 0;
+    }
+}
+.zs-badge:after,.zs-badge:before  {
+	position: absolute;
+}
+.zs-badge:before {
+	color: @zs-background;
+}
+
+.zs-badge-word:before {
+    color: #00629b;    
+}
+.zs-badge-excel:before {
+    color: #409f52;    
+}
+.zs-badge-ppt:before {
+    color: #e35f1d;    
+}
+.zs-badge-pdf:before {
+    color: #9a402b;    
+}
+.zs-badge-txt:before {
+    color: #6e2b62;    
+}
+.zs-badge-zip:before {
+    color: #dfb102;    
+}
+
+/*
+Link icon
+
+A link with an icon 
+
+Markup:
+<a href="#" class="{{modifier_class}}"><span class="zs-icon zs-icon-download"></span>Download</a>
+
+zs-disabled - Disabled state
+
+Styleguide Icons.LinkIcon
+*/
+a:hover>.zs-icon:before, a>.zs-icon:before {
+	display:inline-block;
+	text-decoration:none;
+	margin-right: 0.5em;
+	margin-bottom: 0.25em;
+	vertical-align:middle;
+	//vertical-align: baseline; // baseline here doesn't give better result
+}
+a:hover>.zs-icon:before {
+	color: @zs-link-hover;
+}
+a.zs-icon:before {
+	cursor:pointer;
+}
+
+/*
+Button icon
+
+A button with an icon 
+
+Markup:
+<button class="zs-button {{modifier_class}}">
+	<span class="zs-icon zs-icon-add"></span>
+	Add
+</button>
+
+zs-disabled - Disabled state
+zs-button-action - Action button
+
+Styleguide Icons.ButtonIcon
+*/
+.zs-button.zs-icon {
+	padding-left: @zs-font-padding-ratio;
+	&:hover {
+		cursor:pointer;
+	}
+	&:before {
+		position:absolute;
+		top:50%;
+		.zs-icon-font;
+		font-size:@zs-icon-height;
+		left: -0.1em;
+		//left: @zs-icon-width;
+		//margin-top:0.5*@zs-icon-heght;
+	}
+}
+.zs-button>.zs-icon:before {
+	display:inline-block;
+	margin-left:@zs-padding-horizontal * -1;
+	vertical-align:middle;
+	padding-bottom:0.25em;
+	margin-right:0.25em;
+}
+
+.zs-button-action>.zs-icon {
+	color: @zs-background;
+}
+
+.zs-sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+
+
+// Space between icons
+.zs-icon + .zs-icon {
+	.margin(0,0,0,0.25);
+}
+
+// Fix for IE11 cursor over a link with an icon
+a.zs-icon, a.zs-icon:hover { 
+	cursor:pointer;
+}
+
+// Inactive icon 
+.zs-icon-inactive:before {
+	color: @zs-icon-inactive-color;
+}
+
+// Text icon
+.zs-icon-text:before {
+	color: @zs-text-color;
+}
+
+// All classes for icons
+.zs-icon-error:before, .zs-badge-error:after {
+	content: "\21";
+}
+
+.zs-icon-warning:before, .zs-badge-warning:after {
+	content: "\22";
+}
+
+.zs-icon-user-permissions:before {
+	content: "\23";
+}
+
+.zs-icon-group-permissions:before {
+	content: "\24";
+}
+
+.zs-icon-group:before {
+	content: "\25";
+}
+
+.zs-icon-ungroup:before {
+	content: "\26";
+}
+
+.zs-icon-tasks:before {
+	content: "\27";
+}
+
+.zs-icon-upload:before {
+	content: "\28";
+}
+
+.zs-icon-download:before {
+	content: "\29";
+}
+
+.zs-icon-validations:before {
+	content: "\2a";
+}
+
+.zs-icon-report-template:before {
+	content: "\2b";
+}
+
+.zs-icon-search:before {
+	content: "\2c";
+}
+
+.zs-icon-source:before {
+	content: "\2d";
+}
+
+.zs-icon-preview:before {
+	content: "\2e";
+}
+
+.zs-icon-rules:before {
+	content: "\2f";
+}
+
+.zs-icon-expand-frame:before {
+	content: "\30";
+}
+
+.zs-icon-restore-frame:before {
+	content: "\31";
+}
+
+.zs-icon-pending-approval:before {
+	content: "\32";
+}
+
+.zs-icon-rejected-approval:before, .zs-icon-remove:before {
+	content: "\33";
+}
+
+.zs-icon-revisions-requested:before {
+	content: "\34";
+}
+
+.zs-icon-refresh:before {
+	content: "\35";
+}
+
+.zs-icon-check-success:before, .zs-badge-check-success:after {
+	content: "\36";
+}
+.zs-icon-ok:before, .zs-icon-check-success:before, .zs-badge-check-success:after {
+	content: "\36";
+}
+
+.zs-icon-refinement:before {
+	content: "\37";
+}
+
+.zs-icon-print:before {
+	content: "\38";
+}
+
+.zs-icon-map:before {
+	content: "\39";
+}
+
+.zs-icon-lock:before {
+	content: "\3a";
+}
+
+.zs-icon-info:before {
+	content: "\3b";
+}
+
+.zs-icon-help:before {
+	content: "\3c";
+}
+
+.zs-icon-generatedreport:before {
+	content: "\3d";
+}
+
+.zs-icon-folder-shortcut:before {
+	content: "\3e";
+}
+
+.zs-icon-folder-open:before {
+	content: "\3f";
+}
+
+.zs-icon-folder-closed:before {
+	content: "\40";
+}
+
+.zs-icon-external-bio:before {
+	content: "\41";
+}
+
+.zs-icon-expand:before {
+	content: "\42";
+}
+
+.zs-icon-collapse:before {
+	content: "\4b";
+}
+
+.zs-icon-edit:before {
+	content: "\43";
+}
+
+.zs-icon-duplicate:before {
+	content: "\44";
+}
+
+.zs-icon-delete:before {
+	content: "\45";
+}
+
+.zs-icon-add-value-key:before {
+	content: "\46";
+}
+
+.zs-icon-add:before {
+	content: "\47";
+}
+
+.zs-icon-dashboard:before {
+	content: "\48";
+}
+
+.zs-icon-current-item:before, .zs-badge-current-item:after, .zs-badge-current-item:before {
+	content: "\49";
+}
+
+.zs-icon-constant:before {
+	content: "\4a";
+}
+
+.zs-icon-close:before {
+	content: "\4c";
+}
+
+.zs-icon-calendar:before {
+	content: "\4d";
+}
+
+.zs-icon-calculated-value:before {
+	content: "\4e";
+}
+
+.zs-icon-added-value:before {
+	content: "\4f";
+}
+
+.zs-icon-building:before {
+	content: "\50";
+}
+
+.zs-icon-arrow-previous:before {
+	content: "\51";
+}
+
+.zs-icon-arrow-next:before {
+	content: "\52";
+}
+
+.zs-icon-pdf:before, .zs-badge-pdf:before {
+	content: "\54";
+}
+
+.zs-icon-excel:before, .zs-badge-excel:before {
+	content: "\55";
+}
+
+.zs-icon-misc:before {
+	content: "\56";
+}
+
+.zs-icon-delta-arrow-up:before {
+	content: "\58";
+}
+
+.zs-icon-expand-left:before {
+	content: "\59";
+}
+
+.zs-icon-ppt:before, .zs-badge-ppt:before {
+	content: "\5a";
+}
+
+.zs-icon-img:before {
+	content: "\60";
+}
+
+.zs-icon-background-check-success:before, .zs-badge-circle:before {
+	content: "\61";
+}
+
+.zs-icon-background-error:before, .zs-badge-rectangle:before {
+	content: "\62";
+}
+
+.zs-icon-backgroundwarning:before,.zs-badge-triangle:before {
+	content: "\63";
+}
+
+.zs-icon-spinner:before {
+	.zs-icon-font;
+	content: "\64";
+}
+
+.zs-icon-hamburger:before {
+	content: "\65";
+}
+
+.zs-icon-logout:before {
+	content: "\66";
+}
+
+.zs-icon-move-up:before,.zs-badge-arrow:before{
+	content: "\67";
+}
+.zs-icon-home:before {
+	content: "\69";
+}
+
+.zs-icon-move-down:before {
+	content: "\6a";
+}
+
+.zs-icon-publish:before {
+	content: "\70";
+}
+
+.zs-icon-published:before {	
+	content: "\71";
+}
+
+.zs-icon-grid:before {
+	content: "\72";
+}
+
+.zs-icon-dragger:before {
+	content: "\73";
+}
+
+.zs-icon-warning-diamond:before {
+	content: "\74";
+}
+
+.zs-icon-link:before {
+	content: "\75";
+}
+
+.zs-icon-table:before {
+	content: "\76";
+}
+
+.zs-icon-filter:before {
+	content: "\77";
+}
+
+.zs-icon-trend:before {
+	content: "\7a";
+}
+
+.zs-icon-settings:before,.zs-badge-gear:before {
+	content: "\7c";
+}
+
+.zs-icon-txt:before, .zs-badge-txt:before {
+	content: "\7d";
+}
+
+.zs-icon-zip:before, .zs-badge-zip:before {
+	content: "\7e";
+}
+
+.zs-icon-document:before {
+    content: "\df";
+    color: #74797D;
+}
+
+.zs-icon-trophy:before {
+	content: "\e4";
+}
+
+.zs-icon-rep:before {
+	content: "\e6";
+}
+
+.zs-icon-manually-defined:before{
+    content: "\f8";
+}
+
+.zs-icon-suggested-action:before{
+    content: "\f9";
+}
+
+.zs-icon-product:before{
+    content: "\fa";
+}
+
+.zs-icon-statistically-derived:before{
+    content: "\fc";
+}
+
+.zs-icon-popout:before {
+	content: "\17e";
+}
+
+.zs-icon-prev:before {
+	content: "\2039";
+}
+.zs-icon-next:before {
+	content: "\203A";
+}
+
+.zs-icon-first:before {
+	content: "\2264";
+}
+.zs-icon-last:before {
+	content: "\2265";
+}
+
+.zs-icon-tag:before {
+	content: "\e5";
+}
+
+.zs-icon-square:before {
+	content: "\25fc";
+}
+
+.zs-icon-diamond:before {
+	content: "\b4";
+}
+
+.zs-icon-word:before, .zs-badge-word:before {
+	content: "\e621";
+}
+
+.zs-icon-key:before {
+	content: "\b6";
+}
+
+.zs-icon-positive:before {
+	content: "\a2";
+}
+
+.zs-icon-negative:before {
+	content: "\a3";
+}
+
+.zs-icon-notes:before {
+	content: "\7b";
+} 
+
+.zs-icon-frame:before {
+	content: "\78";
+} 
+
+.zs-icon-clipnote:before,.zs-icon-mike:before  {
+	content: "\79";
+} 
+
+.zs-icon-envelope:before {
+	content: "\h";
+}
+
+.zs-icon-frame-next:before {
+	content: "\57";
+}
+
+.zs-icon-eye:before {
+	content: "\b1";
+}
+
+.zs-icon-eye-closed:before {
+	content: "\b2";
+}
+
+.zs-icon-globe:before {
+	content: "\b3";
+}
+
+.zs-icon-summary:before, .zs-icon-tiles:before {
+	content: "\a1";
+}
+
+.zs-icon-javelin:before {
+	content: "\2673";
+}
+
+.zs-icon-speech-bubble:before{
+	content: "\C1";	
+}
+
+.zs-icon-flag:before{
+	content: "\FF";
+}
+
+.zs-icon-resize:before{
+	content: "\E0";
+}
+
+.zs-icon-territory-l1:before{
+	content: "\E01";
+}
+
+.zs-icon-territory-l2:before{
+	content: "\E02";
+}
+
+.zs-icon-territory-l3:before{
+	content: "\E03";
+}
+
+.zs-icon-territory-l4:before{
+	content: "\E04";
+}
+
+.zs-icon-territory-l5:before{
+	content: "\E05";
+}
+
+.zs-icon-territory-l6:before{
+	content: "\E06";
+}
+
+.zs-icon-territory-l7:before{
+	content: "\E07";
+}
+
+.zs-icon-territory-l8:before{
+	content: "\E08";
+}
+
+.zs-icon-territory-l9:before{
+	content: "\E09";
+}
+
+.zs-icon-territory-l10:before{
+	content: "\E10";
+}
+
+.zs-icon-flowchart:before{
+	content: "\b5";
+}
+
+.zs-icon-scissors:before{
+	content: "\c2";
+}
+
+.zs-icon-derived:before{
+	content: "\d1";
+}
+
+.zs-icon-play:before{
+	content: "\d2";
+}
+
+.zs-icon-select-lasso:before{
+	content: "\6b";
+}
+
+
+.zs-icon-select-rectangle:before{
+	content: "\6c";
+}
+
+.zs-icon-zoom-rectangle:before{
+	content: "\6d";
+}
+
+.zs-icon-icon-plus:before{
+	content: "\6e";
+}
+
+.zs-icon-icon-minus:before{
+	content: "\6f";
+}
+
+.zs-icon-horn:before{
+	content: "\5f";
+}
+
+.zs-icon-handshake:before{
+	content: "\301";
+}
+
+.zs-icon-stop:before{
+	content: "\300";
+}
+
+.zs-icon-pause:before{
+	content: "\5e";
+}
+
+.zs-icon-redo:before{
+	content: "\53";
+}
+
+.zs-icon-user-settings:before{
+	content: "\5d";
+}
+
+.zs-icon-user-deligate:before{
+	content: "\5b";
+}
+
+
+.zs-icon-javelin:after {
+	content: "\2674";
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.zs-icon-javelin .zs-icon-javelin-shadow {
+	position: absolute;
+	left: 0;
+	top: 0;
+	&:before {
+		content: "\2675";
+	}
+}
+.zs-icon-user-permissions{
+	.zs-badge-gear{
+		&:before{
+			border-radius: 0.5em;
+			color: inherit;	
+			background: @zs-background;
+			
+		}
+	}
+
+	.zs-badge-arrow{
+		left:-0.4em;
+		top:1.3em;
+
+		&:before{
+			color: inherit;
+			-webkit-transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			transform: rotate(90deg);	
+			text-shadow: @zs-background 0 -0.1em;		
+		}
+	}
+}

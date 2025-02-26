@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Locked columns</title>
+
+	<!-- zsui styles -->
+	<link rel="stylesheet" href="../../themes/zs/core.css" />
+	<link rel="stylesheet" href="../form/form.css" />
+	<link rel="stylesheet" href="table.css" />
+
+	<!-- zs custom elements library -->
+	<script src="../../lib/js/customElements.poly.js"></script>
+	<script src="../../lib/js/customElements.js"></script>
+
+</head>
+
+<body class="zs-style" style="padding:1em">
+
+
+	<section>
+
+		<!-- zs custom elements-->
+		<script src="../form/zsLoading.js"></script>
+		<script src="zsTable.js"></script>
+		<script src="../form/zsField.js"></script>
+
+
+		<style>
+			body {
+				padding: 40px
+			}
+
+			thead td a {
+				cursor: pointer;
+			}
+		</style>
+		<script>
+			function getData() {
+				return new Promise(function (resolve, reject) {
+					var arr = [];
+					for (i = 0; i <= 15; i++) {
+						var row = [];
+						for (j = 0; j < 10; j++) {
+
+							if (i == 0 && j == 2) {
+								row.push(10 * i + j + '<br>test'); // multi line
+							} else if (i == 0 && j == 5) {
+								row.push(10 * i + j + 'unbreakableLongText'); // unbreakable
+							} else if (i > 0 && (j == 2 || j == 6)) {
+								//row.push('fieldunbreakablelong');
+								//row.push('<input type="text" value="test"/>');
+								//var el = new zs.fieldElement();
+								//el.setAttribute('type', 'text');
+								//el.setAttribute('value', 'test');
+
+								row.push('<p is="zs-field" type="text" label="test" value="my value"></p>');
+							} else {
+								row.push(10 * i + j);
+							}
+						}
+						arr.push(row);
+					}
+					resolve(arr);
+				});
+			}
+		</script>
+		<h2>Locked columns</h2>
+		<div id="locked"></div>
+		<script>
+			(function () {
+
+				// We need to have a container with limited size
+				var container = document.createElement('div');
+				container.setAttribute('style', 'width:400px;height:400px;overflow:auto');
+
+				var fixedTableElement = zs.customElement(zs.tableElement, 'zs-fixed-table', 'div', [zs.tableFixedColumns, {
+					renderCell: function (rowIndex, colIndex, data) {
+						console.log('render cell', rowIndex, colIndex, data);
+						var td = document.createElement('td');
+						td.setAttribute('key', colIndex);
+						td.innerHTML = data;
+
+						field = td.querySelector('p');
+
+						if (field) {
+							field.addEventListener('click', function () {
+								alert('click');
+							});
+						}
+						return td;
+					}
+				}]);
+				var table = new fixedTableElement();
+				table.appendChild(container); 	// Conatiner need to be inside the table
+				table.tableContainer = container; // We need to set it
+				table.fixedColumnCount = 3;
+				table.getTableData = getData;
+				table.refreshTable();
+				document.querySelector('#locked').appendChild(table);
+			})();
+		</script>
+
+		<h2>With a sticky header</h2>
+		<div id="lockedSticky"></div>
+		<script>
+			(function () {
+				var container = document.createElement('div');
+				var fixedTableElement = zs.customElement(zs.tableElement, 'zs-fixed-sticky-table', 'div', [zs.tableFixedColumns, zs.tableStickyHeader, {
+					renderCell: function (rowIndex, colIndex, data) {
+						console.log('render cell', rowIndex, colIndex, data);
+						var td = document.createElement('td');
+						td.setAttribute('key', colIndex);
+						td.innerHTML = data;
+
+						field = td.querySelector('p');
+
+						if (field) {
+							field.addEventListener('click', function () {
+								alert('click');
+							});
+						}
+						return td;
+					},
+					events: {
+						render: function () {
+							this.stickHeader(this.table, null, this.tableContainer);
+							if (this.fixedColumnCount && this.fixedContainer) {
+								this.stickHeader(this.fixedTable, null, this.fixedContainer);
+							}
+						},
+						resize: function () {
+							// resize sticky
+							console.log('resize sticky');
+							this.resizeStickyHeader(this.table, null, this.tableContainer);
+							if (this.fixedColumnCount && this.fixedContainer) {
+								this.resizeStickyHeader(this.fixedTable, null, this.fixedContainer);
+							}
+						}
+					}
+				}]);
+				var table = new fixedTableElement();
+				table.fixedColumnCount = 3;
+
+				table.getTableData = getData;
+				container.setAttribute('style', 'width:400px;height:200px;overflow:auto');
+				table.appendChild(container);
+				table.tableContainer = container;
+
+				document.querySelector('#lockedSticky').appendChild(table);
+				table.refreshTable();
+
+
+				window.addEventListener('resize', function () {
+					table.dispatchEvent(new CustomEvent('resize'));
+				});
+			})();
+		</script>
+	</section>
+
+</html>

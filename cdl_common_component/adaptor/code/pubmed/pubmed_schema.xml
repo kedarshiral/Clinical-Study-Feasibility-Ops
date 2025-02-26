@@ -1,0 +1,1687 @@
+<PubmedArticleSet>
+  <!--You have a CHOICE of the next 2 items at this level-->
+  <PubmedArticle>
+    <MedlineCitation Owner="NLM" Status="Publisher" VersionID="anySimpleType" VersionDate="anySimpleType" IndexingMethod="anySimpleType">
+      <PMID Version="anySimpleType">gero cum</PMID>
+      <DateCompleted>
+        <Year>string</Year>
+        <Month>string</Month>
+        <Day>string</Day>
+      </DateCompleted>
+      <DateRevised>
+        <Year>string</Year>
+        <Month>string</Month>
+        <Day>string</Day>
+      </DateRevised>
+      <Article PubModel="Electronic-Print">
+        <Journal>
+          <ISSN IssnType="Electronic">quae ventos</ISSN>
+          <JournalIssue CitedMedium="Print">
+            <Volume>string</Volume>
+            <Issue>string</Issue>
+            <PubDate>
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <Year>string</Year>
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <Month>string</Month>
+              <Day>string</Day>
+              <Season>string</Season>
+              <MedlineDate>string</MedlineDate>
+            </PubDate>
+          </JournalIssue>
+          <Title>string</Title>
+          <ISOAbbreviation>string</ISOAbbreviation>
+        </Journal>
+        <ArticleTitle book="anySimpleType" part="anySimpleType" sec="anySimpleType">temperat per</ArticleTitle>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <Pagination>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <StartPage>string</StartPage>
+          <EndPage>string</EndPage>
+          <MedlinePgn>string</MedlinePgn>
+          <MedlinePgn>string</MedlinePgn>
+        </Pagination>
+        <!--2 or more repetitions:-->
+        <ELocationID EIdType="doi" ValidYN="Y">circum regemque</ELocationID>
+        <ELocationID EIdType="doi" ValidYN="Y">fremunt foedere</ELocationID>
+        <!--2 or more repetitions:-->
+        <ELocationID EIdType="pii" ValidYN="Y">profundum sceptra</ELocationID>
+        <ELocationID EIdType="doi" ValidYN="Y">turbine iovis</ELocationID>
+        <Abstract>
+          <!--2 or more repetitions:-->
+          <AbstractText Label="anySimpleType" NlmCategory="CONCLUSIONS">speluncis profundum</AbstractText>
+          <AbstractText Label="anySimpleType" NlmCategory="UNASSIGNED">nubibus flammas</AbstractText>
+          <CopyrightInformation>string</CopyrightInformation>
+        </Abstract>
+        <AuthorList CompleteYN="Y" Type="authors">
+          <!--2 or more repetitions:-->
+          <Author ValidYN="Y" EqualContrib="N">
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <LastName>string</LastName>
+            <ForeName>string</ForeName>
+            <Initials>string</Initials>
+            <Suffix>string</Suffix>
+            <CollectiveName>string</CollectiveName>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">rapidum ac</Identifier>
+            <Identifier Source="anySimpleType">caelumque speluncis</Identifier>
+            <!--2 or more repetitions:-->
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">circum aris</Identifier>
+              <Identifier Source="anySimpleType">coniunx praeterea</Identifier>
+            </AffiliationInfo>
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">arce claustra</Identifier>
+              <Identifier Source="anySimpleType">circum imperio</Identifier>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y" EqualContrib="N">
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <LastName>string</LastName>
+            <ForeName>string</ForeName>
+            <Initials>string</Initials>
+            <Suffix>string</Suffix>
+            <CollectiveName>string</CollectiveName>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">quisquam et</Identifier>
+            <Identifier Source="anySimpleType">ac feta</Identifier>
+            <!--2 or more repetitions:-->
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">ac sed</Identifier>
+              <Identifier Source="anySimpleType">pectore talia</Identifier>
+            </AffiliationInfo>
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">pectore austris</Identifier>
+              <Identifier Source="anySimpleType">annos sciret</Identifier>
+            </AffiliationInfo>
+          </Author>
+        </AuthorList>
+        <!--2 or more repetitions:-->
+        <Language>string</Language>
+        <Language>string</Language>
+        <DataBankList CompleteYN="Y">
+          <!--2 or more repetitions:-->
+          <DataBank>
+            <DataBankName>string</DataBankName>
+            <AccessionNumberList>
+              <!--2 or more repetitions:-->
+              <AccessionNumber>string</AccessionNumber>
+              <AccessionNumber>string</AccessionNumber>
+            </AccessionNumberList>
+          </DataBank>
+          <DataBank>
+            <DataBankName>string</DataBankName>
+            <AccessionNumberList>
+              <!--2 or more repetitions:-->
+              <AccessionNumber>string</AccessionNumber>
+              <AccessionNumber>string</AccessionNumber>
+            </AccessionNumberList>
+          </DataBank>
+        </DataBankList>
+        <GrantList CompleteYN="Y">
+          <!--2 or more repetitions:-->
+          <Grant>
+            <GrantID>string</GrantID>
+            <Acronym>string</Acronym>
+            <Agency>string</Agency>
+            <Country>string</Country>
+          </Grant>
+          <Grant>
+            <GrantID>string</GrantID>
+            <Acronym>string</Acronym>
+            <Agency>string</Agency>
+            <Country>string</Country>
+          </Grant>
+        </GrantList>
+        <PublicationTypeList>
+          <!--2 or more repetitions:-->
+          <PublicationType UI="anySimpleType">certo dare</PublicationType>
+          <PublicationType UI="anySimpleType">rates bella</PublicationType>
+        </PublicationTypeList>
+        <VernacularTitle>string</VernacularTitle>
+        <!--2 or more repetitions:-->
+        <ArticleDate DateType="Electronic">
+          <Year>string</Year>
+          <Month>string</Month>
+          <Day>string</Day>
+        </ArticleDate>
+        <ArticleDate DateType="Electronic">
+          <Year>string</Year>
+          <Month>string</Month>
+          <Day>string</Day>
+        </ArticleDate>
+      </Article>
+      <MedlineJournalInfo>
+        <Country>string</Country>
+        <MedlineTA>string</MedlineTA>
+        <NlmUniqueID>string</NlmUniqueID>
+        <ISSNLinking>string</ISSNLinking>
+      </MedlineJournalInfo>
+      <ChemicalList>
+        <!--2 or more repetitions:-->
+        <Chemical>
+          <RegistryNumber>string</RegistryNumber>
+          <NameOfSubstance UI="anySimpleType">volutans dedit</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>string</RegistryNumber>
+          <NameOfSubstance UI="anySimpleType">faciat magno</NameOfSubstance>
+        </Chemical>
+      </ChemicalList>
+      <SupplMeshList>
+        <!--2 or more repetitions:-->
+        <SupplMeshName Type="Disease" UI="anySimpleType">ac et</SupplMeshName>
+        <SupplMeshName Type="Organism" UI="anySimpleType">annos infixit</SupplMeshName>
+      </SupplMeshList>
+      <!--2 or more repetitions:-->
+      <CitationSubset>string</CitationSubset>
+      <CitationSubset>string</CitationSubset>
+      <CommentsCorrectionsList>
+        <!--2 or more repetitions:-->
+        <CommentsCorrections RefType="SummaryForPatientsIn">
+          <RefSource>string</RefSource>
+          <PMID Version="anySimpleType">tenens regina</PMID>
+          <Note>string</Note>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="ExpressionOfConcernFor">
+          <RefSource>string</RefSource>
+          <PMID Version="anySimpleType">rapidum habenas</PMID>
+          <Note>string</Note>
+        </CommentsCorrections>
+      </CommentsCorrectionsList>
+      <GeneSymbolList>
+        <!--2 or more repetitions:-->
+        <GeneSymbol>string</GeneSymbol>
+        <GeneSymbol>string</GeneSymbol>
+      </GeneSymbolList>
+      <MeshHeadingList>
+        <!--2 or more repetitions:-->
+        <MeshHeading>
+          <DescriptorName MajorTopicYN="N" Type="Geographic" UI="anySimpleType">mollitque cum</DescriptorName>
+          <!--2 or more repetitions:-->
+          <QualifierName MajorTopicYN="N" UI="anySimpleType">iovisque in</QualifierName>
+          <QualifierName MajorTopicYN="N" UI="anySimpleType">soror abdidit</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName MajorTopicYN="N" Type="Geographic" UI="anySimpleType">coniunx adorat</DescriptorName>
+          <!--2 or more repetitions:-->
+          <QualifierName MajorTopicYN="N" UI="anySimpleType">ipsa illum</QualifierName>
+          <QualifierName MajorTopicYN="N" UI="anySimpleType">frenat aris</QualifierName>
+        </MeshHeading>
+      </MeshHeadingList>
+      <NumberOfReferences>string</NumberOfReferences>
+      <PersonalNameSubjectList>
+        <!--2 or more repetitions:-->
+        <PersonalNameSubject>
+          <LastName>string</LastName>
+          <ForeName>string</ForeName>
+          <Initials>string</Initials>
+          <Suffix>string</Suffix>
+        </PersonalNameSubject>
+        <PersonalNameSubject>
+          <LastName>string</LastName>
+          <ForeName>string</ForeName>
+          <Initials>string</Initials>
+          <Suffix>string</Suffix>
+        </PersonalNameSubject>
+      </PersonalNameSubjectList>
+      <!--2 or more repetitions:-->
+      <OtherID Source="IND">aris mollitque</OtherID>
+      <OtherID Source="PIP">montis insuper</OtherID>
+      <!--2 or more repetitions:-->
+      <OtherAbstract Type="Publisher" Language="eng">
+        <!--2 or more repetitions:-->
+        <AbstractText Label="anySimpleType" NlmCategory="OBJECTIVE">gero nimborum</AbstractText>
+        <AbstractText Label="anySimpleType" NlmCategory="BACKGROUND">vasto montis</AbstractText>
+        <CopyrightInformation>string</CopyrightInformation>
+      </OtherAbstract>
+      <OtherAbstract Type="AAMC" Language="eng">
+        <!--2 or more repetitions:-->
+        <AbstractText Label="anySimpleType" NlmCategory="OBJECTIVE">tempestatesque aris</AbstractText>
+        <AbstractText Label="anySimpleType" NlmCategory="BACKGROUND">incedo premit</AbstractText>
+        <CopyrightInformation>string</CopyrightInformation>
+      </OtherAbstract>
+      <!--2 or more repetitions:-->
+      <KeywordList Owner="NLM">
+        <!--2 or more repetitions:-->
+        <Keyword MajorTopicYN="N">ac iras</Keyword>
+        <Keyword MajorTopicYN="N">acuto nubibus</Keyword>
+      </KeywordList>
+      <KeywordList Owner="NLM">
+        <!--2 or more repetitions:-->
+        <Keyword MajorTopicYN="N">et austris</Keyword>
+        <Keyword MajorTopicYN="N">dedit qui</Keyword>
+      </KeywordList>
+      <CoiStatement>string</CoiStatement>
+      <!--2 or more repetitions:-->
+      <SpaceFlightMission>string</SpaceFlightMission>
+      <SpaceFlightMission>string</SpaceFlightMission>
+      <InvestigatorList>
+        <!--2 or more repetitions:-->
+        <Investigator ValidYN="Y">
+          <LastName>string</LastName>
+          <ForeName>string</ForeName>
+          <Initials>string</Initials>
+          <Suffix>string</Suffix>
+          <!--2 or more repetitions:-->
+          <Identifier Source="anySimpleType">profundum atris</Identifier>
+          <Identifier Source="anySimpleType">imposuit atris</Identifier>
+          <!--2 or more repetitions:-->
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">magno animos</Identifier>
+            <Identifier Source="anySimpleType">iras sonoras</Identifier>
+          </AffiliationInfo>
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">verrantque patriam</Identifier>
+            <Identifier Source="anySimpleType">metuens montis</Identifier>
+          </AffiliationInfo>
+        </Investigator>
+        <Investigator ValidYN="Y">
+          <LastName>string</LastName>
+          <ForeName>string</ForeName>
+          <Initials>string</Initials>
+          <Suffix>string</Suffix>
+          <!--2 or more repetitions:-->
+          <Identifier Source="anySimpleType">dare laxas</Identifier>
+          <Identifier Source="anySimpleType">tempestatesque e</Identifier>
+          <!--2 or more repetitions:-->
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">sceptra volutans</Identifier>
+            <Identifier Source="anySimpleType">vasto murmure</Identifier>
+          </AffiliationInfo>
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">coniunx vinclis</Identifier>
+            <Identifier Source="anySimpleType">rapidum rapidi</Identifier>
+          </AffiliationInfo>
+        </Investigator>
+      </InvestigatorList>
+      <!--2 or more repetitions:-->
+      <GeneralNote Owner="NLM">turbine antro</GeneralNote>
+      <GeneralNote Owner="NLM">auras sciret</GeneralNote>
+    </MedlineCitation>
+    <PubmedData>
+      <History>
+        <!--2 or more repetitions:-->
+        <PubMedPubDate PubStatus="aheadofprint">
+          <Year>string</Year>
+          <Month>string</Month>
+          <Day>string</Day>
+          <Hour>string</Hour>
+          <Minute>string</Minute>
+          <Second>string</Second>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="entrez">
+          <Year>string</Year>
+          <Month>string</Month>
+          <Day>string</Day>
+          <Hour>string</Hour>
+          <Minute>string</Minute>
+          <Second>string</Second>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>string</PublicationStatus>
+      <ArticleIdList>
+        <!--2 or more repetitions:-->
+        <ArticleId IdType="pubmed">aequora ipsa</ArticleId>
+        <ArticleId IdType="pubmed">et aris</ArticleId>
+      </ArticleIdList>
+      <ObjectList>
+        <!--2 or more repetitions:-->
+        <Object Type="anySimpleType">
+          <!--2 or more repetitions:-->
+          <Param Name="anySimpleType">incedo imperio</Param>
+          <Param Name="anySimpleType">hic arce</Param>
+        </Object>
+        <Object Type="anySimpleType">
+          <!--2 or more repetitions:-->
+          <Param Name="anySimpleType">ego ni</Param>
+          <Param Name="anySimpleType">tempestatesque circum</Param>
+        </Object>
+      </ObjectList>
+    </PubmedData>
+  </PubmedArticle>
+  <PubmedBookArticle>
+    <BookDocument>
+      <PMID Version="anySimpleType">ego corde</PMID>
+      <ArticleIdList>
+        <!--2 or more repetitions:-->
+        <ArticleId IdType="pubmed">aris insuper</ArticleId>
+        <ArticleId IdType="pubmed">molemque temperat</ArticleId>
+      </ArticleIdList>
+      <Book>
+        <Publisher>
+          <PublisherName>string</PublisherName>
+          <PublisherLocation>string</PublisherLocation>
+        </Publisher>
+        <BookTitle book="anySimpleType" part="anySimpleType" sec="anySimpleType">rapidum magno</BookTitle>
+        <PubDate>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <Year>string</Year>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <Month>string</Month>
+          <Day>string</Day>
+          <Season>string</Season>
+          <MedlineDate>string</MedlineDate>
+        </PubDate>
+        <BeginningDate>
+          <Year>string</Year>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <Month>string</Month>
+          <Day>string</Day>
+          <Season>string</Season>
+        </BeginningDate>
+        <EndingDate>
+          <Year>string</Year>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <Month>string</Month>
+          <Day>string</Day>
+          <Season>string</Season>
+        </EndingDate>
+        <!--2 or more repetitions:-->
+        <AuthorList CompleteYN="Y" Type="authors">
+          <!--2 or more repetitions:-->
+          <Author ValidYN="Y" EqualContrib="N">
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <LastName>string</LastName>
+            <ForeName>string</ForeName>
+            <Initials>string</Initials>
+            <Suffix>string</Suffix>
+            <CollectiveName>string</CollectiveName>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">altos iunonis</Identifier>
+            <Identifier Source="anySimpleType">aeoliam premere</Identifier>
+            <!--2 or more repetitions:-->
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">hic iovisque</Identifier>
+              <Identifier Source="anySimpleType">et nubibus</Identifier>
+            </AffiliationInfo>
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">carcere imposuit</Identifier>
+              <Identifier Source="anySimpleType">murmure rates</Identifier>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y" EqualContrib="N">
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <LastName>string</LastName>
+            <ForeName>string</ForeName>
+            <Initials>string</Initials>
+            <Suffix>string</Suffix>
+            <CollectiveName>string</CollectiveName>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">supplex imponet</Identifier>
+            <Identifier Source="anySimpleType">ipsa numen</Identifier>
+            <!--2 or more repetitions:-->
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">volutans per</Identifier>
+              <Identifier Source="anySimpleType">maria et</Identifier>
+            </AffiliationInfo>
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">foedere tempestatesque</Identifier>
+              <Identifier Source="anySimpleType">sciret ego</Identifier>
+            </AffiliationInfo>
+          </Author>
+        </AuthorList>
+        <AuthorList CompleteYN="Y" Type="editors">
+          <!--2 or more repetitions:-->
+          <Author ValidYN="Y" EqualContrib="N">
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <LastName>string</LastName>
+            <ForeName>string</ForeName>
+            <Initials>string</Initials>
+            <Suffix>string</Suffix>
+            <CollectiveName>string</CollectiveName>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">montis omnipotens</Identifier>
+            <Identifier Source="anySimpleType">et premere</Identifier>
+            <!--2 or more repetitions:-->
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">premit talia</Identifier>
+              <Identifier Source="anySimpleType">numen terras</Identifier>
+            </AffiliationInfo>
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">vasto et</Identifier>
+              <Identifier Source="anySimpleType">profundum dare</Identifier>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y" EqualContrib="Y">
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <LastName>string</LastName>
+            <ForeName>string</ForeName>
+            <Initials>string</Initials>
+            <Suffix>string</Suffix>
+            <CollectiveName>string</CollectiveName>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">vasto illi</Identifier>
+            <Identifier Source="anySimpleType">arce dea</Identifier>
+            <!--2 or more repetitions:-->
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">luctantis rapidum</Identifier>
+              <Identifier Source="anySimpleType">bella tempestatesque</Identifier>
+            </AffiliationInfo>
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">ac rapidi</Identifier>
+              <Identifier Source="anySimpleType">imposuit e</Identifier>
+            </AffiliationInfo>
+          </Author>
+        </AuthorList>
+        <InvestigatorList>
+          <!--2 or more repetitions:-->
+          <Investigator ValidYN="Y">
+            <LastName>string</LastName>
+            <ForeName>string</ForeName>
+            <Initials>string</Initials>
+            <Suffix>string</Suffix>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">ignem tenens</Identifier>
+            <Identifier Source="anySimpleType">et vinclis</Identifier>
+            <!--2 or more repetitions:-->
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">murmure aeolus</Identifier>
+              <Identifier Source="anySimpleType">premere sonoras</Identifier>
+            </AffiliationInfo>
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">rapidi soror</Identifier>
+              <Identifier Source="anySimpleType">rapidum imperio</Identifier>
+            </AffiliationInfo>
+          </Investigator>
+          <Investigator ValidYN="Y">
+            <LastName>string</LastName>
+            <ForeName>string</ForeName>
+            <Initials>string</Initials>
+            <Suffix>string</Suffix>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">premere transfixo</Identifier>
+            <Identifier Source="anySimpleType">insuper ego</Identifier>
+            <!--2 or more repetitions:-->
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">maria cum</Identifier>
+              <Identifier Source="anySimpleType">rates arce</Identifier>
+            </AffiliationInfo>
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">iovis austris</Identifier>
+              <Identifier Source="anySimpleType">indignantes ventis</Identifier>
+            </AffiliationInfo>
+          </Investigator>
+        </InvestigatorList>
+        <Volume>string</Volume>
+        <VolumeTitle>string</VolumeTitle>
+        <Edition>string</Edition>
+        <CollectionTitle book="anySimpleType" part="anySimpleType" sec="anySimpleType">sonoras ni</CollectionTitle>
+        <!--2 or more repetitions:-->
+        <Isbn>string</Isbn>
+        <Isbn>string</Isbn>
+        <!--2 or more repetitions:-->
+        <ELocationID EIdType="pii" ValidYN="Y">secum auras</ELocationID>
+        <ELocationID EIdType="pii" ValidYN="Y">iovisque magno</ELocationID>
+        <Medium>string</Medium>
+        <ReportNumber>string</ReportNumber>
+      </Book>
+      <!--2 or more repetitions:-->
+      <LocationLabel Type="section">secum hic</LocationLabel>
+      <LocationLabel Type="part">aeoliam terras</LocationLabel>
+      <ArticleTitle book="anySimpleType" part="anySimpleType" sec="anySimpleType">altos rex</ArticleTitle>
+      <VernacularTitle>string</VernacularTitle>
+      <Pagination>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <StartPage>string</StartPage>
+        <EndPage>string</EndPage>
+        <MedlinePgn>string</MedlinePgn>
+        <MedlinePgn>string</MedlinePgn>
+      </Pagination>
+      <!--2 or more repetitions:-->
+      <Language>string</Language>
+      <Language>string</Language>
+      <!--2 or more repetitions:-->
+      <AuthorList CompleteYN="Y" Type="editors">
+        <!--2 or more repetitions:-->
+        <Author ValidYN="Y" EqualContrib="N">
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <LastName>string</LastName>
+          <ForeName>string</ForeName>
+          <Initials>string</Initials>
+          <Suffix>string</Suffix>
+          <CollectiveName>string</CollectiveName>
+          <!--2 or more repetitions:-->
+          <Identifier Source="anySimpleType">premit certo</Identifier>
+          <Identifier Source="anySimpleType">luctantis dare</Identifier>
+          <!--2 or more repetitions:-->
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">luctantis terras</Identifier>
+            <Identifier Source="anySimpleType">nubibus altos</Identifier>
+          </AffiliationInfo>
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">et sonoras</Identifier>
+            <Identifier Source="anySimpleType">annos tot</Identifier>
+          </AffiliationInfo>
+        </Author>
+        <Author ValidYN="Y" EqualContrib="Y">
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <LastName>string</LastName>
+          <ForeName>string</ForeName>
+          <Initials>string</Initials>
+          <Suffix>string</Suffix>
+          <CollectiveName>string</CollectiveName>
+          <!--2 or more repetitions:-->
+          <Identifier Source="anySimpleType">gente iovisque</Identifier>
+          <Identifier Source="anySimpleType">supplex molemque</Identifier>
+          <!--2 or more repetitions:-->
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">quisquam montis</Identifier>
+            <Identifier Source="anySimpleType">ipsa profundum</Identifier>
+          </AffiliationInfo>
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">adorat bella</Identifier>
+            <Identifier Source="anySimpleType">omnipotens incedo</Identifier>
+          </AffiliationInfo>
+        </Author>
+      </AuthorList>
+      <AuthorList CompleteYN="Y" Type="authors">
+        <!--2 or more repetitions:-->
+        <Author ValidYN="Y" EqualContrib="N">
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <LastName>string</LastName>
+          <ForeName>string</ForeName>
+          <Initials>string</Initials>
+          <Suffix>string</Suffix>
+          <CollectiveName>string</CollectiveName>
+          <!--2 or more repetitions:-->
+          <Identifier Source="anySimpleType">sciret et</Identifier>
+          <Identifier Source="anySimpleType">secum faciat</Identifier>
+          <!--2 or more repetitions:-->
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">dea transfixo</Identifier>
+            <Identifier Source="anySimpleType">hic claustra</Identifier>
+          </AffiliationInfo>
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">imposuit una</Identifier>
+            <Identifier Source="anySimpleType">iunonis corde</Identifier>
+          </AffiliationInfo>
+        </Author>
+        <Author ValidYN="Y" EqualContrib="N">
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <LastName>string</LastName>
+          <ForeName>string</ForeName>
+          <Initials>string</Initials>
+          <Suffix>string</Suffix>
+          <CollectiveName>string</CollectiveName>
+          <!--2 or more repetitions:-->
+          <Identifier Source="anySimpleType">et sciret</Identifier>
+          <Identifier Source="anySimpleType">quae ac</Identifier>
+          <!--2 or more repetitions:-->
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">caelumque regina</Identifier>
+            <Identifier Source="anySimpleType">sceptra sceptra</Identifier>
+          </AffiliationInfo>
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">volutans terras</Identifier>
+            <Identifier Source="anySimpleType">venit aut</Identifier>
+          </AffiliationInfo>
+        </Author>
+      </AuthorList>
+      <InvestigatorList>
+        <!--2 or more repetitions:-->
+        <Investigator ValidYN="Y">
+          <LastName>string</LastName>
+          <ForeName>string</ForeName>
+          <Initials>string</Initials>
+          <Suffix>string</Suffix>
+          <!--2 or more repetitions:-->
+          <Identifier Source="anySimpleType">et regemque</Identifier>
+          <Identifier Source="anySimpleType">ferant iras</Identifier>
+          <!--2 or more repetitions:-->
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">arce austris</Identifier>
+            <Identifier Source="anySimpleType">ignem ipsa</Identifier>
+          </AffiliationInfo>
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">pater regina</Identifier>
+            <Identifier Source="anySimpleType">sedet vasto</Identifier>
+          </AffiliationInfo>
+        </Investigator>
+        <Investigator ValidYN="Y">
+          <LastName>string</LastName>
+          <ForeName>string</ForeName>
+          <Initials>string</Initials>
+          <Suffix>string</Suffix>
+          <!--2 or more repetitions:-->
+          <Identifier Source="anySimpleType">scopuloque sciret</Identifier>
+          <Identifier Source="anySimpleType">mollitque secum</Identifier>
+          <!--2 or more repetitions:-->
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">bella et</Identifier>
+            <Identifier Source="anySimpleType">ast iaculata</Identifier>
+          </AffiliationInfo>
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">nubibus divum</Identifier>
+            <Identifier Source="anySimpleType">aut insuper</Identifier>
+          </AffiliationInfo>
+        </Investigator>
+      </InvestigatorList>
+      <!--2 or more repetitions:-->
+      <PublicationType UI="anySimpleType">ni imperio</PublicationType>
+      <PublicationType UI="anySimpleType">dare hic</PublicationType>
+      <Abstract>
+        <!--2 or more repetitions:-->
+        <AbstractText Label="anySimpleType" NlmCategory="CONCLUSIONS">murmure claustra</AbstractText>
+        <AbstractText Label="anySimpleType" NlmCategory="BACKGROUND">pater tot</AbstractText>
+        <CopyrightInformation>string</CopyrightInformation>
+      </Abstract>
+      <Sections>
+        <!--2 or more repetitions:-->
+        <Section>
+          <LocationLabel Type="chapter">profundum regina</LocationLabel>
+          <SectionTitle book="anySimpleType" part="anySimpleType" sec="anySimpleType">feta exspirantem</SectionTitle>
+          <!--2 or more repetitions:-->
+          <Section/>
+          <Section/>
+        </Section>
+        <Section>
+          <LocationLabel Type="table">honorem numen</LocationLabel>
+          <SectionTitle book="anySimpleType" part="anySimpleType" sec="anySimpleType">mollitque ventos</SectionTitle>
+          <!--2 or more repetitions:-->
+          <Section/>
+          <Section/>
+        </Section>
+      </Sections>
+      <!--2 or more repetitions:-->
+      <KeywordList Owner="NLM">
+        <!--2 or more repetitions:-->
+        <Keyword MajorTopicYN="N">rates in</Keyword>
+        <Keyword MajorTopicYN="N">premit caelumque</Keyword>
+      </KeywordList>
+      <KeywordList Owner="NLM">
+        <!--2 or more repetitions:-->
+        <Keyword MajorTopicYN="N">quippe sedet</Keyword>
+        <Keyword MajorTopicYN="N">sonoras et</Keyword>
+      </KeywordList>
+      <ContributionDate>
+        <Year>string</Year>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <Month>string</Month>
+        <Day>string</Day>
+        <Season>string</Season>
+      </ContributionDate>
+      <DateRevised>
+        <Year>string</Year>
+        <Month>string</Month>
+        <Day>string</Day>
+      </DateRevised>
+      <CitationString>string</CitationString>
+      <GrantList CompleteYN="Y">
+        <!--2 or more repetitions:-->
+        <Grant>
+          <GrantID>string</GrantID>
+          <Acronym>string</Acronym>
+          <Agency>string</Agency>
+          <Country>string</Country>
+        </Grant>
+        <Grant>
+          <GrantID>string</GrantID>
+          <Acronym>string</Acronym>
+          <Agency>string</Agency>
+          <Country>string</Country>
+        </Grant>
+      </GrantList>
+      <!--2 or more repetitions:-->
+      <ItemList ListType="anySimpleType">
+        <!--2 or more repetitions:-->
+        <Item>string</Item>
+        <Item>string</Item>
+      </ItemList>
+      <ItemList ListType="anySimpleType">
+        <!--2 or more repetitions:-->
+        <Item>string</Item>
+        <Item>string</Item>
+      </ItemList>
+    </BookDocument>
+    <PubmedBookData>
+      <History>
+        <!--2 or more repetitions:-->
+        <PubMedPubDate PubStatus="ecollection">
+          <Year>string</Year>
+          <Month>string</Month>
+          <Day>string</Day>
+          <Hour>string</Hour>
+          <Minute>string</Minute>
+          <Second>string</Second>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="pmc-release">
+          <Year>string</Year>
+          <Month>string</Month>
+          <Day>string</Day>
+          <Hour>string</Hour>
+          <Minute>string</Minute>
+          <Second>string</Second>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>string</PublicationStatus>
+      <ArticleIdList>
+        <!--2 or more repetitions:-->
+        <ArticleId IdType="pubmed">ventos iunonis</ArticleId>
+        <ArticleId IdType="pubmed">molemque celsa</ArticleId>
+      </ArticleIdList>
+      <ObjectList>
+        <!--2 or more repetitions:-->
+        <Object Type="anySimpleType">
+          <!--2 or more repetitions:-->
+          <Param Name="anySimpleType">mollitque scopuloque</Param>
+          <Param Name="anySimpleType">tenens ventos</Param>
+        </Object>
+        <Object Type="anySimpleType">
+          <!--2 or more repetitions:-->
+          <Param Name="anySimpleType">circum secum</Param>
+          <Param Name="anySimpleType">circum magno</Param>
+        </Object>
+      </ObjectList>
+    </PubmedBookData>
+  </PubmedBookArticle>
+  <!--You have a CHOICE of the next 2 items at this level-->
+  <PubmedArticle>
+    <MedlineCitation Owner="NLM" Status="OLDMEDLINE" VersionID="anySimpleType" VersionDate="anySimpleType" IndexingMethod="anySimpleType">
+      <PMID Version="anySimpleType">iaculata honorem</PMID>
+      <DateCompleted>
+        <Year>string</Year>
+        <Month>string</Month>
+        <Day>string</Day>
+      </DateCompleted>
+      <DateRevised>
+        <Year>string</Year>
+        <Month>string</Month>
+        <Day>string</Day>
+      </DateRevised>
+      <Article PubModel="Electronic-eCollection">
+        <Journal>
+          <ISSN IssnType="Print">adorat premere</ISSN>
+          <JournalIssue CitedMedium="Print">
+            <Volume>string</Volume>
+            <Issue>string</Issue>
+            <PubDate>
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <Year>string</Year>
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <Month>string</Month>
+              <Day>string</Day>
+              <Season>string</Season>
+              <MedlineDate>string</MedlineDate>
+            </PubDate>
+          </JournalIssue>
+          <Title>string</Title>
+          <ISOAbbreviation>string</ISOAbbreviation>
+        </Journal>
+        <ArticleTitle book="anySimpleType" part="anySimpleType" sec="anySimpleType">flammas profundum</ArticleTitle>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <Pagination>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <StartPage>string</StartPage>
+          <EndPage>string</EndPage>
+          <MedlinePgn>string</MedlinePgn>
+          <MedlinePgn>string</MedlinePgn>
+        </Pagination>
+        <!--2 or more repetitions:-->
+        <ELocationID EIdType="doi" ValidYN="Y">venit sedet</ELocationID>
+        <ELocationID EIdType="doi" ValidYN="Y">frenat dare</ELocationID>
+        <!--2 or more repetitions:-->
+        <ELocationID EIdType="pii" ValidYN="Y">supplex in</ELocationID>
+        <ELocationID EIdType="doi" ValidYN="Y">talia indignantes</ELocationID>
+        <Abstract>
+          <!--2 or more repetitions:-->
+          <AbstractText Label="anySimpleType" NlmCategory="OBJECTIVE">ventis ventis</AbstractText>
+          <AbstractText Label="anySimpleType" NlmCategory="RESULTS">rapidum flammato</AbstractText>
+          <CopyrightInformation>string</CopyrightInformation>
+        </Abstract>
+        <AuthorList CompleteYN="Y" Type="authors">
+          <!--2 or more repetitions:-->
+          <Author ValidYN="Y" EqualContrib="N">
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <LastName>string</LastName>
+            <ForeName>string</ForeName>
+            <Initials>string</Initials>
+            <Suffix>string</Suffix>
+            <CollectiveName>string</CollectiveName>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">ignem caelumque</Identifier>
+            <Identifier Source="anySimpleType">in tenens</Identifier>
+            <!--2 or more repetitions:-->
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">evertitque rates</Identifier>
+              <Identifier Source="anySimpleType">et laxas</Identifier>
+            </AffiliationInfo>
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">qui gente</Identifier>
+              <Identifier Source="anySimpleType">incedo speluncis</Identifier>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y" EqualContrib="N">
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <LastName>string</LastName>
+            <ForeName>string</ForeName>
+            <Initials>string</Initials>
+            <Suffix>string</Suffix>
+            <CollectiveName>string</CollectiveName>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">patriam aequora</Identifier>
+            <Identifier Source="anySimpleType">molemque exspirantem</Identifier>
+            <!--2 or more repetitions:-->
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">animos dare</Identifier>
+              <Identifier Source="anySimpleType">animos aut</Identifier>
+            </AffiliationInfo>
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">montis iunonis</Identifier>
+              <Identifier Source="anySimpleType">ventos aris</Identifier>
+            </AffiliationInfo>
+          </Author>
+        </AuthorList>
+        <!--2 or more repetitions:-->
+        <Language>string</Language>
+        <Language>string</Language>
+        <DataBankList CompleteYN="Y">
+          <!--2 or more repetitions:-->
+          <DataBank>
+            <DataBankName>string</DataBankName>
+            <AccessionNumberList>
+              <!--2 or more repetitions:-->
+              <AccessionNumber>string</AccessionNumber>
+              <AccessionNumber>string</AccessionNumber>
+            </AccessionNumberList>
+          </DataBank>
+          <DataBank>
+            <DataBankName>string</DataBankName>
+            <AccessionNumberList>
+              <!--2 or more repetitions:-->
+              <AccessionNumber>string</AccessionNumber>
+              <AccessionNumber>string</AccessionNumber>
+            </AccessionNumberList>
+          </DataBank>
+        </DataBankList>
+        <GrantList CompleteYN="Y">
+          <!--2 or more repetitions:-->
+          <Grant>
+            <GrantID>string</GrantID>
+            <Acronym>string</Acronym>
+            <Agency>string</Agency>
+            <Country>string</Country>
+          </Grant>
+          <Grant>
+            <GrantID>string</GrantID>
+            <Acronym>string</Acronym>
+            <Agency>string</Agency>
+            <Country>string</Country>
+          </Grant>
+        </GrantList>
+        <PublicationTypeList>
+          <!--2 or more repetitions:-->
+          <PublicationType UI="anySimpleType">et metuens</PublicationType>
+          <PublicationType UI="anySimpleType">foedere venit</PublicationType>
+        </PublicationTypeList>
+        <VernacularTitle>string</VernacularTitle>
+        <!--2 or more repetitions:-->
+        <ArticleDate DateType="Electronic">
+          <Year>string</Year>
+          <Month>string</Month>
+          <Day>string</Day>
+        </ArticleDate>
+        <ArticleDate DateType="Electronic">
+          <Year>string</Year>
+          <Month>string</Month>
+          <Day>string</Day>
+        </ArticleDate>
+      </Article>
+      <MedlineJournalInfo>
+        <Country>string</Country>
+        <MedlineTA>string</MedlineTA>
+        <NlmUniqueID>string</NlmUniqueID>
+        <ISSNLinking>string</ISSNLinking>
+      </MedlineJournalInfo>
+      <ChemicalList>
+        <!--2 or more repetitions:-->
+        <Chemical>
+          <RegistryNumber>string</RegistryNumber>
+          <NameOfSubstance UI="anySimpleType">verrantque numen</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>string</RegistryNumber>
+          <NameOfSubstance UI="anySimpleType">hic quisquam</NameOfSubstance>
+        </Chemical>
+      </ChemicalList>
+      <SupplMeshList>
+        <!--2 or more repetitions:-->
+        <SupplMeshName Type="Protocol" UI="anySimpleType">disiecitque vinclis</SupplMeshName>
+        <SupplMeshName Type="Organism" UI="anySimpleType">montis ego</SupplMeshName>
+      </SupplMeshList>
+      <!--2 or more repetitions:-->
+      <CitationSubset>string</CitationSubset>
+      <CitationSubset>string</CitationSubset>
+      <CommentsCorrectionsList>
+        <!--2 or more repetitions:-->
+        <CommentsCorrections RefType="ExpressionOfConcernIn">
+          <RefSource>string</RefSource>
+          <PMID Version="anySimpleType">flammas secum</PMID>
+          <Note>string</Note>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="AssociatedPublication">
+          <RefSource>string</RefSource>
+          <PMID Version="anySimpleType">iras rapidi</PMID>
+          <Note>string</Note>
+        </CommentsCorrections>
+      </CommentsCorrectionsList>
+      <GeneSymbolList>
+        <!--2 or more repetitions:-->
+        <GeneSymbol>string</GeneSymbol>
+        <GeneSymbol>string</GeneSymbol>
+      </GeneSymbolList>
+      <MeshHeadingList>
+        <!--2 or more repetitions:-->
+        <MeshHeading>
+          <DescriptorName MajorTopicYN="N" Type="Geographic" UI="anySimpleType">et carcere</DescriptorName>
+          <!--2 or more repetitions:-->
+          <QualifierName MajorTopicYN="N" UI="anySimpleType">faciat iras</QualifierName>
+          <QualifierName MajorTopicYN="N" UI="anySimpleType">sedet iras</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName MajorTopicYN="N" Type="Geographic" UI="anySimpleType">tempestatesque certo</DescriptorName>
+          <!--2 or more repetitions:-->
+          <QualifierName MajorTopicYN="N" UI="anySimpleType">austris quisquam</QualifierName>
+          <QualifierName MajorTopicYN="N" UI="anySimpleType">divum sciret</QualifierName>
+        </MeshHeading>
+      </MeshHeadingList>
+      <NumberOfReferences>string</NumberOfReferences>
+      <PersonalNameSubjectList>
+        <!--2 or more repetitions:-->
+        <PersonalNameSubject>
+          <LastName>string</LastName>
+          <ForeName>string</ForeName>
+          <Initials>string</Initials>
+          <Suffix>string</Suffix>
+        </PersonalNameSubject>
+        <PersonalNameSubject>
+          <LastName>string</LastName>
+          <ForeName>string</ForeName>
+          <Initials>string</Initials>
+          <Suffix>string</Suffix>
+        </PersonalNameSubject>
+      </PersonalNameSubjectList>
+      <!--2 or more repetitions:-->
+      <OtherID Source="KIE">montis et</OtherID>
+      <OtherID Source="POP">tempestatesque talia</OtherID>
+      <!--2 or more repetitions:-->
+      <OtherAbstract Type="AAMC" Language="eng">
+        <!--2 or more repetitions:-->
+        <AbstractText Label="anySimpleType" NlmCategory="RESULTS">murmure aeoliam</AbstractText>
+        <AbstractText Label="anySimpleType" NlmCategory="OBJECTIVE">nubibus corripuit</AbstractText>
+        <CopyrightInformation>string</CopyrightInformation>
+      </OtherAbstract>
+      <OtherAbstract Type="AIDS" Language="eng">
+        <!--2 or more repetitions:-->
+        <AbstractText Label="anySimpleType" NlmCategory="UNASSIGNED">et nimborum</AbstractText>
+        <AbstractText Label="anySimpleType" NlmCategory="OBJECTIVE">caelumque claustra</AbstractText>
+        <CopyrightInformation>string</CopyrightInformation>
+      </OtherAbstract>
+      <!--2 or more repetitions:-->
+      <KeywordList Owner="NLM">
+        <!--2 or more repetitions:-->
+        <Keyword MajorTopicYN="N">patriam circum</Keyword>
+        <Keyword MajorTopicYN="N">insuper magno</Keyword>
+      </KeywordList>
+      <KeywordList Owner="NLM">
+        <!--2 or more repetitions:-->
+        <Keyword MajorTopicYN="N">et gero</Keyword>
+        <Keyword MajorTopicYN="N">laxas rapidum</Keyword>
+      </KeywordList>
+      <CoiStatement>string</CoiStatement>
+      <!--2 or more repetitions:-->
+      <SpaceFlightMission>string</SpaceFlightMission>
+      <SpaceFlightMission>string</SpaceFlightMission>
+      <InvestigatorList>
+        <!--2 or more repetitions:-->
+        <Investigator ValidYN="Y">
+          <LastName>string</LastName>
+          <ForeName>string</ForeName>
+          <Initials>string</Initials>
+          <Suffix>string</Suffix>
+          <!--2 or more repetitions:-->
+          <Identifier Source="anySimpleType">infixit et</Identifier>
+          <Identifier Source="anySimpleType">abdidit laxas</Identifier>
+          <!--2 or more repetitions:-->
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">magno auras</Identifier>
+            <Identifier Source="anySimpleType">annos regina</Identifier>
+          </AffiliationInfo>
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">soror pater</Identifier>
+            <Identifier Source="anySimpleType">annos corripuit</Identifier>
+          </AffiliationInfo>
+        </Investigator>
+        <Investigator ValidYN="Y">
+          <LastName>string</LastName>
+          <ForeName>string</ForeName>
+          <Initials>string</Initials>
+          <Suffix>string</Suffix>
+          <!--2 or more repetitions:-->
+          <Identifier Source="anySimpleType">qui patriam</Identifier>
+          <Identifier Source="anySimpleType">gero infixit</Identifier>
+          <!--2 or more repetitions:-->
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">speluncis frenat</Identifier>
+            <Identifier Source="anySimpleType">per montis</Identifier>
+          </AffiliationInfo>
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">altos iaculata</Identifier>
+            <Identifier Source="anySimpleType">aeolus metuens</Identifier>
+          </AffiliationInfo>
+        </Investigator>
+      </InvestigatorList>
+      <!--2 or more repetitions:-->
+      <GeneralNote Owner="NLM">ventis animos</GeneralNote>
+      <GeneralNote Owner="NLM">altos dea</GeneralNote>
+    </MedlineCitation>
+    <PubmedData>
+      <History>
+        <!--2 or more repetitions:-->
+        <PubMedPubDate PubStatus="premedline">
+          <Year>string</Year>
+          <Month>string</Month>
+          <Day>string</Day>
+          <Hour>string</Hour>
+          <Minute>string</Minute>
+          <Second>string</Second>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="ppublish">
+          <Year>string</Year>
+          <Month>string</Month>
+          <Day>string</Day>
+          <Hour>string</Hour>
+          <Minute>string</Minute>
+          <Second>string</Second>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>string</PublicationStatus>
+      <ArticleIdList>
+        <!--2 or more repetitions:-->
+        <ArticleId IdType="pubmed">iussus evertitque</ArticleId>
+        <ArticleId IdType="pubmed">aeolus et</ArticleId>
+      </ArticleIdList>
+      <ObjectList>
+        <!--2 or more repetitions:-->
+        <Object Type="anySimpleType">
+          <!--2 or more repetitions:-->
+          <Param Name="anySimpleType">ignem flammas</Param>
+          <Param Name="anySimpleType">gente transfixo</Param>
+        </Object>
+        <Object Type="anySimpleType">
+          <!--2 or more repetitions:-->
+          <Param Name="anySimpleType">imponet cum</Param>
+          <Param Name="anySimpleType">scopuloque frenat</Param>
+        </Object>
+      </ObjectList>
+    </PubmedData>
+  </PubmedArticle>
+  <PubmedBookArticle>
+    <BookDocument>
+      <PMID Version="anySimpleType">altos premere</PMID>
+      <ArticleIdList>
+        <!--2 or more repetitions:-->
+        <ArticleId IdType="pubmed">scopuloque iras</ArticleId>
+        <ArticleId IdType="pubmed">ni disiecitque</ArticleId>
+      </ArticleIdList>
+      <Book>
+        <Publisher>
+          <PublisherName>string</PublisherName>
+          <PublisherLocation>string</PublisherLocation>
+        </Publisher>
+        <BookTitle book="anySimpleType" part="anySimpleType" sec="anySimpleType">regemque cum</BookTitle>
+        <PubDate>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <Year>string</Year>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <Month>string</Month>
+          <Day>string</Day>
+          <Season>string</Season>
+          <MedlineDate>string</MedlineDate>
+        </PubDate>
+        <BeginningDate>
+          <Year>string</Year>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <Month>string</Month>
+          <Day>string</Day>
+          <Season>string</Season>
+        </BeginningDate>
+        <EndingDate>
+          <Year>string</Year>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <Month>string</Month>
+          <Day>string</Day>
+          <Season>string</Season>
+        </EndingDate>
+        <!--2 or more repetitions:-->
+        <AuthorList CompleteYN="Y" Type="authors">
+          <!--2 or more repetitions:-->
+          <Author ValidYN="Y" EqualContrib="N">
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <LastName>string</LastName>
+            <ForeName>string</ForeName>
+            <Initials>string</Initials>
+            <Suffix>string</Suffix>
+            <CollectiveName>string</CollectiveName>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">aeolus dea</Identifier>
+            <Identifier Source="anySimpleType">imperio transfixo</Identifier>
+            <!--2 or more repetitions:-->
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">ni furentibus</Identifier>
+              <Identifier Source="anySimpleType">flammato cum</Identifier>
+            </AffiliationInfo>
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">faciat et</Identifier>
+              <Identifier Source="anySimpleType">ignem cum</Identifier>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y" EqualContrib="Y">
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <LastName>string</LastName>
+            <ForeName>string</ForeName>
+            <Initials>string</Initials>
+            <Suffix>string</Suffix>
+            <CollectiveName>string</CollectiveName>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">terras et</Identifier>
+            <Identifier Source="anySimpleType">aeolus volutans</Identifier>
+            <!--2 or more repetitions:-->
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">sonoras feta</Identifier>
+              <Identifier Source="anySimpleType">feta et</Identifier>
+            </AffiliationInfo>
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">ni habenas</Identifier>
+              <Identifier Source="anySimpleType">imposuit iras</Identifier>
+            </AffiliationInfo>
+          </Author>
+        </AuthorList>
+        <AuthorList CompleteYN="Y" Type="editors">
+          <!--2 or more repetitions:-->
+          <Author ValidYN="Y" EqualContrib="N">
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <LastName>string</LastName>
+            <ForeName>string</ForeName>
+            <Initials>string</Initials>
+            <Suffix>string</Suffix>
+            <CollectiveName>string</CollectiveName>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">maria dea</Identifier>
+            <Identifier Source="anySimpleType">furentibus aris</Identifier>
+            <!--2 or more repetitions:-->
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">corde aeolus</Identifier>
+              <Identifier Source="anySimpleType">disiecitque tempestatesque</Identifier>
+            </AffiliationInfo>
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">molemque sciret</Identifier>
+              <Identifier Source="anySimpleType">aut vasto</Identifier>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y" EqualContrib="N">
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <LastName>string</LastName>
+            <ForeName>string</ForeName>
+            <Initials>string</Initials>
+            <Suffix>string</Suffix>
+            <CollectiveName>string</CollectiveName>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">imposuit flammato</Identifier>
+            <Identifier Source="anySimpleType">ignem sceptra</Identifier>
+            <!--2 or more repetitions:-->
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">atris fremunt</Identifier>
+              <Identifier Source="anySimpleType">evertitque aut</Identifier>
+            </AffiliationInfo>
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">pater et</Identifier>
+              <Identifier Source="anySimpleType">foedere sedet</Identifier>
+            </AffiliationInfo>
+          </Author>
+        </AuthorList>
+        <InvestigatorList>
+          <!--2 or more repetitions:-->
+          <Investigator ValidYN="Y">
+            <LastName>string</LastName>
+            <ForeName>string</ForeName>
+            <Initials>string</Initials>
+            <Suffix>string</Suffix>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">flammas iras</Identifier>
+            <Identifier Source="anySimpleType">vasto coniunx</Identifier>
+            <!--2 or more repetitions:-->
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">iussus quae</Identifier>
+              <Identifier Source="anySimpleType">supplex circum</Identifier>
+            </AffiliationInfo>
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">adorat et</Identifier>
+              <Identifier Source="anySimpleType">et speluncis</Identifier>
+            </AffiliationInfo>
+          </Investigator>
+          <Investigator ValidYN="Y">
+            <LastName>string</LastName>
+            <ForeName>string</ForeName>
+            <Initials>string</Initials>
+            <Suffix>string</Suffix>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">iunonis rapidi</Identifier>
+            <Identifier Source="anySimpleType">fremunt disiecitque</Identifier>
+            <!--2 or more repetitions:-->
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">foedere dea</Identifier>
+              <Identifier Source="anySimpleType">molemque ferant</Identifier>
+            </AffiliationInfo>
+            <AffiliationInfo>
+              <Affiliation>string</Affiliation>
+              <!--2 or more repetitions:-->
+              <Identifier Source="anySimpleType">patriam abdidit</Identifier>
+              <Identifier Source="anySimpleType">celsa incedo</Identifier>
+            </AffiliationInfo>
+          </Investigator>
+        </InvestigatorList>
+        <Volume>string</Volume>
+        <VolumeTitle>string</VolumeTitle>
+        <Edition>string</Edition>
+        <CollectionTitle book="anySimpleType" part="anySimpleType" sec="anySimpleType">exspirantem secum</CollectionTitle>
+        <!--2 or more repetitions:-->
+        <Isbn>string</Isbn>
+        <Isbn>string</Isbn>
+        <!--2 or more repetitions:-->
+        <ELocationID EIdType="pii" ValidYN="Y">nubibus aequora</ELocationID>
+        <ELocationID EIdType="doi" ValidYN="Y">disiecitque infixit</ELocationID>
+        <Medium>string</Medium>
+        <ReportNumber>string</ReportNumber>
+      </Book>
+      <!--2 or more repetitions:-->
+      <LocationLabel Type="box">ipsa atris</LocationLabel>
+      <LocationLabel Type="figure">abdidit adorat</LocationLabel>
+      <ArticleTitle book="anySimpleType" part="anySimpleType" sec="anySimpleType">dare terras</ArticleTitle>
+      <VernacularTitle>string</VernacularTitle>
+      <Pagination>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <StartPage>string</StartPage>
+        <EndPage>string</EndPage>
+        <MedlinePgn>string</MedlinePgn>
+        <MedlinePgn>string</MedlinePgn>
+      </Pagination>
+      <!--2 or more repetitions:-->
+      <Language>string</Language>
+      <Language>string</Language>
+      <!--2 or more repetitions:-->
+      <AuthorList CompleteYN="Y" Type="authors">
+        <!--2 or more repetitions:-->
+        <Author ValidYN="Y" EqualContrib="N">
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <LastName>string</LastName>
+          <ForeName>string</ForeName>
+          <Initials>string</Initials>
+          <Suffix>string</Suffix>
+          <CollectiveName>string</CollectiveName>
+          <!--2 or more repetitions:-->
+          <Identifier Source="anySimpleType">ignem certo</Identifier>
+          <Identifier Source="anySimpleType">rex e</Identifier>
+          <!--2 or more repetitions:-->
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">et animos</Identifier>
+            <Identifier Source="anySimpleType">imperio ferant</Identifier>
+          </AffiliationInfo>
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">secum bella</Identifier>
+            <Identifier Source="anySimpleType">regemque profundum</Identifier>
+          </AffiliationInfo>
+        </Author>
+        <Author ValidYN="Y" EqualContrib="Y">
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <LastName>string</LastName>
+          <ForeName>string</ForeName>
+          <Initials>string</Initials>
+          <Suffix>string</Suffix>
+          <CollectiveName>string</CollectiveName>
+          <!--2 or more repetitions:-->
+          <Identifier Source="anySimpleType">altos vinclis</Identifier>
+          <Identifier Source="anySimpleType">ventos circum</Identifier>
+          <!--2 or more repetitions:-->
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">ferant circum</Identifier>
+            <Identifier Source="anySimpleType">ferant pectore</Identifier>
+          </AffiliationInfo>
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">dare quae</Identifier>
+            <Identifier Source="anySimpleType">ventos secum</Identifier>
+          </AffiliationInfo>
+        </Author>
+      </AuthorList>
+      <AuthorList CompleteYN="Y" Type="authors">
+        <!--2 or more repetitions:-->
+        <Author ValidYN="Y" EqualContrib="Y">
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <LastName>string</LastName>
+          <ForeName>string</ForeName>
+          <Initials>string</Initials>
+          <Suffix>string</Suffix>
+          <CollectiveName>string</CollectiveName>
+          <!--2 or more repetitions:-->
+          <Identifier Source="anySimpleType">talia imperio</Identifier>
+          <Identifier Source="anySimpleType">nimborum quae</Identifier>
+          <!--2 or more repetitions:-->
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">imperio ni</Identifier>
+            <Identifier Source="anySimpleType">rapidi caelumque</Identifier>
+          </AffiliationInfo>
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">illi aeolus</Identifier>
+            <Identifier Source="anySimpleType">claustra illi</Identifier>
+          </AffiliationInfo>
+        </Author>
+        <Author ValidYN="Y" EqualContrib="Y">
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <LastName>string</LastName>
+          <ForeName>string</ForeName>
+          <Initials>string</Initials>
+          <Suffix>string</Suffix>
+          <CollectiveName>string</CollectiveName>
+          <!--2 or more repetitions:-->
+          <Identifier Source="anySimpleType">ac rapidum</Identifier>
+          <Identifier Source="anySimpleType">habenas quisquam</Identifier>
+          <!--2 or more repetitions:-->
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">sed sceptra</Identifier>
+            <Identifier Source="anySimpleType">iovis rates</Identifier>
+          </AffiliationInfo>
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">ni flammato</Identifier>
+            <Identifier Source="anySimpleType">iussus infixit</Identifier>
+          </AffiliationInfo>
+        </Author>
+      </AuthorList>
+      <InvestigatorList>
+        <!--2 or more repetitions:-->
+        <Investigator ValidYN="Y">
+          <LastName>string</LastName>
+          <ForeName>string</ForeName>
+          <Initials>string</Initials>
+          <Suffix>string</Suffix>
+          <!--2 or more repetitions:-->
+          <Identifier Source="anySimpleType">ipsa supplex</Identifier>
+          <Identifier Source="anySimpleType">dedit insuper</Identifier>
+          <!--2 or more repetitions:-->
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">ipsa auras</Identifier>
+            <Identifier Source="anySimpleType">patriam scopuloque</Identifier>
+          </AffiliationInfo>
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">auras indignantes</Identifier>
+            <Identifier Source="anySimpleType">tenens altos</Identifier>
+          </AffiliationInfo>
+        </Investigator>
+        <Investigator ValidYN="Y">
+          <LastName>string</LastName>
+          <ForeName>string</ForeName>
+          <Initials>string</Initials>
+          <Suffix>string</Suffix>
+          <!--2 or more repetitions:-->
+          <Identifier Source="anySimpleType">exspirantem per</Identifier>
+          <Identifier Source="anySimpleType">exspirantem ni</Identifier>
+          <!--2 or more repetitions:-->
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">vinclis illum</Identifier>
+            <Identifier Source="anySimpleType">divum premere</Identifier>
+          </AffiliationInfo>
+          <AffiliationInfo>
+            <Affiliation>string</Affiliation>
+            <!--2 or more repetitions:-->
+            <Identifier Source="anySimpleType">furentibus illum</Identifier>
+            <Identifier Source="anySimpleType">volutans soror</Identifier>
+          </AffiliationInfo>
+        </Investigator>
+      </InvestigatorList>
+      <!--2 or more repetitions:-->
+      <PublicationType UI="anySimpleType">claustra e</PublicationType>
+      <PublicationType UI="anySimpleType">et secum</PublicationType>
+      <Abstract>
+        <!--2 or more repetitions:-->
+        <AbstractText Label="anySimpleType" NlmCategory="BACKGROUND">adorat gente</AbstractText>
+        <AbstractText Label="anySimpleType" NlmCategory="BACKGROUND">premere incedo</AbstractText>
+        <CopyrightInformation>string</CopyrightInformation>
+      </Abstract>
+      <Sections>
+        <!--2 or more repetitions:-->
+        <Section>
+          <LocationLabel Type="figure">regina ego</LocationLabel>
+          <SectionTitle book="anySimpleType" part="anySimpleType" sec="anySimpleType">abdidit dea</SectionTitle>
+          <!--2 or more repetitions:-->
+          <Section/>
+          <Section/>
+        </Section>
+        <Section>
+          <LocationLabel Type="appendix">celsa pater</LocationLabel>
+          <SectionTitle book="anySimpleType" part="anySimpleType" sec="anySimpleType">flammato flammato</SectionTitle>
+          <!--2 or more repetitions:-->
+          <Section/>
+          <Section/>
+        </Section>
+      </Sections>
+      <!--2 or more repetitions:-->
+      <KeywordList Owner="NLM">
+        <!--2 or more repetitions:-->
+        <Keyword MajorTopicYN="N">et sed</Keyword>
+        <Keyword MajorTopicYN="N">pater nimborum</Keyword>
+      </KeywordList>
+      <KeywordList Owner="NLM">
+        <!--2 or more repetitions:-->
+        <Keyword MajorTopicYN="N">vasto montis</Keyword>
+        <Keyword MajorTopicYN="N">rapidum adorat</Keyword>
+      </KeywordList>
+      <ContributionDate>
+        <Year>string</Year>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <Month>string</Month>
+        <Day>string</Day>
+        <Season>string</Season>
+      </ContributionDate>
+      <DateRevised>
+        <Year>string</Year>
+        <Month>string</Month>
+        <Day>string</Day>
+      </DateRevised>
+      <CitationString>string</CitationString>
+      <GrantList CompleteYN="Y">
+        <!--2 or more repetitions:-->
+        <Grant>
+          <GrantID>string</GrantID>
+          <Acronym>string</Acronym>
+          <Agency>string</Agency>
+          <Country>string</Country>
+        </Grant>
+        <Grant>
+          <GrantID>string</GrantID>
+          <Acronym>string</Acronym>
+          <Agency>string</Agency>
+          <Country>string</Country>
+        </Grant>
+      </GrantList>
+      <!--2 or more repetitions:-->
+      <ItemList ListType="anySimpleType">
+        <!--2 or more repetitions:-->
+        <Item>string</Item>
+        <Item>string</Item>
+      </ItemList>
+      <ItemList ListType="anySimpleType">
+        <!--2 or more repetitions:-->
+        <Item>string</Item>
+        <Item>string</Item>
+      </ItemList>
+    </BookDocument>
+    <PubmedBookData>
+      <History>
+        <!--2 or more repetitions:-->
+        <PubMedPubDate PubStatus="aheadofprint">
+          <Year>string</Year>
+          <Month>string</Month>
+          <Day>string</Day>
+          <Hour>string</Hour>
+          <Minute>string</Minute>
+          <Second>string</Second>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="medliner">
+          <Year>string</Year>
+          <Month>string</Month>
+          <Day>string</Day>
+          <Hour>string</Hour>
+          <Minute>string</Minute>
+          <Second>string</Second>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>string</PublicationStatus>
+      <ArticleIdList>
+        <!--2 or more repetitions:-->
+        <ArticleId IdType="pubmed">aris ipsa</ArticleId>
+        <ArticleId IdType="pubmed">antro corde</ArticleId>
+      </ArticleIdList>
+      <ObjectList>
+        <!--2 or more repetitions:-->
+        <Object Type="anySimpleType">
+          <!--2 or more repetitions:-->
+          <Param Name="anySimpleType">molemque iaculata</Param>
+          <Param Name="anySimpleType">altos carcere</Param>
+        </Object>
+        <Object Type="anySimpleType">
+          <!--2 or more repetitions:-->
+          <Param Name="anySimpleType">et aut</Param>
+          <Param Name="anySimpleType">in molemque</Param>
+        </Object>
+      </ObjectList>
+    </PubmedBookData>
+  </PubmedBookArticle>
+  <DeleteCitation>
+    <!--2 or more repetitions:-->
+    <PMID Version="anySimpleType">quippe feta</PMID>
+    <PMID Version="anySimpleType">ni bella</PMID>
+  </DeleteCitation>
+</PubmedArticleSet>

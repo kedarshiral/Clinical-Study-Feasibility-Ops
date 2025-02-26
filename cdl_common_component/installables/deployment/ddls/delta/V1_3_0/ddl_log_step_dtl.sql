@@ -1,0 +1,1 @@
+ALTER TABLE log_step_dtl MODIFY COLUMN cycle_id bigint(40);

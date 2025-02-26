@@ -1,0 +1,83 @@
+{
+
+  "generic_config": {
+    "local_temp_path": "/tmp/",
+    "s3_temp_path": "",
+    "emr_code_path": "",
+    "mysql_connection_details": {
+      "mysql_host": "mysql_host$$",
+      "mysql_port": "mysql_port$$",
+      "mysql_username": "mysql_username$$",
+      "mysql_password": "mysql_password$$",
+      "mysql_db": "mysql_db$$"
+    },
+    "cluster_mode": "EMR",
+    "s3_region": "eu-central-1",
+    "aws_region": "eu-central-1",
+    "s3_region_endpoint": "s3-eu-central-1.amazonaws.com",
+    "private_key_loaction": "",
+    "ses_region": "eu-central-1",
+    "cluster_type": "small"
+  },
+  "datasource_details": {
+      "rdbms_qa": {
+       "datasource_connection_details": {
+      "database_type": "oracle",
+      "service_name": "rdbms_qa_service_name$$",
+      "host": "rdbms_qa_host$$",
+      "port": "rdbms_qa_port$$",
+      "username": "rdbms_qa_username$$",
+      "password": "rdbms_qa_password$$",
+      "database": "rdbms_qa_database$$"
+    },
+    "misc_configs": {
+      "path": "",
+      "cluster_type": "small",
+      "file_format": "%Y%m%d%H%M%S",
+      "date_format": "dd-MMM-yyyy hh.mm.ss.SSS a",
+      "timestamp_format": "dd-MMM-yyyy hh.mm.ss.SSS a",
+      "changeDatetoTimestamp": "true"
+    }
+  },
+     "rdbms_prd": {
+       "datasource_connection_details": {
+      "database_type": "oracle",
+      "service_name": "rdbms_prd_service_name$$",
+      "host": "rdbms_prd_host$$",
+      "port": "rdbms_prd_port$$",
+      "username": "rdbms_prd_username$$",
+      "password": "rdbms_prd_password$$",
+      "database": "rdbms_prd_database$$"
+    },
+    "misc_configs": {
+      "path": "",
+      "cluster_type": "small",
+      "file_format": "%Y%m%d%H%M%S",
+      "date_format": "dd-MMM-yyyy hh.mm.ss.SSS a",
+      "timestamp_format": "dd-MMM-yyyy hh.mm.ss.SSS a",
+      "changeDatetoTimestamp": "true"
+    }
+  },
+  "rdbms_latam": {
+       "datasource_connection_details": {
+      "database_type": "oracle",
+      "service_name": "rdbms_latam_service_name$$",
+      "host": "rdbms_latam_host$$",
+      "port": "rdbms_latam_port$$",
+      "username": "rdbms_latam_username$$",
+      "password": "rdbms_latam_password$$",
+      "database": "rdbms_latam_database$$"
+    },
+    "misc_configs": {
+      "path": "",
+      "cluster_type": "small",
+      "file_format": "%Y%m%d%H%M%S",
+      "date_format": "dd-MMM-yyyy hh.mm.ss.SSS a",
+      "timestamp_format": "dd-MMM-yyyy hh.mm.ss.SSS a",
+      "changeDatetoTimestamp": "true"
+    }
+  }
+  
+  }
+}
+

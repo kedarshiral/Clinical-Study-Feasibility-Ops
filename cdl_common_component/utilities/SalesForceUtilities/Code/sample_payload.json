@@ -1,0 +1,10 @@
+{
+  "username": "<username>",
+  "password": "<Enter Secret Name for Password stored in secrets manager>",
+  "query": "SELECT AccountNumber FROM Account",
+  "tb_name": "Account",
+  "load_type": "FULL",
+  "query_type": "queryAll",
+  "content_type": "CSV",
+  "sse_flag": "y"
+}

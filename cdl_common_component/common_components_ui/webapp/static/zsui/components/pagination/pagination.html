@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link href="../../themes/zs/app.css" rel="stylesheet" />
+		<title>ZS UI Components // Pagination</title>
+	</head>
+	<script src="../../lib/js/jquery.min.js"></script>
+	<script src="jquery.zsPagination.js"></script>
+	<body class="zs-style zs-reset" style="padding:2em">
+		<h2>Normal</h2>
+		<nav class="zs-pagination" normal></nav>
+		<h2>Many pages</h2>		
+		<nav class="zs-pagination" many></nav>
+		<h2>Infinite</h2>
+		<nav class="zs-pagination" inf></nav>	
+		<script>
+			$(document).ready(function() {			
+					
+				$('.zs-pagination[normal]').zsPagination({	
+					
+				});
+				
+				$('.zs-pagination[many]').zsPagination({
+					itemsCount: 900,
+					pageSize:15,
+					currentPage: 2					
+				});
+				
+				$('.zs-pagination[inf]').zsPagination({
+					itemsCount: null	
+					
+				});
+			});
+		</script>
+		<h2>Pagination custom element</h2>
+		<p>You can use custom element zs-pagination too. Set attributes and listen to "pagechange" event to implement your business logic</p>
+		<script src="../../lib/js/customElements.poly.js"></script>
+		<script src="../../lib/js/customElements.js"></script>
+		<script src="zsPagination.js"></script>
+
+		<zs-pagination total="30" size="10" page="2"></zs-pagination>
+		<script>
+			var el = document.querySelector('zs-pagination');
+			el.addEventListener('pagechange', function(event) {
+				alert('Page ' + event.detail.currentPage + ' selected');
+			});
+		</script>
+
+
+	</body>
+
+</html>

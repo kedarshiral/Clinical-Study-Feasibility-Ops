@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="../../themes/zs/app.css"/>
+	</head>	
+	<body class="zs-style zs-space" style="padding:2em">
+		<h2>Tags</h2>
+		<div class="tags-container">
+			<span is="zs-tag" value="Tag1" dismissable>Using HTML</span>
+		</div>
+	</body>
+	<script src="../../../zsui/lib/js/customElements.poly.js"></script>
+	<script src="../../../zsui/lib/js/customElements.js"></script>
+	<script src="zsTag.js"></script>
+	<script>
+		(function() {
+			var container = document.getElementsByClassName('tags-container')[0];
+			var tag = new zs.tagElement();
+			tag.textContent = "Dismissable"
+			tag.value = "Tag2";
+			tag.dismissable = true;
+			tag.handleDismiss = function() {console.log('handled');};
+			tag.render();
+			container.appendChild(tag);
+			
+			tag = new zs.tagElement();
+			tag.textContent = "Non dismissable";
+			tag.value = "Tag3";
+			tag.dismissable = false;
+			tag.render();
+			container.appendChild(tag);
+			
+			tag = new zs.tagElement();
+			tag.textContent = "Non clickable";
+			tag.value = "Tag5";
+			tag.nonclickable = true;
+			tag.render();
+			container.appendChild(tag);
+			
+		})();
+	</script>
+</html>

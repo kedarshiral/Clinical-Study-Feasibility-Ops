@@ -1,0 +1,67 @@
+/*
+Modal dialog
+
+Modal dialog
+
+Markup:
+<div class="zs-modal">
+	<header>Title<a href="#" class="zs-icon zs-icon-close"></a></header>
+	<section>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum, dui id gravida mattis, tortor neque imperdiet dolor,
+	ut vehicula lectus massa at purus. Pellentesque dapibus elit molestie hendrerit rhoncus. Aenean at vulputate magna. Suspendisse
+	eget lorem et magna auctor pulvinar. Donec accumsan dictum dui. Maecenas pretium consequat sapien quis iaculis. Fusce ultricies
+	vehicula posuere.</section>
+	<footer><button class="zs-button zs-button-action">Action</button></footer>
+</div>
+
+Styleguide Components.Modal
+*/
+.zs-modal {
+	@zs-modal-width: 600px;
+	@zs-modal-height: 500px;
+	background: @zs-background;
+	border-radius: @zs-border-radius;
+	border: 1px solid @zs-border-color;
+	box-shadow: 0 3px 6px @zs-shadow-color;
+	display: inline-block;	
+	width:@zs-modal-width;
+	z-index:@zs-layer-4;
+	>header:extend(.zs-style h2 all) {		
+		.padding(0,1,0,1);
+		margin-bottom:0.5em;
+		margin-top:0.5em;
+		position:relative;
+		.zs-icon {
+			position: absolute;
+			margin-top:-0.5em;
+			top: 50%;
+			right: 14/24*@zs-font-padding-ratio;
+		}
+		.zs-icon-large {
+			font-size: @zs-icon-large-height*@zs-font-size-base;
+		}
+	}
+	>section {
+		.margin(1.5,1.5,1.5,1.5);
+		min-height:150px;
+		max-height: @zs-modal-height;		
+		overflow: auto;
+	}
+	>footer {
+		.margin(1.5,1.5,1.5,1.5);
+		text-align: right;		
+	}
+}
+.zs-modal[hidden] {
+	display:none;
+}
+.zs-overlay {
+	position: fixed;
+	top: 0;
+	left:0;
+	right:0;
+	bottom:0;
+	opacity:0.5;
+	background: #fff;
+	display:block;
+	z-index: @zs-layer-3; // Should be below modal dialogs but above everything else.
+}

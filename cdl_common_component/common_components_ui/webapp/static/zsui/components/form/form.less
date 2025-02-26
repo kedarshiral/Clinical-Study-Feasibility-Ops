@@ -1,0 +1,464 @@
+// Deprecated: Moved to component/form/form.less
+@zs-select-arrow-size: @zs-font-size-base;
+@zs-input-padding: (34 - 14*1.25 - 2)/(2*14*@zs-font-padding-ratio); // When we have a font size of 14px the input height should be 34px
+
+// Dropdown
+.zs-select select, .zs-input, .zs-textarea, .zs-button {
+	font-family: @zs-font-family-base;
+	color:@zs-text-color;
+	font-size: 1em;
+}
+.zs-select {
+	position:relative;
+	padding: 0;
+	display:inline-block;
+    select, select:focus {
+		-moz-appearance:none; // Required for Mozilla see https://bugzilla.mozilla.org/show_bug.cgi?id=649849
+		appearance: none;
+		-webkit-appearance:none;
+		background-color: transparent;
+		border: 0;
+		border-radius:0;
+		outline: 0;
+		font-weight: normal;
+		border: 1px solid @zs-brand-gray;
+        color: @zs-text-color;
+		.padding(@zs-input-padding,0.6,@zs-input-padding,0.6);
+		padding-right: (@zs-padding-horizontal-large - 1) + 1em;
+		cursor:pointer;		
+		width:100%;
+	}
+	select::-ms-expand { // Fix for IE to remove border arround arrow
+	   display: none;
+	}
+	min-width: 250em/14;
+	
+}
+.zs-select:after {
+	content: '\4b';
+    .zs-icon-font();
+    font-size: @zs-icon-width;
+	color: @zs-brand-dark;
+	right: 0.25em;
+	top:50%;
+	margin-top:-@zs-icon-width/2;
+	
+	position:absolute;
+	pointer-events:none;
+	display:inline-block;
+}
+.zs-select:hover:after {
+	color: darken(@zs-brand-dark, 10%);
+}
+
+// Text input
+.zs-input {
+	// TODO: make message, select the same size as input boxes	
+	background-color: transparent;
+	outline: 0;
+	font-weight: normal;
+	border: 1px solid @zs-brand-gray;
+	color: @zs-text-color;
+    .padding(@zs-input-padding,0.8,@zs-input-padding,0.8); 
+	-webkit-appearance: none;
+	 border-radius: 0;
+	 min-width: 250em/14;
+	 &[type="number"] {
+		 text-align: right;
+	 }
+
+}
+.zs-form, .zs-field, .zs-fieldset {
+	input[type="number"],input[type="text"],textarea {
+		&:extend(.zs-input);
+	}
+}
+
+// Input with icon
+.zs-input-icon {
+	overflow: hidden;	
+	display: inline;
+	position: relative;
+	&.zs-field {
+		//display:inline;
+	}
+	input {
+		display: inline-block;
+		position: relative;
+		padding-right: 1.5*@zs-icon-width !important;
+	}
+
+	&:before {
+		.zs-icon-font;
+		font-size: @zs-icon-width*1;
+		pointer-events: none;
+		right: 0.5em;
+		top: 50%;
+		margin-top: -1*@zs-icon-height/2.25;
+		color: @zs-icon-inactive-color;
+		position: absolute;
+		z-index:1;
+	}
+
+	[clear] {
+		@width: 2em;
+		@height: 2em;
+		display: inline-block;
+		padding: (@height - @zs-icon-height)/2 (@width - @zs-icon-width)/2;
+		right: 0.25em;
+		top: 50%;
+		margin-top: -@height/2 + 0.1em;
+		background: transparent;
+	}
+	.zs-icon-remove {
+		background:@zs-background;
+	}
+}
+.zs-error .zs-input-icon .zs-icon-remove, .zs-warning .zs-input-icon .zs-icon-remove { // Fix for ZSUI-433
+	background:lighten(@zs-status-warning,50%);
+}
+
+// Button
+.zs-button, .zs-form .zs-button {
+	border: 1px solid @zs-link-normal;
+	color: @zs-brand-dark;
+	background-color: @zs-background;
+	border-radius: @zs-border-radius;
+    .padding(@zs-input-padding,2,@zs-input-padding,2);
+	min-height: 34em/14px;
+    white-space: nowrap;	
+	&:hover {
+		cursor: pointer;
+		color: saturate(@zs-brand-dark, 50%);
+		.zs-icon {
+			color: saturate(@zs-brand-dark, 50%);
+		}
+		border: 1px solid saturate(@zs-link-normal,50%);
+	}	
+	-webkit-appearance: none;
+}
+a.zs-button {
+	.padding(0,2,0,2);
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	display:inline-block;
+}
+.zs-button-action, a.zs-button-action, a.zs-button-action:visited, a.zs-button-action:hover, .zs-form .zs-button-action {
+	color: white;
+	text-decoration: none;
+	background: @zs-brand-dark;
+	background: linear-gradient(lighten(@zs-brand-dark, 10), @zs-brand-dark);
+	&:hover {
+		color: saturate(white, 30%); 
+		background: saturate(@zs-brand-dark, 30%);
+		.zs-icon {
+			color: saturate(white, 30%);
+		}
+
+		background: linear-gradient(saturate(lighten(@zs-brand-dark, 10), 15%), saturate(@zs-brand-dark, 15%));
+	}
+}
+.zs-form input[type="submit"] {
+	&:extend(.zs-button all);
+	&:extend(.zs-button-action all);
+}
+.zs-form button, .zs-form input[type="button"] {
+	&:extend(.zs-button all);
+	
+	&.zs-button-action {
+		&:extend(.zs-button-action all);
+	}
+}
+.zs-button + .zs-button, input[type] + .zs-button, .zs-button + input[type], input[type] + input[type], a + .zs-button, a + input[type], input[type] + a  { // space between buttons
+	margin-left: @zs-font-padding-ratio;
+}
+
+// Fieldset
+.zs-form fieldset, .zs-fieldset {
+	label {
+		font-size: 13em/14;
+		font-weight: bold;	
+	}
+
+	display:inline-block;	
+	border: 0;
+
+	legend:extend(.zs-style h3) {
+		margin:0;
+		.padding(1.5,0,1,0);
+	}	
+}	
+
+// Checkboxes, radiobuttons
+.zs-form input[type="radio"], .zs-form input[type="checkbox"], .zs-checkbox>input,.zs-checkbox-group>input[type="checkbox"], .zs-radio-group>input[type="radio"]{
+	.margin(1.25*@zs-input-padding,0.6,1.25*@zs-input-padding,0.6);
+	vertical-align: middle;
+	display:inline-block;
+}
+.zs-checkbox + .zs-checkbox, .zs-radio-group>input[type="radio"] + input[type="radio"], .zs-checkbox-group>input[type="checkbox"] + input[type="checkbox"] {
+	margin-left: @zs-font-padding-ratio*2;
+}
+
+// Field
+.zs-form fieldset>p, .zs-field, .zs-fieldset>p, .zs-form .zs-paragraph, .zs-fieldset>.zs-paragraph {
+	>label {
+		font-size: 13em/14;
+		font-weight: bold;	
+		display:block;
+	}
+
+	>.zs-message {
+		display:block;
+		.margin(0.5,0,0,0);
+	}
+
+	&.zs-field-flex, &.zs-flex {
+		>input,>textarea {width: 100%;min-width:auto};
+		>.zs-select {
+			width:100%;
+			min-width:auto;
+		}
+	}
+
+	// Validation
+	&.zs-error, &.zs-warning {
+		&.zs-checkbox, input[type="text"], textarea, .zs-select, .zs-checkbox-group, .zs-radio-group, .zs-input-icon>input[type="text"], .zs-input-icon>.zs-input {
+			background: lighten(@zs-status-warning,50%);
+			display:inline-block; 
+			position:relative;
+
+		}	
+		textarea{
+			display: block;	// To fix inconsistent textarea bottom margin in Chrome. 
+		}
+		&.zs-error {
+			input, textarea, .zs-select, .zs-checkbox, .zs-radio-group, .zs-checkbox-group {
+				border:1px solid lighten(@zs-status-error,20%);
+				&.zs-select {
+					border:0;
+					>select {
+						border:1px solid lighten(@zs-status-error,20%);	
+					}	
+				}	
+				
+			}
+
+			&.zs-radio-group, .zs-radio-group, .zs-checkbox, .zs-checkbox-group {
+				border:0;
+				color: @zs-status-error;
+				>input {
+					border:0;				
+				}
+			}
+
+			.zs-calendar{
+				>header{
+					span{
+						border: 0;
+						background: @zs-background;
+					}
+				}
+			}
+		}
+
+		&.zs-warning {
+			input, textarea, .zs-select, .zs-checkbox, .zs-radio-group, .zs-checkbox-group {
+			//	border: 1px solid lighten(@zs-status-warning,10%);
+			}
+		}
+
+		// No background for checkbox and radio buttons	
+		&.zs-radio-group, .zs-radio-group, .zs-checkbox, .zs-checkbox-group {
+			background: transparent;
+			>input {
+				background: transparent;
+			}
+		}			
+
+		position:relative;	
+	}
+
+	// Compact validation
+	&.zs-compact {
+		@size: @zs-icon-width + 2*@zs-font-padding-ratio;
+		padding-right: @size; 
+		vertical-align: middle;
+		position: relative;
+		
+		>.zs-message {
+			cursor:pointer;
+			white-space: nowrap;
+			position: absolute!important;			
+			right:0;
+			top: 50%;
+			padding-left:0;
+			margin-top: -@size/2;			 
+			display: inline-block;
+
+
+		
+
+			// hide text
+			//overflow: hidden;
+			text-indent: -9999px;
+			&:before, &:after, .tooltip {
+				text-indent:0;								
+			}			
+			.tooltip {
+				min-width: 20em;
+				color: @zs-text-color;		
+			}
+			width: @size;
+			max-width: @size;
+			height: @size;
+
+			border: 0;
+			background: transparent;
+		}
+
+
+		// Add padding for the info icon
+		&.zs-info {
+			>.zs-message:before, >.zs-message:after {
+				left: 0.5em;
+			}
+		}
+	}
+}
+
+// Validation messages
+.zs-message-icon() {
+	.zs-icon-font;
+	position:absolute;
+	top: 50%;
+	left: 0.5em;
+	line-height: 0em;
+	font-size: @zs-font-size-base *@zs-icon-height;	// Fix for ZSUI-489 
+}
+.zs-message {
+	.padding(16*@zs-input-padding/13,1,16*@zs-input-padding/13,1);
+	position:relative;
+	font-size: 13em/14;
+}
+.zs-message.zs-error, .zs-error>.zs-message  {
+	color:darken(@zs-status-error,10%);
+	background: lighten(@zs-status-error,55%);
+	padding-left: 2.5*@zs-icon-height;
+	&:before {
+		.zs-message-icon;
+		color: @zs-background;
+		content: "\62";
+	}
+	&:after {
+		.zs-message-icon;
+		color:@zs-status-error;
+		content: "\21";	
+	}
+	border: 1px solid lighten(@zs-status-error,25%);
+}
+.zs-message.zs-warning, .zs-warning>.zs-message {
+	color:darken(@zs-status-warning,10%);
+	background: lighten(@zs-status-warning,50%);
+	padding-left: 2.5*@zs-icon-height;
+	&:before {
+		.zs-message-icon;
+		color: @zs-background;
+		content: "\63";
+	}
+	&:after {
+		.zs-message-icon;
+		color:@zs-status-warning;
+		content: "\22";				
+	}
+	border: 1px solid lighten(@zs-status-warning,10%);
+}
+.zs-message.zs-success, .zs-success>.zs-message {
+	color: darken(@zs-status-success,10%);
+	background: lighten(@zs-status-success,50%);
+	padding-left: 2.5*@zs-icon-height;
+	
+	&:before {
+		.zs-message-icon;			
+		color: @zs-background;
+		content: "\61";
+	}
+	&:after {
+		.zs-message-icon;
+		color: @zs-status-success;			
+		content: "\36";				
+	}
+	border: 1px solid lighten(@zs-status-success,25%);
+}
+.zs-message.zs-info,.zs-info>.zs-message {
+	padding-left: 1.75*@zs-icon-height;
+	&:before {
+		.zs-message-icon;
+		color: @zs-background;
+		content: "\61";
+		left:0;
+	}
+	&:after {
+		.zs-message-icon;
+		color:@zs-brand-gray;
+		left:0;
+		content: "\3b";				
+	}
+}
+
+// Search with button
+.zs-search-button { 
+	.zs-input-icon {
+		&:before {
+			//top:0.4em;
+		}
+		input { 
+			.padding(@zs-input-padding, 0.6, @zs-input-padding, 0.6);
+		}
+	}
+	.zs-button {
+		.margin(0,0,0,1);
+	}
+}
+.zs-style p.zs-search-button {
+	padding-right:inherit;
+}
+
+// Input box with an attached button
+.zs-button-attached {
+	display: inline-block;
+	position: relative;
+
+	> input {
+		font-size: 1.1em;
+	}
+
+	> .zs-button, >input + .zs-button {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		padding-right: 1.1em;
+		padding-left: 1.1em;		
+		position: absolute;
+		right: 0;
+		top: 0;
+		margin-right: -2.25em;
+		height: 100%; // height 100% give 1px difference in Chrome.
+		max-width: 2em; //To fix FF issue wherein width of absolutely positioned pseudo-element content is reflected in parent element.Should be removed in future when FF fixes this.
+		&:before {
+			font-size: @zs-icon-height;
+			font-family: @zs-icon-font-family;
+			position: absolute;
+			top: 50%;
+			right: 0;
+			margin-top: -@zs-icon-height/2;
+			margin-right: @zs-icon-width/2;
+			display:inline-block;
+			
+		}
+	}
+}
+
+
+// Fields inside tables
+.zs-data-table td .zs-field {
+	margin:0px;
+}

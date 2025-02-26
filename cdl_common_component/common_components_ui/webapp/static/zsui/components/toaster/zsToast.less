@@ -1,0 +1,34 @@
+.zs-toast-container {
+	position: relative;
+	z-index: @zs-layer-1;	
+}
+
+.zs-toast {
+	.margin(0,0,1,0);
+	display: block;
+	cursor: pointer;
+	
+	opacity: 0;
+	-webkit-transition: opacity 1s; /* Safari */
+	transition: opacity 1s;
+	
+	.zs-toast-title {
+		font-weight: bold;
+	}
+
+	.zs-toast-close-button {
+		position: absolute;
+		margin-top:-0.5em;
+		top: 50%;
+		right: 14/24*@zs-font-padding-ratio;		
+	}
+
+	&.fadeIn{
+		opacity: 1;		
+	}
+
+	&.zs-error .zs-toast-close-button:hover:extend(a:hover>.zs-icon.zs-error all){}
+	&.zs-warning .zs-toast-close-button:hover:extend(a:hover>.zs-icon.zs-warning all){}
+	&.zs-success .zs-toast-close-button:hover:extend(a:hover>.zs-icon.zs-success all){}
+	&.zs-info .zs-toast-close-button:hover:extend(a:hover>.zs-icon.zs-info all){}
+}

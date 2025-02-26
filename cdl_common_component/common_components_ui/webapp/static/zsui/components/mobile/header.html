@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link href="../../themes/zs/app.css" rel="stylesheet" />
+	<title>ZSUI test page</title>
+	<meta name="viewport" content="user-scalable=no, width=device-width"><!-- we need to disable zoom in order to staging responsive features-->
+</head>
+<body class="zs-style zs-reset zs-layout-1col">
+	<header class="zs-mobile-header">
+		<div class="zs-brand-stripe"></div>
+		<div class="zs-brand-bar">
+			<div class="zs-row">
+				<div class="zs-logo">
+					<img src="../../lib/images/logo-small.png" class="zs-small"/>
+					<img src="../../lib/images/logo.png" class="zs-normal"/>
+				</div>
+				<div class="zs-brand-name">
+					<div class="zs-select">
+						<select>
+							<option>...123 ...</option>
+						</select>
+					</div>
+				</div>
+				<div class="zs-nav">
+					<nav class="zs-top-navigation">
+						<ul>
+							<li>
+								<a href="#">Item</a>
+							</li>
+							<li><a href="#">Two words</a></li>
+							<li class="zs-active"><a  href="#">Three words item</a></li>
+							<li><a href="#">Item</a></li>
+							<li><a href="#">Two words</a></li>
+							<li><a href="#">Four words item word</a></li>
+						</ul>
+					</nav>
+					<div class="zs-select">
+						<select><option>Item</option><option>Two word</option><option>hree words item</option><option>Long item name really long</option></select>
+					</div>
+				</div>
+				<div class="zs-user-bar">					
+					<div role="help">
+						<a href="javascript:void(0);">
+							<span class="zs-icon zs-icon-help"></span>
+							<span class="zs-icon zs-icon-large zs-icon-help"></span>
+							<label>Help</label>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<nav class="zs-top-navigation">
+			<ul>
+				<li>
+					<a href="#">Item</a>
+				</li>
+				<li><a href="#">Two words</a></li>
+				<li><a  href="#">Three words item</a></li>
+			
+				<li class="zs-active zs-submenu" style="position:relative"><a href="javascript:alert(1)">Sub menu</a><a href="#"><span class="zs-icon zs-icon-collapse"></span></a>
+					<nav class="zs-menu" style="display:none;position:absolute">
+						<ul>
+							<li>
+								<a href="#">sub item </a>
+							</li>
+							<li class="zs-active zs-submenu"><a href="#">Long sub item  name really long<span class="zs-icon zs-icon-expand"></span></a>
+								<nav class="zs-menu" style="display:none;position:absolute">
+									<ul>
+										<li>
+											<a href="#">sub item </a>
+										</li>
+										<li class="zs-active"><a href="#">Long sub item  name really long</a></li>
+										<li><a href="#">UnbreakableSubItemLongVeryLongLongLongLongLongLongLongLongLongLongLongLongLong</a></li>
+									</ul>
+								</nav>
+							</li>
+							<li><a href="#">UnbreakableSubItemLongVeryLong</a></li>
+						</ul>
+					</nav>
+				</li>
+				
+				<li><a href="#">Two words</a></li>
+				<li class="zs-submenu" style="position:relative"><a href="#">Four words item word</a><a href="#"><span class="zs-icon zs-icon-collapse"></span></a>
+					<nav class="zs-menu" style="display:none;position:absolute">
+						<ul>
+							<li>
+								<a href="#">sub item </a>
+							</li>
+							<li class="zs-active"><a href="#">Long sub item  name really long</a></li>
+							<li><a href="#">UnbreakableSubItemLongVeryLongLongLongLongLongLongLongLongLongLongLongLongLong</a></li>
+						</ul>
+					</nav>
+
+				</li>
+				<li><a href="#">Two words</a></li>
+				<li><a href="#">Four words item word</a></li>
+			</ul>
+		</nav>
+
+	</header>
+	<script src="../../lib/js/jquery.min.js"></script>
+	<script src="zsMobile.js"></script>
+	<script src="../user/launchbar.js"></script>
+	<script>
+
+		var zsResponseText = '<div id="zs-lbr" style="display: none;"><div role="profile"><a href="javascript:void(0);"><span class="zs-icon zs-icon-user-permissions"><span class="zs-badge zs-error zs-badge-error zs-badge-rectangle" style="display: none;"></span></span><span class="zs-icon zs-icon-large zs-icon-user-permissions"><span class="zs-badge zs-error zs-badge-error zs-badge-rectangle" style="display: none;"></span></span><label>Profile</label></a><nav class="zs-menu" style="display: none"><div class="zs-message zs-error" style="display: none;"><div>One or more roles are expiring</div><a href="javascript:void(0);">Manage roles to extend or renew access</a></div><a href="javascript:void(0);" class="zs-link">My Account</a><a href="javascript:void(0);" class="zs-link">Switch Account</a><a href="javascript:void(0);" class="zs-link"><span class="zs-icon zs-icon-logout"></span>Sign Out</a></nav></div><div role="apps"><a href="javascript:void(0);"><span class="zs-icon zs-icon-grid"></span><span class="zs-icon zs-icon-large zs-icon-grid"></span><label>Applications</label></a><nav class="zs-menu" style="display: none"><a href="javascript:void(0);">App 1</a><a href="javascript:void(0);">App 2</a><a href="javascript:void(0);">App 3</a></nav></div><div role="help"><a href="javascript:void(0);"><span class="zs-icon zs-icon-help"></span><span class="zs-icon zs-icon-large zs-icon-help"></span><label class="">Help</label></a></div></div>';
+		
+		var fakeRequest = {
+    		readyState: 4,
+    		status: 200,
+    		responseText: zsResponseText
+    	};
+
+		$(document).ready(function () {			
+			if (ZSLB) {
+				ZSLB.handleLaunchbarResponse(fakeRequest);
+			}
+		});
+	</script>
+
+</body>
+</html>

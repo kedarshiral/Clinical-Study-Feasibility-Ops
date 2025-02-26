@@ -1,0 +1,486 @@
+﻿// Require: responsive.less, brand.less, icons.less
+@zs-icon-large-height: @zs-icon-height*24/16;
+@menu-xs-min: @screen-xs*0.6;
+@zs-user-max-width: 15em;
+#zs-lbr {
+	display:none;
+}
+
+
+
+.zs-user-bar {
+	@tabHeight: @zs-icon-large-height + 2*@zs-font-padding-ratio;
+    display:inline-block;
+    position:absolute;
+    right:0px;
+    margin-right: @zs-brand-margin;
+    top: 50%;
+    margin-top: -@tabHeight / 2;	
+
+	>div[role="profile"] {
+		>a {
+		
+		}
+		>nav {
+			min-width: 120%; // compensate for long user names.
+		}
+	}
+	>div {
+		position:relative;
+		display:inline-block;
+		.padding(0,0.75,0,0.75);
+		.margin(0,0,0,0.5);
+		min-height:@tabHeight;
+		max-height: @tabHeight;
+		height: @tabHeight;
+		&:first-child {
+			margin-left:0;
+		}
+		>a {	
+			
+			cursor: pointer;
+			position:relative;		
+			margin:0;
+			display:inline;
+			line-height: @tabHeight;
+			>.zs-icon {
+				margin-right:0;
+				margin-left:0;
+				&:before {
+					margin-bottom:0;
+					margin-right:0;
+				}
+				&.zs-icon-large {
+				}			
+				&.zs-icon-large:before {
+					margin-right:0;
+				}
+
+                .zs-badge {
+                    font-size: 0.75em;
+                    top: 0.75em;
+                    left: 0.75em;
+                }
+			}
+
+			>label {
+				line-height: @zs-icon-height;				
+				cursor: pointer;
+				.padding(0,0,0,1);
+			}
+		}
+		>nav {
+			min-width:10em; // make sure that popup menu is wider than a trigger link.
+			position:absolute;
+			right:-1px;
+			top: 100%;
+			border-top-right-radius:0;
+			>a {
+				z-index:@zs-layer-3;
+			}
+			//top:0;
+		}
+	}
+
+    .zs-message-container {
+        position: relative;
+
+        .zs-message.zs-error {
+            min-height: 0;
+            z-index: @zs-layer-1;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            margin-left: -47em;
+            margin-top: -1.35em;
+        }
+    }
+}
+.zs-hide, .zs-menu.zs-hide {
+    display:none;
+}
+
+// Popup menu tweaks. TODO: add to popupMenu.less styles
+.zs-menu {
+	a.zs-link:extend(.zs-style a all),
+	a.zs-link:visited:extend(.zs-style a all) { }
+    
+    .zs-message {
+        border: none;
+        min-width: @menu-xs-min;
+
+        a {
+            display: block;
+        }
+    }
+}
+
+
+// Header fixes
+.zs-header {
+	.zs-brand-bar {
+		.zs-logo {
+			display:inline-block;
+			float:inherit;
+			vertical-align:middle;
+		}
+		.zs-brand-name {
+			display:inline-block;
+			float:inherit;
+			line-height:100%; // would place it in the middle
+			vertical-align:middle; // this would place it kind of in the middle but not really
+		}
+	}
+}
+
+// Application-level messages
+.zs-app-message {
+	margin-left: @zs-layout-aside-width;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	font-size:@zs-font-size-base;
+	background: lighten(@zs-status-warning, 52%);
+	display:block;
+	border-top-left-radius: @zs-border-radius;
+	border-top-right-radius: @zs-border-radius;	
+	position:relative;
+	line-height:2.2em;
+	.padding(1,2,1,2);
+	button {
+		.margin(0,0,0,3);
+		line-height:1.25em; // IE11 fix
+	}
+	border:1px solid @zs-border-color;
+	&:before,&:after {
+		content:"";
+		display:table;
+	}
+	&:after {
+		clear:both;
+	}
+    @zs-app-message-width: 90%;
+    display: none;
+    position: fixed;
+    bottom: 0;
+    width: @zs-app-message-width;
+    left: 50%;
+    margin-left: @zs-app-message-width / -2;
+
+    .zs-icon.zs-icon-rejected-approval {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-top: @zs-icon-height / -2;
+        margin-right: @zs-font-padding-ratio * 2;
+    }
+}
+
+/*** Old Launchbar styles ***/
+@zs-launchbar-arrow: "../../components/user/launch-bar.gif";
+@zs-launchbar-notifications: "../../components/user/launch-bar-notifications.gif";
+#lbr {
+	background: #505050 url(@zs-launchbar-arrow) 0 -9px repeat-x;
+    font-size: 8pt;
+    font-family: Tahoma, Helvetica, Sans-Serif;
+	height: 23px;
+	line-height: 23px;
+
+    div& * {
+        font-size: 8pt;
+        font-family: Tahoma, Helvetica, Sans-Serif;
+    }
+
+    #lbar-apps {
+        float: left;
+        font-weight: bold;
+    }
+
+    #lbar-app-more {
+	    position: relative;
+	    z-index: 32767;
+    }
+ 
+    #lbar-logout {
+        float: right;
+    }
+
+    #lbar-user {
+        float: right;
+	    position: relative;
+	    z-index: 32767;
+ 
+       .lbar-menu-popup {
+            right: -1px;
+	        min-width: 110px;
+        }
+    }
+
+    ul, ul li, a.lbar-link, a.lbar-menu-dropdown {
+        display: inline-block;
+        height: 100%; /* For IE */
+    }
+
+    a {
+	    color: #AAA;
+    }
+
+    ul {
+	    list-style: none;
+	    padding: 0;
+	    margin: 0;
+    }
+
+    a.lbar-link {
+        text-decoration: none;
+	    padding: 0 10px;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    .lbar-selected {
+	    background: url(@zs-launchbar-arrow) no-repeat;
+	    background-position: 50% -64px;
+
+        a {
+	        color: white;
+        }
+    }
+
+    a.lbar-menu-dropdown {
+	    text-decoration: none;
+	    padding: 0 26px 0 10px;
+	    background: url(@zs-launchbar-arrow) 100% -100px no-repeat;
+    }
+    
+    .lbar-menu-on a.lbar-menu-dropdown {
+	    color: white;
+	    background-position: 100% -132px;
+    }
+
+    .lbar-menu-off {
+	    border-left: solid 1px transparent;
+	    border-right: solid 1px transparent;
+    }
+
+    .lbar-menu-on {
+	    background: url(@zs-launchbar-arrow) 0 -34px repeat-x;
+	    border-left: solid 1px #909090;
+	    border-right: solid 1px #909090;
+        
+        .lbar-menu-popup {
+	        display: block;
+        }
+    }
+
+    .lbar-menu-popup {
+	    display: none;
+	    position: absolute;
+	    top: 23px;
+        left: -1px;
+	    background-color: #626262;
+	    border-left: solid 1px #909090;
+	    border-right: solid 1px #909090;
+	    border-bottom: solid 1px #909090;
+        font-weight: bold;
+        line-height: 30px;
+
+        a {
+	        display: block;
+            white-space: nowrap;
+        }
+
+        li {
+            width: 100%;
+        }
+
+        ul {
+	        width: 100%;
+        }
+    }
+
+    #lbar-notifications {
+        position: relative;
+        float: left;
+	    background: #cc0000 url(@zs-launchbar-notifications) 2px -4px no-repeat;
+	    border-right: none;
+        color: white;
+        font-weight: bold;
+        z-index: 32767;
+        
+        a.lbar-menu-dropdown {
+            color: white;
+	        background-position: 100% -132px;
+	        padding-left: 33px;
+        }
+
+        .lbar-menu-popup {
+	        background-color: white;
+	        font-weight: normal;
+	        border: solid 4px #cc0000;
+	        -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 1) inset,
+						        1px 1px 2px rgba(40, 40, 40, 0.6),
+						        2px 2px 5px rgba(80, 80, 80, 1);
+
+            em {
+                font-weight: bold;
+                font-style: normal;
+            }
+
+            a.note-link {
+	            text-decoration: none;
+	            color: #3577C9;
+
+                &:hover {
+	                text-decoration: underline;
+                }
+            }
+        }
+
+        &.lbar-menu-on {
+	        border-left: solid 1px #cc0000;
+        }
+
+        .lbar-link {
+	        color: black;
+        }
+    }
+
+    #lbar-not-prod {
+        display: inline-block;    
+        *display: inline;
+        *zoom: 1;
+	    background-color: #7e7e7e;
+	    color: white;
+	    font-weight: bold;
+        height: 100%;
+        padding: 0px 10px;
+        margin-right: 10px;
+    }
+
+    #lbar-user .user-name {
+        font-weight: bold;
+        padding-left: 4px;
+    }
+}
+
+
+// Sub meun TODO: It is copied from mobile/header.less. Need to make it a reusable behaviour
+@zs-table-header-background: @zs-background-tab;
+.zs-submenu, .zs-mobile-header .zs-top-navigation > ul > li.zs-submenu, .zs-user-bar>div {
+	>a:first-child {
+		//.margin(0,2,0,0);
+	}
+
+	>a:first-child + a {
+		//.margin(0,0,0,1);
+		position: absolute;
+		top: 50%;
+		margin-top: -@zs-icon-height/2;
+		right: 0;
+	}
+
+
+	&.zs-selected {
+		&:before {
+			content: '';
+			background: transparent;
+			border-radius: @zs-border-radius;
+			border: 1px solid @zs-border-color;
+			box-shadow: 0 3px 6px @zs-shadow-color;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+			top: 0px;
+			position: absolute;
+			right: -1px;
+			bottom: -1px;
+			left: -1px;
+			z-index: 0;
+		}
+
+
+		&:after {
+			// cover the border
+			@height: 2px;
+			margin-top: -@height/2;
+			left: 0px;
+			top: 100%;
+			content: '';
+			right: 0px;
+			height: @height;
+			background: @zs-background;
+			display: inline-block;
+			position: absolute;
+			z-index: 2;
+		}
+	}
+
+	>nav {
+		position: absolute;
+		position: absolute;
+		right: -1px;
+		top: 100%;
+		border-top-right-radius: 0;
+		z-index: 1;
+		min-width: 120%;
+
+		>ul {
+			>li {
+				display: block;
+				position: relative;
+
+				&.zs-active {
+					background: @zs-table-header-background;
+				}
+			}
+		}
+	}
+
+	&.zs-selected.zs-to-left {
+		>nav {
+			left:-1px;
+			right:auto;
+			border-top-right-radius: @zs-border-radius;
+			border-top-left-radius:0;
+		}
+	}
+}
+
+// Responsive fixes 
+@screen-tablet-landscape: 1024px;
+.zs-user-bar {
+	.zs-icon-large {
+		display:none;
+	}
+}
+@media (min-width: 0) {
+	.zs-user-bar {
+		label {display:none}
+		.zs-icon {display:none}
+		.zs-icon.zs-icon-large {display:inline}
+	}
+
+}
+
+@media (min-width: (@screen-tablet+1)) {
+	.zs-user-bar {
+		[role="profile"] label {
+			display: inline-block;
+			max-width: 7em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	}
+}
+
+@media (min-width: (@screen-tablet-landscape+1)) {
+	.zs-user-bar {
+		.zs-icon {display:inline}
+		.zs-icon.zs-icon-large {display:none}
+		label, [role="profile"] label {display:inline}
+		
+	}
+}
+

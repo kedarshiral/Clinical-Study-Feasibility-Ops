@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DQM Results</title>
+    <meta charset="UTF-8">
+    <link href="../static/zsui/themes/zs/app.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <script src="../static/zsui/lib/js/customElements.js"></script>
+    <script src="../static/zsui/lib/js/customElements.poly.js"></script>
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+    <script src="../static/js/dqmTable.js"></script>
+
+</head>
+<body class="zs-style zs-reset zs-layout-1col zs-layout-table">
+{% include 'header.html'%}
+    <section>
+        <main>
+            <header>
+                <h1>DQM Checks Analysis</h1>
+            </header>
+            <section>
+                <div data-page="tabs">
+                    <h2>Tabs</h2>
+                    <zs-tabs-container class="zs-tabs">
+                        <ul>
+
+                        <li is="zs-tab" tab-id="tab1" active><a href="javascript:void(0)">DQM Configuration</a></li><li is="zs-tab" tab-id="tab2"><a href="javascript:void(0)">DQM Error Details</a></li></ul>
+                        <div source-id="tab1" style="display: block;">
+                            <table id='configuration_table' class="zs-data-table">
+                                <thead>
+                                <tr>
+                                        <th>QC Id</th>
+                                        <th>QC Type</th>
+                                    <th>Table</th>
+                                        <th>Column</th>
+                                        <th>Parameter</th>
+                                        <th>Filter</th>
+                                        <th>Active</th>
+                                        <th>Primary Key</th>
+                                        <th>Criticality</th>
+                                    <th>Create By</th>
+                                        <th>Create Ts</th>
+                                        <th>Update By</th>
+                                    <th>Update Ts</th>
+                                </tr>
+                                </thead>
+                                 </table>
+                        </div>
+                        <div source-id="tab2" style="display: none;">
+                           <table id='error_table' class="zs-data-table">
+                            <thead>
+                            <tr>
+                             <th>Run Id</th>
+                            <th>File Id</th>
+                                    <th>QC Id</th>
+                                    <th>QC Type</th>
+                                <th>Table</th>
+                                    <th>Column</th>
+                                    <th>Criticality</th>
+                                    <th>Error value</th>
+                                <th>Create By</th>
+                                    <th>Create TS</th>
+                            </tr>
+                            </thead>
+                        </table>
+                        </div>
+
+                    </zs-tabs-container>
+                </div>
+                <script src="../static/zsui/components/tabs/zsTab.js"></script>
+            </section>
+         </main>
+    </section>
+</body>
+</html>

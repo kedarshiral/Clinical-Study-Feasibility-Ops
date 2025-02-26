@@ -1,0 +1,138 @@
+{
+  "cluster_configurations": {
+    "small": {
+      "Name": "",
+      "LogUri": "",
+      "AmiVersion": "emr-5.29.0",
+      "ReleaseLabel": "emr-5.29.0",
+      "Instances": {
+        "InstanceGroups": [
+          {
+            "Name": "Main node",
+            "Market": "ON_DEMAND",
+            "InstanceRole": "MASTER",
+            "InstanceType": "r4.xlarge",
+            "InstanceCount": 1,
+            "Configurations": [
+              {
+                "Classification": "yarn-site",
+                "Properties": {
+                  "yarn.resourcemanager.scheduler.class": "org.apache.hadoop.yarn.server.resourcemanager.scheduler.fair.FairScheduler"
+                }
+              }
+            ]
+          },
+          {
+            "Name": "Worker nodes",
+            "Market": "SPOT",
+            "BidPrice": "0.185",
+            "InstanceRole": "CORE",
+            "InstanceType": "r4.xlarge",
+            "InstanceCount": 3,
+            "Configurations": [
+              {
+                "Classification": "yarn-site",
+                "Properties": {
+                  "yarn.resourcemanager.scheduler.class": "org.apache.hadoop.yarn.server.resourcemanager.scheduler.fair.FairScheduler"
+                }
+              }
+            ]
+          }
+        ],
+        "KeepJobFlowAliveWhenNoSteps": true,
+        "TerminationProtected": true,
+        "Ec2KeyName": "",
+        "Ec2SubnetId": "",
+        "EmrManagedMasterSecurityGroup": "",
+        "EmrManagedSlaveSecurityGroup": "",
+        "ServiceAccessSecurityGroup": "",
+        "AdditionalMasterSecurityGroups": [
+          ""
+        ]
+      },
+      "Applications": [
+        {
+          "Name": "Hive"
+        },
+        {
+          "Name": "Pig"
+        },
+        {
+          "Name": "Ganglia"
+        },
+        {
+          "Name": "Hue"
+        },
+        {
+          "Name": "Sqoop"
+        },
+        {
+          "Name": "Spark"
+        }
+      ],
+      "VisibleToAllUsers": true,
+      "JobFlowRole": "",
+      "ServiceRole": "",
+      "Configurations": [
+        {
+          "Classification": "spark-env",
+          "Configurations": [
+            {
+              "Classification": "export",
+              "Properties": {
+                "PYSPARK_PYTHON": "/usr/bin/python3"
+              }
+            }
+          ]
+        }
+      ],
+      "BootstrapActions": [
+        {
+          "Name": "Run environment setup and deploy code",
+          "ScriptBootstrapAction": {
+            "Path": "",
+            "Args": [
+              "",
+              "",
+                          "TEST",
+                          "test",
+                          "test",
+                          "RVBJQ1hCQg",
+                          "QnhJeVR6MjAyMA"
+
+            ]
+          }
+        }
+      ],
+      "SecurityConfiguration": "",
+      "Tags": [
+         {
+          "Key": "WBS",
+          "Value": "I160.30000.01.03.00"
+        },
+        {
+          "Key": "Organization",
+          "Value": ""
+        },
+        {
+          "Key": "Cost Center",
+          "Value": "12345"
+        },
+        {
+          "Key": "Environment",
+          "Value": "Test"
+        },
+        {
+          "Key": "Creation Date",
+          "Value": "20200601"
+        },
+        {
+          "Key": "Name",
+          "Value": ""
+        }
+      ],
+      "Region": "eu-central-1"
+    }
+  }
+}
+

@@ -1,0 +1,148 @@
+/*
+Drag and drop table
+
+Drag and drop table
+
+Markup:
+<div class="zs-drag-table ">
+	<header>
+        <a href="# "><span class="zs-icon zs-icon-add"></span>Add something</a>
+    </header>
+	<table class="zs-data-table">
+		<thead>
+        	<td width="60 ">Status</th>
+        	<td width="100 ">Column 2</th>
+        	<th width="100 ">Column 3</th>
+        	<th width="100 " align="right">Number</th>
+        	<th width="100 " align="right">Action</th>
+		</thead>
+	</table>
+	<div class="zs-draggable">
+		<table class="zs-data-table">
+		<tbody>
+        <tr>
+            <td width="60 "><span class="zs-icon zs-icon-published zs-icon-large "></span></td>
+            <td width="100 ">Cell 12</td>
+            <td width="100 ">Cell 13</td>
+            <td width="100 " align="right">1</td>
+            <td width="100 " align="right"><a href="# " class="zs-icon zs-icon-edit zs-icon-large "></a></td>
+        </tr>
+		</tbody>
+		</table>
+	</div>						
+	<div class="zs-draggable">
+		<table class="zs-data-table">
+		<tbody>
+        <tr>
+            <td width="60 "><span class="zs-icon zs-icon-publish zs-icon-large "></span></td>
+            <td width="100 ">Cell 12</td>
+            <td width="100 ">Cell 13</td>
+            <td width="100 " align="right">1</td>
+            <td width="100 " align="right"><a href="# " class="zs-icon zs-icon-edit zs-icon-large "></a></td>
+        </tr>
+		</tbody>
+		</table>
+	</div>						
+    <div class="zs-draggable">
+		<table class="zs-data-table">
+		<tbody>
+        <tr>
+            <td width="60 "><span class="zs-icon zs-icon-spinner zs-icon-large "></span></td>
+            <td width="100 ">Cell 12</td>
+            <td width="100 ">Cell 13</td>
+            <td width="100 " align="right">1</td>
+            <td width="100 " align="right"><a href="# " class="zs-icon zs-icon-edit zs-icon-large "></a></td>
+        </tr>
+		</tbody>
+		</table>
+	</div>
+	<footer>
+		   <a href="# "><span class="zs-icon zs-icon-add "></span>Add something</a>
+	</footer>  
+</div>
+	
+Styleguide Components.DragDropTable
+*/ 
+.zs-drag-table {
+	display:inline-block;
+	//position:relative;
+    header,footer {
+        .padding;
+        a {
+            float:right;
+        }
+		.clearfix;
+    }
+	>table, div.zs-draggable >table {
+		margin:0;
+		table-layout:fixed;
+		thead th:first-child:before, thead td:first-child:before {
+			content: '';
+			padding-left:@zs-font-size-base*1.35; // 1.5 - 0.15 
+		}
+	}
+	.zs-draggable, .zs-droppable, .zs-dragged {
+		
+		padding-left:1em;
+		td {
+			border-top:0px;
+			border-bottom:0px;
+			vertical-align: middle;
+		}
+		display:block;
+		box-shadow: 0px 1px 3px 0px @zs-shadow-color;
+		border:1px solid @zs-border-color;
+		border-radius: 0.25em;
+		.margin(0.5,0,0,0);
+		position:relative;
+	}
+	.zs-draggable:before, .zs-dragged:before {		
+		.zs-icon-font();
+		position:absolute;
+		top: 50%;
+		left:-0.15em;
+		margin-top:-0.5em;		
+		font-size:@zs-font-size-base*1.5; // Fix for IE 
+		content: "\73";
+		opacity:0.5;
+	}
+	.zs-draggable:hover:before {
+		color: @zs-link-normal;
+		opacity:1;
+	}
+	.zs-dragged:before {
+		color: @zs-link-normal;
+		opacity:1;
+	}
+	.zs-draggable:before, .zs-draggable {
+		cursor: pointer;
+	}
+	
+	.zs-dragged {
+		position:absolute;
+		z-index: @zs-layer-1;
+		background: @zs-background;
+		border: 1px solid @zs-link-normal;
+		box-shadow:	 0 3px 6px @zs-shadow-color;
+	}
+	
+	.zs-droppable {
+		height: 3em;
+		border:1px dashed @zs-table-border-color;
+		background: tint(@zs-brand-primary, 90%); 
+	}
+
+}
+.zs-dragging .zs-drag-table .zs-draggable, .zs-dragging .zs-drag-table .zs-droppable, .zs-dragging, .zs-dragging .zs-drag-table, .zs-dragging .zs-drag-table .zs-draggable:before {
+	cursor:move!important;
+}
+
+//Copied for non-ideal table headers
+.zs-table-header,
+.zs-table-footer{    
+    .padding;
+    a {
+        float:right;
+    }
+	.clearfix;
+}

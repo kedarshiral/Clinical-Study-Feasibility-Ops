@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link href="../../themes/zs/app.css" rel="stylesheet" />
+		<title>ZS UI Components // Highlight</title>
+	</head>
+	<script src="../../lib/js/jquery.min.js"></script>
+	<script src="jquery.zsHighlight.js"></script>
+	<body class="zs-style zs-reset" style="padding:2em">
+		<h2>Highlight</h2>
+		<p><input type="text" class="zs-input" value="lectus"/> <button class="zs-button" high>Highlight</button></p>
+		<p highlight>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum, dui id gravida mattis, tortor neque imperdiet dolor,
+		ut vehicula lectus massa at purus. Pellentesque dapibus elit molestie hendrerit rhoncus. Aenean at vulputate magna. Suspendisse
+		eget lorem et magna auctor pulvinar. Donec accumsan dictum dui. Maecenas pretium consequat sapien quis iaculis. Fusce ultricies
+		vehicula posuere.
+		</p>
+		<button class="zs-button" low>Remove</button>
+		<script>
+			$(document).ready(function() {
+				function highlight(keyword) {
+					$.zs.highlight(keyword, '[highlight]');
+				}
+				$('.zs-input').on('change', function() {
+					highlight($(this).val());
+				});	
+
+				highlight($('.zs-input').val());
+
+				$('[low]').click(function() {
+					$.zs.lowlight('[highlight]');
+				});	
+
+				$('[high]').click(function() {
+				highlight($('.zs-input').val());
+				});
+			});
+		</script>
+	</body>
+</html>

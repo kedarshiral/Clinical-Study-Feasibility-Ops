@@ -1,0 +1,38 @@
+
+/*
+Breadcrumbs
+
+Breadcrumbs
+
+Markup:
+<nav class="zs-breadcrumbs">
+	<a href="#">Home</a>
+	<a href="#">Parent</a>
+	<a href="#" class="zs-active">Current</a>
+</nav>
+
+Styleguide Components.Breadcrumbs
+*/
+@zs-breadCrumbs-active: @zs-nav-color;  
+.zs-breadcrumbs {
+	//display: none;	
+	a, a:visited { 
+		font-size:@zs-font-size-small;
+		text-decoration: none;
+		display:inline-block;		
+	}
+	a:after {
+		content:'>';
+		.padding(0,0.75,0,0.75);
+		color: @zs-text-color;
+	}	
+	a.zs-active, a.zs-active:visited, .zs-active, a:last-child {
+		color: @zs-breadCrumbs-active; 
+		&:after {
+			content: '';
+		}
+		cursor: pointer;
+		pointer-events: none;		
+	}
+	.margin(0,0,0.5,0);
+}

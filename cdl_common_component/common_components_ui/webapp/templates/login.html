@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Here</title>
+    <link href="../static/zsui/themes/zs/app-login.css" rel="stylesheet" type="text/css">
+</head>
+<body class="zs-style">
+<form method="post" action="/landing" id="loginForm" autocomplete="off" class="zs-form">
+
+<div id="entry-form">
+            <div class="container">
+                <h1>
+                    <img id="ctl00_Logo" class="logo" src="../static/images/loginlogo.jpg">
+                </h1>
+                <div id="ctl00_FormTitle" class="form-title">
+
+                    <h2>
+                        Sign In</h2>
+
+</div>
+                <div id="ctl00_FormDescription" class="form-description">
+
+                    <span id="ctl00_FormDescriptionLabel"></span>
+
+</div>
+                <div id="ctl00_PageValidationSummary" class="zs-error zs-message" style="display:none;">
+
+</div>
+
+                <div class="form-content">
+
+    <fieldset class="zs-grid-row zs-fieldset-vertical">
+        <p id="ctl00_PageContentPlaceholder_UserNameInputContainer" class="zs-no-error-icon">
+            <label for="ctl00_PageContentPlaceholder_UserNameInput" id="ctl00_PageContentPlaceholder_UserNameInputLabel" >User Name</label>
+            <input type="text" class="userid zs-input" name="username">
+
+        </p>
+        <p id="ctl00_PageContentPlaceholder_PasswordInputContainer" class="zs-no-error-icon">
+            <label for="ctl00_PageContentPlaceholder_PasswordInput" id="ctl00_PageContentPlaceholder_PasswordInputLabel">Password</label>
+            <input  type="password" name="password" class="password zs-input">
+
+        </p>
+        <div class="remember-me">
+            <input id="ctl00_PageContentPlaceholder_RememberMe" type="checkbox" name="ctl00$PageContentPlaceholder$RememberMe"><label for="ctl00_PageContentPlaceholder_RememberMe">Remember me</label>
+        </div>
+        <div class="submit">
+            <input type="submit" name="ctl00$PageContentPlaceholder$LoginButton" value="Sign In" id="ctl00_PageContentPlaceholder_LoginButton" {#class="zs-button zs-button-action#}">
+        </div>
+    </fieldset>
+
+    <p class="login-access-message">
+        <span id="ctl00_PageContentPlaceholder_AccessMessage"></span>
+    </p>
+
+                </div>
+            </div>
+        </div>
+        <div class="zs-footer">
+		    <img id="ctl00_zsLogo" class="zslogo" src="../static/images/zsloginlogo.png">
+        </div>
+        <div id="footer">
+
+            <p>
+                Created by <a href="http://www.zsassociates.com">ZS Associates</a>
+            </p>
+            <p class="policy">
+                <a href="http://www.zsservices.com/hosted/privacy.htm">
+                    Privacy Policy</a> | <a href="http://www.zsservices.com/hosted/terms.htm">
+                        Terms of Use</a>
+            </p>
+        </div>
+</form>
+</body>
+</html>

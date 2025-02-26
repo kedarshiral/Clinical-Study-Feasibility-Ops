@@ -1,0 +1,437 @@
+// Mobile components
+//		require: responsive.less
+
+// Custom margin to line-up elements on the page. Should be consistent across elements
+@zs-brand-margin: 40px;
+
+
+// Header
+.zs-brand-stripe {
+	min-height: 4px;
+	background: #faa44e url('@{zs-images}/header.png') top center no-repeat;
+}
+
+.zs-mobile-header {
+	box-shadow: 0px 1px 3px 0px @zs-shadow-color;
+	z-index: @zs-layer-3;
+	position: relative; // Required for shadow and z-index to work
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	background: @zs-background;
+
+
+	a, a:visited {
+		text-decoration: none;
+	}
+
+	.zs-brand-bar {
+		//.clearfix;
+		position: relative;
+		border-bottom: 1px solid @zs-border-color;
+		display: table;
+		width: 100%;
+
+		>.zs-row {
+			display: table-row;
+
+			>* {
+				display: table-cell !important;
+				vertical-align: middle;
+			}
+
+			.zs-logo {
+				width: 0;
+				margin: 0;
+				position: relative;
+				margin-left: @zs-brand-margin; // TODO: Logo has 2 extra pixels of margin at the bottom
+			}
+
+			>* {
+				display: table-cell;
+				vertical-align: middle;
+			}
+
+			.zs-logo-javelin {
+				width: 136px;
+				min-width: 136px; // because of flexbox
+				height: 32px;
+				background: url('logo.png') left center no-repeat;
+			}
+
+			.zs-brand-name {
+				.padding(0,1,0,1);
+				border-left: 1px solid @zs-border-color;
+				border-right: 1px solid @zs-border-color;
+				position: relative;
+
+				.zs-select {
+					min-width: inherit;
+
+					>select {
+						border: 0;
+						width: auto;
+					}
+				}
+
+				h1 {
+					font-size: @zs-font-size-large;
+					padding: 0;
+					margin: 0;
+				}
+			}
+
+			.zs-nav {
+				.padding(0,1,0,1);
+				width: 100%;
+
+				>.zs-top-navigation {
+					margin-left: 0;
+					padding-left: 0;
+					height: 100%;
+					border-bottom: 0px!important;
+				}
+
+				>.zs-select {
+					min-width: inherit;
+				}
+			}
+
+			>.zs-user-bar {
+				position: relative;
+				white-space: nowrap;
+				margin-top: inherit;
+				text-align: right;
+
+				>div {
+					text-align: left;
+					margin-top: inherit;
+					padding-top: inherit;
+					padding-bottom: inherit;
+					min-height: inherit;
+				}
+			}
+		}
+	}
+	// Top Navigation
+	.zs-top-navigation {
+		border-top: 0;
+		background: @zs-background;
+		border-bottom: 0; // border-bottom: 1px solid @zs-border-color;
+		z-index: @zs-layer-1;
+		box-shadow: none;
+		display: table;
+		margin-left: @zs-brand-margin;
+
+		>ul {
+			display: table-row;
+			@zs-border-overlap-width: 3px;
+			@zs-border-width: 3px;
+			height: 100%;
+
+			>li > a, >li > a:visited {
+				color: @zs-text-light;
+				padding: 0 @zs-border-overlap-width 0;
+				display: inline-block;
+				cursor: pointer;
+				text-decoration: none;
+				vertical-align: middle;
+			}
+
+			>li {
+				display: table-cell;
+				vertical-align: middle;
+				position: relative;
+				.padding(1,1,1,1);
+				cursor: pointer;
+				&:last-child > a {
+					//margin-right: 0;
+				}
+			}
+
+
+
+			>li > a:hover, >li.zs-active > a:hover {
+				color: @zs-brand-primary;
+				text-decoration: none;
+			}
+
+			>li.zs-active {
+				position: relative;
+				z-index: @zs-layer-1;
+
+				>a {
+					color: @zs-brand-darkgray;
+					font-weight: 550;
+				}
+
+				&:after {
+					content: '';
+					display: inline-block;
+					position: absolute;
+					height: @zs-border-width;
+					background: @zs-brand-primary;
+					bottom: 0;
+					left: @zs-font-padding-ratio/2;
+					right: @zs-font-padding-ratio/2;
+				}
+
+
+				&:last-child:after {
+					right: 0px;
+				}
+			}
+		}
+	}
+}
+
+
+// Sub meun
+.zs-submenu, .zs-mobile-header .zs-top-navigation > ul > li.zs-submenu {
+	overflow:visible;
+	>a:first-child {
+		.margin(0,2,0,0);
+	}
+
+	>a:first-child + a {
+		.margin(0,0,0,1);
+		position: absolute;
+		top: 50%;
+		margin-top: -@zs-icon-height/2;
+		right: 0;
+	}
+
+
+	&.zs-selected {
+		&:before {
+			content: '';
+			background: transparent;
+			border-radius: @zs-border-radius;
+			border: 1px solid @zs-border-color;
+			box-shadow: 0 3px 6px @zs-shadow-color;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+			top: 0px;
+			position: absolute;
+			right: -1px;
+			bottom: -1px;
+			left: -1px;
+			z-index: 1;
+		}
+
+
+		&:after {
+			// cover the border
+			@height: 2px;
+			margin-top: -@height/2;
+			left: 0px;
+			top: 100%;
+			content: '';
+			right: 0px;
+			height: @height;
+			background: @zs-background;
+			display: inline-block;
+			position: absolute;
+			z-index: 2;
+		}
+	}
+
+	>nav {
+		position: absolute;
+		right: -1px;
+		top: 100%;
+		border-top-right-radius: 0;
+		z-index: 1;
+		min-width: 120%;
+
+		>ul {
+			>li {
+				display: block;
+				position: relative;
+				overflow: visible;
+
+				&.zs-active {
+					background: @zs-table-header-background;
+				}
+
+				&.zs-submenu {
+					overflow: visible;
+					
+					a:first-child {
+						.margin(0,0,0,0);
+					}
+					
+					&:before {
+						box-shadow: none;
+					}
+					&:after {
+						display: none;
+					}
+				}
+
+				// Inside submenu
+				>nav {
+					margin-left: 100%;
+					margin-top: -2.7em;
+					position: absolute;
+				}
+			}
+		}
+	}
+
+	&.zs-selected.zs-to-left {
+		>nav {
+			left:-1px;
+			right:auto;
+			border-top-right-radius: @zs-border-radius;
+			border-top-left-radius:0;
+		}
+	}
+}
+
+// Responsive tweaks
+@screen-tablet-landscape: 1024px;
+@zs-header-logo-min: 50px;
+@zs-brand-margin-min: 10px;
+@zs-header-select-min: 150px;
+@zs-header-stripe-width: 4px;
+@zs-user-bar-min: 4*@zs-icon-height*24/16;
+@zs-header-nav-min: @screen-tablet - @zs-header-logo-min - @zs-header-select-min - 2*@zs-brand-margin-min - @zs-user-bar-min;
+@zs-header-nav-medium: @screen-desktop - @zs-header-logo-min - @zs-header-select-min - 2*@zs-brand-margin-min - @zs-user-bar-min;
+@zs-header-icon-width: 57px;
+
+@media (min-width: 0) {
+	.zs-mobile-header {
+		>.zs-top-navigation {
+			display: none;
+		}
+
+		>.zs-brand-bar {
+			>.zs-row {
+				
+				>.zs-logo {
+					.padding(0,1,0,0);
+					.zs-small {
+						display: block;
+						margin-left: @zs-brand-margin-min;
+					}
+
+					.zs-normal {
+						display: none;
+					}
+
+					overflow: hidden;
+
+					&.zs-logo {
+					}
+				}
+
+
+				>.zs-nav {
+					>.zs-top-navigation {
+						display: none;
+					}
+
+					>.zs-select {
+						.margin(1,0,1,0);
+					}
+				}
+
+				>.zs-user-bar {
+					margin-right: @zs-brand-margin-min;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: (@screen-tablet+1)) {
+	.zs-mobile-header {
+		>.zs-brand-bar {
+			>.zs-row {
+				>.zs-nav {
+					>.zs-top-navigation {
+						display: table;
+						min-height: 3em; // navigation should drive the height of the whole bar.
+					}
+
+					>.zs-select {
+						display: none;
+					}
+
+					&.limit { // Enforce dropdown navigation
+						>.zs-top-navigation {
+							display: none;
+						}
+
+						>.zs-select {
+							display: inline-block;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: (@screen-tablet-landscape+1)) {
+	.zs-mobile-header {
+		>.zs-brand-bar {
+			>.zs-row {
+				>.zs-logo {
+					.padding(0.5,1,1.5,1);
+					max-width: inherit;
+					width: inherit;
+
+					.zs-small {
+						display: none;
+					}
+
+					.zs-normal {
+						margin-left: @zs-brand-margin;
+						display: block;
+					}
+					
+					&.zsui-logo {
+						.padding(0.5,1,0.5,0.25);
+					}
+				}
+
+				>.zs-brand-name {
+					min-width: inherit;
+					>.zs-select {
+						width:inherit;
+					}
+				}
+
+				>.zs-nav, .zs-nav.limit {
+
+
+					>.zs-top-navigation {
+						display: none;
+					}
+
+					>.zs-select {
+						display: none;
+					}
+				}
+
+				>.zs-user-bar {
+					padding-right: @zs-brand-margin;
+				}
+			}
+		}
+
+		>.zs-top-navigation {
+			display: table;
+			margin-left:0;
+		}
+	}
+}
+
+@media (max-width: (@screen-tablet)) {
+	.hide-sidenav-for-mobile {
+		.zs-style .zs-layout-1col;
+		.zs-layout-table .zs-layout-1col;
+	}
+}

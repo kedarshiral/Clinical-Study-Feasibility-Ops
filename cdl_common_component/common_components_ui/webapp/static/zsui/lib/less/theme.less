@@ -1,0 +1,83 @@
+// Version
+@zs-lib-version: '2.6.1'; 
+@zs-theme-version: @zs-lib-version; // could be overriden in a theme 
+
+// Colors
+@zs-brand-primary: #ed8b00;
+@zs-brand-dark: #48778a;
+@zs-brand-gray: #98a4ae;
+@zs-brand-darkgray: #53565a;
+
+@zs-text-color: #53565a;
+@zs-text-light: #74797d;
+
+@zs-nav-color: @zs-brand-primary;
+@zs-link-normal: #327f97;
+@zs-link-hover: #4c94af;
+@zs-link-active: @zs-link-hover;
+@zs-link-visited: @zs-link-normal;
+
+@zs-status-success: #409f52;
+@zs-status-error: #9a402b;
+@zs-status-warning: #dfb102;
+@zs-status-info: #00629b;
+
+@zs-background: #fff;
+@zs-background-tab: #e5eaef;
+@zs-selected-color: mix(@zs-brand-primary,#fff, 10%);
+
+@zs-border-color: #e1e9ef;
+@zs-border-color-error: red;
+@zs-shadow-color:  #dee3e3;
+
+// Fonts
+@zs-font-family-base: Roboto, Helvetica, "Helvetica Neue", Arial, sans-serif;
+@zs-font-size-base: 14px;
+@zs-font-size-small: @zs-font-size-base - 2;
+@zs-font-size-large: @zs-font-size-base + 2;
+
+// Sizes
+@zs-gutter: @zs-font-size-base * 10 / 14;
+@zs-padding-vertical: 0.5*@zs-gutter; // 5px;
+@zs-padding-horizontal: @zs-gutter; // 10px;
+@zs-padding-vertical-large: @zs-gutter;
+@zs-padding-horizontal-large: 2*@zs-padding-horizontal;
+@zs-padding-vertical-small: 0.5*@zs-padding-vertical;
+@zs-padding-horizontal-small: 0.5*@zs-padding-horizontal;
+@zs-icon-width: 16/14em; // If font-size is 14px the icon width should be 16px
+@zs-icon-height: @zs-icon-width;
+@zs-icon-large-height:@zs-icon-height*24/16;
+@zs-icon-large-width:@zs-icon-width*24/16;
+@zs-border-radius: 0.3em;
+
+// Paths
+@zs-images: '../images';
+@zs-fonts: '../fonts';
+@zs-theme-path: '.';
+
+// Layers
+@zs-layer-distance: 1000;
+@zs-layer-1: 1*@zs-layer-distance;
+@zs-layer-2: 2*@zs-layer-distance;
+@zs-layer-3: 3*@zs-layer-distance;
+@zs-layer-4: 4*@zs-layer-distance;
+@zs-layer-5: 5*@zs-layer-distance;
+
+// Brand variables
+@zs-logo-width: 97px;
+@zs-layout-aside-width: 200px;
+@zs-layout-left-margin: 40px;
+
+// Icons
+@zs-icon-inactive-color: @zs-brand-gray;
+@zs-icon-font-version: @zs-lib-version;
+@zs-icon-font-family: 'zsIcons';
+
+// Chart colors
+@zs-chart-color1: #86c8bc;
+@zs-chart-color2: #00629b;
+@zs-chart-color3: #6e2b62;
+@zs-chart-color4: #b8cc7b;
+@zs-chart-color5: #01a6dc;
+@zs-chart-color6: #a3b2aa;
+@zs-chart-color7: #a0afc6;

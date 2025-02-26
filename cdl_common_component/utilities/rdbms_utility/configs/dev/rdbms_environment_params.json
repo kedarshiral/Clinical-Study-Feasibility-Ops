@@ -1,0 +1,20 @@
+{
+    "mysql_host": "",
+    "mysql_port": "3306",
+    "mysql_username": "",
+    "mysql_password": "",
+    "mysql_db": "orchestration_db",
+    "rdbms_service_name": "",
+    "rdbms_host": "",
+    "rdbms_port": "15210",
+    "rdbms_username": "",
+    "rdbms_password": "",
+    "rdbms_database": "",
+    "rdbms_prd_service_name": "",
+    "rdbms_prd_host": "",
+    "rdbms_prd_port": "15210",
+    "rdbms_prd_username": "",
+    "rdbms_prd_password": "",
+    "rdbms_prd_database": ""
+}
+

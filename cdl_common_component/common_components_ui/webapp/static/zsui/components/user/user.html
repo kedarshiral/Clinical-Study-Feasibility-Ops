@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="../../themes/zs/app.css" rel="stylesheet" />
+	
+    <!--[if lte IE 9]>
+        <link href="../../lib/css/ie8.css" rel="stylesheet" />
+        <script src="../../lib/js/html5.js"></script>
+    <![endif]-->    
+    <title>IDM components</title>
+</head>
+<body class="zs-style zs-reset zs-layout-table">
+<header class="zs-header">    
+    <div class="zs-brand-stripe"></div>
+    <div class="zs-brand-bar">
+        <div class="zs-logo zs-logo-javelin"></div>
+        <div class="zs-brand-name">
+            <h1>Compellium</h1>
+        </div>
+        <div class="zs-user-bar">            
+        </div>
+    </div>
+    <div id="top-nav-sub">
+        <nav class="zs-top-navigation">
+            <a href="#">Item1</a>
+            <a href="#">Item2</a>
+            <a class="zs-active" href="#">Item3</a>
+        </nav>
+    </div>
+</header>
+    <section>
+        <main>
+            <aside>
+                <nav class="zs-side-navigation">
+                    <a class="zs-active" href="#">Item1</a>
+                    <a href="#">Item2</a>
+                    <a href="#">Item3</a>
+                    <a href="#">Item4</a>
+                </nav>
+            </aside>
+            <header>
+                <nav class="zs-breadcrumbs">
+                    <a href="#">Home</a>
+                    <a href="#">Parent</a>
+                    <a href="#" class="zs-active">Current</a>
+                </nav>
+                <h1>IDM components</h1>
+            </header>
+            <section>
+				<form class="zs-form">
+					<fieldset class="zs-fieldset">
+						<p>
+							<span class="zs-radio-group">
+								<input type="radio" name="launchbarType" value="zs" checked />Branded launchbar
+								<input type="radio" name="launchbarType" value="legacy" />Legacy launchbar
+								<input type="radio" name="launchbarType" value="both" />Both
+							</span>
+						</p>
+					</fieldset>
+				</form>
+            </section>
+        </main>
+    </section>
+    <footer>
+        <div>&nbsp;</div>
+        <div>
+            <span>
+                Technical Support:
+                <a href="mailto:support@zsassociates.com">support@zsassociates.com</a>
+            </span>
+            <span>Release 42.1</span>
+            <span>Copyright &copy; 2015 ZS Associates Inc.</span>
+        </div>
+    </footer>
+</body>
+<script src="../../lib/js/jquery.min.js"></script>		
+<script src="../../lib/js/zs-table-layout-polyfill.js" async></script>
+<link href="../../themes/zs/launchbar.css" rel="stylesheet" />
+<script src="launchbar.js"></script>
+<script>
+    $(document).ready(function () {
+    	var type = 'zs';
+    	var zsResponseText = '<div id="zs-lbr" style="display: none;"><div role="profile"><a href="javascript:void(0);"><span class="zs-icon zs-icon-user-permissions"><span class="zs-badge zs-error zs-badge-error zs-badge-rectangle" style="display: none;"></span></span><span class="zs-icon zs-icon-large zs-icon-user-permissions"><span class="zs-badge zs-error zs-badge-error zs-badge-rectangle" style="display: none;"></span></span><label>Profile</label></a><nav class="zs-menu" style="display: none"><div class="zs-message zs-error" style="display: none;"><div>One or more roles are expiring</div><a href="javascript:void(0);">Manage roles to extend or renew access</a></div><a href="javascript:void(0);" class="zs-link">My Account</a><a href="javascript:void(0);" class="zs-link">Switch Account</a><a href="javascript:void(0);" class="zs-link"><span class="zs-icon zs-icon-logout"></span>Sign Out</a></nav></div><div role="apps"><a href="javascript:void(0);"><span class="zs-icon zs-icon-grid"></span><span class="zs-icon zs-icon-large zs-icon-grid"></span><label>Applications</label></a><nav class="zs-menu" style="display: none"><a href="javascript:void(0);">App 1</a><a href="javascript:void(0);">App 2</a><a href="javascript:void(0);">App 3</a></nav></div><div role="help"><a href="javascript:void(0);"><span class="zs-icon zs-icon-help"></span><span class="zs-icon zs-icon-large zs-icon-help"></span><label class="">Help</label></a></div></div>';
+    	var legacyResponseText = '<div id="lbr" style="display:none"><div id="lbar-apps"><ul><li class="lbar-selected"><a class="lbar-link" href="javascript:void(0);" id="lbl_0" title="App1" onclick="return ZSLB.LinkClick(\'0\')">App1</a></li><li><a class="lbar-link" href="javascript:void(0);" id="lbl_1" title="App2" onclick="return ZSLB.LinkClick(\'1\')">App2</a></li><li><a class="lbar-link" href="javascript:void(0);" id="lbl_2" title="App3" onclick="return ZSLB.LinkClick(\'2\')">App3</a></li></ul></div><div id="lbar-logout"><a class="lbar-link" href="javascript:void(0);" id="lbl_so" onclick="return ZSLB.LinkClick(\'so\')">Sign Out</a></div><div id="lbar-user" class="lbar-menu-off"><div id="lbar-user-menu-popup" class="lbar-menu-popup"><ul><li><a href="javascript:void(0);" id="lbl_ma" class="lbar-link" onclick="return ZSLB.LinkClick(\'ma\')">My Account</a></li><li><a href="javascript:void(0);" id="lbl_sa" class="lbar-link" onclick="return ZSLB.LinkClick(\'sa\')">Switch Account</a></li></ul></div><a id="lbar-user-menu-link" class="lbar-menu-dropdown" href="javascript:void(0);"><span class="user-label">User: </span><span class="user-name">username</span></a></div></div>';
+    	var fakeRequest = {
+    		readyState: 4,
+    		status: 200,
+    		responseText: zsResponseText
+    	};
+
+    	function switchLaunchbar(val) {
+    		if (val == type) return;
+
+    		type = val;
+    		$('.zs-user-bar').remove();
+    		$('#lbr').remove();
+
+    		if (val == 'zs') {
+    			fakeRequest.responseText = zsResponseText;
+    			ZSLB.handleLaunchbarResponse(fakeRequest);    			
+    			
+    		} else if (val == 'legacy') {
+    			
+    			fakeRequest.responseText = legacyResponseText;
+    			ZSLB.handleLaunchbarResponse(fakeRequest);
+    		} else {
+    			fakeRequest.responseText = legacyResponseText + zsResponseText;
+    			ZSLB.handleLaunchbarResponse(fakeRequest);
+    		}
+    	}
+
+    	$('[name="launchbarType"]').each(function () {
+    		var value = $(this).val();
+    		$(this).on('click', function () {
+    			switchLaunchbar(value);
+    		});
+    	});
+
+    	ZSLB.handleLaunchbarResponse(fakeRequest);
+    });
+</script>
+</html>
